@@ -500,6 +500,7 @@ DAMAGES.
  *  \li SpaceInvaders: -> File: SpaceInvaders.bin, Start Address: 0x00540000
  *  \li ImageShow: -> File: PhotoFrame.bin, Start Address: 0x00560000
  *
+ * -# Note: The Applications have to be build with the HALOS API´s (see folder: .../Halos_Development/src/halos_apis) and have avterwards to be converted from the standard ELF-Fileformat to a BINARY-Fileformat. For converting just run on the console the file "convert_elf_to_bin_fileformat.bat". This does the converting for you. After that you can find the *.bin file in the debug folder of the application.
  * -# Now the HalOS System is ready to run and also ready to debug. Just restart the NGW100 by the reset button or power plug
  * 	  and be sure that the NGW100 is connected by the serial cable to a computer with a running terminal (E.g. HTerm).
  * .
