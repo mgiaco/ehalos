@@ -1,0 +1,137 @@
+\hypertarget{group___v_m_m___t_l_b}{
+\section{Transition Lookaside Buffer}
+\label{group___v_m_m___t_l_b}\index{Transition Lookaside Buffer@{Transition Lookaside Buffer}}
+}
+Transition Lookaside Buffer. Manages the 32 data entries of the AVR32 AP7000. Used by memory exception handler.  
+
+
+\subsection*{Defines}
+\begin{CompactItemize}
+\item 
+\hypertarget{group___v_m_m___t_l_b_gec877369e5e9d5e6e8d6e84089157684}{
+\#define \hyperlink{group___v_m_m___t_l_b_gec877369e5e9d5e6e8d6e84089157684}{NROFTLBENTRIES}~32}
+\label{group___v_m_m___t_l_b_gec877369e5e9d5e6e8d6e84089157684}
+
+\begin{CompactList}\small\item\em the possible number of loaded Processes as far Memory Management is concerned. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+BOOL \hyperlink{group___v_m_m___t_l_b_g769f3784ad4e3826035640f257947a48}{updateTLB} (\hyperlink{struct_page_table_entry}{PageTableEntryPtr} pPageTableEntry)
+\item 
+void \hyperlink{group___v_m_m___t_l_b_gfc514c7439830f42ce18cb81ac95d4db}{transformPTEntry} (\hyperlink{struct_page_table_entry}{PageTableEntryPtr} pPTEntry, int $\ast$pType, long $\ast$pPhysical\_\-addr\_\-base, long $\ast$pVirtual\_\-addr\_\-base, struct \hyperlink{structmmu__tlb__t}{mmu\_\-tlb\_\-t} $\ast$pOptions, int $\ast$mmuStatus)
+\item 
+BOOL \hyperlink{group___v_m_m___t_l_b_g394e8e5ef0f91baf7ee2e6ffbb41a632}{isWiredDown} (int index, int type)
+\item 
+BOOL \hyperlink{group___v_m_m___t_l_b_gec5186e1f24ab3de57765267723dfba6}{isAccessed} (int index, int type)
+\item 
+int \hyperlink{group___v_m_m___t_l_b_g2cd5a0e8e26579c35da589d5a35a3567}{setNotAccessed} (int index, int type)
+\item 
+BOOL \hyperlink{group___v_m_m___t_l_b_g0aef1a11aac9970e992625e68280cad0}{InvalidateTLBEntry} (\hyperlink{struct_page_table_entry}{PageTableEntryPtr} pPTEntry)
+\item 
+BOOL \hyperlink{group___v_m_m___t_l_b_g89da6e0c2dad7972fda18e737fb06a84}{InvalidateTLB} ()
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Transition Lookaside Buffer. Manages the 32 data entries of the AVR32 AP7000. Used by memory exception handler. 
+
+\begin{Desc}
+\item[Note:]... \end{Desc}
+\begin{Desc}
+\item[Author:]drb8w \end{Desc}
+\begin{Desc}
+\item[Version:]0.0.0.1 \end{Desc}
+
+
+\subsection{Function Documentation}
+\hypertarget{group___v_m_m___t_l_b_g89da6e0c2dad7972fda18e737fb06a84}{
+\index{VMM\_\-TLB@{VMM\_\-TLB}!InvalidateTLB@{InvalidateTLB}}
+\index{InvalidateTLB@{InvalidateTLB}!VMM_TLB@{VMM\_\-TLB}}
+\subsubsection[{InvalidateTLB}]{\setlength{\rightskip}{0pt plus 5cm}BOOL InvalidateTLB ()}}
+\label{group___v_m_m___t_l_b_g89da6e0c2dad7972fda18e737fb06a84}
+
+
+Invalidates the complete Transition Lookaside Buffer. \begin{Desc}
+\item[Returns:]TRUE if successful, FALSE otherwise \end{Desc}
+\hypertarget{group___v_m_m___t_l_b_g0aef1a11aac9970e992625e68280cad0}{
+\index{VMM\_\-TLB@{VMM\_\-TLB}!InvalidateTLBEntry@{InvalidateTLBEntry}}
+\index{InvalidateTLBEntry@{InvalidateTLBEntry}!VMM_TLB@{VMM\_\-TLB}}
+\subsubsection[{InvalidateTLBEntry}]{\setlength{\rightskip}{0pt plus 5cm}BOOL InvalidateTLBEntry ({\bf PageTableEntryPtr} {\em pPTEntry})}}
+\label{group___v_m_m___t_l_b_g0aef1a11aac9970e992625e68280cad0}
+
+
+Invalidates the Transition Lookaside Buffer of the corresponding Page Table Entry. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em pPTEntry}]the Page Table Entry in charge \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]TRUE if successful, FALSE otherwise \end{Desc}
+\hypertarget{group___v_m_m___t_l_b_gec5186e1f24ab3de57765267723dfba6}{
+\index{VMM\_\-TLB@{VMM\_\-TLB}!isAccessed@{isAccessed}}
+\index{isAccessed@{isAccessed}!VMM_TLB@{VMM\_\-TLB}}
+\subsubsection[{isAccessed}]{\setlength{\rightskip}{0pt plus 5cm}BOOL isAccessed (int {\em index}, \/  int {\em type})}}
+\label{group___v_m_m___t_l_b_gec5186e1f24ab3de57765267723dfba6}
+
+
+Check if the TLB Entry is accessed. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em index}]identifies the TLB Entry \item[{\em type}]MMU\_\-TLB\_\-TYPE\_\-DATA or MMU\_\-TLB\_\-TYPE\_\-INSTRUCTION \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]TRUE if successful, FALSE otherwise \end{Desc}
+\hypertarget{group___v_m_m___t_l_b_g394e8e5ef0f91baf7ee2e6ffbb41a632}{
+\index{VMM\_\-TLB@{VMM\_\-TLB}!isWiredDown@{isWiredDown}}
+\index{isWiredDown@{isWiredDown}!VMM_TLB@{VMM\_\-TLB}}
+\subsubsection[{isWiredDown}]{\setlength{\rightskip}{0pt plus 5cm}BOOL isWiredDown (int {\em index}, \/  int {\em type})}}
+\label{group___v_m_m___t_l_b_g394e8e5ef0f91baf7ee2e6ffbb41a632}
+
+
+Check if the TLB Entry is wired down. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em index}]identifies the TLB Entry \item[{\em type}]MMU\_\-TLB\_\-TYPE\_\-DATA or MMU\_\-TLB\_\-TYPE\_\-INSTRUCTION \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]TRUE if successful, FALSE otherwise \end{Desc}
+\hypertarget{group___v_m_m___t_l_b_g2cd5a0e8e26579c35da589d5a35a3567}{
+\index{VMM\_\-TLB@{VMM\_\-TLB}!setNotAccessed@{setNotAccessed}}
+\index{setNotAccessed@{setNotAccessed}!VMM_TLB@{VMM\_\-TLB}}
+\subsubsection[{setNotAccessed}]{\setlength{\rightskip}{0pt plus 5cm}int setNotAccessed (int {\em index}, \/  int {\em type})}}
+\label{group___v_m_m___t_l_b_g2cd5a0e8e26579c35da589d5a35a3567}
+
+
+Set the identified TLB Entry to not accessed. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em index}]identifies the TLB Entry \item[{\em type}]MMU\_\-TLB\_\-TYPE\_\-DATA or MMU\_\-TLB\_\-TYPE\_\-INSTRUCTION \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]MMU\_\-OK if successful \end{Desc}
+\hypertarget{group___v_m_m___t_l_b_gfc514c7439830f42ce18cb81ac95d4db}{
+\index{VMM\_\-TLB@{VMM\_\-TLB}!transformPTEntry@{transformPTEntry}}
+\index{transformPTEntry@{transformPTEntry}!VMM_TLB@{VMM\_\-TLB}}
+\subsubsection[{transformPTEntry}]{\setlength{\rightskip}{0pt plus 5cm}void transformPTEntry ({\bf PageTableEntryPtr} {\em pPTEntry}, \/  int $\ast$ {\em pType}, \/  long $\ast$ {\em pPhysical\_\-addr\_\-base}, \/  long $\ast$ {\em pVirtual\_\-addr\_\-base}, \/  struct {\bf mmu\_\-tlb\_\-t} $\ast$ {\em pOptions}, \/  int $\ast$ {\em mmuStatus})}}
+\label{group___v_m_m___t_l_b_gfc514c7439830f42ce18cb81ac95d4db}
+
+
+Transforms own Page Table Entry structure into data structure of \hyperlink{mmu_8c}{mmu.c} code. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em pPTEntry}]the Page Table Entry that should be transformed \item[{\em pType}]MMU\_\-TLB\_\-TYPE\_\-DATA or MMU\_\-TLB\_\-TYPE\_\-INSTRUCTION \item[{\em pPhysical\_\-addr\_\-base}]the physical base address in \hyperlink{mmu_8c}{mmu.c} format \item[{\em pVirtual\_\-addr\_\-base}]the virtual base address in \hyperlink{mmu_8c}{mmu.c} format \item[{\em pOptions}]defines options for operating on TLB entries \item[{\em mmuStatus}]MMU\_\-OK if success, MMU\_\-TLB\_\-MISS otherwise \end{description}
+\end{Desc}
+\hypertarget{group___v_m_m___t_l_b_g769f3784ad4e3826035640f257947a48}{
+\index{VMM\_\-TLB@{VMM\_\-TLB}!updateTLB@{updateTLB}}
+\index{updateTLB@{updateTLB}!VMM_TLB@{VMM\_\-TLB}}
+\subsubsection[{updateTLB}]{\setlength{\rightskip}{0pt plus 5cm}BOOL updateTLB ({\bf PageTableEntryPtr} {\em pPageTableEntry})}}
+\label{group___v_m_m___t_l_b_g769f3784ad4e3826035640f257947a48}
+
+
+Updates the TLB with the given Page Table Entry. At the moment FIFO is used to skip entries. Later Second Chance to skip page out of TLB search an entry which is not accessed and reset the accessed bit of visited entries. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em pPageTableEntry}]the Page Table Entry that must be added in the TLB \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]TRUE id successful, FALSE otherwise \end{Desc}

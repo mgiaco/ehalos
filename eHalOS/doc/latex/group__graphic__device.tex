@@ -1,0 +1,427 @@
+\hypertarget{group__graphic__device}{
+\section{Graphic Device}
+\label{group__graphic__device}\index{Graphic Device@{Graphic Device}}
+}
+device independent implementation of drawing functions. functions are called by GDI API. Hardware dependent code is called through the graphics hardware interface  
+
+
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+\hypertarget{group__graphic__device_g477dd2821cac07b0dd56d67a72eacaba}{
+void \hyperlink{group__graphic__device_g477dd2821cac07b0dd56d67a72eacaba}{initGraph} (void)}
+\label{group__graphic__device_g477dd2821cac07b0dd56d67a72eacaba}
+
+\begin{CompactList}\small\item\em initalize graphic \item\end{CompactList}\item 
+void \hyperlink{group__graphic__device_gb1d5625d6d64546097d27be58b43a5f9}{setDevice} (char DeviceNo)
+\begin{CompactList}\small\item\em switch current device \item\end{CompactList}\item 
+void \hyperlink{group__graphic__device_g7551aae0561930d02c9981917c4d9d9b}{gotoXY} (uint16\_\-t x, uint16\_\-t y)
+\begin{CompactList}\small\item\em set new cursor position, called from GDI-API \item\end{CompactList}\item 
+void \hyperlink{group__graphic__device_gba6affc39995efe14043eadbf0b43827}{setX} (uint16\_\-t x)
+\begin{CompactList}\small\item\em set new x-coordinate for cursor, called from GDI-API \item\end{CompactList}\item 
+uint16\_\-t \hyperlink{group__graphic__device_g4bcab06388adcd058a24e1cac1e2e544}{getX} (void)
+\begin{CompactList}\small\item\em get x-coordinate of cursor, called from GDI-API \item\end{CompactList}\item 
+void \hyperlink{group__graphic__device_gebdf36b1cfeae90226306544e8b0f546}{setY} (uint16\_\-t y)
+\begin{CompactList}\small\item\em set new y-coordinate for cursor, called from GDI-API \item\end{CompactList}\item 
+uint16\_\-t \hyperlink{group__graphic__device_g32fe0e72f29aeb9a8285f00cfbe59957}{getY} (void)
+\begin{CompactList}\small\item\em get y-coordinate of cursor, called from GDI-API \item\end{CompactList}\item 
+uint16\_\-t \hyperlink{group__graphic__device_g6421d0855aedae698f7a483392ffd25c}{getScreenWidth} ()
+\begin{CompactList}\small\item\em get current screenwidth, called from GDI-API \item\end{CompactList}\item 
+uint16\_\-t \hyperlink{group__graphic__device_g097b85d7f413373b20867a9415cabbed}{getScreenHeight} ()
+\begin{CompactList}\small\item\em get current screenheight, called from GDI-API \item\end{CompactList}\item 
+void \hyperlink{group__graphic__device_ga22a0dd9dcea4d5c82fae9be9bf089f0}{setColor} (uint32\_\-t Color)
+\begin{CompactList}\small\item\em set new color, called from GDI-API \item\end{CompactList}\item 
+uint32\_\-t \hyperlink{group__graphic__device_ga7f56f8fafb90e55a6af7ac7646df124}{getColor} ()
+\begin{CompactList}\small\item\em get current color, called from GDI-API \item\end{CompactList}\item 
+void \hyperlink{group__graphic__device_gc8bf090a80d7fe12147b6d87fd1ee83b}{setBackgroundColor} (uint32\_\-t color)
+\begin{CompactList}\small\item\em set new backgroundcolor, called from GDI-API \item\end{CompactList}\item 
+uint32\_\-t \hyperlink{group__graphic__device_g81bda3c8db3821062fba08e5ecb2d90d}{getBackgroundColor} ()
+\begin{CompactList}\small\item\em get current backgroundcolor, called from GDI-API \item\end{CompactList}\item 
+void \hyperlink{group__graphic__device_g3efd6ee7243705cce37b440c68399546}{setFontColor} (uint32\_\-t color)
+\begin{CompactList}\small\item\em set font color, called from GDI-API \item\end{CompactList}\item 
+void \hyperlink{group__graphic__device_g3a3cd779058c4bb5b8b03e316f58ed16}{verticalPan} (int16\_\-t yoffset)
+\begin{CompactList}\small\item\em scroll framebuffer up or down, called from GDI-API \item\end{CompactList}\item 
+void \hyperlink{group__graphic__device_gb7831d44ca8d752c86a1953b2b898e5f}{putPixel} (uint16\_\-t x1, uint16\_\-t y1)
+\begin{CompactList}\small\item\em draw pixel with current color at given position, called from GDI-API \item\end{CompactList}\item 
+void \hyperlink{group__graphic__device_gb5f226f1613f7f70a1e068c5fa2e4b56}{clrPixel} (uint16\_\-t x1, uint16\_\-t y1)
+\begin{CompactList}\small\item\em draw pixel with current backgroundcolor at given position, called from GDI-API \item\end{CompactList}\item 
+void \hyperlink{group__graphic__device_gbae4230e0d7bc64a2f8fba6c6175eb87}{line} (uint16\_\-t x1, uint16\_\-t y1, uint16\_\-t x2, uint16\_\-t y2)
+\begin{CompactList}\small\item\em draws a line, called from GDI-API \item\end{CompactList}\item 
+void \hyperlink{group__graphic__device_g6d8d01808fb00f5848e16621995a6657}{rectangle} (uint16\_\-t x1, uint16\_\-t y1, uint16\_\-t x2, uint16\_\-t y2)
+\begin{CompactList}\small\item\em draws a rectangle, called from GDI-API \item\end{CompactList}\item 
+void \hyperlink{group__graphic__device_g777ea1e70848dcacfa26275e00527aae}{fillRectangle} (uint16\_\-t x1, uint16\_\-t y1, uint16\_\-t x2, uint16\_\-t y2)
+\begin{CompactList}\small\item\em draws a filled rectangle, called from GDI-API \item\end{CompactList}\item 
+void \hyperlink{group__graphic__device_gc94c3233de7ff3e87551f5ee9717b1bb}{circle} (uint16\_\-t xCenter, uint16\_\-t yCenter, uint16\_\-t radius)
+\begin{CompactList}\small\item\em draws a circle, called from GDI-API \item\end{CompactList}\item 
+void \hyperlink{group__graphic__device_g8bdd86d104cca372768afe13dd8e66b4}{box} (uint16\_\-t x, uint16\_\-t y, uint16\_\-t width, uint16\_\-t height)
+\begin{CompactList}\small\item\em draws a box, called from GDI-API \item\end{CompactList}\item 
+void \hyperlink{group__graphic__device_g2aea83565e4b3416a0920d9d6d925ed9}{sprite} (uint8\_\-t $\ast$data, uint16\_\-t height, uint16\_\-t width)
+\begin{CompactList}\small\item\em draws a sprite, called from GDI-API \item\end{CompactList}\item 
+void \hyperlink{group__graphic__device_gaea2e351a7efbc2ec4be0f4688593fdb}{sprite2} (\hyperlink{struct__gdi__sprite}{gdi\_\-sprite\_\-t} $\ast$sprite)
+\begin{CompactList}\small\item\em draws a sprite, called from GDI-API \item\end{CompactList}\item 
+void \hyperlink{group__graphic__device_ga7267153b94e4ea20df9231fbc208a19}{color\_\-sprite} (\hyperlink{struct__gdi__sprite}{gdi\_\-sprite\_\-t} $\ast$sprite)
+\begin{CompactList}\small\item\em draws a 24-bit colored sprite, called from GDI-API \item\end{CompactList}\item 
+void \hyperlink{group__graphic__device_ge1e3f4164ddb7ede972dfd4573c05739}{setLineThickness} (uint8\_\-t thickness)
+\begin{CompactList}\small\item\em set line thickness, called from GDI-API \item\end{CompactList}\item 
+void \hyperlink{group__graphic__device_g457c68dc52c4aed28ac3b53f7325b00d}{setLineStyle} (\hyperlink{group__hgdi__types_gdfccdb9380d340f00e646a1fd04b79d9}{line\_\-style\_\-t} linestyle)
+\begin{CompactList}\small\item\em set linestyle, called from GDI-API \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+device independent implementation of drawing functions. functions are called by GDI API. Hardware dependent code is called through the graphics hardware interface 
+
+\begin{Desc}
+\item[Note:]... \end{Desc}
+\begin{Desc}
+\item[Author:]momo \end{Desc}
+\begin{Desc}
+\item[Version:]0.0.0.1 \end{Desc}
+
+
+\subsection{Function Documentation}
+\hypertarget{group__graphic__device_g8bdd86d104cca372768afe13dd8e66b4}{
+\index{graphic\_\-device@{graphic\_\-device}!box@{box}}
+\index{box@{box}!graphic_device@{graphic\_\-device}}
+\subsubsection[{box}]{\setlength{\rightskip}{0pt plus 5cm}void box (uint16\_\-t {\em x}, \/  uint16\_\-t {\em y}, \/  uint16\_\-t {\em width}, \/  uint16\_\-t {\em height})}}
+\label{group__graphic__device_g8bdd86d104cca372768afe13dd8e66b4}
+
+
+draws a box, called from GDI-API 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em x}]x-coordinate of first corner \item[{\em y}]y-coordinate of first corner \item[{\em width}]width of box \item[{\em height}]height of box \end{description}
+\end{Desc}
+\hypertarget{group__graphic__device_gc94c3233de7ff3e87551f5ee9717b1bb}{
+\index{graphic\_\-device@{graphic\_\-device}!circle@{circle}}
+\index{circle@{circle}!graphic_device@{graphic\_\-device}}
+\subsubsection[{circle}]{\setlength{\rightskip}{0pt plus 5cm}void circle (uint16\_\-t {\em xCenter}, \/  uint16\_\-t {\em yCenter}, \/  uint16\_\-t {\em radius})}}
+\label{group__graphic__device_gc94c3233de7ff3e87551f5ee9717b1bb}
+
+
+draws a circle, called from GDI-API 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em xCenter}]x-coordinate of circle center \item[{\em yCenter}]y-coordinate of circle center \item[{\em radius}]radius of circle \end{description}
+\end{Desc}
+\hypertarget{group__graphic__device_gb5f226f1613f7f70a1e068c5fa2e4b56}{
+\index{graphic\_\-device@{graphic\_\-device}!clrPixel@{clrPixel}}
+\index{clrPixel@{clrPixel}!graphic_device@{graphic\_\-device}}
+\subsubsection[{clrPixel}]{\setlength{\rightskip}{0pt plus 5cm}void clrPixel (uint16\_\-t {\em x1}, \/  uint16\_\-t {\em y1})}}
+\label{group__graphic__device_gb5f226f1613f7f70a1e068c5fa2e4b56}
+
+
+draw pixel with current backgroundcolor at given position, called from GDI-API 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em x1}]x-coordinate of pixel \item[{\em y1}]y-coordinate of pixel \end{description}
+\end{Desc}
+\hypertarget{group__graphic__device_ga7267153b94e4ea20df9231fbc208a19}{
+\index{graphic\_\-device@{graphic\_\-device}!color\_\-sprite@{color\_\-sprite}}
+\index{color\_\-sprite@{color\_\-sprite}!graphic_device@{graphic\_\-device}}
+\subsubsection[{color\_\-sprite}]{\setlength{\rightskip}{0pt plus 5cm}void color\_\-sprite ({\bf gdi\_\-sprite\_\-t} $\ast$ {\em sprite})}}
+\label{group__graphic__device_ga7267153b94e4ea20df9231fbc208a19}
+
+
+draws a 24-bit colored sprite, called from GDI-API 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em sprite}]sprite-structure \end{description}
+\end{Desc}
+\hypertarget{group__graphic__device_g777ea1e70848dcacfa26275e00527aae}{
+\index{graphic\_\-device@{graphic\_\-device}!fillRectangle@{fillRectangle}}
+\index{fillRectangle@{fillRectangle}!graphic_device@{graphic\_\-device}}
+\subsubsection[{fillRectangle}]{\setlength{\rightskip}{0pt plus 5cm}void fillRectangle (uint16\_\-t {\em x1}, \/  uint16\_\-t {\em y1}, \/  uint16\_\-t {\em x2}, \/  uint16\_\-t {\em y2})}}
+\label{group__graphic__device_g777ea1e70848dcacfa26275e00527aae}
+
+
+draws a filled rectangle, called from GDI-API 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em x1}]x-coordinate of first corner \item[{\em y1}]y-coordinate of first corner \item[{\em x2}]x-coordinate of second corner \item[{\em y2}]y-coordinate of second corner \end{description}
+\end{Desc}
+\hypertarget{group__graphic__device_g81bda3c8db3821062fba08e5ecb2d90d}{
+\index{graphic\_\-device@{graphic\_\-device}!getBackgroundColor@{getBackgroundColor}}
+\index{getBackgroundColor@{getBackgroundColor}!graphic_device@{graphic\_\-device}}
+\subsubsection[{getBackgroundColor}]{\setlength{\rightskip}{0pt plus 5cm}uint32\_\-t getBackgroundColor ()}}
+\label{group__graphic__device_g81bda3c8db3821062fba08e5ecb2d90d}
+
+
+get current backgroundcolor, called from GDI-API 
+
+\begin{Desc}
+\item[Returns:]backgroundcolor currently set \end{Desc}
+\hypertarget{group__graphic__device_ga7f56f8fafb90e55a6af7ac7646df124}{
+\index{graphic\_\-device@{graphic\_\-device}!getColor@{getColor}}
+\index{getColor@{getColor}!graphic_device@{graphic\_\-device}}
+\subsubsection[{getColor}]{\setlength{\rightskip}{0pt plus 5cm}uint32\_\-t getColor ()}}
+\label{group__graphic__device_ga7f56f8fafb90e55a6af7ac7646df124}
+
+
+get current color, called from GDI-API 
+
+\begin{Desc}
+\item[Returns:]color currently set \end{Desc}
+\hypertarget{group__graphic__device_g097b85d7f413373b20867a9415cabbed}{
+\index{graphic\_\-device@{graphic\_\-device}!getScreenHeight@{getScreenHeight}}
+\index{getScreenHeight@{getScreenHeight}!graphic_device@{graphic\_\-device}}
+\subsubsection[{getScreenHeight}]{\setlength{\rightskip}{0pt plus 5cm}uint16\_\-t getScreenHeight ()}}
+\label{group__graphic__device_g097b85d7f413373b20867a9415cabbed}
+
+
+get current screenheight, called from GDI-API 
+
+\begin{Desc}
+\item[Returns:]current screenheight \end{Desc}
+\hypertarget{group__graphic__device_g6421d0855aedae698f7a483392ffd25c}{
+\index{graphic\_\-device@{graphic\_\-device}!getScreenWidth@{getScreenWidth}}
+\index{getScreenWidth@{getScreenWidth}!graphic_device@{graphic\_\-device}}
+\subsubsection[{getScreenWidth}]{\setlength{\rightskip}{0pt plus 5cm}uint16\_\-t getScreenWidth ()}}
+\label{group__graphic__device_g6421d0855aedae698f7a483392ffd25c}
+
+
+get current screenwidth, called from GDI-API 
+
+\begin{Desc}
+\item[Returns:]current screenwidth \end{Desc}
+\hypertarget{group__graphic__device_g4bcab06388adcd058a24e1cac1e2e544}{
+\index{graphic\_\-device@{graphic\_\-device}!getX@{getX}}
+\index{getX@{getX}!graphic_device@{graphic\_\-device}}
+\subsubsection[{getX}]{\setlength{\rightskip}{0pt plus 5cm}uint16\_\-t getX (void)}}
+\label{group__graphic__device_g4bcab06388adcd058a24e1cac1e2e544}
+
+
+get x-coordinate of cursor, called from GDI-API 
+
+\begin{Desc}
+\item[Returns:]x-coordinate of cursor position \end{Desc}
+\hypertarget{group__graphic__device_g32fe0e72f29aeb9a8285f00cfbe59957}{
+\index{graphic\_\-device@{graphic\_\-device}!getY@{getY}}
+\index{getY@{getY}!graphic_device@{graphic\_\-device}}
+\subsubsection[{getY}]{\setlength{\rightskip}{0pt plus 5cm}uint16\_\-t getY (void)}}
+\label{group__graphic__device_g32fe0e72f29aeb9a8285f00cfbe59957}
+
+
+get y-coordinate of cursor, called from GDI-API 
+
+\begin{Desc}
+\item[Returns:]y-coordinate of cursor position \end{Desc}
+\hypertarget{group__graphic__device_g7551aae0561930d02c9981917c4d9d9b}{
+\index{graphic\_\-device@{graphic\_\-device}!gotoXY@{gotoXY}}
+\index{gotoXY@{gotoXY}!graphic_device@{graphic\_\-device}}
+\subsubsection[{gotoXY}]{\setlength{\rightskip}{0pt plus 5cm}void gotoXY (uint16\_\-t {\em x}, \/  uint16\_\-t {\em y})}}
+\label{group__graphic__device_g7551aae0561930d02c9981917c4d9d9b}
+
+
+set new cursor position, called from GDI-API 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em x}]x-coordinate of new cursor position \item[{\em y}]y-coordinate of new cursor position \end{description}
+\end{Desc}
+\hypertarget{group__graphic__device_gbae4230e0d7bc64a2f8fba6c6175eb87}{
+\index{graphic\_\-device@{graphic\_\-device}!line@{line}}
+\index{line@{line}!graphic_device@{graphic\_\-device}}
+\subsubsection[{line}]{\setlength{\rightskip}{0pt plus 5cm}void line (uint16\_\-t {\em x1}, \/  uint16\_\-t {\em y1}, \/  uint16\_\-t {\em x2}, \/  uint16\_\-t {\em y2})}}
+\label{group__graphic__device_gbae4230e0d7bc64a2f8fba6c6175eb87}
+
+
+draws a line, called from GDI-API 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em x1}]x-coordinate of startpoint \item[{\em y1}]y-coordinate of startpoint \item[{\em x2}]x-coordinate of endpoint \item[{\em y2}]y-coordinate of endpoint \end{description}
+\end{Desc}
+\hypertarget{group__graphic__device_gb7831d44ca8d752c86a1953b2b898e5f}{
+\index{graphic\_\-device@{graphic\_\-device}!putPixel@{putPixel}}
+\index{putPixel@{putPixel}!graphic_device@{graphic\_\-device}}
+\subsubsection[{putPixel}]{\setlength{\rightskip}{0pt plus 5cm}void putPixel (uint16\_\-t {\em x1}, \/  uint16\_\-t {\em y1})}}
+\label{group__graphic__device_gb7831d44ca8d752c86a1953b2b898e5f}
+
+
+draw pixel with current color at given position, called from GDI-API 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em x1}]x-coordinate of pixel \item[{\em y1}]y-coordinate of pixel \end{description}
+\end{Desc}
+\hypertarget{group__graphic__device_g6d8d01808fb00f5848e16621995a6657}{
+\index{graphic\_\-device@{graphic\_\-device}!rectangle@{rectangle}}
+\index{rectangle@{rectangle}!graphic_device@{graphic\_\-device}}
+\subsubsection[{rectangle}]{\setlength{\rightskip}{0pt plus 5cm}void rectangle (uint16\_\-t {\em x1}, \/  uint16\_\-t {\em y1}, \/  uint16\_\-t {\em x2}, \/  uint16\_\-t {\em y2})}}
+\label{group__graphic__device_g6d8d01808fb00f5848e16621995a6657}
+
+
+draws a rectangle, called from GDI-API 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em x1}]x-coordinate of first corner \item[{\em y1}]y-coordinate of first corner \item[{\em x2}]x-coordinate of second corner \item[{\em y2}]y-coordinate of second corner \end{description}
+\end{Desc}
+\hypertarget{group__graphic__device_gc8bf090a80d7fe12147b6d87fd1ee83b}{
+\index{graphic\_\-device@{graphic\_\-device}!setBackgroundColor@{setBackgroundColor}}
+\index{setBackgroundColor@{setBackgroundColor}!graphic_device@{graphic\_\-device}}
+\subsubsection[{setBackgroundColor}]{\setlength{\rightskip}{0pt plus 5cm}void setBackgroundColor (uint32\_\-t {\em color})}}
+\label{group__graphic__device_gc8bf090a80d7fe12147b6d87fd1ee83b}
+
+
+set new backgroundcolor, called from GDI-API 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em color}]new backgroundcolor to be set \end{description}
+\end{Desc}
+\hypertarget{group__graphic__device_ga22a0dd9dcea4d5c82fae9be9bf089f0}{
+\index{graphic\_\-device@{graphic\_\-device}!setColor@{setColor}}
+\index{setColor@{setColor}!graphic_device@{graphic\_\-device}}
+\subsubsection[{setColor}]{\setlength{\rightskip}{0pt plus 5cm}void setColor (uint32\_\-t {\em Color})}}
+\label{group__graphic__device_ga22a0dd9dcea4d5c82fae9be9bf089f0}
+
+
+set new color, called from GDI-API 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em Color}]new color to be set \end{description}
+\end{Desc}
+\hypertarget{group__graphic__device_gb1d5625d6d64546097d27be58b43a5f9}{
+\index{graphic\_\-device@{graphic\_\-device}!setDevice@{setDevice}}
+\index{setDevice@{setDevice}!graphic_device@{graphic\_\-device}}
+\subsubsection[{setDevice}]{\setlength{\rightskip}{0pt plus 5cm}void setDevice (char {\em DeviceNo})}}
+\label{group__graphic__device_gb1d5625d6d64546097d27be58b43a5f9}
+
+
+switch current device 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em DeviceNo}]number of device \end{description}
+\end{Desc}
+\hypertarget{group__graphic__device_g3efd6ee7243705cce37b440c68399546}{
+\index{graphic\_\-device@{graphic\_\-device}!setFontColor@{setFontColor}}
+\index{setFontColor@{setFontColor}!graphic_device@{graphic\_\-device}}
+\subsubsection[{setFontColor}]{\setlength{\rightskip}{0pt plus 5cm}void setFontColor (uint32\_\-t {\em color})}}
+\label{group__graphic__device_g3efd6ee7243705cce37b440c68399546}
+
+
+set font color, called from GDI-API 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em color}]new fontcolor \end{description}
+\end{Desc}
+\hypertarget{group__graphic__device_g457c68dc52c4aed28ac3b53f7325b00d}{
+\index{graphic\_\-device@{graphic\_\-device}!setLineStyle@{setLineStyle}}
+\index{setLineStyle@{setLineStyle}!graphic_device@{graphic\_\-device}}
+\subsubsection[{setLineStyle}]{\setlength{\rightskip}{0pt plus 5cm}void setLineStyle ({\bf line\_\-style\_\-t} {\em linestyle})}}
+\label{group__graphic__device_g457c68dc52c4aed28ac3b53f7325b00d}
+
+
+set linestyle, called from GDI-API 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em linestyle}]value for new linestyle \end{description}
+\end{Desc}
+\hypertarget{group__graphic__device_ge1e3f4164ddb7ede972dfd4573c05739}{
+\index{graphic\_\-device@{graphic\_\-device}!setLineThickness@{setLineThickness}}
+\index{setLineThickness@{setLineThickness}!graphic_device@{graphic\_\-device}}
+\subsubsection[{setLineThickness}]{\setlength{\rightskip}{0pt plus 5cm}void setLineThickness (uint8\_\-t {\em thickness})}}
+\label{group__graphic__device_ge1e3f4164ddb7ede972dfd4573c05739}
+
+
+set line thickness, called from GDI-API 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em thickness}]value for line thickness \end{description}
+\end{Desc}
+\hypertarget{group__graphic__device_gba6affc39995efe14043eadbf0b43827}{
+\index{graphic\_\-device@{graphic\_\-device}!setX@{setX}}
+\index{setX@{setX}!graphic_device@{graphic\_\-device}}
+\subsubsection[{setX}]{\setlength{\rightskip}{0pt plus 5cm}void setX (uint16\_\-t {\em x})}}
+\label{group__graphic__device_gba6affc39995efe14043eadbf0b43827}
+
+
+set new x-coordinate for cursor, called from GDI-API 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em x}]x-coordinate of new cursor position \end{description}
+\end{Desc}
+\hypertarget{group__graphic__device_gebdf36b1cfeae90226306544e8b0f546}{
+\index{graphic\_\-device@{graphic\_\-device}!setY@{setY}}
+\index{setY@{setY}!graphic_device@{graphic\_\-device}}
+\subsubsection[{setY}]{\setlength{\rightskip}{0pt plus 5cm}void setY (uint16\_\-t {\em y})}}
+\label{group__graphic__device_gebdf36b1cfeae90226306544e8b0f546}
+
+
+set new y-coordinate for cursor, called from GDI-API 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em y}]y-coordinate of new cursor position \end{description}
+\end{Desc}
+\hypertarget{group__graphic__device_g2aea83565e4b3416a0920d9d6d925ed9}{
+\index{graphic\_\-device@{graphic\_\-device}!sprite@{sprite}}
+\index{sprite@{sprite}!graphic_device@{graphic\_\-device}}
+\subsubsection[{sprite}]{\setlength{\rightskip}{0pt plus 5cm}void sprite (uint8\_\-t $\ast$ {\em data}, \/  uint16\_\-t {\em height}, \/  uint16\_\-t {\em width})}}
+\label{group__graphic__device_g2aea83565e4b3416a0920d9d6d925ed9}
+
+
+draws a sprite, called from GDI-API 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em data}]sprite value array \item[{\em height}]height of sprite \item[{\em width}]width of sprite \end{description}
+\end{Desc}
+\hypertarget{group__graphic__device_gaea2e351a7efbc2ec4be0f4688593fdb}{
+\index{graphic\_\-device@{graphic\_\-device}!sprite2@{sprite2}}
+\index{sprite2@{sprite2}!graphic_device@{graphic\_\-device}}
+\subsubsection[{sprite2}]{\setlength{\rightskip}{0pt plus 5cm}void sprite2 ({\bf gdi\_\-sprite\_\-t} $\ast$ {\em sprite})}}
+\label{group__graphic__device_gaea2e351a7efbc2ec4be0f4688593fdb}
+
+
+draws a sprite, called from GDI-API 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em sprite}]sprite-structure \end{description}
+\end{Desc}
+\hypertarget{group__graphic__device_g3a3cd779058c4bb5b8b03e316f58ed16}{
+\index{graphic\_\-device@{graphic\_\-device}!verticalPan@{verticalPan}}
+\index{verticalPan@{verticalPan}!graphic_device@{graphic\_\-device}}
+\subsubsection[{verticalPan}]{\setlength{\rightskip}{0pt plus 5cm}void verticalPan (int16\_\-t {\em yoffset})}}
+\label{group__graphic__device_g3a3cd779058c4bb5b8b03e316f58ed16}
+
+
+scroll framebuffer up or down, called from GDI-API 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em yoffset}]value for framebuffer scrolling \end{description}
+\end{Desc}

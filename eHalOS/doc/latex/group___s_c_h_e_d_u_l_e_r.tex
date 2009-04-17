@@ -1,0 +1,321 @@
+\hypertarget{group___s_c_h_e_d_u_l_e_r}{
+\section{Scheduler}
+\label{group___s_c_h_e_d_u_l_e_r}\index{Scheduler@{Scheduler}}
+}
+Task/process scheduler for Halos, implemented scheduling algorithm: simple Round Robin (not priority based).  
+
+
+\subsection*{Defines}
+\begin{CompactItemize}
+\item 
+\hypertarget{group___s_c_h_e_d_u_l_e_r_ga40645236fdec3db71ba1c464fc61012}{
+\#define \hyperlink{group___s_c_h_e_d_u_l_e_r_ga40645236fdec3db71ba1c464fc61012}{TASK\_\-INITIALIZED}~0}
+\label{group___s_c_h_e_d_u_l_e_r_ga40645236fdec3db71ba1c464fc61012}
+
+\begin{CompactList}\small\item\em Constants for the different task states. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+\hyperlink{structprocess_control_block}{PCtrlBlock\_\-t} $\ast$ \hyperlink{group___s_c_h_e_d_u_l_e_r_g6f966a27cb81e25cbbeb00209e4f425a}{init\_\-scheduler} (\hyperlink{structprocess_control_block}{PCtrlBlock\_\-t} $\ast$\hyperlink{group___s_c_h_e_d_u_l_e_r_gc4ccbf885c8f3faf19274dced0c7216a}{ptrIdleTask}, \hyperlink{structprocess_control_block}{PCtrlBlock\_\-t} $\ast$ptrNewTask)
+\item 
+void \hyperlink{group___s_c_h_e_d_u_l_e_r_g8cf010ead07e0d3c9f2fec540ca41222}{initIdleTask} (\hyperlink{structprocess_control_block}{PCtrlBlock\_\-t} $\ast$ptrIdleT)
+\item 
+void \hyperlink{group___s_c_h_e_d_u_l_e_r_g0a823bd7dfbe610f6fb79f213bad887a}{putTask\_\-to\_\-RUNABLQ} (\hyperlink{structprocess_control_block}{PCtrlBlock\_\-t} $\ast$ptrNewTask)
+\item 
+void \hyperlink{group___s_c_h_e_d_u_l_e_r_g915e6a1a7af8610eb748b2a71aed8e25}{putTask\_\-to\_\-SUSPENDEDQ} (\hyperlink{structprocess_control_block}{PCtrlBlock\_\-t} $\ast$ptrNewTask, uint32\_\-t suspendTime)
+\item 
+void \hyperlink{group___s_c_h_e_d_u_l_e_r_gb30df8d2157564bf9b3ab2fb0fc4e416}{removeTask\_\-from\_\-RUNABLQ} (\hyperlink{structprocess_control_block}{PCtrlBlock\_\-t} $\ast$ptrRemTask)
+\item 
+\hyperlink{structprocess_control_block}{PCtrlBlock\_\-t} $\ast$ \hyperlink{group___s_c_h_e_d_u_l_e_r_g37148b0b5230fbd6a7e27996d7c7559b}{schedule} (void)
+\item 
+\hyperlink{structprocess_control_block}{PCtrlBlock\_\-t} $\ast$ \hyperlink{group___s_c_h_e_d_u_l_e_r_g7f3d982256a144718b4d566764ab3380}{getRunningTask} (void)
+\item 
+void \hyperlink{group___s_c_h_e_d_u_l_e_r_g30026f24b7df3171d12eac61e94c654e}{changeTaskStateAndReorg} (\hyperlink{structprocess_control_block}{PCtrlBlock\_\-t} $\ast$ptrCurTask, uint8\_\-t newState)
+\item 
+int8\_\-t \hyperlink{group___s_c_h_e_d_u_l_e_r_g98be6cb7c674631c08f257f0f361bdba}{top} (\hyperlink{group___h_s_y_s_t_e_m___a_p_i_g3be61222bdb3a1adfbf7720dec596851}{process\_\-info\_\-block\_\-t} $\ast$allocatedListOfInfBlks)
+\item 
+uint8\_\-t \hyperlink{group___s_c_h_e_d_u_l_e_r_g464f3d8698435a2cce5660213ad5e2a1}{get\_\-nr\_\-of\_\-processes} ()
+\item 
+uint8\_\-t \hyperlink{group___s_c_h_e_d_u_l_e_r_g2c41093c81844ed2a2b8336ea7e65c22}{count\_\-queue} (\hyperlink{structprocess_control_block}{PCtrlBlock\_\-t} $\ast$ptrTaskList)
+\item 
+void \hyperlink{group___s_c_h_e_d_u_l_e_r_g65919f434a296ebe721e10c695c76fd7}{cleanupScheduler} (void)
+\item 
+void \hyperlink{group___s_c_h_e_d_u_l_e_r_ge4efef9d981ec735fdb928fa859e90c8}{updateAllSupendedTasks} (void)
+\item 
+void \hyperlink{group___s_c_h_e_d_u_l_e_r_g4f5f47b0e6e09f0d8f20b174a451d3f9}{putTask\_\-to\_\-BLOCKEDQ} (\hyperlink{structprocess_control_block}{PCtrlBlock\_\-t} $\ast$ptrNewTask)
+\item 
+void \hyperlink{group___s_c_h_e_d_u_l_e_r_g5b3f8e0a1ef0153e3701fd5c353ffb30}{putTask\_\-to\_\-STOPPEDQ} (\hyperlink{structprocess_control_block}{PCtrlBlock\_\-t} $\ast$ptrNewTask)
+\item 
+void \hyperlink{group___s_c_h_e_d_u_l_e_r_g36b5565a1de28332f76c8201e3978710}{removeTask\_\-from\_\-BLOCKEDQ} (\hyperlink{structprocess_control_block}{PCtrlBlock\_\-t} $\ast$ptrRemTask)
+\item 
+void \hyperlink{group___s_c_h_e_d_u_l_e_r_gdd6fd538df662b324399533cd7ee6983}{removeTask\_\-from\_\-STOPPEDQ} (\hyperlink{structprocess_control_block}{PCtrlBlock\_\-t} $\ast$ptrRemTask)
+\item 
+void \hyperlink{group___s_c_h_e_d_u_l_e_r_g6269ef2491853b54f6857e84a495e0a3}{removeTask\_\-from\_\-SUSPENDEDQ} (\hyperlink{structprocess_control_block}{PCtrlBlock\_\-t} $\ast$ptrRemTask)
+\item 
+void \hyperlink{group___s_c_h_e_d_u_l_e_r_g2b9b2d937366c49222722abf3d3ca448}{deleteTask} (\hyperlink{structprocess_control_block}{PCtrlBlock\_\-t} $\ast$ptrCurTask)
+\item 
+void \hyperlink{group___s_c_h_e_d_u_l_e_r_gbc336985438a0d2ef4e4386aca2fec83}{updateCpuTimes} (void)
+\item 
+uint8\_\-t \hyperlink{group___s_c_h_e_d_u_l_e_r_g037e710f906b1ff253e859e70add039b}{reorganizeSuspendedTasks} (void)
+\end{CompactItemize}
+\subsection*{Variables}
+\begin{CompactItemize}
+\item 
+\hypertarget{group___s_c_h_e_d_u_l_e_r_g4e6e6409119b57e144bf39f102d3aa4c}{
+volatile \hyperlink{structprocess_control_block}{PCtrlBlock\_\-t} $\ast$ \hyperlink{group___s_c_h_e_d_u_l_e_r_g4e6e6409119b57e144bf39f102d3aa4c}{ptrRunningTask}}
+\label{group___s_c_h_e_d_u_l_e_r_g4e6e6409119b57e144bf39f102d3aa4c}
+
+\begin{CompactList}\small\item\em Current Running Task - pointer to current running task (holds only one task!). \item\end{CompactList}\item 
+\hypertarget{group___s_c_h_e_d_u_l_e_r_gc4ccbf885c8f3faf19274dced0c7216a}{
+\hyperlink{structprocess_control_block}{PCtrlBlock\_\-t} $\ast$ \hyperlink{group___s_c_h_e_d_u_l_e_r_gc4ccbf885c8f3faf19274dced0c7216a}{ptrIdleTask}}
+\label{group___s_c_h_e_d_u_l_e_r_gc4ccbf885c8f3faf19274dced0c7216a}
+
+\begin{CompactList}\small\item\em Idle Task for Scheduler - pointer to idle task, is used if system has no other task to run and for performance metrics. \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Task/process scheduler for Halos, implemented scheduling algorithm: simple Round Robin (not priority based). 
+
+\begin{Desc}
+\item[Note:]... \end{Desc}
+\begin{Desc}
+\item[Author:]maex.sp Markus Speckle \end{Desc}
+\begin{Desc}
+\item[Version:]0.0.0.1 \end{Desc}
+
+
+\subsection{Function Documentation}
+\hypertarget{group___s_c_h_e_d_u_l_e_r_g30026f24b7df3171d12eac61e94c654e}{
+\index{SCHEDULER@{SCHEDULER}!changeTaskStateAndReorg@{changeTaskStateAndReorg}}
+\index{changeTaskStateAndReorg@{changeTaskStateAndReorg}!SCHEDULER@{SCHEDULER}}
+\subsubsection[{changeTaskStateAndReorg}]{\setlength{\rightskip}{0pt plus 5cm}void changeTaskStateAndReorg ({\bf PCtrlBlock\_\-t} $\ast$ {\em ptrCurTask}, \/  uint8\_\-t {\em newState})}}
+\label{group___s_c_h_e_d_u_l_e_r_g30026f24b7df3171d12eac61e94c654e}
+
+
+Changes the state of the task and reorganizes the task queues, e.g. remove from BLOCKEDQ, change state of task an put to RUNNABLEQ \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em ptrCurTask}]the task which should be changed \item[{\em newState}]new state for this task \end{description}
+\end{Desc}
+\hypertarget{group___s_c_h_e_d_u_l_e_r_g65919f434a296ebe721e10c695c76fd7}{
+\index{SCHEDULER@{SCHEDULER}!cleanupScheduler@{cleanupScheduler}}
+\index{cleanupScheduler@{cleanupScheduler}!SCHEDULER@{SCHEDULER}}
+\subsubsection[{cleanupScheduler}]{\setlength{\rightskip}{0pt plus 5cm}void cleanupScheduler (void)}}
+\label{group___s_c_h_e_d_u_l_e_r_g65919f434a296ebe721e10c695c76fd7}
+
+
+Cleans the scheduler pointer, free´s alls queues and set pointer to NULL (mainly used for testing issues) \hypertarget{group___s_c_h_e_d_u_l_e_r_g2c41093c81844ed2a2b8336ea7e65c22}{
+\index{SCHEDULER@{SCHEDULER}!count\_\-queue@{count\_\-queue}}
+\index{count\_\-queue@{count\_\-queue}!SCHEDULER@{SCHEDULER}}
+\subsubsection[{count\_\-queue}]{\setlength{\rightskip}{0pt plus 5cm}uint8\_\-t count\_\-queue ({\bf PCtrlBlock\_\-t} $\ast$ {\em ptrTaskList})}}
+\label{group___s_c_h_e_d_u_l_e_r_g2c41093c81844ed2a2b8336ea7e65c22}
+
+
+Gets the number of tasks (length) in a task-queue \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em ptrTaskList}]queue list for counting \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]length of task queue \end{Desc}
+\hypertarget{group___s_c_h_e_d_u_l_e_r_g2b9b2d937366c49222722abf3d3ca448}{
+\index{SCHEDULER@{SCHEDULER}!deleteTask@{deleteTask}}
+\index{deleteTask@{deleteTask}!SCHEDULER@{SCHEDULER}}
+\subsubsection[{deleteTask}]{\setlength{\rightskip}{0pt plus 5cm}void deleteTask ({\bf PCtrlBlock\_\-t} $\ast$ {\em ptrCurTask})}}
+\label{group___s_c_h_e_d_u_l_e_r_g2b9b2d937366c49222722abf3d3ca448}
+
+
+Free´s the memory and the task itselfe from the HALOS system, after this function call the task is completly deleted from the system and scheduler \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em ptrCurTask}]the task to be deleted from HALOS \end{description}
+\end{Desc}
+\hypertarget{group___s_c_h_e_d_u_l_e_r_g464f3d8698435a2cce5660213ad5e2a1}{
+\index{SCHEDULER@{SCHEDULER}!get\_\-nr\_\-of\_\-processes@{get\_\-nr\_\-of\_\-processes}}
+\index{get\_\-nr\_\-of\_\-processes@{get\_\-nr\_\-of\_\-processes}!SCHEDULER@{SCHEDULER}}
+\subsubsection[{get\_\-nr\_\-of\_\-processes}]{\setlength{\rightskip}{0pt plus 5cm}uint8\_\-t get\_\-nr\_\-of\_\-processes ()}}
+\label{group___s_c_h_e_d_u_l_e_r_g464f3d8698435a2cce5660213ad5e2a1}
+
+
+Gets the number of current tasks/processes in the scheduler \begin{Desc}
+\item[Returns:]number of tasks \end{Desc}
+\hypertarget{group___s_c_h_e_d_u_l_e_r_g7f3d982256a144718b4d566764ab3380}{
+\index{SCHEDULER@{SCHEDULER}!getRunningTask@{getRunningTask}}
+\index{getRunningTask@{getRunningTask}!SCHEDULER@{SCHEDULER}}
+\subsubsection[{getRunningTask}]{\setlength{\rightskip}{0pt plus 5cm}{\bf PCtrlBlock\_\-t}$\ast$ getRunningTask (void)}}
+\label{group___s_c_h_e_d_u_l_e_r_g7f3d982256a144718b4d566764ab3380}
+
+
+Returns the current running task, after the \hyperlink{group___s_c_h_e_d_u_l_e_r_g37148b0b5230fbd6a7e27996d7c7559b}{schedule()} operation this pointer holds the new current task, this can also be the idle task if there was no other runnable task available \hypertarget{group___s_c_h_e_d_u_l_e_r_g6f966a27cb81e25cbbeb00209e4f425a}{
+\index{SCHEDULER@{SCHEDULER}!init\_\-scheduler@{init\_\-scheduler}}
+\index{init\_\-scheduler@{init\_\-scheduler}!SCHEDULER@{SCHEDULER}}
+\subsubsection[{init\_\-scheduler}]{\setlength{\rightskip}{0pt plus 5cm}{\bf PCtrlBlock\_\-t}$\ast$ init\_\-scheduler ({\bf PCtrlBlock\_\-t} $\ast$ {\em ptrIdleTask}, \/  {\bf PCtrlBlock\_\-t} $\ast$ {\em ptrNewTask})}}
+\label{group___s_c_h_e_d_u_l_e_r_g6f966a27cb81e25cbbeb00209e4f425a}
+
+
+Initializing the scheduler at startup, needs idle task and task to run 1.) inits idle task 2.) puts first Task into runnable queue 3.) schedules the tasks... should so far the ptrNewTask because its the first task to run \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em ptrIdleTask}]the idle task for the scheduler (empty task which is doing nothing, only performance counting) \item[{\em ptrNewTask}]starting task ((this is normally the shell task but can also be NULL) \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]next task to be run (new current running task) \end{Desc}
+\hypertarget{group___s_c_h_e_d_u_l_e_r_g8cf010ead07e0d3c9f2fec540ca41222}{
+\index{SCHEDULER@{SCHEDULER}!initIdleTask@{initIdleTask}}
+\index{initIdleTask@{initIdleTask}!SCHEDULER@{SCHEDULER}}
+\subsubsection[{initIdleTask}]{\setlength{\rightskip}{0pt plus 5cm}void initIdleTask ({\bf PCtrlBlock\_\-t} $\ast$ {\em ptrIdleT})}}
+\label{group___s_c_h_e_d_u_l_e_r_g8cf010ead07e0d3c9f2fec540ca41222}
+
+
+Puts idle task to the scheduler evironment, this task is only \char`\"{}executed\char`\"{} if there is no other task in the runnable queue, idleTask should therefore also be used for performance metrics analyses \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em ptrIdleT}]the idle Task \end{description}
+\end{Desc}
+\hypertarget{group___s_c_h_e_d_u_l_e_r_g4f5f47b0e6e09f0d8f20b174a451d3f9}{
+\index{SCHEDULER@{SCHEDULER}!putTask\_\-to\_\-BLOCKEDQ@{putTask\_\-to\_\-BLOCKEDQ}}
+\index{putTask\_\-to\_\-BLOCKEDQ@{putTask\_\-to\_\-BLOCKEDQ}!SCHEDULER@{SCHEDULER}}
+\subsubsection[{putTask\_\-to\_\-BLOCKEDQ}]{\setlength{\rightskip}{0pt plus 5cm}void putTask\_\-to\_\-BLOCKEDQ ({\bf PCtrlBlock\_\-t} $\ast$ {\em ptrNewTask})}}
+\label{group___s_c_h_e_d_u_l_e_r_g4f5f47b0e6e09f0d8f20b174a451d3f9}
+
+
+Put tasks to the blocked queue, here are all tasks hold which are waiting for any IO operations \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em ptrNewTask}]the task for the blocked-queue \end{description}
+\end{Desc}
+\hypertarget{group___s_c_h_e_d_u_l_e_r_g0a823bd7dfbe610f6fb79f213bad887a}{
+\index{SCHEDULER@{SCHEDULER}!putTask\_\-to\_\-RUNABLQ@{putTask\_\-to\_\-RUNABLQ}}
+\index{putTask\_\-to\_\-RUNABLQ@{putTask\_\-to\_\-RUNABLQ}!SCHEDULER@{SCHEDULER}}
+\subsubsection[{putTask\_\-to\_\-RUNABLQ}]{\setlength{\rightskip}{0pt plus 5cm}void putTask\_\-to\_\-RUNABLQ ({\bf PCtrlBlock\_\-t} $\ast$ {\em ptrNewTask})}}
+\label{group___s_c_h_e_d_u_l_e_r_g0a823bd7dfbe610f6fb79f213bad887a}
+
+
+Puts task to the runnable queue, if we call \hyperlink{group___s_c_h_e_d_u_l_e_r_g37148b0b5230fbd6a7e27996d7c7559b}{schedule()} -$>$ one of the next task from this runnalbe queue will be returned as the next running task \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em ptrNewTask}]the new task \end{description}
+\end{Desc}
+\hypertarget{group___s_c_h_e_d_u_l_e_r_g5b3f8e0a1ef0153e3701fd5c353ffb30}{
+\index{SCHEDULER@{SCHEDULER}!putTask\_\-to\_\-STOPPEDQ@{putTask\_\-to\_\-STOPPEDQ}}
+\index{putTask\_\-to\_\-STOPPEDQ@{putTask\_\-to\_\-STOPPEDQ}!SCHEDULER@{SCHEDULER}}
+\subsubsection[{putTask\_\-to\_\-STOPPEDQ}]{\setlength{\rightskip}{0pt plus 5cm}void putTask\_\-to\_\-STOPPEDQ ({\bf PCtrlBlock\_\-t} $\ast$ {\em ptrNewTask})}}
+\label{group___s_c_h_e_d_u_l_e_r_g5b3f8e0a1ef0153e3701fd5c353ffb30}
+
+
+Put tasks to the stopped queue, here are all tasks which ended and can be deleted afterwards \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em ptrNewTask}]the task for the stopped-queue \end{description}
+\end{Desc}
+\hypertarget{group___s_c_h_e_d_u_l_e_r_g915e6a1a7af8610eb748b2a71aed8e25}{
+\index{SCHEDULER@{SCHEDULER}!putTask\_\-to\_\-SUSPENDEDQ@{putTask\_\-to\_\-SUSPENDEDQ}}
+\index{putTask\_\-to\_\-SUSPENDEDQ@{putTask\_\-to\_\-SUSPENDEDQ}!SCHEDULER@{SCHEDULER}}
+\subsubsection[{putTask\_\-to\_\-SUSPENDEDQ}]{\setlength{\rightskip}{0pt plus 5cm}void putTask\_\-to\_\-SUSPENDEDQ ({\bf PCtrlBlock\_\-t} $\ast$ {\em ptrNewTask}, \/  uint32\_\-t {\em suspendTime})}}
+\label{group___s_c_h_e_d_u_l_e_r_g915e6a1a7af8610eb748b2a71aed8e25}
+
+
+Puts task to the suspended-queue with a speciefied suspend-time, task will be hold in the queue as long as the suspend time is not reached \begin{Desc}
+\item[See also:]\hyperlink{group___s_c_h_e_d_u_l_e_r_ge4efef9d981ec735fdb928fa859e90c8}{updateAllSupendedTasks()} for putting back tasks from suspended queue to runnable queue \end{Desc}
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em ptrNewTask}]task to be suspended \item[{\em suspendTime}]suspend time (the amount of systicks to wait in the suspend queue) \end{description}
+\end{Desc}
+\hypertarget{group___s_c_h_e_d_u_l_e_r_g36b5565a1de28332f76c8201e3978710}{
+\index{SCHEDULER@{SCHEDULER}!removeTask\_\-from\_\-BLOCKEDQ@{removeTask\_\-from\_\-BLOCKEDQ}}
+\index{removeTask\_\-from\_\-BLOCKEDQ@{removeTask\_\-from\_\-BLOCKEDQ}!SCHEDULER@{SCHEDULER}}
+\subsubsection[{removeTask\_\-from\_\-BLOCKEDQ}]{\setlength{\rightskip}{0pt plus 5cm}void removeTask\_\-from\_\-BLOCKEDQ ({\bf PCtrlBlock\_\-t} $\ast$ {\em ptrRemTask})}}
+\label{group___s_c_h_e_d_u_l_e_r_g36b5565a1de28332f76c8201e3978710}
+
+
+Removes task from blocked-IO-queue, state will not be changed \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em ptrRemTask}]task to be removed from queue \end{description}
+\end{Desc}
+\hypertarget{group___s_c_h_e_d_u_l_e_r_gb30df8d2157564bf9b3ab2fb0fc4e416}{
+\index{SCHEDULER@{SCHEDULER}!removeTask\_\-from\_\-RUNABLQ@{removeTask\_\-from\_\-RUNABLQ}}
+\index{removeTask\_\-from\_\-RUNABLQ@{removeTask\_\-from\_\-RUNABLQ}!SCHEDULER@{SCHEDULER}}
+\subsubsection[{removeTask\_\-from\_\-RUNABLQ}]{\setlength{\rightskip}{0pt plus 5cm}void removeTask\_\-from\_\-RUNABLQ ({\bf PCtrlBlock\_\-t} $\ast$ {\em ptrRemTask})}}
+\label{group___s_c_h_e_d_u_l_e_r_gb30df8d2157564bf9b3ab2fb0fc4e416}
+
+
+Removes task from runnable queue, state will not be changed \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em ptrRemTask}]the task which should be removed \end{description}
+\end{Desc}
+\hypertarget{group___s_c_h_e_d_u_l_e_r_gdd6fd538df662b324399533cd7ee6983}{
+\index{SCHEDULER@{SCHEDULER}!removeTask\_\-from\_\-STOPPEDQ@{removeTask\_\-from\_\-STOPPEDQ}}
+\index{removeTask\_\-from\_\-STOPPEDQ@{removeTask\_\-from\_\-STOPPEDQ}!SCHEDULER@{SCHEDULER}}
+\subsubsection[{removeTask\_\-from\_\-STOPPEDQ}]{\setlength{\rightskip}{0pt plus 5cm}void removeTask\_\-from\_\-STOPPEDQ ({\bf PCtrlBlock\_\-t} $\ast$ {\em ptrRemTask})}}
+\label{group___s_c_h_e_d_u_l_e_r_gdd6fd538df662b324399533cd7ee6983}
+
+
+Removes task from stopped queue, state will not be changed \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em ptrRemTask}]task to be removed from queue \end{description}
+\end{Desc}
+\hypertarget{group___s_c_h_e_d_u_l_e_r_g6269ef2491853b54f6857e84a495e0a3}{
+\index{SCHEDULER@{SCHEDULER}!removeTask\_\-from\_\-SUSPENDEDQ@{removeTask\_\-from\_\-SUSPENDEDQ}}
+\index{removeTask\_\-from\_\-SUSPENDEDQ@{removeTask\_\-from\_\-SUSPENDEDQ}!SCHEDULER@{SCHEDULER}}
+\subsubsection[{removeTask\_\-from\_\-SUSPENDEDQ}]{\setlength{\rightskip}{0pt plus 5cm}void removeTask\_\-from\_\-SUSPENDEDQ ({\bf PCtrlBlock\_\-t} $\ast$ {\em ptrRemTask})}}
+\label{group___s_c_h_e_d_u_l_e_r_g6269ef2491853b54f6857e84a495e0a3}
+
+
+Removes task from suspended-queue, state will not be changed \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em ptrRemTask}]task to be removed from queue \end{description}
+\end{Desc}
+\hypertarget{group___s_c_h_e_d_u_l_e_r_g037e710f906b1ff253e859e70add039b}{
+\index{SCHEDULER@{SCHEDULER}!reorganizeSuspendedTasks@{reorganizeSuspendedTasks}}
+\index{reorganizeSuspendedTasks@{reorganizeSuspendedTasks}!SCHEDULER@{SCHEDULER}}
+\subsubsection[{reorganizeSuspendedTasks}]{\setlength{\rightskip}{0pt plus 5cm}uint8\_\-t reorganizeSuspendedTasks (void)}}
+\label{group___s_c_h_e_d_u_l_e_r_g037e710f906b1ff253e859e70add039b}
+
+
+Reorganizes the SUSPENDED tasks queue, checks if there are tasks available which can be put to the runnable queue, call this function until return 1 is received, this is needed if there are more than 1 task have to be moved to runnable queue \begin{Desc}
+\item[Returns:]: 0 = one task has been found and reorganized, maybe one or more other tasks left to reorganize, return: 1 = all tasks have been checked (and if necessary also moved to runnable queue) \end{Desc}
+\hypertarget{group___s_c_h_e_d_u_l_e_r_g37148b0b5230fbd6a7e27996d7c7559b}{
+\index{SCHEDULER@{SCHEDULER}!schedule@{schedule}}
+\index{schedule@{schedule}!SCHEDULER@{SCHEDULER}}
+\subsubsection[{schedule}]{\setlength{\rightskip}{0pt plus 5cm}{\bf PCtrlBlock\_\-t}$\ast$ schedule (void)}}
+\label{group___s_c_h_e_d_u_l_e_r_g37148b0b5230fbd6a7e27996d7c7559b}
+
+
+Schedules with round robin algorithmus through the runnable queue and returns the next task which should be started for the next time quantum (time slice), returns next task which schould be executed (depends if new runnable tasks available and on priority of tasks (round robin), if no runnable task available the idle task will become the next running task \begin{Desc}
+\item[Returns:]the next task to be run (current runningtask) \end{Desc}
+\hypertarget{group___s_c_h_e_d_u_l_e_r_g98be6cb7c674631c08f257f0f361bdba}{
+\index{SCHEDULER@{SCHEDULER}!top@{top}}
+\index{top@{top}!SCHEDULER@{SCHEDULER}}
+\subsubsection[{top}]{\setlength{\rightskip}{0pt plus 5cm}int8\_\-t top ({\bf process\_\-info\_\-block\_\-t} $\ast$ {\em allocatedListOfInfBlks})}}
+\label{group___s_c_h_e_d_u_l_e_r_g98be6cb7c674631c08f257f0f361bdba}
+
+
+Returns current info for all processes in the OS, processInfoBlock\_\-t is a special datatyp which is only used for the \hyperlink{group___s_c_h_e_d_u_l_e_r_g98be6cb7c674631c08f257f0f361bdba}{top()} command, parameter allocatedListOfInfBlocks has to be a already allocated list, length of list is defined by function return value \hyperlink{group___s_c_h_e_d_u_l_e_r_g464f3d8698435a2cce5660213ad5e2a1}{get\_\-nr\_\-of\_\-processes()} \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em allocatedListOfInfBlocks}]allocated list of process info blocks (linked list) \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]0 if fine, otherwise -1 (E.g. if length of allocated) \end{Desc}
+\hypertarget{group___s_c_h_e_d_u_l_e_r_ge4efef9d981ec735fdb928fa859e90c8}{
+\index{SCHEDULER@{SCHEDULER}!updateAllSupendedTasks@{updateAllSupendedTasks}}
+\index{updateAllSupendedTasks@{updateAllSupendedTasks}!SCHEDULER@{SCHEDULER}}
+\subsubsection[{updateAllSupendedTasks}]{\setlength{\rightskip}{0pt plus 5cm}void updateAllSupendedTasks (void)}}
+\label{group___s_c_h_e_d_u_l_e_r_ge4efef9d981ec735fdb928fa859e90c8}
+
+
+Updates/reorganizes the SUSPENDED tasks queue, all suspended tasks will be checked if they can be put back to runnable queue \begin{Desc}
+\item[See also:]\hyperlink{group___s_c_h_e_d_u_l_e_r_g915e6a1a7af8610eb748b2a71aed8e25}{putTask\_\-to\_\-SUSPENDEDQ()} \end{Desc}
+\hypertarget{group___s_c_h_e_d_u_l_e_r_gbc336985438a0d2ef4e4386aca2fec83}{
+\index{SCHEDULER@{SCHEDULER}!updateCpuTimes@{updateCpuTimes}}
+\index{updateCpuTimes@{updateCpuTimes}!SCHEDULER@{SCHEDULER}}
+\subsubsection[{updateCpuTimes}]{\setlength{\rightskip}{0pt plus 5cm}void updateCpuTimes (void)}}
+\label{group___s_c_h_e_d_u_l_e_r_gbc336985438a0d2ef4e4386aca2fec83}
+
+
+Updates all ticks for process they are in runnable, iowaiting or running state, also the IdleTask has counted time ticks which should indicate the usability of the system Each CPU\_\-TIME\_\-... shows the ticks of running or waiting. Multiply these ticks with the scheduling time-slice size ! 

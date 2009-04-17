@@ -1,0 +1,55 @@
+\hypertarget{structpm__pll__opt__t}{
+\section{pm\_\-pll\_\-opt\_\-t Struct Reference}
+\label{structpm__pll__opt__t}\index{pm\_\-pll\_\-opt\_\-t@{pm\_\-pll\_\-opt\_\-t}}
+}
+Pll settings. The new frequency will be set according to the following formula: pll = osc $\ast$ mul / div.  
+
+
+{\tt \#include $<$pm\_\-at32ap7000.h$>$}
+
+\subsection*{Data Fields}
+\begin{CompactItemize}
+\item 
+\hypertarget{structpm__pll__opt__t_f681a41dae0c61f675cb283f7021a35c}{
+unsigned char \hyperlink{structpm__pll__opt__t_f681a41dae0c61f675cb283f7021a35c}{pll\_\-id}}
+\label{structpm__pll__opt__t_f681a41dae0c61f675cb283f7021a35c}
+
+\begin{CompactList}\small\item\em The pll id number. \item\end{CompactList}\item 
+\hypertarget{structpm__pll__opt__t_d21311786caa8b67229fa8c6f57268d7}{
+unsigned char \hyperlink{structpm__pll__opt__t_d21311786caa8b67229fa8c6f57268d7}{osc\_\-id}}
+\label{structpm__pll__opt__t_d21311786caa8b67229fa8c6f57268d7}
+
+\begin{CompactList}\small\item\em The oscillator id number to use as a reference. \item\end{CompactList}\item 
+\hypertarget{structpm__pll__opt__t_871d632ba4483d6b0410c0cbb62c51ea}{
+unsigned char \hyperlink{structpm__pll__opt__t_871d632ba4483d6b0410c0cbb62c51ea}{mul}}
+\label{structpm__pll__opt__t_871d632ba4483d6b0410c0cbb62c51ea}
+
+\begin{CompactList}\small\item\em Multiplier. \item\end{CompactList}\item 
+\hypertarget{structpm__pll__opt__t_ff3249d14af8fd7c842632c16f227eb9}{
+unsigned char \hyperlink{structpm__pll__opt__t_ff3249d14af8fd7c842632c16f227eb9}{div}}
+\label{structpm__pll__opt__t_ff3249d14af8fd7c842632c16f227eb9}
+
+\begin{CompactList}\small\item\em Divider. \item\end{CompactList}\item 
+\hypertarget{structpm__pll__opt__t_11ff9f83ef3be9fda30369640c0a4017}{
+unsigned char \hyperlink{structpm__pll__opt__t_11ff9f83ef3be9fda30369640c0a4017}{count}}
+\label{structpm__pll__opt__t_11ff9f83ef3be9fda30369640c0a4017}
+
+\begin{CompactList}\small\item\em The number of cycles after pll lock before status register is updated. \item\end{CompactList}\item 
+\hypertarget{structpm__pll__opt__t_8b17faeaff4786ba22e3192e35e847be}{
+unsigned char \hyperlink{structpm__pll__opt__t_8b17faeaff4786ba22e3192e35e847be}{options}}
+\label{structpm__pll__opt__t_8b17faeaff4786ba22e3192e35e847be}
+
+\begin{CompactList}\small\item\em Extended pll options. Consult the part specific datasheet for settings. \item\end{CompactList}\item 
+\hypertarget{structpm__pll__opt__t_8c3eee8741e28978aa4a3618307499a2}{
+Bool \hyperlink{structpm__pll__opt__t_8c3eee8741e28978aa4a3618307499a2}{wait\_\-for\_\-lock}}
+\label{structpm__pll__opt__t_8c3eee8741e28978aa4a3618307499a2}
+
+\begin{CompactList}\small\item\em Set to true to wait actively for pll lock. \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Pll settings. The new frequency will be set according to the following formula: pll = osc $\ast$ mul / div. 
+
+The documentation for this struct was generated from the following file:\begin{CompactItemize}
+\item 
+E:/Ausbildung/Semester3/AVR32\_\-Work1/Halos\_\-Development/src/hal/ports/avr32/ap7x/ap7000/\hyperlink{pm__at32ap7000_8h}{pm\_\-at32ap7000.h}\end{CompactItemize}

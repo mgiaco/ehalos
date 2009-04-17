@@ -1,0 +1,44 @@
+\hypertarget{font_8c}{
+\section{E:/Ausbildung/Semester3/AVR32\_\-Work1/Halos\_\-Development/src/devices/gdi/font/src/font.c File Reference}
+\label{font_8c}\index{E:/Ausbildung/Semester3/AVR32\_\-Work1/Halos\_\-Development/src/devices/gdi/font/src/font.c@{E:/Ausbildung/Semester3/AVR32\_\-Work1/Halos\_\-Development/src/devices/gdi/font/src/font.c}}
+}
+device independet graphic/font implementation  
+
+
+{\tt \#include \char`\"{}font.h\char`\"{}}\par
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+void \hyperlink{group__graphic__device__font_ga343406213368d6304b31a9fce39c19d}{init\_\-font} (\hyperlink{struct_device_context__t}{DeviceContext\_\-t} $\ast$DC)
+\begin{CompactList}\small\item\em initialize font \item\end{CompactList}\item 
+uint8\_\-t \hyperlink{group__graphic__device__font_g56c9e56353b4b51cda195a17a23748ea}{read\_\-font\_\-data} (const uint8\_\-t $\ast$ptr)
+\begin{CompactList}\small\item\em read font data \item\end{CompactList}\item 
+void \hyperlink{group__graphic__device__font_g65f96d48c2f92aac9b7b71208826bdaf}{select\_\-new\_\-font} (\hyperlink{group__hgdi__fonts_gec86a33a52fa97333da1074389df46a3}{halos\_\-font\_\-t} fonts, \hyperlink{group__graphic__device__font_ge7d259c434193cdc93d4d4136d77612a}{FontReadCallback} callback, uint32\_\-t color)
+\begin{CompactList}\small\item\em select font, called from GDI-API \item\end{CompactList}\item 
+void \hyperlink{group__graphic__device__font_g526db8c9babc556c5a4cc0fca4375b57}{glcd\_\-set\_\-text\_\-justify} (uint8\_\-t horiz, uint8\_\-t vert)
+\begin{CompactList}\small\item\em set text alignment, called from GDI-API \item\end{CompactList}\item 
+uint8\_\-t \hyperlink{group__graphic__device__font_ged8f749179799860fc51de0900f6460a}{glcd\_\-draw\_\-char} (const char a)
+\begin{CompactList}\small\item\em draw character, called from GDI-API \item\end{CompactList}\item 
+void \hyperlink{group__graphic__device__font_gcd9fe916d077689750b8db36268e97e5}{glcd\_\-draw\_\-string} (const char $\ast$str)
+\item 
+uint8\_\-t \hyperlink{group__graphic__device__font_gac9f46ba71240ab10226e2301453baca}{glcd\_\-get\_\-char\_\-width} (char c)
+\begin{CompactList}\small\item\em get character width, called from GDI-API \item\end{CompactList}\item 
+uint16\_\-t \hyperlink{group__graphic__device__font_g7139ef355833e99644e2149b6e908759}{glcd\_\-get\_\-string\_\-width} (const char $\ast$str)
+\begin{CompactList}\small\item\em get string width, called from GDI-API \item\end{CompactList}\item 
+uint8\_\-t \hyperlink{group__graphic__device__font_g98c36633bb1b0db1ac26c4b07a392d2c}{glcd\_\-get\_\-font\_\-height} ()
+\begin{CompactList}\small\item\em get font height, called from GDI-API \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+device independet graphic/font implementation 
+
+\begin{Desc}
+\item[Author:]Team Halos \end{Desc}
+\begin{Desc}
+\item[Version:]0.0.1 \end{Desc}
+\begin{Desc}
+\item[Date:]2008-2009 \end{Desc}
+\begin{Desc}
+\item[Note:]Hardware: NGW100, Software: AVR32-GCC \end{Desc}
+\begin{Desc}
+\item[License: ]LGPLv2.1 \end{Desc}

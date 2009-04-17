@@ -1,0 +1,45 @@
+\hypertarget{arial__bold__14_8h}{
+\section{E:/Ausbildung/Semester3/AVR32\_\-Work1/Halos\_\-Development/src/devices/gdi/font/fonts/arial\_\-bold\_\-14.h File Reference}
+\label{arial__bold__14_8h}\index{E:/Ausbildung/Semester3/AVR32\_\-Work1/Halos\_\-Development/src/devices/gdi/font/fonts/arial\_\-bold\_\-14.h@{E:/Ausbildung/Semester3/AVR32\_\-Work1/Halos\_\-Development/src/devices/gdi/font/fonts/arial\_\-bold\_\-14.h}}
+}
+Arial bold 14 Font for Halos.  
+
+
+{\tt \#include $<$inttypes.h$>$}\par
+\subsection*{Defines}
+\begin{CompactItemize}
+\item 
+\#define \hyperlink{group__graphic__device__font__arial14_gea609b33503f156623ed45a35d449754}{ARIAL\_\-BOLD\_\-14\_\-WIDTH}~10
+\item 
+\#define \hyperlink{group__graphic__device__font__arial14_gcffe3e6f04dad38f6ec40a947d91718b}{ARIAL\_\-BOLD\_\-14\_\-HEIGHT}~14
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Arial bold 14 Font for Halos. 
+
+\begin{Desc}
+\item[Author:]Team Halos \end{Desc}
+\begin{Desc}
+\item[Version:]0.0.1 \end{Desc}
+\begin{Desc}
+\item[Date:]2008-2009 \end{Desc}
+\begin{Desc}
+\item[Note:]Hardware: NGW100, Software: AVR32-GCC \end{Desc}
+\begin{Desc}
+\item[License: ]LGPLv2.1\end{Desc}
+Arial Bold 14
+
+created with FontCreator written by F. Maximilian Thiele
+
+\href{http://www.apetech.de/fontCreator}{\tt http://www.apetech.de/fontCreator} \href{mailto:me@apetech.de}{\tt me@apetech.de}
+
+File Name : arial\_\-bold\_\-14 Date : 29.01.2005 Font size in bytes : 8712 Font width : 10 Font height : 14 Font first char : 32 Font last char : 128 Font used chars : 96
+
+The font data are defined as
+
+struct \_\-FONT\_\- \{ uint16\_\-t font\_\-Size\_\-in\_\-Bytes\_\-over\_\-all\_\-included\_\-Size\_\-it\_\-self; uint8\_\-t font\_\-Width\_\-in\_\-Pixel\_\-for\_\-fixed\_\-drawing; uint8\_\-t font\_\-Height\_\-in\_\-Pixel\_\-for\_\-all\_\-characters; unit8\_\-t font\_\-First\_\-Char; uint8\_\-t font\_\-Char\_\-Count;
+
+uint8\_\-t font\_\-Char\_\-Widths\mbox{[}font\_\-Last\_\-Char - font\_\-First\_\-Char +1\mbox{]}; // for each character the separate width in pixels, // characters $<$ 128 have an implicit virtual right empty row
+
+uint8\_\-t font\_\-data\mbox{[}\mbox{]}; // bit field of all characters 

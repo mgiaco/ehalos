@@ -1,0 +1,19 @@
+\hypertarget{hsystem__call__table_8h}{
+\section{E:/Ausbildung/Semester3/AVR32\_\-Work1/Halos\_\-Development/src/halos\_\-apis/halos\_\-system\_\-api/inc/hsystem\_\-call\_\-table.h File Reference}
+\label{hsystem__call__table_8h}\index{E:/Ausbildung/Semester3/AVR32\_\-Work1/Halos\_\-Development/src/halos\_\-apis/halos\_\-system\_\-api/inc/hsystem\_\-call\_\-table.h@{E:/Ausbildung/Semester3/AVR32\_\-Work1/Halos\_\-Development/src/halos\_\-apis/halos\_\-system\_\-api/inc/hsystem\_\-call\_\-table.h}}
+}
+
+
+\subsection{Detailed Description}
+Manages system calls from usermode (applications) to the halOS kernel (supervisormode), system calls can have max 4 parameters for a syscall (including the ret\_\-params as void pointer) \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em scall\_\-number}]specifys the number of the systemcall, see also \end{description}
+\end{Desc}
+\begin{Desc}
+\item[See also:]hsystem\_\-call\_\-table in \end{Desc}
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em param1}]first parameter \item[{\em param2}]second parameter \item[{\em param3}]third parameter \item[{\em ret\_\-param}]can be used as void pointer for everthing or as return parameter \end{description}
+\end{Desc}

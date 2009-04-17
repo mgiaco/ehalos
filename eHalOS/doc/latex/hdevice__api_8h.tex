@@ -1,0 +1,48 @@
+\hypertarget{hdevice__api_8h}{
+\section{E:/Ausbildung/Semester3/AVR32\_\-Work1/Halos\_\-Development/src/halos\_\-apis/halos\_\-device\_\-api/inc/hdevice\_\-api.h File Reference}
+\label{hdevice__api_8h}\index{E:/Ausbildung/Semester3/AVR32\_\-Work1/Halos\_\-Development/src/halos\_\-apis/halos\_\-device\_\-api/inc/hdevice\_\-api.h@{E:/Ausbildung/Semester3/AVR32\_\-Work1/Halos\_\-Development/src/halos\_\-apis/halos\_\-device\_\-api/inc/hdevice\_\-api.h}}
+}
+Device API header.  
+
+
+{\tt \#include $<$inttypes.h$>$}\par
+{\tt \#include \char`\"{}device\_\-struct.h\char`\"{}}\par
+{\tt \#include \char`\"{}hsystem\_\-call\_\-table.h\char`\"{}}\par
+{\tt \#include \char`\"{}hsystem\_\-api.h\char`\"{}}\par
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+\hypertarget{group___d_e_v_i_c_e___a_p_i_g811bf83f91422a12605214335366a38d}{
+void \hyperlink{group___d_e_v_i_c_e___a_p_i_g811bf83f91422a12605214335366a38d}{device\_\-init} (void)}
+\label{group___d_e_v_i_c_e___a_p_i_g811bf83f91422a12605214335366a38d}
+
+\begin{CompactList}\small\item\em initalize all devices for use with Halos \item\end{CompactList}\item 
+device\_\-t $\ast$ \hyperlink{group___d_e_v_i_c_e___a_p_i_gb4bf1da93b05a0e9b89351a6f14b8d86}{device\_\-open} (\hyperlink{group___d_e_v_i_c_e___a_p_i_g9f427f7fc1dc07b788af60c2aaa6b8d3}{DEV\_\-UID} $\ast$dev\_\-uid, int32\_\-t device\_\-type, int32\_\-t device\_\-number)
+\begin{CompactList}\small\item\em open device \item\end{CompactList}\item 
+void \hyperlink{group___d_e_v_i_c_e___a_p_i_gdbf6ebde9656a7eee490f554ac3dcbea}{device\_\-write\_\-byte} (device\_\-t $\ast$dev, \hyperlink{group___d_e_v_i_c_e___a_p_i_g9f427f7fc1dc07b788af60c2aaa6b8d3}{DEV\_\-UID} dev\_\-uid, char data)
+\begin{CompactList}\small\item\em write byte to device \item\end{CompactList}\item 
+int16\_\-t \hyperlink{group___d_e_v_i_c_e___a_p_i_g61a1f3d441ef22c1fe3d42420134c51d}{device\_\-read\_\-byte} (device\_\-t $\ast$dev, \hyperlink{group___d_e_v_i_c_e___a_p_i_g9f427f7fc1dc07b788af60c2aaa6b8d3}{DEV\_\-UID} dev\_\-uid)
+\begin{CompactList}\small\item\em read byte from device \item\end{CompactList}\item 
+int32\_\-t \hyperlink{group___d_e_v_i_c_e___a_p_i_gca0e04a4b3f9379a4d094ca2dcd4388b}{device\_\-close} (device\_\-t $\ast$dev, \hyperlink{group___d_e_v_i_c_e___a_p_i_g9f427f7fc1dc07b788af60c2aaa6b8d3}{DEV\_\-UID} dev\_\-uid)
+\begin{CompactList}\small\item\em close device \item\end{CompactList}\item 
+device\_\-t $\ast$ \hyperlink{group___d_e_v_i_c_e___a_p_i_g2b7371d08d6707e136b6027980c5e49f}{rm\_\-device\_\-open} (\hyperlink{group___d_e_v_i_c_e___a_p_i_g9f427f7fc1dc07b788af60c2aaa6b8d3}{DEV\_\-UID} $\ast$dev\_\-uid, int32\_\-t device\_\-type, int32\_\-t device\_\-number)
+\begin{CompactList}\small\item\em open device (ressource manager) \item\end{CompactList}\item 
+void \hyperlink{group___d_e_v_i_c_e___a_p_i_g21fbe79e12278075a0999eb4650db12e}{rm\_\-device\_\-write\_\-byte} (device\_\-t $\ast$dev, \hyperlink{group___d_e_v_i_c_e___a_p_i_g9f427f7fc1dc07b788af60c2aaa6b8d3}{DEV\_\-UID} dev\_\-uid, char data)
+\begin{CompactList}\small\item\em write byte to device (ressource manager) \item\end{CompactList}\item 
+int16\_\-t \hyperlink{group___d_e_v_i_c_e___a_p_i_gf62d9b836db6b6a2d17d6b6f86c556d2}{rm\_\-device\_\-read\_\-byte} (device\_\-t $\ast$dev, \hyperlink{group___d_e_v_i_c_e___a_p_i_g9f427f7fc1dc07b788af60c2aaa6b8d3}{DEV\_\-UID} dev\_\-uid)
+\begin{CompactList}\small\item\em read byte from device (ressource manager) \item\end{CompactList}\item 
+int32\_\-t \hyperlink{group___d_e_v_i_c_e___a_p_i_g43618e7de934afd7241ae12191fb15d2}{rm\_\-device\_\-close} (device\_\-t $\ast$dev, \hyperlink{group___d_e_v_i_c_e___a_p_i_g9f427f7fc1dc07b788af60c2aaa6b8d3}{DEV\_\-UID} dev\_\-uid)
+\begin{CompactList}\small\item\em close device (ressource manager) \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Device API header. 
+
+\begin{Desc}
+\item[Author:]Team Halos \end{Desc}
+\begin{Desc}
+\item[Version:]0.0.1 \end{Desc}
+\begin{Desc}
+\item[Date:]2008-2009 \end{Desc}
+\begin{Desc}
+\item[Note:]Hardware: NGW100, Software: AVR32-GCC \end{Desc}

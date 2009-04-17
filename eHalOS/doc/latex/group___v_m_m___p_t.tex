@@ -1,0 +1,161 @@
+\hypertarget{group___v_m_m___p_t}{
+\section{Page Table}
+\label{group___v_m_m___p_t}\index{Page Table@{Page Table}}
+}
+The Page Table consists of two parts, namely the Hash Anchor Table and the Inverted Page Table. This is to improve the search speed via a hashing algorithm for given ASID-VPN combinations. The init-, search-, update- and free-methods should be used from Memory Management to handle the Page Table, other methods are for internal use only.  
+
+
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+void \hyperlink{group___v_m_m___p_t_gf5ebfb7e466013140327368b655792fe}{initPageTable} ()
+\item 
+\hyperlink{struct_page_table_entry}{PageTableEntryPtr} \hyperlink{group___v_m_m___p_t_g8edbef60b1d72e6ad3dffed3c57b5e7c}{searchPageTableEntry} (\hyperlink{struct_t_l_b_e_h_i}{TLBEHIPtr} pTLBEntryHigh)
+\item 
+\hyperlink{struct_t_l_b_e_l_o}{TLBELOPtr} \hyperlink{group___v_m_m___p_t_g0021597aea50ac13519f811f316c4fd7}{searchPageTableEntryLow} (\hyperlink{struct_t_l_b_e_h_i}{TLBEHIPtr} pTLBEntryHigh)
+\item 
+\hyperlink{struct_page_table_entry}{PageTableEntryPtr} \hyperlink{group___v_m_m___p_t_g621765a4679ecc5e2d8e1257ba21d440}{updatePageTableEntry} (\hyperlink{struct_t_l_b_e_h_i}{TLBEHIPtr} pTLBEntryHigh, \hyperlink{struct_t_l_b_e_l_o_p_f_n_l_e_s_s}{TLBELOPFNLESSPtr} pTLBEntryLow)
+\item 
+BOOL \hyperlink{group___v_m_m___p_t_g85b6e33ff8a22b5c1e9e0b36e8f24c4c}{freePageTableEntry} (\hyperlink{struct_t_l_b_e_h_i}{TLBEHIPtr} pTLBEntryHigh)
+\item 
+\hyperlink{struct_page_table_entry}{PageTableEntryPtr} \hyperlink{group___v_m_m___p_t_g64821ed5828e71fb8cb12f99fffae069}{getDissolvedVictimPTEntry} (\hyperlink{struct_t_l_b_e_h_i}{TLBEHIPtr} pTLBEntryHigh, int $\ast$pIPTIndex)
+\item 
+BOOL \hyperlink{group___v_m_m___p_t_g0037f23be8f09ed71ce7ff34f93adcb9}{dissolvePageTableEntry} (\hyperlink{struct_page_table_entry}{PageTableEntryPtr} pPTEntry, \hyperlink{struct_page_table_entry}{PageTableEntryPtr} pHashAnchorPTEntry, \hyperlink{struct_page_table_entry}{PageTableEntryPtr} pPrevPTEntry)
+\item 
+\hyperlink{struct_page_table_entry}{PageTableEntryPtr} \hyperlink{group___v_m_m___p_t_g5002efe2fb3da2510b62affe18807174}{createPageTableEntry} (\hyperlink{struct_t_l_b_e_h_i}{TLBEHIPtr} pTLBEntryHigh, \hyperlink{struct_t_l_b_e_l_o_p_f_n_l_e_s_s}{TLBELOPFNLESSPtr} pTLBEntryLow, \hyperlink{struct_page_table_entry}{PageTableEntryPtr} pHashAnchorPTEntry)
+\item 
+\hyperlink{struct_page_table_entry}{PageTableEntryPtr} \hyperlink{group___v_m_m___p_t_g993bcff0f6138305b034e3b09e69cf8d}{createHashAnchorPageTableEntry} (\hyperlink{struct_t_l_b_e_h_i}{TLBEHIPtr} pTLBEntryHigh, \hyperlink{struct_t_l_b_e_l_o_p_f_n_l_e_s_s}{TLBELOPFNLESSPtr} pTLBEntryLow)
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+The Page Table consists of two parts, namely the Hash Anchor Table and the Inverted Page Table. This is to improve the search speed via a hashing algorithm for given ASID-VPN combinations. The init-, search-, update- and free-methods should be used from Memory Management to handle the Page Table, other methods are for internal use only. 
+
+\begin{Desc}
+\item[Note:]... \end{Desc}
+\begin{Desc}
+\item[Author:]drb8w \end{Desc}
+\begin{Desc}
+\item[Version:]0.0.0.1 \end{Desc}
+
+
+\subsection{Function Documentation}
+\hypertarget{group___v_m_m___p_t_g993bcff0f6138305b034e3b09e69cf8d}{
+\index{VMM\_\-PT@{VMM\_\-PT}!createHashAnchorPageTableEntry@{createHashAnchorPageTableEntry}}
+\index{createHashAnchorPageTableEntry@{createHashAnchorPageTableEntry}!VMM_PT@{VMM\_\-PT}}
+\subsubsection[{createHashAnchorPageTableEntry}]{\setlength{\rightskip}{0pt plus 5cm}{\bf PageTableEntryPtr} createHashAnchorPageTableEntry ({\bf TLBEHIPtr} {\em pTLBEntryHigh}, \/  {\bf TLBELOPFNLESSPtr} {\em pTLBEntryLow})}}
+\label{group___v_m_m___p_t_g993bcff0f6138305b034e3b09e69cf8d}
+
+
+Creates a new Hash Anchor Page Table Entry i.e. the first entry in the hash chain that is referenced by the Hash Anchor Table. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em pTLBEntryHigh}]identifies all parameters of the high part \item[{\em pTLBEntryLow}]identifies all parameters except the page frame number of the low part \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]created Page Table Entry pointer if successful, NULL otherwise \end{Desc}
+\hypertarget{group___v_m_m___p_t_g5002efe2fb3da2510b62affe18807174}{
+\index{VMM\_\-PT@{VMM\_\-PT}!createPageTableEntry@{createPageTableEntry}}
+\index{createPageTableEntry@{createPageTableEntry}!VMM_PT@{VMM\_\-PT}}
+\subsubsection[{createPageTableEntry}]{\setlength{\rightskip}{0pt plus 5cm}{\bf PageTableEntryPtr} createPageTableEntry ({\bf TLBEHIPtr} {\em pTLBEntryHigh}, \/  {\bf TLBELOPFNLESSPtr} {\em pTLBEntryLow}, \/  {\bf PageTableEntryPtr} {\em pHashAnchorPTEntry})}}
+\label{group___v_m_m___p_t_g5002efe2fb3da2510b62affe18807174}
+
+
+Creates a new Page Table Entry with the high and low parameters. The hash chain is given. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em pTLBEntryHigh}]identifies all parameters of the high part \item[{\em pTLBEntryLow}]identifies all parameters except the page frame number of the low part \item[{\em pHashAnchorPTEntry}]identifies the hash chain in which the entry is inserted \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]created Page Table Entry pointer if successful, NULL otherwise \end{Desc}
+\hypertarget{group___v_m_m___p_t_g0037f23be8f09ed71ce7ff34f93adcb9}{
+\index{VMM\_\-PT@{VMM\_\-PT}!dissolvePageTableEntry@{dissolvePageTableEntry}}
+\index{dissolvePageTableEntry@{dissolvePageTableEntry}!VMM_PT@{VMM\_\-PT}}
+\subsubsection[{dissolvePageTableEntry}]{\setlength{\rightskip}{0pt plus 5cm}BOOL dissolvePageTableEntry ({\bf PageTableEntryPtr} {\em pPTEntry}, \/  {\bf PageTableEntryPtr} {\em pHashAnchorPTEntry}, \/  {\bf PageTableEntryPtr} {\em pPrevPTEntry})}}
+\label{group___v_m_m___p_t_g0037f23be8f09ed71ce7ff34f93adcb9}
+
+
+Dissovle given page table entry. Rechain page table chain and actualize HAT if necessary. Do not delete contents of dissolved page table entries. This is the job of the caller. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em pPTEntry}]the Page Table Entry that should be dissolved \item[{\em pHashAnchorPTEntry}]the Page Table Entry identified by the Hash Anchor Table, i.e. the start of the hash chain \item[{\em pPrevPTEntry}]the Page Table Entry that is before the entry to dissolve in the hash chain \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]TRUE if successful, FALSE otherwise \end{Desc}
+\hypertarget{group___v_m_m___p_t_g85b6e33ff8a22b5c1e9e0b36e8f24c4c}{
+\index{VMM\_\-PT@{VMM\_\-PT}!freePageTableEntry@{freePageTableEntry}}
+\index{freePageTableEntry@{freePageTableEntry}!VMM_PT@{VMM\_\-PT}}
+\subsubsection[{freePageTableEntry}]{\setlength{\rightskip}{0pt plus 5cm}BOOL freePageTableEntry ({\bf TLBEHIPtr} {\em pTLBEntryHigh})}}
+\label{group___v_m_m___p_t_g85b6e33ff8a22b5c1e9e0b36e8f24c4c}
+
+
+Dissolves the found Page Table Entry from all chains and set it to IllegalPTEntry except the page frame number. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em pTLBEntryHigh}]the TLBEntryHigh Part that delivers the ASID and VPN \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]true if successful, false otherwise \end{Desc}
+\hypertarget{group___v_m_m___p_t_g64821ed5828e71fb8cb12f99fffae069}{
+\index{VMM\_\-PT@{VMM\_\-PT}!getDissolvedVictimPTEntry@{getDissolvedVictimPTEntry}}
+\index{getDissolvedVictimPTEntry@{getDissolvedVictimPTEntry}!VMM_PT@{VMM\_\-PT}}
+\subsubsection[{getDissolvedVictimPTEntry}]{\setlength{\rightskip}{0pt plus 5cm}{\bf PageTableEntryPtr} getDissolvedVictimPTEntry ({\bf TLBEHIPtr} {\em pTLBEntryHigh}, \/  int $\ast$ {\em pIPTIndex})}}
+\label{group___v_m_m___p_t_g64821ed5828e71fb8cb12f99fffae069}
+
+
+Dissolve a Page Table Entry from the Inverted Page Table and returns its index. At the moment only free PageTableEntries are returned. Later victim should be found via second change algorithm. Dissovling includes the hash-chain as well as the HashAnchor. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em pTLBEntryHigh}]to identify if entry is unused via complete Inverted Page Table search \item[{\em pIPTIndex}]the inverted page table index of the dissolved page table entry \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]the dissolved Page Table Entry pointer if successful, or NULL otherwise \end{Desc}
+\hypertarget{group___v_m_m___p_t_gf5ebfb7e466013140327368b655792fe}{
+\index{VMM\_\-PT@{VMM\_\-PT}!initPageTable@{initPageTable}}
+\index{initPageTable@{initPageTable}!VMM_PT@{VMM\_\-PT}}
+\subsubsection[{initPageTable}]{\setlength{\rightskip}{0pt plus 5cm}void initPageTable ()}}
+\label{group___v_m_m___p_t_gf5ebfb7e466013140327368b655792fe}
+
+
+Initialize all components of the Page Table. That means Hash Anchor Table and Inverted Page Table. \hypertarget{group___v_m_m___p_t_g8edbef60b1d72e6ad3dffed3c57b5e7c}{
+\index{VMM\_\-PT@{VMM\_\-PT}!searchPageTableEntry@{searchPageTableEntry}}
+\index{searchPageTableEntry@{searchPageTableEntry}!VMM_PT@{VMM\_\-PT}}
+\subsubsection[{searchPageTableEntry}]{\setlength{\rightskip}{0pt plus 5cm}{\bf PageTableEntryPtr} searchPageTableEntry ({\bf TLBEHIPtr} {\em pTLBEntryHigh})}}
+\label{group___v_m_m___p_t_g8edbef60b1d72e6ad3dffed3c57b5e7c}
+
+
+Search a complete Page Table Entry via ASID and VPN of the given TLBEntryHigh part of the Page Table Entry. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em pTLBEntryHigh}]high part with relevant ASID and VPN to search. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]found Page Table Entry pointer, NULL otherwise \end{Desc}
+\hypertarget{group___v_m_m___p_t_g0021597aea50ac13519f811f316c4fd7}{
+\index{VMM\_\-PT@{VMM\_\-PT}!searchPageTableEntryLow@{searchPageTableEntryLow}}
+\index{searchPageTableEntryLow@{searchPageTableEntryLow}!VMM_PT@{VMM\_\-PT}}
+\subsubsection[{searchPageTableEntryLow}]{\setlength{\rightskip}{0pt plus 5cm}{\bf TLBELOPtr} searchPageTableEntryLow ({\bf TLBEHIPtr} {\em pTLBEntryHigh})}}
+\label{group___v_m_m___p_t_g0021597aea50ac13519f811f316c4fd7}
+
+
+Search the TLBEntryLow Part via ASID and VPN of the given TLBEntryHigh part of the Page Table Entry. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em pTLBEntryHigh}]high part with relevant ASID and VPN to search. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]found TLB Low pointer, NULL otherwise \end{Desc}
+\hypertarget{group___v_m_m___p_t_g621765a4679ecc5e2d8e1257ba21d440}{
+\index{VMM\_\-PT@{VMM\_\-PT}!updatePageTableEntry@{updatePageTableEntry}}
+\index{updatePageTableEntry@{updatePageTableEntry}!VMM_PT@{VMM\_\-PT}}
+\subsubsection[{updatePageTableEntry}]{\setlength{\rightskip}{0pt plus 5cm}{\bf PageTableEntryPtr} updatePageTableEntry ({\bf TLBEHIPtr} {\em pTLBEntryHigh}, \/  {\bf TLBELOPFNLESSPtr} {\em pTLBEntryLow})}}
+\label{group___v_m_m___p_t_g621765a4679ecc5e2d8e1257ba21d440}
+
+
+Update the Inverted Page Table Entry identified by tlbEntryHigh. If existent it is replaced, if not it is inserted in front of bucket-chain. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em pTLBEntryHigh}]delivers ASID and VPN for search or all parameters of the high part for creation of entry \item[{\em pTLBEntryLow}]identifies all parameters except the page frame number of the low part \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]created or actualized Page Table Entry pointer if successful, NULL otherwise \end{Desc}

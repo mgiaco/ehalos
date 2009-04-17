@@ -1,0 +1,112 @@
+\hypertarget{group___v_m_m___l_d_r}{
+\section{Loader}
+\label{group___v_m_m___l_d_r}\index{Loader@{Loader}}
+}
+Loader. The Loader loads the complete \hyperlink{struct_process}{Process} Image into Virtual Memory. This causes multiple initial page faults which actualize the TLB.  
+
+
+\subsection*{Data Structures}
+\begin{CompactItemize}
+\item 
+struct \hyperlink{struct_binary}{Binary}
+\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+BOOL \hyperlink{group___v_m_m___l_d_r_gaf0bee09e9416fef2ebaa23cd84c329b}{loadBinApplication} (BinImagePtr pBinImage, int ASID)
+\item 
+void \hyperlink{group___v_m_m___l_d_r_gee5032b8bccc629d554bd321d74a71a5}{startBinApplication} (BinImagePtr pBinImage, int ASID)
+\item 
+void \hyperlink{group___v_m_m___l_d_r_gfa3edc54147d22b0e8e45491140576cb}{stopBinApplication} (BinImagePtr pBinImage, int ASID)
+\item 
+BOOL \hyperlink{group___v_m_m___l_d_r_gef6344ddde662c01f04ed17a53e80291}{unloadBinApplication} (BinImagePtr pBinImage, int ASID)
+\item 
+BOOL \hyperlink{group___v_m_m___l_d_r_g0b60ccd1a0871b94620f9206fc9e86a6}{reservePagesForBinImage} (BinImagePtr pBinImage, int ASID)
+\item 
+BOOL \hyperlink{group___v_m_m___l_d_r_g2774925688551490cf567ca10eddd33c}{writeBinImageToVirtualRam} (BinImagePtr pBinImage, int ASID)
+\item 
+int \hyperlink{group___v_m_m___l_d_r_ga457b6bb7d7447760750e4315be37e14}{nrOfPagesForBinImage} (BinImagePtr pBinImage)
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Loader. The Loader loads the complete \hyperlink{struct_process}{Process} Image into Virtual Memory. This causes multiple initial page faults which actualize the TLB. 
+
+\begin{Desc}
+\item[Note:]... \end{Desc}
+\begin{Desc}
+\item[Author:]drb8w \end{Desc}
+\begin{Desc}
+\item[Version:]0.0.0.1 \end{Desc}
+
+
+\subsection{Function Documentation}
+\hypertarget{group___v_m_m___l_d_r_gaf0bee09e9416fef2ebaa23cd84c329b}{
+\index{VMM\_\-LDR@{VMM\_\-LDR}!loadBinApplication@{loadBinApplication}}
+\index{loadBinApplication@{loadBinApplication}!VMM_LDR@{VMM\_\-LDR}}
+\subsubsection[{loadBinApplication}]{\setlength{\rightskip}{0pt plus 5cm}BOOL loadBinApplication (BinImagePtr {\em pBinImage}, \/  int {\em ASID})}}
+\label{group___v_m_m___l_d_r_gaf0bee09e9416fef2ebaa23cd84c329b}
+
+
+Load raw process image into memory. Stack and heap allocation is done by application. Steps: + reserve pages for BinImage + write BinImage to Virtual Ram
+
+Load raw process image into memory. Stack and heap allocation is done by application. Problem: intentionally causes page faults. How to separate from illegal memory-access? Done by state of process. At the moment loading copies complete process image. That means that the right number of pages are reserved to appropriate process image size and copying is done afterwords. \hypertarget{group___v_m_m___l_d_r_ga457b6bb7d7447760750e4315be37e14}{
+\index{VMM\_\-LDR@{VMM\_\-LDR}!nrOfPagesForBinImage@{nrOfPagesForBinImage}}
+\index{nrOfPagesForBinImage@{nrOfPagesForBinImage}!VMM_LDR@{VMM\_\-LDR}}
+\subsubsection[{nrOfPagesForBinImage}]{\setlength{\rightskip}{0pt plus 5cm}int nrOfPagesForBinImage (BinImagePtr {\em pBinImage})}}
+\label{group___v_m_m___l_d_r_ga457b6bb7d7447760750e4315be37e14}
+
+
+Determines how many pages must be reserved for that binary process image. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em pBinImage}]the image to be analysed \end{description}
+\end{Desc}
+\hypertarget{group___v_m_m___l_d_r_g0b60ccd1a0871b94620f9206fc9e86a6}{
+\index{VMM\_\-LDR@{VMM\_\-LDR}!reservePagesForBinImage@{reservePagesForBinImage}}
+\index{reservePagesForBinImage@{reservePagesForBinImage}!VMM_LDR@{VMM\_\-LDR}}
+\subsubsection[{reservePagesForBinImage}]{\setlength{\rightskip}{0pt plus 5cm}BOOL reservePagesForBinImage (BinImagePtr {\em pBinImage}, \/  int {\em ASID})}}
+\label{group___v_m_m___l_d_r_g0b60ccd1a0871b94620f9206fc9e86a6}
+
+
+Determines the necessary number of pages of the BinImage and reserves them in the Inverted Page Table. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em pBinImage}]the binary process image \item[{\em ASID}]the ASID for the corresponding running process \end{description}
+\end{Desc}
+\hypertarget{group___v_m_m___l_d_r_gee5032b8bccc629d554bd321d74a71a5}{
+\index{VMM\_\-LDR@{VMM\_\-LDR}!startBinApplication@{startBinApplication}}
+\index{startBinApplication@{startBinApplication}!VMM_LDR@{VMM\_\-LDR}}
+\subsubsection[{startBinApplication}]{\setlength{\rightskip}{0pt plus 5cm}void startBinApplication (BinImagePtr {\em pBinImage}, \/  int {\em ASID})}}
+\label{group___v_m_m___l_d_r_gee5032b8bccc629d554bd321d74a71a5}
+
+
+BinImage is nec if e.g. startaddress is not 0x0000. Unused at the moment.
+
+Starts raw binary application. BinImage is nec if e.g. startaddress is not 0x0000 \hypertarget{group___v_m_m___l_d_r_gfa3edc54147d22b0e8e45491140576cb}{
+\index{VMM\_\-LDR@{VMM\_\-LDR}!stopBinApplication@{stopBinApplication}}
+\index{stopBinApplication@{stopBinApplication}!VMM_LDR@{VMM\_\-LDR}}
+\subsubsection[{stopBinApplication}]{\setlength{\rightskip}{0pt plus 5cm}void stopBinApplication (BinImagePtr {\em pBinImage}, \/  int {\em ASID})}}
+\label{group___v_m_m___l_d_r_gfa3edc54147d22b0e8e45491140576cb}
+
+
+Unused at the moment. \hypertarget{group___v_m_m___l_d_r_gef6344ddde662c01f04ed17a53e80291}{
+\index{VMM\_\-LDR@{VMM\_\-LDR}!unloadBinApplication@{unloadBinApplication}}
+\index{unloadBinApplication@{unloadBinApplication}!VMM_LDR@{VMM\_\-LDR}}
+\subsubsection[{unloadBinApplication}]{\setlength{\rightskip}{0pt plus 5cm}BOOL unloadBinApplication (BinImagePtr {\em pBinImage}, \/  int {\em ASID})}}
+\label{group___v_m_m___l_d_r_gef6344ddde662c01f04ed17a53e80291}
+
+
+Unloads the binary process image from memory. That means remove it from the page table system. Unused at the moment. \hypertarget{group___v_m_m___l_d_r_g2774925688551490cf567ca10eddd33c}{
+\index{VMM\_\-LDR@{VMM\_\-LDR}!writeBinImageToVirtualRam@{writeBinImageToVirtualRam}}
+\index{writeBinImageToVirtualRam@{writeBinImageToVirtualRam}!VMM_LDR@{VMM\_\-LDR}}
+\subsubsection[{writeBinImageToVirtualRam}]{\setlength{\rightskip}{0pt plus 5cm}BOOL writeBinImageToVirtualRam (BinImagePtr {\em pBinImage}, \/  int {\em ASID})}}
+\label{group___v_m_m___l_d_r_g2774925688551490cf567ca10eddd33c}
+
+
+Writes raw binary image to ram. During writing multiple page faults will occur. Because context is the context of OS not of application it is necessary to use the actual ASID also in OS Mode. The image is written from back to front to assure that the start page is in the TLB at prosess start. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em pBinImage}]the image that is written to virtual Ram \item[{\em ASID}]the PID of the corresponding process\end{description}
+\end{Desc}
+Writes raw binary image to ram. During writing multiple page faults will occur. Problem: Context is the context of OS NOT of application! It is necessary to use the actual ASID also in OS Mode. Alternatively write to Physical RAM via direct mapped memory and offset 0xA000000. 

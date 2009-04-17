@@ -1,0 +1,145 @@
+\hypertarget{group___p_c_b}{
+\section{Process Control Block (PCB)}
+\label{group___p_c_b}\index{Process Control Block (PCB)@{Process Control Block (PCB)}}
+}
+\hyperlink{struct_process}{Process} Control Block (PCB), structs and routines for creating tasks (PCB´s), MMU initializing and starting tasks.  
+
+
+\subsection*{Data Structures}
+\begin{CompactItemize}
+\item 
+struct \hyperlink{structprocess_control_block}{processControlBlock}
+\begin{CompactList}\small\item\em Control Block for holding all the task informations, used mainly by the schuduler. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Defines}
+\begin{CompactItemize}
+\item 
+\hypertarget{group___p_c_b_g4cc9b44b9d0676b3f2ed29949017f889}{
+\#define \hyperlink{group___p_c_b_g4cc9b44b9d0676b3f2ed29949017f889}{REGISTER\_\-STACK\_\-SIZE}~20}
+\label{group___p_c_b_g4cc9b44b9d0676b3f2ed29949017f889}
+
+\begin{CompactList}\small\item\em constant for stack size \item\end{CompactList}\item 
+\hypertarget{group___p_c_b_g3cf3e9b0bf546d9629508ba4ec4b7c50}{
+\#define \hyperlink{group___p_c_b_g3cf3e9b0bf546d9629508ba4ec4b7c50}{REGISTER\_\-0\_\-OFFSET}~16}
+\label{group___p_c_b_g3cf3e9b0bf546d9629508ba4ec4b7c50}
+
+\begin{CompactList}\small\item\em constant for register 0 offset \item\end{CompactList}\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+\hyperlink{structprocess_control_block}{PCtrlBlock\_\-t} $\ast$ \hyperlink{group___p_c_b_g387d4213f53fdf9464524819d03cab62}{processCreate} (processFkt pFkt, const char $\ast$pName, uint32\_\-t stackSize)
+\item 
+\hyperlink{structprocess_control_block}{PCtrlBlock\_\-t} $\ast$ \hyperlink{group___p_c_b_ga67eb0979dcbd97d5e1a1023cf2bbe09}{mmuProcessCreate} (uint32\_\-t virtualLoadAddress, const char $\ast$pName)
+\item 
+void \hyperlink{group___p_c_b_g8e154be3f7e3b394bfe771ba2b73fc07}{start\_\-first\_\-process} (\hyperlink{structprocess_control_block}{PCtrlBlock\_\-t} $\ast$pcb) \_\-\_\-attribute\_\-\_\-((naked))
+\item 
+void \hyperlink{group___p_c_b_g70927fcffcb94cf5e5489161c8bc5a47}{setup\_\-and\_\-start\_\-new\_\-process} (char $\ast$processName)
+\item 
+void \hyperlink{group___p_c_b_g1ee7e6105aedabb1f1aa0cf8e77b453b}{setupFirstProcess} ()
+\item 
+void \hyperlink{group___p_c_b_g5a00b737864b285963b61f755d34629b}{startFirstProcess} ()
+\end{CompactItemize}
+\subsection*{Variables}
+\begin{CompactItemize}
+\item 
+\hypertarget{group___p_c_b_g186be0def8dfc704f43e446e25c5d5d4}{
+BinImage \hyperlink{group___p_c_b_g186be0def8dfc704f43e446e25c5d5d4}{BinImages} \mbox{[}$\,$\mbox{]}}
+\label{group___p_c_b_g186be0def8dfc704f43e446e25c5d5d4}
+
+\begin{CompactList}\small\item\em \hyperlink{struct_binary}{Binary} images for the tasks we want to load (holds all the memory adresses to our applications like idle-task, shell, space invaders, ...) \mbox{[}0\mbox{]} = idle process \mbox{[}1\mbox{]} = shell process \mbox{[}2\mbox{]} = space invaders game. \item\end{CompactList}\item 
+\hypertarget{group___p_c_b_gf190a046213a394375f51fa3fe5e4bdb}{
+uint32\_\-t \hyperlink{group___p_c_b_gf190a046213a394375f51fa3fe5e4bdb}{activeASID}}
+\label{group___p_c_b_gf190a046213a394375f51fa3fe5e4bdb}
+
+\begin{CompactList}\small\item\em current active ASID for MMU \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{struct_process}{Process} Control Block (PCB), structs and routines for creating tasks (PCB´s), MMU initializing and starting tasks. 
+
+\begin{Desc}
+\item[Note:]... \end{Desc}
+\begin{Desc}
+\item[Author:]maex.sp Markus Speckle \end{Desc}
+\begin{Desc}
+\item[Version:]0.0.0.1 \end{Desc}
+
+
+\subsection{Function Documentation}
+\hypertarget{group___p_c_b_ga67eb0979dcbd97d5e1a1023cf2bbe09}{
+\index{PCB@{PCB}!mmuProcessCreate@{mmuProcessCreate}}
+\index{mmuProcessCreate@{mmuProcessCreate}!PCB@{PCB}}
+\subsubsection[{mmuProcessCreate}]{\setlength{\rightskip}{0pt plus 5cm}{\bf PCtrlBlock\_\-t}$\ast$ mmuProcessCreate (uint32\_\-t {\em virtualLoadAddress}, \/  const char $\ast$ {\em pName})}}
+\label{group___p_c_b_ga67eb0979dcbd97d5e1a1023cf2bbe09}
+
+
+Creates a process with MMU support and with defined name and stacksize \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em virtualLoadAddress}]load address for MMU \item[{\em pName}]name of the process (shell, space invaders, picture frame application, ...) \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]pointer to the new created process \end{Desc}
+\hypertarget{group___p_c_b_g387d4213f53fdf9464524819d03cab62}{
+\index{PCB@{PCB}!processCreate@{processCreate}}
+\index{processCreate@{processCreate}!PCB@{PCB}}
+\subsubsection[{processCreate}]{\setlength{\rightskip}{0pt plus 5cm}{\bf PCtrlBlock\_\-t}$\ast$ processCreate (processFkt {\em pFkt}, \/  const char $\ast$ {\em pName}, \/  uint32\_\-t {\em stackSize})}}
+\label{group___p_c_b_g387d4213f53fdf9464524819d03cab62}
+
+
+TASK\_\-SWITCH\_\-TESTING function: Creates a process with defined name and stacksize, this method is only used for simple task switching (without nay MMU/memory management support!) \begin{Desc}
+\item[See also:]\hyperlink{group___p_c_b_ga67eb0979dcbd97d5e1a1023cf2bbe09}{mmuProcessCreate}(...) \end{Desc}
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em pFkt}]process function pointer \item[{\em pName}]name of the process (shell, space invaders, picture frame application, ...) \item[{\em stackSize}]stack size \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]pointer to the new created process \end{Desc}
+
+
+$\ast$ Setup the newly allocated TCB with the initial state of the task. $\ast$/ \hypertarget{group___p_c_b_g70927fcffcb94cf5e5489161c8bc5a47}{
+\index{PCB@{PCB}!setup\_\-and\_\-start\_\-new\_\-process@{setup\_\-and\_\-start\_\-new\_\-process}}
+\index{setup\_\-and\_\-start\_\-new\_\-process@{setup\_\-and\_\-start\_\-new\_\-process}!PCB@{PCB}}
+\subsubsection[{setup\_\-and\_\-start\_\-new\_\-process}]{\setlength{\rightskip}{0pt plus 5cm}void setup\_\-and\_\-start\_\-new\_\-process (char $\ast$ {\em processName})}}
+\label{group___p_c_b_g70927fcffcb94cf5e5489161c8bc5a47}
+
+
+Loads the given process from the defined BinImages, used for SYSTEMCALL E.g. shell starts new process like space invaders, function creates a new \hyperlink{struct_process}{Process} Control Block (PCB), creates process in the MMU, ASID MMU management and puts PCB to the scheduler as a new runnable task \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em processName}]name of the process to init \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]nothing \end{Desc}
+\hypertarget{group___p_c_b_g1ee7e6105aedabb1f1aa0cf8e77b453b}{
+\index{PCB@{PCB}!setupFirstProcess@{setupFirstProcess}}
+\index{setupFirstProcess@{setupFirstProcess}!PCB@{PCB}}
+\subsubsection[{setupFirstProcess}]{\setlength{\rightskip}{0pt plus 5cm}void setupFirstProcess ()}}
+\label{group___p_c_b_g1ee7e6105aedabb1f1aa0cf8e77b453b}
+
+
+Create and load first process, first process is the Idle process ==$>$ this process is used for measurement and runs only if no other runnable process is available, idle task starts directly the shell as first real applications (so the user can interact via GUI with HALOS) \begin{Desc}
+\item[Returns:]nothing \end{Desc}
+\hypertarget{group___p_c_b_g8e154be3f7e3b394bfe771ba2b73fc07}{
+\index{PCB@{PCB}!start\_\-first\_\-process@{start\_\-first\_\-process}}
+\index{start\_\-first\_\-process@{start\_\-first\_\-process}!PCB@{PCB}}
+\subsubsection[{start\_\-first\_\-process}]{\setlength{\rightskip}{0pt plus 5cm}void start\_\-first\_\-process ({\bf PCtrlBlock\_\-t} $\ast$ {\em pcb})}}
+\label{group___p_c_b_g8e154be3f7e3b394bfe771ba2b73fc07}
+
+
+Loads the given process into the the current registers, PC, SP, LR, R0 - R12, ... \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em pcb}]process control block of the process we want to load \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]nothing \end{Desc}
+\hypertarget{group___p_c_b_g5a00b737864b285963b61f755d34629b}{
+\index{PCB@{PCB}!startFirstProcess@{startFirstProcess}}
+\index{startFirstProcess@{startFirstProcess}!PCB@{PCB}}
+\subsubsection[{startFirstProcess}]{\setlength{\rightskip}{0pt plus 5cm}void startFirstProcess ()}}
+\label{group___p_c_b_g5a00b737864b285963b61f755d34629b}
+
+
+Starts first process ==$>$ Idle Task, this task automatically starts the shell as a the first real user application (GUI interface) \begin{Desc}
+\item[Returns:]nothing \end{Desc}

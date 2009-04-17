@@ -1,0 +1,106 @@
+\hypertarget{hgdi__api_8h}{
+\section{E:/Ausbildung/Semester3/AVR32\_\-Work1/Halos\_\-Development/src/halos\_\-apis/halos\_\-gdi/inc/hgdi\_\-api.h File Reference}
+\label{hgdi__api_8h}\index{E:/Ausbildung/Semester3/AVR32\_\-Work1/Halos\_\-Development/src/halos\_\-apis/halos\_\-gdi/inc/hgdi\_\-api.h@{E:/Ausbildung/Semester3/AVR32\_\-Work1/Halos\_\-Development/src/halos\_\-apis/halos\_\-gdi/inc/hgdi\_\-api.h}}
+}
+Halos GDI API header.  
+
+
+{\tt \#include $<$inttypes.h$>$}\par
+{\tt \#include \char`\"{}colors.h\char`\"{}}\par
+{\tt \#include \char`\"{}fonts.h\char`\"{}}\par
+{\tt \#include \char`\"{}hsystem\_\-api.h\char`\"{}}\par
+{\tt \#include \char`\"{}hsystem\_\-call\_\-table.h\char`\"{}}\par
+{\tt \#include \char`\"{}gdi\_\-types.h\char`\"{}}\par
+\subsection*{Typedefs}
+\begin{CompactItemize}
+\item 
+\hypertarget{group__hgdi__api_g45f1f4ec61f7d1369d94ffba402c6adb}{
+typedef int \hyperlink{group__hgdi__api_g45f1f4ec61f7d1369d94ffba402c6adb}{GDI\_\-UID}}
+\label{group__hgdi__api_g45f1f4ec61f7d1369d94ffba402c6adb}
+
+\begin{CompactList}\small\item\em unique identifier for GDI \item\end{CompactList}\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+\hypertarget{group__hgdi__api_g9ae06ae1c0c5f79d3f1c69f7052754ce}{
+void \hyperlink{group__hgdi__api_g9ae06ae1c0c5f79d3f1c69f7052754ce}{gdi\_\-open} (\hyperlink{group__hgdi__api_g45f1f4ec61f7d1369d94ffba402c6adb}{GDI\_\-UID} $\ast$gdi\_\-uid, int32\_\-t gdi\_\-type)}
+\label{group__hgdi__api_g9ae06ae1c0c5f79d3f1c69f7052754ce}
+
+\begin{CompactList}\small\item\em open gdi device calls initalization of hardware dependent display \item\end{CompactList}\item 
+void \hyperlink{group__hgdi__api_g7601be835bcebe7b3cdde530f1eee8ae}{goto\_\-xy} (uint16\_\-t x, uint16\_\-t y)
+\begin{CompactList}\small\item\em set new cursor position \item\end{CompactList}\item 
+void \hyperlink{group__hgdi__api_g8d443553cf6cc32ecaffc97696150b03}{set\_\-x\_\-pos} (uint16\_\-t x)
+\begin{CompactList}\small\item\em set new x-coordinate for cursor \item\end{CompactList}\item 
+uint16\_\-t \hyperlink{group__hgdi__api_g7e9d358d7d7d5d19b78da9ca5c630fce}{get\_\-x\_\-pos} (void)
+\begin{CompactList}\small\item\em get x-coordinate of cursor \item\end{CompactList}\item 
+void \hyperlink{group__hgdi__api_ge36f0ada44131f77cd99aac2e1945cc4}{set\_\-y\_\-pos} (uint16\_\-t y)
+\begin{CompactList}\small\item\em set new y-coordinate for cursor \item\end{CompactList}\item 
+uint16\_\-t \hyperlink{group__hgdi__api_g0237f5d1affe3493f0f428a66d7d1290}{get\_\-y\_\-pos} (void)
+\begin{CompactList}\small\item\em get y-coordinate of cursor \item\end{CompactList}\item 
+uint16\_\-t \hyperlink{group__hgdi__api_g8bec741a24e406cc198d14de6533b264}{get\_\-screen\_\-width} ()
+\begin{CompactList}\small\item\em get current screenwidth \item\end{CompactList}\item 
+uint16\_\-t \hyperlink{group__hgdi__api_g23427ee7a3a85ad4db15258a42636535}{get\_\-screen\_\-height} ()
+\begin{CompactList}\small\item\em get current screenheight \item\end{CompactList}\item 
+void \hyperlink{group__hgdi__api_gda96baaa4dc5ab037974f7045c9a3868}{set\_\-color} (\hyperlink{group__hgdi__colors8_g2d1e492285f42b7772298f092243fe6b}{color\_\-t} color)
+\begin{CompactList}\small\item\em set new color \item\end{CompactList}\item 
+void \hyperlink{group__hgdi__api_ge97dbe5fd160d2b86ba22c067ada9f57}{set\_\-color\_\-rgb} (uint8\_\-t r, uint8\_\-t g, uint8\_\-t b)
+\begin{CompactList}\small\item\em set new color in RGB-style \item\end{CompactList}\item 
+\hyperlink{group__hgdi__colors8_g2d1e492285f42b7772298f092243fe6b}{color\_\-t} \hyperlink{group__hgdi__api_gd5b5f01663c117b46b1949f3b2353fa5}{get\_\-color} ()
+\begin{CompactList}\small\item\em get current color \item\end{CompactList}\item 
+void \hyperlink{group__hgdi__api_g4215543853fd0158a34117310a5f5efb}{set\_\-background\_\-color} (\hyperlink{group__hgdi__colors8_g2d1e492285f42b7772298f092243fe6b}{color\_\-t} color)
+\begin{CompactList}\small\item\em set new backgroundcolor \item\end{CompactList}\item 
+void \hyperlink{group__hgdi__api_g77a2bc7d1449fa4175ad4655437f90df}{set\_\-background\_\-color\_\-rgb} (uint8\_\-t r, uint8\_\-t g, uint8\_\-t b)
+\begin{CompactList}\small\item\em set new backgroundcolor in RGB-style \item\end{CompactList}\item 
+\hyperlink{group__hgdi__colors8_g2d1e492285f42b7772298f092243fe6b}{color\_\-t} \hyperlink{group__hgdi__api_gaff5b39ea1c26814023c4079e9cd91ea}{get\_\-background\_\-color\_\-rgb} ()
+\begin{CompactList}\small\item\em get current backgroundcolor \item\end{CompactList}\item 
+void \hyperlink{group__hgdi__api_ga56b1c619a3b3c381b9cc7ad9e66fb77}{put\_\-pixel} (uint16\_\-t x1, uint16\_\-t y1)
+\begin{CompactList}\small\item\em draw pixel with current color at given position \item\end{CompactList}\item 
+void \hyperlink{group__hgdi__api_g7f1f418ba1d392e2f8f2ea2bf346c2c0}{clr\_\-pixel} (uint16\_\-t x1, uint16\_\-t y1)
+\begin{CompactList}\small\item\em draw pixel with current backgroundcolor at given position \item\end{CompactList}\item 
+void \hyperlink{group__hgdi__api_gdae60538438e5266a1ca190a4f42107b}{vertical\_\-pan} (int16\_\-t yoffset)
+\begin{CompactList}\small\item\em scroll framebuffer up or down \item\end{CompactList}\item 
+void \hyperlink{group__hgdi__api_gd0d0faa6493f00905dc998f5b8833d46}{draw\_\-line} (uint16\_\-t x1, uint16\_\-t y1, uint16\_\-t x2, uint16\_\-t y2)
+\begin{CompactList}\small\item\em draws a line \item\end{CompactList}\item 
+void \hyperlink{group__hgdi__api_gfa36c7551052447e34f346143af702db}{draw\_\-rectangle} (uint16\_\-t x1, uint16\_\-t y1, uint16\_\-t x2, uint16\_\-t y2)
+\begin{CompactList}\small\item\em draws a rectangle \item\end{CompactList}\item 
+void \hyperlink{group__hgdi__api_gd2f97e49f85d6c4126e325042fcf0135}{draw\_\-circle} (uint16\_\-t xCenter, uint16\_\-t yCenter, uint16\_\-t radius)
+\begin{CompactList}\small\item\em draws a circle \item\end{CompactList}\item 
+void \hyperlink{group__hgdi__api_g4d61525496e856403881088f723791c8}{draw\_\-sprite} (uint8\_\-t $\ast$data, uint16\_\-t height, uint16\_\-t width)
+\begin{CompactList}\small\item\em draws a sprite \item\end{CompactList}\item 
+void \hyperlink{group__hgdi__api_ge78bbfb934b7a4443bdebd86508c246b}{draw\_\-sprite2} (\hyperlink{struct__gdi__sprite}{gdi\_\-sprite\_\-t} $\ast$sprite)
+\begin{CompactList}\small\item\em draws a sprite \item\end{CompactList}\item 
+void \hyperlink{group__hgdi__api_g39f639f5516f6a0fea13f7ffb39d2dcb}{draw\_\-color\_\-sprite} (\hyperlink{struct__gdi__sprite}{gdi\_\-sprite\_\-t} $\ast$sprite)
+\begin{CompactList}\small\item\em draws a 24-bit colored sprite \item\end{CompactList}\item 
+void \hyperlink{group__hgdi__api_g7aff5f3016a84ac9cfd360744d653700}{fill\_\-rectangle} (uint16\_\-t x1, uint16\_\-t y1, uint16\_\-t x2, uint16\_\-t y2)
+\begin{CompactList}\small\item\em draws a filled rectangle \item\end{CompactList}\item 
+void \hyperlink{group__hgdi__api_g325aa117e69b5614f75198308d116b69}{select\_\-font} (\hyperlink{group__hgdi__fonts_gec86a33a52fa97333da1074389df46a3}{halos\_\-font\_\-t} fonts)
+\begin{CompactList}\small\item\em select font \item\end{CompactList}\item 
+uint8\_\-t \hyperlink{group__hgdi__api_g1701f17a87fc25691c886ac822622491}{draw\_\-char} (const char c)
+\begin{CompactList}\small\item\em draws a character \item\end{CompactList}\item 
+void \hyperlink{group__hgdi__api_gfba093e7eb44678dacadfe498b6c6afa}{draw\_\-string} (const char $\ast$str)
+\begin{CompactList}\small\item\em draws a string \item\end{CompactList}\item 
+void \hyperlink{group__hgdi__api_gc5a88037655557ae99d1f1144c021f61}{set\_\-text\_\-justify} (uint8\_\-t horiz, uint8\_\-t vert)
+\begin{CompactList}\small\item\em change alignment of text \item\end{CompactList}\item 
+uint8\_\-t \hyperlink{group__hgdi__api_g3521241c59402aa97549fca14f20f544}{get\_\-char\_\-width} (char c)
+\begin{CompactList}\small\item\em get width of a single char \item\end{CompactList}\item 
+uint16\_\-t \hyperlink{group__hgdi__api_gdc6bc2359b35da24a9bcf4b9449d8902}{get\_\-string\_\-width} (const char $\ast$str)
+\begin{CompactList}\small\item\em get width of a given string \item\end{CompactList}\item 
+uint8\_\-t \hyperlink{group__hgdi__api_g13207a4e8f1f2299ddb9075d3cda4a82}{get\_\-font\_\-height} ()
+\begin{CompactList}\small\item\em get font height of current font \item\end{CompactList}\item 
+void \hyperlink{group__hgdi__api_g4e1ad4c71558a1855664187428409bba}{set\_\-line\_\-thickness} (uint8\_\-t thickness)
+\begin{CompactList}\small\item\em set line thickness \item\end{CompactList}\item 
+void \hyperlink{group__hgdi__api_gb9b7e1a4efa87c1d2a8e6b34d49a3aeb}{set\_\-line\_\-style} (\hyperlink{group__hgdi__types_gdfccdb9380d340f00e646a1fd04b79d9}{line\_\-style\_\-t} linestyle)
+\begin{CompactList}\small\item\em set linestyle \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Halos GDI API header. 
+
+\begin{Desc}
+\item[Author:]Team Halos \end{Desc}
+\begin{Desc}
+\item[Version:]0.0.1 \end{Desc}
+\begin{Desc}
+\item[Date:]2008-2009 \end{Desc}
+\begin{Desc}
+\item[Note:]Hardware: NGW100, Software: AVR32-GCC \end{Desc}

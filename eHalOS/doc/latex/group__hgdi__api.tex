@@ -1,0 +1,532 @@
+\hypertarget{group__hgdi__api}{
+\section{GDI API}
+\label{group__hgdi__api}\index{GDI API@{GDI API}}
+}
+API for GDI.  
+
+
+\subsection*{Typedefs}
+\begin{CompactItemize}
+\item 
+\hypertarget{group__hgdi__api_g45f1f4ec61f7d1369d94ffba402c6adb}{
+typedef int \hyperlink{group__hgdi__api_g45f1f4ec61f7d1369d94ffba402c6adb}{GDI\_\-UID}}
+\label{group__hgdi__api_g45f1f4ec61f7d1369d94ffba402c6adb}
+
+\begin{CompactList}\small\item\em unique identifier for GDI \item\end{CompactList}\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+\hypertarget{group__hgdi__api_g9ae06ae1c0c5f79d3f1c69f7052754ce}{
+void \hyperlink{group__hgdi__api_g9ae06ae1c0c5f79d3f1c69f7052754ce}{gdi\_\-open} (\hyperlink{group__hgdi__api_g45f1f4ec61f7d1369d94ffba402c6adb}{GDI\_\-UID} $\ast$gdi\_\-uid, int32\_\-t gdi\_\-type)}
+\label{group__hgdi__api_g9ae06ae1c0c5f79d3f1c69f7052754ce}
+
+\begin{CompactList}\small\item\em open gdi device calls initalization of hardware dependent display \item\end{CompactList}\item 
+void \hyperlink{group__hgdi__api_g7601be835bcebe7b3cdde530f1eee8ae}{goto\_\-xy} (uint16\_\-t x, uint16\_\-t y)
+\begin{CompactList}\small\item\em set new cursor position \item\end{CompactList}\item 
+void \hyperlink{group__hgdi__api_g8d443553cf6cc32ecaffc97696150b03}{set\_\-x\_\-pos} (uint16\_\-t x)
+\begin{CompactList}\small\item\em set new x-coordinate for cursor \item\end{CompactList}\item 
+uint16\_\-t \hyperlink{group__hgdi__api_g7e9d358d7d7d5d19b78da9ca5c630fce}{get\_\-x\_\-pos} (void)
+\begin{CompactList}\small\item\em get x-coordinate of cursor \item\end{CompactList}\item 
+void \hyperlink{group__hgdi__api_ge36f0ada44131f77cd99aac2e1945cc4}{set\_\-y\_\-pos} (uint16\_\-t y)
+\begin{CompactList}\small\item\em set new y-coordinate for cursor \item\end{CompactList}\item 
+uint16\_\-t \hyperlink{group__hgdi__api_g0237f5d1affe3493f0f428a66d7d1290}{get\_\-y\_\-pos} (void)
+\begin{CompactList}\small\item\em get y-coordinate of cursor \item\end{CompactList}\item 
+uint16\_\-t \hyperlink{group__hgdi__api_g8bec741a24e406cc198d14de6533b264}{get\_\-screen\_\-width} ()
+\begin{CompactList}\small\item\em get current screenwidth \item\end{CompactList}\item 
+uint16\_\-t \hyperlink{group__hgdi__api_g23427ee7a3a85ad4db15258a42636535}{get\_\-screen\_\-height} ()
+\begin{CompactList}\small\item\em get current screenheight \item\end{CompactList}\item 
+void \hyperlink{group__hgdi__api_gda96baaa4dc5ab037974f7045c9a3868}{set\_\-color} (\hyperlink{group__hgdi__colors8_g2d1e492285f42b7772298f092243fe6b}{color\_\-t} color)
+\begin{CompactList}\small\item\em set new color \item\end{CompactList}\item 
+void \hyperlink{group__hgdi__api_ge97dbe5fd160d2b86ba22c067ada9f57}{set\_\-color\_\-rgb} (uint8\_\-t r, uint8\_\-t g, uint8\_\-t b)
+\begin{CompactList}\small\item\em set new color in RGB-style \item\end{CompactList}\item 
+\hyperlink{group__hgdi__colors8_g2d1e492285f42b7772298f092243fe6b}{color\_\-t} \hyperlink{group__hgdi__api_gd5b5f01663c117b46b1949f3b2353fa5}{get\_\-color} ()
+\begin{CompactList}\small\item\em get current color \item\end{CompactList}\item 
+void \hyperlink{group__hgdi__api_g4215543853fd0158a34117310a5f5efb}{set\_\-background\_\-color} (\hyperlink{group__hgdi__colors8_g2d1e492285f42b7772298f092243fe6b}{color\_\-t} color)
+\begin{CompactList}\small\item\em set new backgroundcolor \item\end{CompactList}\item 
+void \hyperlink{group__hgdi__api_g77a2bc7d1449fa4175ad4655437f90df}{set\_\-background\_\-color\_\-rgb} (uint8\_\-t r, uint8\_\-t g, uint8\_\-t b)
+\begin{CompactList}\small\item\em set new backgroundcolor in RGB-style \item\end{CompactList}\item 
+\hyperlink{group__hgdi__colors8_g2d1e492285f42b7772298f092243fe6b}{color\_\-t} \hyperlink{group__hgdi__api_gaff5b39ea1c26814023c4079e9cd91ea}{get\_\-background\_\-color\_\-rgb} ()
+\begin{CompactList}\small\item\em get current backgroundcolor \item\end{CompactList}\item 
+void \hyperlink{group__hgdi__api_ga56b1c619a3b3c381b9cc7ad9e66fb77}{put\_\-pixel} (uint16\_\-t x1, uint16\_\-t y1)
+\begin{CompactList}\small\item\em draw pixel with current color at given position \item\end{CompactList}\item 
+void \hyperlink{group__hgdi__api_g7f1f418ba1d392e2f8f2ea2bf346c2c0}{clr\_\-pixel} (uint16\_\-t x1, uint16\_\-t y1)
+\begin{CompactList}\small\item\em draw pixel with current backgroundcolor at given position \item\end{CompactList}\item 
+void \hyperlink{group__hgdi__api_gdae60538438e5266a1ca190a4f42107b}{vertical\_\-pan} (int16\_\-t yoffset)
+\begin{CompactList}\small\item\em scroll framebuffer up or down \item\end{CompactList}\item 
+void \hyperlink{group__hgdi__api_gd0d0faa6493f00905dc998f5b8833d46}{draw\_\-line} (uint16\_\-t x1, uint16\_\-t y1, uint16\_\-t x2, uint16\_\-t y2)
+\begin{CompactList}\small\item\em draws a line \item\end{CompactList}\item 
+void \hyperlink{group__hgdi__api_gfa36c7551052447e34f346143af702db}{draw\_\-rectangle} (uint16\_\-t x1, uint16\_\-t y1, uint16\_\-t x2, uint16\_\-t y2)
+\begin{CompactList}\small\item\em draws a rectangle \item\end{CompactList}\item 
+void \hyperlink{group__hgdi__api_gd2f97e49f85d6c4126e325042fcf0135}{draw\_\-circle} (uint16\_\-t xCenter, uint16\_\-t yCenter, uint16\_\-t radius)
+\begin{CompactList}\small\item\em draws a circle \item\end{CompactList}\item 
+void \hyperlink{group__hgdi__api_g4d61525496e856403881088f723791c8}{draw\_\-sprite} (uint8\_\-t $\ast$data, uint16\_\-t height, uint16\_\-t width)
+\begin{CompactList}\small\item\em draws a sprite \item\end{CompactList}\item 
+void \hyperlink{group__hgdi__api_ge78bbfb934b7a4443bdebd86508c246b}{draw\_\-sprite2} (\hyperlink{struct__gdi__sprite}{gdi\_\-sprite\_\-t} $\ast$sprite)
+\begin{CompactList}\small\item\em draws a sprite \item\end{CompactList}\item 
+void \hyperlink{group__hgdi__api_g39f639f5516f6a0fea13f7ffb39d2dcb}{draw\_\-color\_\-sprite} (\hyperlink{struct__gdi__sprite}{gdi\_\-sprite\_\-t} $\ast$sprite)
+\begin{CompactList}\small\item\em draws a 24-bit colored sprite \item\end{CompactList}\item 
+void \hyperlink{group__hgdi__api_g7aff5f3016a84ac9cfd360744d653700}{fill\_\-rectangle} (uint16\_\-t x1, uint16\_\-t y1, uint16\_\-t x2, uint16\_\-t y2)
+\begin{CompactList}\small\item\em draws a filled rectangle \item\end{CompactList}\item 
+void \hyperlink{group__hgdi__api_g325aa117e69b5614f75198308d116b69}{select\_\-font} (\hyperlink{group__hgdi__fonts_gec86a33a52fa97333da1074389df46a3}{halos\_\-font\_\-t} fonts)
+\begin{CompactList}\small\item\em select font \item\end{CompactList}\item 
+uint8\_\-t \hyperlink{group__hgdi__api_g1701f17a87fc25691c886ac822622491}{draw\_\-char} (const char c)
+\begin{CompactList}\small\item\em draws a character \item\end{CompactList}\item 
+void \hyperlink{group__hgdi__api_gfba093e7eb44678dacadfe498b6c6afa}{draw\_\-string} (const char $\ast$str)
+\begin{CompactList}\small\item\em draws a string \item\end{CompactList}\item 
+void \hyperlink{group__hgdi__api_gc5a88037655557ae99d1f1144c021f61}{set\_\-text\_\-justify} (uint8\_\-t horiz, uint8\_\-t vert)
+\begin{CompactList}\small\item\em change alignment of text \item\end{CompactList}\item 
+uint8\_\-t \hyperlink{group__hgdi__api_g3521241c59402aa97549fca14f20f544}{get\_\-char\_\-width} (char c)
+\begin{CompactList}\small\item\em get width of a single char \item\end{CompactList}\item 
+uint16\_\-t \hyperlink{group__hgdi__api_gdc6bc2359b35da24a9bcf4b9449d8902}{get\_\-string\_\-width} (const char $\ast$str)
+\begin{CompactList}\small\item\em get width of a given string \item\end{CompactList}\item 
+uint8\_\-t \hyperlink{group__hgdi__api_g13207a4e8f1f2299ddb9075d3cda4a82}{get\_\-font\_\-height} ()
+\begin{CompactList}\small\item\em get font height of current font \item\end{CompactList}\item 
+void \hyperlink{group__hgdi__api_g4e1ad4c71558a1855664187428409bba}{set\_\-line\_\-thickness} (uint8\_\-t thickness)
+\begin{CompactList}\small\item\em set line thickness \item\end{CompactList}\item 
+void \hyperlink{group__hgdi__api_gb9b7e1a4efa87c1d2a8e6b34d49a3aeb}{set\_\-line\_\-style} (\hyperlink{group__hgdi__types_gdfccdb9380d340f00e646a1fd04b79d9}{line\_\-style\_\-t} linestyle)
+\begin{CompactList}\small\item\em set linestyle \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+API for GDI. 
+
+\begin{Desc}
+\item[Note:]... \end{Desc}
+\begin{Desc}
+\item[Author:]momo \end{Desc}
+\begin{Desc}
+\item[Version:]0.0.0.1 \end{Desc}
+
+
+\subsection{Function Documentation}
+\hypertarget{group__hgdi__api_g7f1f418ba1d392e2f8f2ea2bf346c2c0}{
+\index{hgdi\_\-api@{hgdi\_\-api}!clr\_\-pixel@{clr\_\-pixel}}
+\index{clr\_\-pixel@{clr\_\-pixel}!hgdi_api@{hgdi\_\-api}}
+\subsubsection[{clr\_\-pixel}]{\setlength{\rightskip}{0pt plus 5cm}void clr\_\-pixel (uint16\_\-t {\em x1}, \/  uint16\_\-t {\em y1})}}
+\label{group__hgdi__api_g7f1f418ba1d392e2f8f2ea2bf346c2c0}
+
+
+draw pixel with current backgroundcolor at given position 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em x1}]x-coordinate of pixel \item[{\em y1}]y-coordinate of pixel \end{description}
+\end{Desc}
+\hypertarget{group__hgdi__api_g1701f17a87fc25691c886ac822622491}{
+\index{hgdi\_\-api@{hgdi\_\-api}!draw\_\-char@{draw\_\-char}}
+\index{draw\_\-char@{draw\_\-char}!hgdi_api@{hgdi\_\-api}}
+\subsubsection[{draw\_\-char}]{\setlength{\rightskip}{0pt plus 5cm}uint8\_\-t draw\_\-char (const char {\em c})}}
+\label{group__hgdi__api_g1701f17a87fc25691c886ac822622491}
+
+
+draws a character 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em c}]character \end{description}
+\end{Desc}
+\hypertarget{group__hgdi__api_gd2f97e49f85d6c4126e325042fcf0135}{
+\index{hgdi\_\-api@{hgdi\_\-api}!draw\_\-circle@{draw\_\-circle}}
+\index{draw\_\-circle@{draw\_\-circle}!hgdi_api@{hgdi\_\-api}}
+\subsubsection[{draw\_\-circle}]{\setlength{\rightskip}{0pt plus 5cm}void draw\_\-circle (uint16\_\-t {\em xCenter}, \/  uint16\_\-t {\em yCenter}, \/  uint16\_\-t {\em radius})}}
+\label{group__hgdi__api_gd2f97e49f85d6c4126e325042fcf0135}
+
+
+draws a circle 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em xCenter}]x-coordinate of circle center \item[{\em yCenter}]y-coordinate of circle center \item[{\em radius}]radius of circle \end{description}
+\end{Desc}
+\hypertarget{group__hgdi__api_g39f639f5516f6a0fea13f7ffb39d2dcb}{
+\index{hgdi\_\-api@{hgdi\_\-api}!draw\_\-color\_\-sprite@{draw\_\-color\_\-sprite}}
+\index{draw\_\-color\_\-sprite@{draw\_\-color\_\-sprite}!hgdi_api@{hgdi\_\-api}}
+\subsubsection[{draw\_\-color\_\-sprite}]{\setlength{\rightskip}{0pt plus 5cm}void draw\_\-color\_\-sprite ({\bf gdi\_\-sprite\_\-t} $\ast$ {\em sprite})}}
+\label{group__hgdi__api_g39f639f5516f6a0fea13f7ffb39d2dcb}
+
+
+draws a 24-bit colored sprite 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em sprite}]sprite-structure \end{description}
+\end{Desc}
+\hypertarget{group__hgdi__api_gd0d0faa6493f00905dc998f5b8833d46}{
+\index{hgdi\_\-api@{hgdi\_\-api}!draw\_\-line@{draw\_\-line}}
+\index{draw\_\-line@{draw\_\-line}!hgdi_api@{hgdi\_\-api}}
+\subsubsection[{draw\_\-line}]{\setlength{\rightskip}{0pt plus 5cm}void draw\_\-line (uint16\_\-t {\em x1}, \/  uint16\_\-t {\em y1}, \/  uint16\_\-t {\em x2}, \/  uint16\_\-t {\em y2})}}
+\label{group__hgdi__api_gd0d0faa6493f00905dc998f5b8833d46}
+
+
+draws a line 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em x1}]x-coordinate of startpoint \item[{\em y1}]y-coordinate of startpoint \item[{\em x2}]x-coordinate of endpoint \item[{\em y2}]y-coordinate of endpoint \end{description}
+\end{Desc}
+\hypertarget{group__hgdi__api_gfa36c7551052447e34f346143af702db}{
+\index{hgdi\_\-api@{hgdi\_\-api}!draw\_\-rectangle@{draw\_\-rectangle}}
+\index{draw\_\-rectangle@{draw\_\-rectangle}!hgdi_api@{hgdi\_\-api}}
+\subsubsection[{draw\_\-rectangle}]{\setlength{\rightskip}{0pt plus 5cm}void draw\_\-rectangle (uint16\_\-t {\em x1}, \/  uint16\_\-t {\em y1}, \/  uint16\_\-t {\em x2}, \/  uint16\_\-t {\em y2})}}
+\label{group__hgdi__api_gfa36c7551052447e34f346143af702db}
+
+
+draws a rectangle 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em x1}]x-coordinate of first corner \item[{\em y1}]y-coordinate of first corner \item[{\em x2}]x-coordinate of second corner \item[{\em y2}]y-coordinate of second corner \end{description}
+\end{Desc}
+\hypertarget{group__hgdi__api_g4d61525496e856403881088f723791c8}{
+\index{hgdi\_\-api@{hgdi\_\-api}!draw\_\-sprite@{draw\_\-sprite}}
+\index{draw\_\-sprite@{draw\_\-sprite}!hgdi_api@{hgdi\_\-api}}
+\subsubsection[{draw\_\-sprite}]{\setlength{\rightskip}{0pt plus 5cm}void draw\_\-sprite (uint8\_\-t $\ast$ {\em data}, \/  uint16\_\-t {\em height}, \/  uint16\_\-t {\em width})}}
+\label{group__hgdi__api_g4d61525496e856403881088f723791c8}
+
+
+draws a sprite 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em data}]sprite value array \item[{\em height}]height of sprite \item[{\em width}]width of sprite \end{description}
+\end{Desc}
+\hypertarget{group__hgdi__api_ge78bbfb934b7a4443bdebd86508c246b}{
+\index{hgdi\_\-api@{hgdi\_\-api}!draw\_\-sprite2@{draw\_\-sprite2}}
+\index{draw\_\-sprite2@{draw\_\-sprite2}!hgdi_api@{hgdi\_\-api}}
+\subsubsection[{draw\_\-sprite2}]{\setlength{\rightskip}{0pt plus 5cm}void draw\_\-sprite2 ({\bf gdi\_\-sprite\_\-t} $\ast$ {\em sprite})}}
+\label{group__hgdi__api_ge78bbfb934b7a4443bdebd86508c246b}
+
+
+draws a sprite 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em sprite}]sprite-structure \end{description}
+\end{Desc}
+\hypertarget{group__hgdi__api_gfba093e7eb44678dacadfe498b6c6afa}{
+\index{hgdi\_\-api@{hgdi\_\-api}!draw\_\-string@{draw\_\-string}}
+\index{draw\_\-string@{draw\_\-string}!hgdi_api@{hgdi\_\-api}}
+\subsubsection[{draw\_\-string}]{\setlength{\rightskip}{0pt plus 5cm}void draw\_\-string (const char $\ast$ {\em str})}}
+\label{group__hgdi__api_gfba093e7eb44678dacadfe498b6c6afa}
+
+
+draws a string 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em str}]pointer to a string \end{description}
+\end{Desc}
+\hypertarget{group__hgdi__api_g7aff5f3016a84ac9cfd360744d653700}{
+\index{hgdi\_\-api@{hgdi\_\-api}!fill\_\-rectangle@{fill\_\-rectangle}}
+\index{fill\_\-rectangle@{fill\_\-rectangle}!hgdi_api@{hgdi\_\-api}}
+\subsubsection[{fill\_\-rectangle}]{\setlength{\rightskip}{0pt plus 5cm}void fill\_\-rectangle (uint16\_\-t {\em x1}, \/  uint16\_\-t {\em y1}, \/  uint16\_\-t {\em x2}, \/  uint16\_\-t {\em y2})}}
+\label{group__hgdi__api_g7aff5f3016a84ac9cfd360744d653700}
+
+
+draws a filled rectangle 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em x1}]x-coordinate of first corner \item[{\em y1}]y-coordinate of first corner \item[{\em x2}]x-coordinate of second corner \item[{\em y2}]y-coordinate of second corner \end{description}
+\end{Desc}
+\hypertarget{group__hgdi__api_gaff5b39ea1c26814023c4079e9cd91ea}{
+\index{hgdi\_\-api@{hgdi\_\-api}!get\_\-background\_\-color\_\-rgb@{get\_\-background\_\-color\_\-rgb}}
+\index{get\_\-background\_\-color\_\-rgb@{get\_\-background\_\-color\_\-rgb}!hgdi_api@{hgdi\_\-api}}
+\subsubsection[{get\_\-background\_\-color\_\-rgb}]{\setlength{\rightskip}{0pt plus 5cm}{\bf color\_\-t} get\_\-background\_\-color\_\-rgb ()}}
+\label{group__hgdi__api_gaff5b39ea1c26814023c4079e9cd91ea}
+
+
+get current backgroundcolor 
+
+\begin{Desc}
+\item[Returns:]backgroundcolor currently set \end{Desc}
+\hypertarget{group__hgdi__api_g3521241c59402aa97549fca14f20f544}{
+\index{hgdi\_\-api@{hgdi\_\-api}!get\_\-char\_\-width@{get\_\-char\_\-width}}
+\index{get\_\-char\_\-width@{get\_\-char\_\-width}!hgdi_api@{hgdi\_\-api}}
+\subsubsection[{get\_\-char\_\-width}]{\setlength{\rightskip}{0pt plus 5cm}uint8\_\-t get\_\-char\_\-width (char {\em c})}}
+\label{group__hgdi__api_g3521241c59402aa97549fca14f20f544}
+
+
+get width of a single char 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em c}]character \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]width of character \end{Desc}
+\hypertarget{group__hgdi__api_gd5b5f01663c117b46b1949f3b2353fa5}{
+\index{hgdi\_\-api@{hgdi\_\-api}!get\_\-color@{get\_\-color}}
+\index{get\_\-color@{get\_\-color}!hgdi_api@{hgdi\_\-api}}
+\subsubsection[{get\_\-color}]{\setlength{\rightskip}{0pt plus 5cm}{\bf color\_\-t} get\_\-color ()}}
+\label{group__hgdi__api_gd5b5f01663c117b46b1949f3b2353fa5}
+
+
+get current color 
+
+\begin{Desc}
+\item[Returns:]color currently set \end{Desc}
+\hypertarget{group__hgdi__api_g13207a4e8f1f2299ddb9075d3cda4a82}{
+\index{hgdi\_\-api@{hgdi\_\-api}!get\_\-font\_\-height@{get\_\-font\_\-height}}
+\index{get\_\-font\_\-height@{get\_\-font\_\-height}!hgdi_api@{hgdi\_\-api}}
+\subsubsection[{get\_\-font\_\-height}]{\setlength{\rightskip}{0pt plus 5cm}uint8\_\-t get\_\-font\_\-height ()}}
+\label{group__hgdi__api_g13207a4e8f1f2299ddb9075d3cda4a82}
+
+
+get font height of current font 
+
+\begin{Desc}
+\item[Returns:]fontheight \end{Desc}
+\hypertarget{group__hgdi__api_g23427ee7a3a85ad4db15258a42636535}{
+\index{hgdi\_\-api@{hgdi\_\-api}!get\_\-screen\_\-height@{get\_\-screen\_\-height}}
+\index{get\_\-screen\_\-height@{get\_\-screen\_\-height}!hgdi_api@{hgdi\_\-api}}
+\subsubsection[{get\_\-screen\_\-height}]{\setlength{\rightskip}{0pt plus 5cm}uint16\_\-t get\_\-screen\_\-height ()}}
+\label{group__hgdi__api_g23427ee7a3a85ad4db15258a42636535}
+
+
+get current screenheight 
+
+\begin{Desc}
+\item[Returns:]current screenheight \end{Desc}
+\hypertarget{group__hgdi__api_g8bec741a24e406cc198d14de6533b264}{
+\index{hgdi\_\-api@{hgdi\_\-api}!get\_\-screen\_\-width@{get\_\-screen\_\-width}}
+\index{get\_\-screen\_\-width@{get\_\-screen\_\-width}!hgdi_api@{hgdi\_\-api}}
+\subsubsection[{get\_\-screen\_\-width}]{\setlength{\rightskip}{0pt plus 5cm}uint16\_\-t get\_\-screen\_\-width ()}}
+\label{group__hgdi__api_g8bec741a24e406cc198d14de6533b264}
+
+
+get current screenwidth 
+
+\begin{Desc}
+\item[Returns:]current screenwidth \end{Desc}
+\hypertarget{group__hgdi__api_gdc6bc2359b35da24a9bcf4b9449d8902}{
+\index{hgdi\_\-api@{hgdi\_\-api}!get\_\-string\_\-width@{get\_\-string\_\-width}}
+\index{get\_\-string\_\-width@{get\_\-string\_\-width}!hgdi_api@{hgdi\_\-api}}
+\subsubsection[{get\_\-string\_\-width}]{\setlength{\rightskip}{0pt plus 5cm}uint16\_\-t get\_\-string\_\-width (const char $\ast$ {\em str})}}
+\label{group__hgdi__api_gdc6bc2359b35da24a9bcf4b9449d8902}
+
+
+get width of a given string 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em str}]pointer to a string \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]width of string \end{Desc}
+\hypertarget{group__hgdi__api_g7e9d358d7d7d5d19b78da9ca5c630fce}{
+\index{hgdi\_\-api@{hgdi\_\-api}!get\_\-x\_\-pos@{get\_\-x\_\-pos}}
+\index{get\_\-x\_\-pos@{get\_\-x\_\-pos}!hgdi_api@{hgdi\_\-api}}
+\subsubsection[{get\_\-x\_\-pos}]{\setlength{\rightskip}{0pt plus 5cm}uint16\_\-t get\_\-x\_\-pos (void)}}
+\label{group__hgdi__api_g7e9d358d7d7d5d19b78da9ca5c630fce}
+
+
+get x-coordinate of cursor 
+
+\begin{Desc}
+\item[Returns:]x-coordinate of cursor position \end{Desc}
+\hypertarget{group__hgdi__api_g0237f5d1affe3493f0f428a66d7d1290}{
+\index{hgdi\_\-api@{hgdi\_\-api}!get\_\-y\_\-pos@{get\_\-y\_\-pos}}
+\index{get\_\-y\_\-pos@{get\_\-y\_\-pos}!hgdi_api@{hgdi\_\-api}}
+\subsubsection[{get\_\-y\_\-pos}]{\setlength{\rightskip}{0pt plus 5cm}uint16\_\-t get\_\-y\_\-pos (void)}}
+\label{group__hgdi__api_g0237f5d1affe3493f0f428a66d7d1290}
+
+
+get y-coordinate of cursor 
+
+\begin{Desc}
+\item[Returns:]y-coordinate of cursor position \end{Desc}
+\hypertarget{group__hgdi__api_g7601be835bcebe7b3cdde530f1eee8ae}{
+\index{hgdi\_\-api@{hgdi\_\-api}!goto\_\-xy@{goto\_\-xy}}
+\index{goto\_\-xy@{goto\_\-xy}!hgdi_api@{hgdi\_\-api}}
+\subsubsection[{goto\_\-xy}]{\setlength{\rightskip}{0pt plus 5cm}void goto\_\-xy (uint16\_\-t {\em x}, \/  uint16\_\-t {\em y})}}
+\label{group__hgdi__api_g7601be835bcebe7b3cdde530f1eee8ae}
+
+
+set new cursor position 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em x}]x-coordinate of new cursor position \item[{\em y}]y-coordinate of new cursor position \end{description}
+\end{Desc}
+\hypertarget{group__hgdi__api_ga56b1c619a3b3c381b9cc7ad9e66fb77}{
+\index{hgdi\_\-api@{hgdi\_\-api}!put\_\-pixel@{put\_\-pixel}}
+\index{put\_\-pixel@{put\_\-pixel}!hgdi_api@{hgdi\_\-api}}
+\subsubsection[{put\_\-pixel}]{\setlength{\rightskip}{0pt plus 5cm}void put\_\-pixel (uint16\_\-t {\em x1}, \/  uint16\_\-t {\em y1})}}
+\label{group__hgdi__api_ga56b1c619a3b3c381b9cc7ad9e66fb77}
+
+
+draw pixel with current color at given position 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em x1}]x-coordinate of pixel \item[{\em y1}]y-coordinate of pixel \end{description}
+\end{Desc}
+\hypertarget{group__hgdi__api_g325aa117e69b5614f75198308d116b69}{
+\index{hgdi\_\-api@{hgdi\_\-api}!select\_\-font@{select\_\-font}}
+\index{select\_\-font@{select\_\-font}!hgdi_api@{hgdi\_\-api}}
+\subsubsection[{select\_\-font}]{\setlength{\rightskip}{0pt plus 5cm}void select\_\-font ({\bf halos\_\-font\_\-t} {\em fonts})}}
+\label{group__hgdi__api_g325aa117e69b5614f75198308d116b69}
+
+
+select font 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em fonts}]font to choose \end{description}
+\end{Desc}
+\hypertarget{group__hgdi__api_g4215543853fd0158a34117310a5f5efb}{
+\index{hgdi\_\-api@{hgdi\_\-api}!set\_\-background\_\-color@{set\_\-background\_\-color}}
+\index{set\_\-background\_\-color@{set\_\-background\_\-color}!hgdi_api@{hgdi\_\-api}}
+\subsubsection[{set\_\-background\_\-color}]{\setlength{\rightskip}{0pt plus 5cm}void set\_\-background\_\-color ({\bf color\_\-t} {\em color})}}
+\label{group__hgdi__api_g4215543853fd0158a34117310a5f5efb}
+
+
+set new backgroundcolor 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em color}]new backgroundcolor to be set \end{description}
+\end{Desc}
+\hypertarget{group__hgdi__api_g77a2bc7d1449fa4175ad4655437f90df}{
+\index{hgdi\_\-api@{hgdi\_\-api}!set\_\-background\_\-color\_\-rgb@{set\_\-background\_\-color\_\-rgb}}
+\index{set\_\-background\_\-color\_\-rgb@{set\_\-background\_\-color\_\-rgb}!hgdi_api@{hgdi\_\-api}}
+\subsubsection[{set\_\-background\_\-color\_\-rgb}]{\setlength{\rightskip}{0pt plus 5cm}void set\_\-background\_\-color\_\-rgb (uint8\_\-t {\em r}, \/  uint8\_\-t {\em g}, \/  uint8\_\-t {\em b})}}
+\label{group__hgdi__api_g77a2bc7d1449fa4175ad4655437f90df}
+
+
+set new backgroundcolor in RGB-style 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em r}]red pigment content of new backgroundcolor \item[{\em g}]green pigment content of new backgroundcolor \item[{\em b}]blue pigment content of new backgroundcolor \end{description}
+\end{Desc}
+\hypertarget{group__hgdi__api_gda96baaa4dc5ab037974f7045c9a3868}{
+\index{hgdi\_\-api@{hgdi\_\-api}!set\_\-color@{set\_\-color}}
+\index{set\_\-color@{set\_\-color}!hgdi_api@{hgdi\_\-api}}
+\subsubsection[{set\_\-color}]{\setlength{\rightskip}{0pt plus 5cm}void set\_\-color ({\bf color\_\-t} {\em color})}}
+\label{group__hgdi__api_gda96baaa4dc5ab037974f7045c9a3868}
+
+
+set new color 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em color}]new color to be set \end{description}
+\end{Desc}
+\hypertarget{group__hgdi__api_ge97dbe5fd160d2b86ba22c067ada9f57}{
+\index{hgdi\_\-api@{hgdi\_\-api}!set\_\-color\_\-rgb@{set\_\-color\_\-rgb}}
+\index{set\_\-color\_\-rgb@{set\_\-color\_\-rgb}!hgdi_api@{hgdi\_\-api}}
+\subsubsection[{set\_\-color\_\-rgb}]{\setlength{\rightskip}{0pt plus 5cm}void set\_\-color\_\-rgb (uint8\_\-t {\em r}, \/  uint8\_\-t {\em g}, \/  uint8\_\-t {\em b})}}
+\label{group__hgdi__api_ge97dbe5fd160d2b86ba22c067ada9f57}
+
+
+set new color in RGB-style 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em r}]red pigment content of new color \item[{\em g}]green pigment content of new color \item[{\em b}]blue pigment content of new color \end{description}
+\end{Desc}
+\hypertarget{group__hgdi__api_gb9b7e1a4efa87c1d2a8e6b34d49a3aeb}{
+\index{hgdi\_\-api@{hgdi\_\-api}!set\_\-line\_\-style@{set\_\-line\_\-style}}
+\index{set\_\-line\_\-style@{set\_\-line\_\-style}!hgdi_api@{hgdi\_\-api}}
+\subsubsection[{set\_\-line\_\-style}]{\setlength{\rightskip}{0pt plus 5cm}void set\_\-line\_\-style ({\bf line\_\-style\_\-t} {\em linestyle})}}
+\label{group__hgdi__api_gb9b7e1a4efa87c1d2a8e6b34d49a3aeb}
+
+
+set linestyle 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em linestyle}]value for new linestyle \end{description}
+\end{Desc}
+\hypertarget{group__hgdi__api_g4e1ad4c71558a1855664187428409bba}{
+\index{hgdi\_\-api@{hgdi\_\-api}!set\_\-line\_\-thickness@{set\_\-line\_\-thickness}}
+\index{set\_\-line\_\-thickness@{set\_\-line\_\-thickness}!hgdi_api@{hgdi\_\-api}}
+\subsubsection[{set\_\-line\_\-thickness}]{\setlength{\rightskip}{0pt plus 5cm}void set\_\-line\_\-thickness (uint8\_\-t {\em thickness})}}
+\label{group__hgdi__api_g4e1ad4c71558a1855664187428409bba}
+
+
+set line thickness 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em thickness}]value for line thickness \end{description}
+\end{Desc}
+\hypertarget{group__hgdi__api_gc5a88037655557ae99d1f1144c021f61}{
+\index{hgdi\_\-api@{hgdi\_\-api}!set\_\-text\_\-justify@{set\_\-text\_\-justify}}
+\index{set\_\-text\_\-justify@{set\_\-text\_\-justify}!hgdi_api@{hgdi\_\-api}}
+\subsubsection[{set\_\-text\_\-justify}]{\setlength{\rightskip}{0pt plus 5cm}void set\_\-text\_\-justify (uint8\_\-t {\em horiz}, \/  uint8\_\-t {\em vert})}}
+\label{group__hgdi__api_gc5a88037655557ae99d1f1144c021f61}
+
+
+change alignment of text 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em horiz}]horizontal \item[{\em vert}]vertical \end{description}
+\end{Desc}
+\hypertarget{group__hgdi__api_g8d443553cf6cc32ecaffc97696150b03}{
+\index{hgdi\_\-api@{hgdi\_\-api}!set\_\-x\_\-pos@{set\_\-x\_\-pos}}
+\index{set\_\-x\_\-pos@{set\_\-x\_\-pos}!hgdi_api@{hgdi\_\-api}}
+\subsubsection[{set\_\-x\_\-pos}]{\setlength{\rightskip}{0pt plus 5cm}void set\_\-x\_\-pos (uint16\_\-t {\em x})}}
+\label{group__hgdi__api_g8d443553cf6cc32ecaffc97696150b03}
+
+
+set new x-coordinate for cursor 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em x}]x-coordinate of new cursor position \end{description}
+\end{Desc}
+\hypertarget{group__hgdi__api_ge36f0ada44131f77cd99aac2e1945cc4}{
+\index{hgdi\_\-api@{hgdi\_\-api}!set\_\-y\_\-pos@{set\_\-y\_\-pos}}
+\index{set\_\-y\_\-pos@{set\_\-y\_\-pos}!hgdi_api@{hgdi\_\-api}}
+\subsubsection[{set\_\-y\_\-pos}]{\setlength{\rightskip}{0pt plus 5cm}void set\_\-y\_\-pos (uint16\_\-t {\em y})}}
+\label{group__hgdi__api_ge36f0ada44131f77cd99aac2e1945cc4}
+
+
+set new y-coordinate for cursor 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em y}]y-coordinate of new cursor position \end{description}
+\end{Desc}
+\hypertarget{group__hgdi__api_gdae60538438e5266a1ca190a4f42107b}{
+\index{hgdi\_\-api@{hgdi\_\-api}!vertical\_\-pan@{vertical\_\-pan}}
+\index{vertical\_\-pan@{vertical\_\-pan}!hgdi_api@{hgdi\_\-api}}
+\subsubsection[{vertical\_\-pan}]{\setlength{\rightskip}{0pt plus 5cm}void vertical\_\-pan (int16\_\-t {\em yoffset})}}
+\label{group__hgdi__api_gdae60538438e5266a1ca190a4f42107b}
+
+
+scroll framebuffer up or down 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em yoffset}]value for framebuffer scrolling \end{description}
+\end{Desc}

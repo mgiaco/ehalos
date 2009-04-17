@@ -1,0 +1,92 @@
+\hypertarget{group___l_e_d___d_r_i_v_e_r}{
+\section{Led Driver}
+\label{group___l_e_d___d_r_i_v_e_r}\index{Led Driver@{Led Driver}}
+}
+AP7000 LED driver.  
+
+
+\subsection*{Defines}
+\begin{CompactItemize}
+\item 
+\#define \hyperlink{group___l_e_d___d_r_i_v_e_r_gda38030928bc5c3bdec6b7613fd3cab9}{DEV\_\-UID\_\-NULL}~0
+\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+\hypertarget{group___l_e_d___d_r_i_v_e_r_g0465ca2d4ffd8bed426bd197898bf72b}{
+void \hyperlink{group___l_e_d___d_r_i_v_e_r_g0465ca2d4ffd8bed426bd197898bf72b}{leds\_\-driver\_\-init} (void)}
+\label{group___l_e_d___d_r_i_v_e_r_g0465ca2d4ffd8bed426bd197898bf72b}
+
+\begin{CompactList}\small\item\em initializes the led driver \item\end{CompactList}\item 
+\hyperlink{group___d_e_v_i_c_e___a_p_i_g9f427f7fc1dc07b788af60c2aaa6b8d3}{DEV\_\-UID} \hyperlink{group___l_e_d___d_r_i_v_e_r_gb7d8a66025cb15b1eee23f5612fec260}{leds\_\-driver\_\-open} (uint32\_\-t device\_\-type, uint32\_\-t device\_\-number)
+\begin{CompactList}\small\item\em opens the led driver \item\end{CompactList}\item 
+void \hyperlink{group___l_e_d___d_r_i_v_e_r_ge5f9451ef85692996d440cb67950645a}{leds\_\-driver\_\-set\_\-bit} (\hyperlink{group___d_e_v_i_c_e___a_p_i_g9f427f7fc1dc07b788af60c2aaa6b8d3}{DEV\_\-UID} dev\_\-uid, void $\ast$data)
+\begin{CompactList}\small\item\em sets a led on the board \item\end{CompactList}\item 
+int32\_\-t \hyperlink{group___l_e_d___d_r_i_v_e_r_g1c9941f649946c996f3b22a47d809f94}{leds\_\-driver\_\-close} (\hyperlink{group___d_e_v_i_c_e___a_p_i_g9f427f7fc1dc07b788af60c2aaa6b8d3}{DEV\_\-UID} dev\_\-uid)
+\begin{CompactList}\small\item\em closes the led driver \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+AP7000 LED driver. 
+
+\begin{Desc}
+\item[Note:]... \end{Desc}
+\begin{Desc}
+\item[Author:]b83 \end{Desc}
+\begin{Desc}
+\item[Version:]0.0.0.1 \end{Desc}
+
+
+\subsection{Define Documentation}
+\hypertarget{group___l_e_d___d_r_i_v_e_r_gda38030928bc5c3bdec6b7613fd3cab9}{
+\index{LED\_\-DRIVER@{LED\_\-DRIVER}!DEV\_\-UID\_\-NULL@{DEV\_\-UID\_\-NULL}}
+\index{DEV\_\-UID\_\-NULL@{DEV\_\-UID\_\-NULL}!LED_DRIVER@{LED\_\-DRIVER}}
+\subsubsection[{DEV\_\-UID\_\-NULL}]{\setlength{\rightskip}{0pt plus 5cm}\#define DEV\_\-UID\_\-NULL~0}}
+\label{group___l_e_d___d_r_i_v_e_r_gda38030928bc5c3bdec6b7613fd3cab9}
+
+
+NULL UID 
+
+\subsection{Function Documentation}
+\hypertarget{group___l_e_d___d_r_i_v_e_r_g1c9941f649946c996f3b22a47d809f94}{
+\index{LED\_\-DRIVER@{LED\_\-DRIVER}!leds\_\-driver\_\-close@{leds\_\-driver\_\-close}}
+\index{leds\_\-driver\_\-close@{leds\_\-driver\_\-close}!LED_DRIVER@{LED\_\-DRIVER}}
+\subsubsection[{leds\_\-driver\_\-close}]{\setlength{\rightskip}{0pt plus 5cm}int32\_\-t leds\_\-driver\_\-close ({\bf DEV\_\-UID} {\em dev\_\-uid})}}
+\label{group___l_e_d___d_r_i_v_e_r_g1c9941f649946c996f3b22a47d809f94}
+
+
+closes the led driver 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em dev\_\-uid}]device UID \end{description}
+\end{Desc}
+\hypertarget{group___l_e_d___d_r_i_v_e_r_gb7d8a66025cb15b1eee23f5612fec260}{
+\index{LED\_\-DRIVER@{LED\_\-DRIVER}!leds\_\-driver\_\-open@{leds\_\-driver\_\-open}}
+\index{leds\_\-driver\_\-open@{leds\_\-driver\_\-open}!LED_DRIVER@{LED\_\-DRIVER}}
+\subsubsection[{leds\_\-driver\_\-open}]{\setlength{\rightskip}{0pt plus 5cm}{\bf DEV\_\-UID} leds\_\-driver\_\-open (uint32\_\-t {\em device\_\-type}, \/  uint32\_\-t {\em device\_\-number})}}
+\label{group___l_e_d___d_r_i_v_e_r_gb7d8a66025cb15b1eee23f5612fec260}
+
+
+opens the led driver 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em device\_\-type}]\item[{\em device\_\-number}]\end{description}
+\end{Desc}
+\hypertarget{group___l_e_d___d_r_i_v_e_r_ge5f9451ef85692996d440cb67950645a}{
+\index{LED\_\-DRIVER@{LED\_\-DRIVER}!leds\_\-driver\_\-set\_\-bit@{leds\_\-driver\_\-set\_\-bit}}
+\index{leds\_\-driver\_\-set\_\-bit@{leds\_\-driver\_\-set\_\-bit}!LED_DRIVER@{LED\_\-DRIVER}}
+\subsubsection[{leds\_\-driver\_\-set\_\-bit}]{\setlength{\rightskip}{0pt plus 5cm}void leds\_\-driver\_\-set\_\-bit ({\bf DEV\_\-UID} {\em dev\_\-uid}, \/  void $\ast$ {\em data})}}
+\label{group___l_e_d___d_r_i_v_e_r_ge5f9451ef85692996d440cb67950645a}
+
+
+sets a led on the board 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em dev\_\-uid}]device UID \item[{\em data}]bit to write \end{description}
+\end{Desc}

@@ -1,0 +1,236 @@
+\hypertarget{group___v_m_m___p_r_t}{
+\section{Process Region Table}
+\label{group___v_m_m___p_r_t}\index{Process Region Table@{Process Region Table}}
+}
+The \hyperlink{struct_process}{Process} Region Table should manage the regions and access-rights for a given process. Swapping and Demand-Paging links to different Page Tables. At the moment no swapping is supported and the \hyperlink{struct_process}{Process} Region Table is simply used for unloading the process from the virtual memory system.  
+
+
+\subsection*{Data Structures}
+\begin{CompactItemize}
+\item 
+struct \hyperlink{struct_page_table}{PageTable}
+\item 
+struct \hyperlink{struct_pager}{Pager}
+\item 
+struct \hyperlink{struct_process_region}{ProcessRegion}
+\item 
+struct \hyperlink{struct_process}{Process}
+\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+void \hyperlink{group___v_m_m___p_r_t_g77b59cf14a5524b6cf3ad0455c15b8bb}{initProcessRegionTables} ()
+\item 
+ProcessRegionTablePtr \hyperlink{group___v_m_m___p_r_t_g296088b63a558cf3d38b438dddfd4f06}{reuseProcessRegionTable} (int ASID, BOOL $\ast$autoUnload)
+\item 
+ProcessRegionTablePtr \hyperlink{group___v_m_m___p_r_t_gfb393f1640529f598296f3b4ecee0874}{createProcessRegionTable} (int ASID)
+\item 
+ProcessRegionTablePtr \hyperlink{group___v_m_m___p_r_t_g1a235146354b478aebb943e89d11ebb7}{findProcessRegionTable} (int ASID)
+\item 
+BOOL \hyperlink{group___v_m_m___p_r_t_g9a1a7531051937bcea7f8f373cd5e622}{addBinImageRegionToRamPager} (int ASID, BinImagePtr pBinImage)
+\item 
+BOOL \hyperlink{group___v_m_m___p_r_t_g518e4adc2150f04b43eade644523eec7}{addRegion} (int ASID, \hyperlink{struct_process_region}{ProcessRegionPtr} pProcessRegion)
+\item 
+BOOL \hyperlink{group___v_m_m___p_r_t_ga71999d60ed6ffd380de19b82064e115}{isIllegalProcessRegionTable} (ProcessRegionTablePtr pProcessRegionTable)
+\item 
+BOOL \hyperlink{group___v_m_m___p_r_t_g3005fc0af040931da544c349f3f3997b}{unloadProcessRegionTable} (int ASID)
+\item 
+BOOL \hyperlink{group___v_m_m___p_r_t_g5b19ce07f679920b8eeb08bfe28b37de}{freeProcessRegionTableContents} (ProcessRegionTablePtr pProcessRegionTable)
+\item 
+BOOL \hyperlink{group___v_m_m___p_r_t_gd3367b77c8075f072fd9cbdcce6ed3c8}{freeProcessRegionContents} (\hyperlink{struct_process_region}{ProcessRegionPtr} pProcessRegion)
+\item 
+\hyperlink{struct_process_region}{ProcessRegionPtr} \hyperlink{group___v_m_m___p_r_t_gb544170401f25a8d8400c426ccbf157c}{findProcessRegionByMemoryRegion} (int ASID, size\_\-t size, void $\ast$pMemory)
+\item 
+BOOL \hyperlink{group___v_m_m___p_r_t_g729d2fee9d5aac1f889e6ecae833dd1b}{addRightToProcessRegion} (\hyperlink{struct_process_region}{ProcessRegionPtr} pProcessRegion, AccessRight accessRight)
+\end{CompactItemize}
+\subsection*{Variables}
+\begin{CompactItemize}
+\item 
+\hyperlink{struct_pager}{PagerPtr} \hyperlink{group___v_m_m___p_r_t_gd51c26b7297e20a13f290d1a9063efa5}{Pagers} \mbox{[}$\,$\mbox{]}
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{struct_process}{Process} Region Table should manage the regions and access-rights for a given process. Swapping and Demand-Paging links to different Page Tables. At the moment no swapping is supported and the \hyperlink{struct_process}{Process} Region Table is simply used for unloading the process from the virtual memory system. 
+
+\begin{Desc}
+\item[Note:]... \end{Desc}
+\begin{Desc}
+\item[Author:]drb8w \end{Desc}
+\begin{Desc}
+\item[Version:]0.0.0.1 \end{Desc}
+
+
+\subsection{Function Documentation}
+\hypertarget{group___v_m_m___p_r_t_g9a1a7531051937bcea7f8f373cd5e622}{
+\index{VMM\_\-PRT@{VMM\_\-PRT}!addBinImageRegionToRamPager@{addBinImageRegionToRamPager}}
+\index{addBinImageRegionToRamPager@{addBinImageRegionToRamPager}!VMM_PRT@{VMM\_\-PRT}}
+\subsubsection[{addBinImageRegionToRamPager}]{\setlength{\rightskip}{0pt plus 5cm}BOOL addBinImageRegionToRamPager (int {\em ASID}, \/  BinImagePtr {\em pBinImage})}}
+\label{group___v_m_m___p_r_t_g9a1a7531051937bcea7f8f373cd5e622}
+
+
+Adds all pages of image to appropriate region of region table. Only existent to have an intermediate Solution with the Loader. With full demand paging this is not necessary anymore. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em ASID}]the PID of the process in charge \item[{\em pBinImage}]the process image that will be fully loaded in RAM \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]true if Regions could be added, false otherwise \end{Desc}
+\hypertarget{group___v_m_m___p_r_t_g518e4adc2150f04b43eade644523eec7}{
+\index{VMM\_\-PRT@{VMM\_\-PRT}!addRegion@{addRegion}}
+\index{addRegion@{addRegion}!VMM_PRT@{VMM\_\-PRT}}
+\subsubsection[{addRegion}]{\setlength{\rightskip}{0pt plus 5cm}BOOL addRegion (int {\em ASID}, \/  {\bf ProcessRegionPtr} {\em pProcessRegion})}}
+\label{group___v_m_m___p_r_t_g518e4adc2150f04b43eade644523eec7}
+
+
+Add a given Region to the \hyperlink{struct_process}{Process} Region Table of the process in charge. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em ASID}]the PID of the process in charge \item[{\em pProcessRegion}]the process region that should be added \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]true if adding was successful, false otherwise \end{Desc}
+\hypertarget{group___v_m_m___p_r_t_g729d2fee9d5aac1f889e6ecae833dd1b}{
+\index{VMM\_\-PRT@{VMM\_\-PRT}!addRightToProcessRegion@{addRightToProcessRegion}}
+\index{addRightToProcessRegion@{addRightToProcessRegion}!VMM_PRT@{VMM\_\-PRT}}
+\subsubsection[{addRightToProcessRegion}]{\setlength{\rightskip}{0pt plus 5cm}BOOL addRightToProcessRegion ({\bf ProcessRegionPtr} {\em pProcessRegion}, \/  AccessRight {\em accessRight})}}
+\label{group___v_m_m___p_r_t_g729d2fee9d5aac1f889e6ecae833dd1b}
+
+
+Accumulates a new Right to existing AccessRights of the given \hyperlink{struct_process}{Process} Region. To Be Implemented. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em pProcessRegion}]the \hyperlink{struct_process}{Process} Region to be updated \item[{\em accessRight}]the Access Right to be added \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]TRUE if add was successful, FALSE otherwise \end{Desc}
+\hypertarget{group___v_m_m___p_r_t_gfb393f1640529f598296f3b4ecee0874}{
+\index{VMM\_\-PRT@{VMM\_\-PRT}!createProcessRegionTable@{createProcessRegionTable}}
+\index{createProcessRegionTable@{createProcessRegionTable}!VMM_PRT@{VMM\_\-PRT}}
+\subsubsection[{createProcessRegionTable}]{\setlength{\rightskip}{0pt plus 5cm}ProcessRegionTablePtr createProcessRegionTable (int {\em ASID})}}
+\label{group___v_m_m___p_r_t_gfb393f1640529f598296f3b4ecee0874}
+
+
+Dynamically creates a new \hyperlink{struct_process}{Process} Region Table for a \hyperlink{struct_process}{Process} with a given ASID. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em ASID}]the PID of the process in charge \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]the table if successful, false otherwise \end{Desc}
+\hypertarget{group___v_m_m___p_r_t_gb544170401f25a8d8400c426ccbf157c}{
+\index{VMM\_\-PRT@{VMM\_\-PRT}!findProcessRegionByMemoryRegion@{findProcessRegionByMemoryRegion}}
+\index{findProcessRegionByMemoryRegion@{findProcessRegionByMemoryRegion}!VMM_PRT@{VMM\_\-PRT}}
+\subsubsection[{findProcessRegionByMemoryRegion}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ProcessRegionPtr} findProcessRegionByMemoryRegion (int {\em ASID}, \/  size\_\-t {\em size}, \/  void $\ast$ {\em pMemory})}}
+\label{group___v_m_m___p_r_t_gb544170401f25a8d8400c426ccbf157c}
+
+
+Find \hyperlink{struct_process}{Process} Region according to defined Memory Region. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em ASID}]the PID of the process in charge \item[{\em size}]the size in byte of allocated memory \item[{\em pMemory}]the pointer to allocated memory \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]the found \hyperlink{struct_process_region}{ProcessRegion} or NULL otherwise \end{Desc}
+\hypertarget{group___v_m_m___p_r_t_g1a235146354b478aebb943e89d11ebb7}{
+\index{VMM\_\-PRT@{VMM\_\-PRT}!findProcessRegionTable@{findProcessRegionTable}}
+\index{findProcessRegionTable@{findProcessRegionTable}!VMM_PRT@{VMM\_\-PRT}}
+\subsubsection[{findProcessRegionTable}]{\setlength{\rightskip}{0pt plus 5cm}ProcessRegionTablePtr findProcessRegionTable (int {\em ASID})}}
+\label{group___v_m_m___p_r_t_g1a235146354b478aebb943e89d11ebb7}
+
+
+Returns a \hyperlink{struct_process}{Process} Region Table for the process with the given ASID. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em ASID}]the PID of the process in charge \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]the found \hyperlink{struct_process}{Process} Region Table pointer, NULL otherwise \end{Desc}
+\hypertarget{group___v_m_m___p_r_t_gd3367b77c8075f072fd9cbdcce6ed3c8}{
+\index{VMM\_\-PRT@{VMM\_\-PRT}!freeProcessRegionContents@{freeProcessRegionContents}}
+\index{freeProcessRegionContents@{freeProcessRegionContents}!VMM_PRT@{VMM\_\-PRT}}
+\subsubsection[{freeProcessRegionContents}]{\setlength{\rightskip}{0pt plus 5cm}BOOL freeProcessRegionContents ({\bf ProcessRegionPtr} {\em pProcessRegion})}}
+\label{group___v_m_m___p_r_t_gd3367b77c8075f072fd9cbdcce6ed3c8}
+
+
+Frees contents in given \hyperlink{struct_process}{Process} Region. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em pProcessRegion}]the \hyperlink{struct_process}{Process} Region which contents should be freed \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]TRUE if successful, FALSE otherwise \end{Desc}
+\hypertarget{group___v_m_m___p_r_t_g5b19ce07f679920b8eeb08bfe28b37de}{
+\index{VMM\_\-PRT@{VMM\_\-PRT}!freeProcessRegionTableContents@{freeProcessRegionTableContents}}
+\index{freeProcessRegionTableContents@{freeProcessRegionTableContents}!VMM_PRT@{VMM\_\-PRT}}
+\subsubsection[{freeProcessRegionTableContents}]{\setlength{\rightskip}{0pt plus 5cm}BOOL freeProcessRegionTableContents (ProcessRegionTablePtr {\em pProcessRegionTable})}}
+\label{group___v_m_m___p_r_t_g5b19ce07f679920b8eeb08bfe28b37de}
+
+
+Frees contents in given \hyperlink{struct_process}{Process} Region Table. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em pProcessRegionTable}]the \hyperlink{struct_process}{Process} Region Table which contents should be freed \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]TRUE if successful, FALSE otherwise \end{Desc}
+\hypertarget{group___v_m_m___p_r_t_g77b59cf14a5524b6cf3ad0455c15b8bb}{
+\index{VMM\_\-PRT@{VMM\_\-PRT}!initProcessRegionTables@{initProcessRegionTables}}
+\index{initProcessRegionTables@{initProcessRegionTables}!VMM_PRT@{VMM\_\-PRT}}
+\subsubsection[{initProcessRegionTables}]{\setlength{\rightskip}{0pt plus 5cm}void initProcessRegionTables ()}}
+\label{group___v_m_m___p_r_t_g77b59cf14a5524b6cf3ad0455c15b8bb}
+
+
+Initialise the available \hyperlink{struct_process}{Process} Region Table Pool. \hypertarget{group___v_m_m___p_r_t_ga71999d60ed6ffd380de19b82064e115}{
+\index{VMM\_\-PRT@{VMM\_\-PRT}!isIllegalProcessRegionTable@{isIllegalProcessRegionTable}}
+\index{isIllegalProcessRegionTable@{isIllegalProcessRegionTable}!VMM_PRT@{VMM\_\-PRT}}
+\subsubsection[{isIllegalProcessRegionTable}]{\setlength{\rightskip}{0pt plus 5cm}BOOL isIllegalProcessRegionTable (ProcessRegionTablePtr {\em pProcessRegionTable})}}
+\label{group___v_m_m___p_r_t_ga71999d60ed6ffd380de19b82064e115}
+
+
+Checks if the given \hyperlink{struct_process}{Process} Region Table is illegal, i.e. could be overwritten. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em pProcessRegionTable}]the table in charge \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]true if illegal, false otherwise \end{Desc}
+\hypertarget{group___v_m_m___p_r_t_g296088b63a558cf3d38b438dddfd4f06}{
+\index{VMM\_\-PRT@{VMM\_\-PRT}!reuseProcessRegionTable@{reuseProcessRegionTable}}
+\index{reuseProcessRegionTable@{reuseProcessRegionTable}!VMM_PRT@{VMM\_\-PRT}}
+\subsubsection[{reuseProcessRegionTable}]{\setlength{\rightskip}{0pt plus 5cm}ProcessRegionTablePtr reuseProcessRegionTable (int {\em ASID}, \/  BOOL $\ast$ {\em autoUnload})}}
+\label{group___v_m_m___p_r_t_g296088b63a558cf3d38b438dddfd4f06}
+
+
+If \hyperlink{struct_process}{Process} Region Table with given ASID it is unloaded automatically. Otherwise a new \hyperlink{struct_process}{Process} Region Table for the given ASID is created. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em ASID}]the PID of the process in charge \item[{\em autoUnload}]TRUE if successful aunload happens, FALSE otherwise \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]new \hyperlink{struct_process}{Process} Region Table with default initialisation \end{Desc}
+\hypertarget{group___v_m_m___p_r_t_g3005fc0af040931da544c349f3f3997b}{
+\index{VMM\_\-PRT@{VMM\_\-PRT}!unloadProcessRegionTable@{unloadProcessRegionTable}}
+\index{unloadProcessRegionTable@{unloadProcessRegionTable}!VMM_PRT@{VMM\_\-PRT}}
+\subsubsection[{unloadProcessRegionTable}]{\setlength{\rightskip}{0pt plus 5cm}BOOL unloadProcessRegionTable (int {\em ASID})}}
+\label{group___v_m_m___p_r_t_g3005fc0af040931da544c349f3f3997b}
+
+
+Unloads process with given ASID from all Pagers i.e. from RamPage and SwapPage. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em ASID}]the PID of the process \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]true if a complete remove of all Memory and Swap-Resources was successful, false otherwise \end{Desc}
+
+
+\subsection{Variable Documentation}
+\hypertarget{group___v_m_m___p_r_t_gd51c26b7297e20a13f290d1a9063efa5}{
+\index{VMM\_\-PRT@{VMM\_\-PRT}!Pagers@{Pagers}}
+\index{Pagers@{Pagers}!VMM_PRT@{VMM\_\-PRT}}
+\subsubsection[{Pagers}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Pagers} the available {\bf Pagers}}}
+\label{group___v_m_m___p_r_t_gd51c26b7297e20a13f290d1a9063efa5}
+
+
+At the moment only RamPagers and SwapPagers are available. RamPager is programmed, SwapPager need to be done. 

@@ -1,0 +1,86 @@
+\hypertarget{structmmu__tlb__t}{
+\section{mmu\_\-tlb\_\-t Struct Reference}
+\label{structmmu__tlb__t}\index{mmu\_\-tlb\_\-t@{mmu\_\-tlb\_\-t}}
+}
+Struct which defines options for operating on TLB entries.  
+
+
+{\tt \#include $<$mmu.h$>$}
+
+\subsection*{Data Fields}
+\begin{CompactItemize}
+\item 
+\hypertarget{structmmu__tlb__t_4925d045a0fed4432040de62f9fed980}{
+int \hyperlink{structmmu__tlb__t_4925d045a0fed4432040de62f9fed980}{valid}}
+\label{structmmu__tlb__t_4925d045a0fed4432040de62f9fed980}
+
+\begin{CompactList}\small\item\em Enable if the TLB entry is valid. \item\end{CompactList}\item 
+int \hyperlink{structmmu__tlb__t_6bb98a71abde4276e7f57bb8d35492cb}{type}
+\begin{CompactList}\small\item\em The type of the TLB entry. \item\end{CompactList}\item 
+\hypertarget{structmmu__tlb__t_fa4d92c6ae1107a5a6b6256a8e39f1c1}{
+int \hyperlink{structmmu__tlb__t_fa4d92c6ae1107a5a6b6256a8e39f1c1}{asid}}
+\label{structmmu__tlb__t_fa4d92c6ae1107a5a6b6256a8e39f1c1}
+
+\begin{CompactList}\small\item\em Application space identifier. Used by operating systems to give an unique id to each process. \item\end{CompactList}\item 
+\hypertarget{structmmu__tlb__t_89a065dc5db82b1fce12b5869c7b55f5}{
+int \hyperlink{structmmu__tlb__t_89a065dc5db82b1fce12b5869c7b55f5}{cachable}}
+\label{structmmu__tlb__t_89a065dc5db82b1fce12b5869c7b55f5}
+
+\begin{CompactList}\small\item\em Enable if the page is cachable. \item\end{CompactList}\item 
+\hypertarget{structmmu__tlb__t_4cdcad5d1918a5ac1cd70ccc0e5681eb}{
+int \hyperlink{structmmu__tlb__t_4cdcad5d1918a5ac1cd70ccc0e5681eb}{global}}
+\label{structmmu__tlb__t_4cdcad5d1918a5ac1cd70ccc0e5681eb}
+
+\begin{CompactList}\small\item\em Enable if the MMU is in private virtual memory mode and a global lookup is to be beformed. \item\end{CompactList}\item 
+\hypertarget{structmmu__tlb__t_7eaae47762a66493519ca256a903fa20}{
+int \hyperlink{structmmu__tlb__t_7eaae47762a66493519ca256a903fa20}{bufferable}}
+\label{structmmu__tlb__t_7eaae47762a66493519ca256a903fa20}
+
+\begin{CompactList}\small\item\em Enable if the page is bufferable. \item\end{CompactList}\item 
+\hypertarget{structmmu__tlb__t_f7434b97f74f016a0b7f32d3dd0df6e4}{
+int \hyperlink{structmmu__tlb__t_f7434b97f74f016a0b7f32d3dd0df6e4}{access}}
+\label{structmmu__tlb__t_f7434b97f74f016a0b7f32d3dd0df6e4}
+
+\begin{CompactList}\small\item\em Access permissions specifying the requirements to access the page. \item\end{CompactList}\item 
+\hypertarget{structmmu__tlb__t_318934d32b7f53b5ada76c5f4f6dc500}{
+int \hyperlink{structmmu__tlb__t_318934d32b7f53b5ada76c5f4f6dc500}{dirty}}
+\label{structmmu__tlb__t_318934d32b7f53b5ada76c5f4f6dc500}
+
+\begin{CompactList}\small\item\em Enable if the page has been written to. \item\end{CompactList}\item 
+\hypertarget{structmmu__tlb__t_3e3c7e4b0876ed6622b2d7b2f2b8c5d9}{
+int \hyperlink{structmmu__tlb__t_3e3c7e4b0876ed6622b2d7b2f2b8c5d9}{page\_\-size}}
+\label{structmmu__tlb__t_3e3c7e4b0876ed6622b2d7b2f2b8c5d9}
+
+\begin{CompactList}\small\item\em Page size for the entries. \item\end{CompactList}\item 
+\hypertarget{structmmu__tlb__t_038ab08138d3341a1176414802d68fdb}{
+int \hyperlink{structmmu__tlb__t_038ab08138d3341a1176414802d68fdb}{write\_\-through}}
+\label{structmmu__tlb__t_038ab08138d3341a1176414802d68fdb}
+
+\begin{CompactList}\small\item\em Enable if the cache should use write-through as update policy. Disable for write-back update. \item\end{CompactList}\item 
+\hypertarget{structmmu__tlb__t_c3347ab70ce218cf7abfa442a813c88a}{
+int \hyperlink{structmmu__tlb__t_c3347ab70ce218cf7abfa442a813c88a}{position}}
+\label{structmmu__tlb__t_c3347ab70ce218cf7abfa442a813c88a}
+
+\begin{CompactList}\small\item\em The TLB entry to modify the entry to. \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Struct which defines options for operating on TLB entries. 
+
+\subsection{Field Documentation}
+\hypertarget{structmmu__tlb__t_6bb98a71abde4276e7f57bb8d35492cb}{
+\index{mmu\_\-tlb\_\-t@{mmu\_\-tlb\_\-t}!type@{type}}
+\index{type@{type}!mmu_tlb_t@{mmu\_\-tlb\_\-t}}
+\subsubsection[{type}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf mmu\_\-tlb\_\-t::type}}}
+\label{structmmu__tlb__t_6bb98a71abde4276e7f57bb8d35492cb}
+
+
+The type of the TLB entry. 
+
+\begin{itemize}
+\item MMU\_\-TLB\_\-TYPE\_\-DATA \item MMU\_\-TLB\_\-TYPE\_\-INSTRUCTION \end{itemize}
+
+
+The documentation for this struct was generated from the following file:\begin{CompactItemize}
+\item 
+E:/Ausbildung/Semester3/AVR32\_\-Work1/Halos\_\-Development/src/hal/ports/avr32/ap7x/ap7000/\hyperlink{mmu_8h}{mmu.h}\end{CompactItemize}

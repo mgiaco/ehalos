@@ -1,0 +1,56 @@
+\hypertarget{group___v_m_m___h_e_a_p}{
+\section{Heap Management}
+\label{group___v_m_m___h_e_a_p}\index{Heap Management@{Heap Management}}
+}
+Heap Management to add dynamically allocated regions to \hyperlink{struct_process}{Process} Region Table. Benefits: + Free all Pages at process termination + Memory Protection at Page Level.  
+
+
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+void $\ast$ \hyperlink{group___v_m_m___h_e_a_p_g3303e6b60e6122fb992cfc51ec01616f}{hmalloc} (size\_\-t size)
+\item 
+void \hyperlink{group___v_m_m___h_e_a_p_gb66bfae7d7a736214c5f9c9a566f2b22}{hfree} (void $\ast$ptr)
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Heap Management to add dynamically allocated regions to \hyperlink{struct_process}{Process} Region Table. Benefits: + Free all Pages at process termination + Memory Protection at Page Level. 
+
+Not complete at the moment. System Calls must be implemented.
+
+TODO: + own malloc functions for speed and better control \begin{Desc}
+\item[Note:]... \end{Desc}
+\begin{Desc}
+\item[Author:]drb8w \end{Desc}
+\begin{Desc}
+\item[Version:]0.0.0.1 \end{Desc}
+
+
+\subsection{Function Documentation}
+\hypertarget{group___v_m_m___h_e_a_p_gb66bfae7d7a736214c5f9c9a566f2b22}{
+\index{VMM\_\-HEAP@{VMM\_\-HEAP}!hfree@{hfree}}
+\index{hfree@{hfree}!VMM_HEAP@{VMM\_\-HEAP}}
+\subsubsection[{hfree}]{\setlength{\rightskip}{0pt plus 5cm}void hfree (void $\ast$ {\em ptr})}}
+\label{group___v_m_m___h_e_a_p_gb66bfae7d7a736214c5f9c9a566f2b22}
+
+
+Uses free of std lib and additionally updates \hyperlink{struct_process}{Process} Region Table. Not used at the moment. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em ptr}]pointer to memory to be freed \end{description}
+\end{Desc}
+\hypertarget{group___v_m_m___h_e_a_p_g3303e6b60e6122fb992cfc51ec01616f}{
+\index{VMM\_\-HEAP@{VMM\_\-HEAP}!hmalloc@{hmalloc}}
+\index{hmalloc@{hmalloc}!VMM_HEAP@{VMM\_\-HEAP}}
+\subsubsection[{hmalloc}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ hmalloc (size\_\-t {\em size})}}
+\label{group___v_m_m___h_e_a_p_g3303e6b60e6122fb992cfc51ec01616f}
+
+
+Uses malloc of std lib and additionally updates \hyperlink{struct_process}{Process} Region Table. Not used at the moment. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em size}]size in bytes of allocated region \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]pointer to memory region \end{Desc}

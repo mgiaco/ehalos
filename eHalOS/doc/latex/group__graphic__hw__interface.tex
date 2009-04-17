@@ -1,0 +1,158 @@
+\hypertarget{group__graphic__hw__interface}{
+\section{Graphic Hardware Interface}
+\label{group__graphic__hw__interface}\index{Graphic Hardware Interface@{Graphic Hardware Interface}}
+}
+Hardware Interface for Graphic device.  
+
+
+\subsection*{Data Structures}
+\begin{CompactItemize}
+\item 
+struct \hyperlink{struct_display_info__t}{DisplayInfo\_\-t}
+\begin{CompactList}\small\item\em Struct that defines Display information. \item\end{CompactList}\item 
+struct \hyperlink{struct_cursor__t}{Cursor\_\-t}
+\begin{CompactList}\small\item\em Struct that defines the position of the cursor. \item\end{CompactList}\item 
+struct \hyperlink{struct_line_settings__t}{LineSettings\_\-t}
+\begin{CompactList}\small\item\em Struct that defines the linestyle. \item\end{CompactList}\item 
+struct \hyperlink{struct_font_settings__t}{FontSettings\_\-t}
+\begin{CompactList}\small\item\em Struct that defines the font settings. \item\end{CompactList}\item 
+struct \hyperlink{struct_device_context__t}{DeviceContext\_\-t}
+\begin{CompactList}\small\item\em Struct that defines the device context. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Defines}
+\begin{CompactItemize}
+\item 
+\#define \hyperlink{group__graphic__hw__interface_g04bac763718080bfe54d5a7fa58036d2}{MAXLCDS}~3
+\end{CompactItemize}
+\subsection*{Typedefs}
+\begin{CompactItemize}
+\item 
+typedef void($\ast$ \hyperlink{group__graphic__hw__interface_g18b37a90b4b77654c4a5f7613868d4aa}{VerticalPan\_\-t} )(int16\_\-t yoffset)
+\item 
+typedef void($\ast$ \hyperlink{group__graphic__hw__interface_g91ecaa7e16f781d972a8f96c4cd59492}{Line\_\-t} )(uint16\_\-t x1, uint16\_\-t y1, uint16\_\-t x2, uint16\_\-t y2)
+\item 
+typedef void($\ast$ \hyperlink{group__graphic__hw__interface_gd4fdf6d87a3b08492ea381f7bbc3922f}{PutPixel\_\-t} )(uint16\_\-t x, uint16\_\-t y)
+\item 
+typedef void($\ast$ \hyperlink{group__graphic__hw__interface_g6840b9250f097bd4e0cc14ab0b607101}{ClrPixel\_\-t} )(uint16\_\-t x, uint16\_\-t y)
+\item 
+typedef void($\ast$ \hyperlink{group__graphic__hw__interface_ge9372db6223f46e25c072f5d97b4223f}{SetColor\_\-t} )(uint32\_\-t Color)
+\item 
+typedef void($\ast$ \hyperlink{group__graphic__hw__interface_g7373056a36a75da73dc4921dd10074fa}{SetBGColor\_\-t} )(uint32\_\-t color)
+\item 
+typedef void($\ast$ \hyperlink{group__graphic__hw__interface_g2720234f07ba67eb55362ad2b1b3d102}{SetFontColor\_\-t} )(uint32\_\-t color)
+\item 
+typedef void($\ast$ \hyperlink{group__graphic__hw__interface_g23f1f3d777d2fee79309669dcd30cdac}{PasteRawData\_\-t} )(uint8\_\-t $\ast$data, uint16\_\-t x, uint16\_\-t y, uint16\_\-t length)
+\item 
+typedef void($\ast$ \hyperlink{group__graphic__hw__interface_gd6ccf1837a820c03c88a134373cba158}{Update\_\-t} )(uint16\_\-t top, uint16\_\-t bottom)
+\end{CompactItemize}
+\subsection*{Variables}
+\begin{CompactItemize}
+\item 
+uint8\_\-t \hyperlink{group__graphic__hw__interface_g90833154adae4dc76085e743d7575b52}{CurrentDevice}
+\item 
+\hyperlink{struct_device_context__t}{DeviceContext\_\-t} \hyperlink{group__graphic__hw__interface_g1a43e4812f9eef5a406226252379dc04}{LCD} \mbox{[}MAXLCDS\mbox{]}
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Hardware Interface for Graphic device. 
+
+\begin{Desc}
+\item[Note:]... \end{Desc}
+\begin{Desc}
+\item[Author:]momo \end{Desc}
+\begin{Desc}
+\item[Version:]0.0.0.1 \end{Desc}
+
+
+\subsection{Define Documentation}
+\hypertarget{group__graphic__hw__interface_g04bac763718080bfe54d5a7fa58036d2}{
+\index{graphic\_\-hw\_\-interface@{graphic\_\-hw\_\-interface}!MAXLCDS@{MAXLCDS}}
+\index{MAXLCDS@{MAXLCDS}!graphic_hw_interface@{graphic\_\-hw\_\-interface}}
+\subsubsection[{MAXLCDS}]{\setlength{\rightskip}{0pt plus 5cm}\#define MAXLCDS~3}}
+\label{group__graphic__hw__interface_g04bac763718080bfe54d5a7fa58036d2}
+
+
+number of different device contexts 
+
+\subsection{Typedef Documentation}
+\hypertarget{group__graphic__hw__interface_g6840b9250f097bd4e0cc14ab0b607101}{
+\index{graphic\_\-hw\_\-interface@{graphic\_\-hw\_\-interface}!ClrPixel\_\-t@{ClrPixel\_\-t}}
+\index{ClrPixel\_\-t@{ClrPixel\_\-t}!graphic_hw_interface@{graphic\_\-hw\_\-interface}}
+\subsubsection[{ClrPixel\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ {\bf ClrPixel\_\-t})(uint16\_\-t x, uint16\_\-t y)}}
+\label{group__graphic__hw__interface_g6840b9250f097bd4e0cc14ab0b607101}
+
+
+callback for ClrPixel \hypertarget{group__graphic__hw__interface_g91ecaa7e16f781d972a8f96c4cd59492}{
+\index{graphic\_\-hw\_\-interface@{graphic\_\-hw\_\-interface}!Line\_\-t@{Line\_\-t}}
+\index{Line\_\-t@{Line\_\-t}!graphic_hw_interface@{graphic\_\-hw\_\-interface}}
+\subsubsection[{Line\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ {\bf Line\_\-t})(uint16\_\-t x1, uint16\_\-t y1, uint16\_\-t x2, uint16\_\-t y2)}}
+\label{group__graphic__hw__interface_g91ecaa7e16f781d972a8f96c4cd59492}
+
+
+callback for Line \hypertarget{group__graphic__hw__interface_g23f1f3d777d2fee79309669dcd30cdac}{
+\index{graphic\_\-hw\_\-interface@{graphic\_\-hw\_\-interface}!PasteRawData\_\-t@{PasteRawData\_\-t}}
+\index{PasteRawData\_\-t@{PasteRawData\_\-t}!graphic_hw_interface@{graphic\_\-hw\_\-interface}}
+\subsubsection[{PasteRawData\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ {\bf PasteRawData\_\-t})(uint8\_\-t $\ast$data, uint16\_\-t x, uint16\_\-t y, uint16\_\-t length)}}
+\label{group__graphic__hw__interface_g23f1f3d777d2fee79309669dcd30cdac}
+
+
+callback for PasteRawData \hypertarget{group__graphic__hw__interface_gd4fdf6d87a3b08492ea381f7bbc3922f}{
+\index{graphic\_\-hw\_\-interface@{graphic\_\-hw\_\-interface}!PutPixel\_\-t@{PutPixel\_\-t}}
+\index{PutPixel\_\-t@{PutPixel\_\-t}!graphic_hw_interface@{graphic\_\-hw\_\-interface}}
+\subsubsection[{PutPixel\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ {\bf PutPixel\_\-t})(uint16\_\-t x, uint16\_\-t y)}}
+\label{group__graphic__hw__interface_gd4fdf6d87a3b08492ea381f7bbc3922f}
+
+
+callback for PutPixel \hypertarget{group__graphic__hw__interface_g7373056a36a75da73dc4921dd10074fa}{
+\index{graphic\_\-hw\_\-interface@{graphic\_\-hw\_\-interface}!SetBGColor\_\-t@{SetBGColor\_\-t}}
+\index{SetBGColor\_\-t@{SetBGColor\_\-t}!graphic_hw_interface@{graphic\_\-hw\_\-interface}}
+\subsubsection[{SetBGColor\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ {\bf SetBGColor\_\-t})(uint32\_\-t color)}}
+\label{group__graphic__hw__interface_g7373056a36a75da73dc4921dd10074fa}
+
+
+callback for SetBGColor \hypertarget{group__graphic__hw__interface_ge9372db6223f46e25c072f5d97b4223f}{
+\index{graphic\_\-hw\_\-interface@{graphic\_\-hw\_\-interface}!SetColor\_\-t@{SetColor\_\-t}}
+\index{SetColor\_\-t@{SetColor\_\-t}!graphic_hw_interface@{graphic\_\-hw\_\-interface}}
+\subsubsection[{SetColor\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ {\bf SetColor\_\-t})(uint32\_\-t Color)}}
+\label{group__graphic__hw__interface_ge9372db6223f46e25c072f5d97b4223f}
+
+
+callback for SetColor \hypertarget{group__graphic__hw__interface_g2720234f07ba67eb55362ad2b1b3d102}{
+\index{graphic\_\-hw\_\-interface@{graphic\_\-hw\_\-interface}!SetFontColor\_\-t@{SetFontColor\_\-t}}
+\index{SetFontColor\_\-t@{SetFontColor\_\-t}!graphic_hw_interface@{graphic\_\-hw\_\-interface}}
+\subsubsection[{SetFontColor\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ {\bf SetFontColor\_\-t})(uint32\_\-t color)}}
+\label{group__graphic__hw__interface_g2720234f07ba67eb55362ad2b1b3d102}
+
+
+callback for SetFontColor \hypertarget{group__graphic__hw__interface_gd6ccf1837a820c03c88a134373cba158}{
+\index{graphic\_\-hw\_\-interface@{graphic\_\-hw\_\-interface}!Update\_\-t@{Update\_\-t}}
+\index{Update\_\-t@{Update\_\-t}!graphic_hw_interface@{graphic\_\-hw\_\-interface}}
+\subsubsection[{Update\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ {\bf Update\_\-t})(uint16\_\-t top, uint16\_\-t bottom)}}
+\label{group__graphic__hw__interface_gd6ccf1837a820c03c88a134373cba158}
+
+
+callback for Update \hypertarget{group__graphic__hw__interface_g18b37a90b4b77654c4a5f7613868d4aa}{
+\index{graphic\_\-hw\_\-interface@{graphic\_\-hw\_\-interface}!VerticalPan\_\-t@{VerticalPan\_\-t}}
+\index{VerticalPan\_\-t@{VerticalPan\_\-t}!graphic_hw_interface@{graphic\_\-hw\_\-interface}}
+\subsubsection[{VerticalPan\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ {\bf VerticalPan\_\-t})(int16\_\-t yoffset)}}
+\label{group__graphic__hw__interface_g18b37a90b4b77654c4a5f7613868d4aa}
+
+
+callback for VerticalPan 
+
+\subsection{Variable Documentation}
+\hypertarget{group__graphic__hw__interface_g90833154adae4dc76085e743d7575b52}{
+\index{graphic\_\-hw\_\-interface@{graphic\_\-hw\_\-interface}!CurrentDevice@{CurrentDevice}}
+\index{CurrentDevice@{CurrentDevice}!graphic_hw_interface@{graphic\_\-hw\_\-interface}}
+\subsubsection[{CurrentDevice}]{\setlength{\rightskip}{0pt plus 5cm}uint8\_\-t {\bf CurrentDevice}}}
+\label{group__graphic__hw__interface_g90833154adae4dc76085e743d7575b52}
+
+
+device currently active \hypertarget{group__graphic__hw__interface_g1a43e4812f9eef5a406226252379dc04}{
+\index{graphic\_\-hw\_\-interface@{graphic\_\-hw\_\-interface}!LCD@{LCD}}
+\index{LCD@{LCD}!graphic_hw_interface@{graphic\_\-hw\_\-interface}}
+\subsubsection[{LCD}]{\setlength{\rightskip}{0pt plus 5cm}{\bf DeviceContext\_\-t} {\bf LCD}\mbox{[}MAXLCDS\mbox{]}}}
+\label{group__graphic__hw__interface_g1a43e4812f9eef5a406226252379dc04}
+
+
+device context array 

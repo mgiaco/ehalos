@@ -1,0 +1,98 @@
+\hypertarget{pio_8h}{
+\section{E:/Ausbildung/Semester3/AVR32\_\-Work1/Halos\_\-Development/src/hal/ports/avr32/ap7x/ap7000/pio.h File Reference}
+\label{pio_8h}\index{E:/Ausbildung/Semester3/AVR32\_\-Work1/Halos\_\-Development/src/hal/ports/avr32/ap7x/ap7000/pio.h@{E:/Ausbildung/Semester3/AVR32\_\-Work1/Halos\_\-Development/src/hal/ports/avr32/ap7x/ap7000/pio.h}}
+}
+pio driver functions  
+
+
+\subsection*{Typedefs}
+\begin{CompactItemize}
+\item 
+typedef char \hyperlink{pio_8h_e3e4e5c4f0784fd66613f9aedffb758a}{avr32\_\-piomap\_\-t} \mbox{[}$\,$\mbox{]}\mbox{[}2\mbox{]}
+\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+volatile avr32\_\-pio\_\-t $\ast$ \hyperlink{pio_8h_0bd74eb36ce8ba84b30411571192a207}{pioGetHandle} (int port)
+\item 
+int \hyperlink{pio_8h_11350a4ffdfbbd00abb0acee8faefcfa}{pio\_\-setup\_\-pin} (int pin, int function)
+\item 
+void \hyperlink{pio_8h_45c2e62c9da21ea0aea60d9dcd8023fa}{pio\_\-enable\_\-module} (\hyperlink{pio_8h_e3e4e5c4f0784fd66613f9aedffb758a}{avr32\_\-piomap\_\-t} piomap, int size)
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+pio driver functions 
+
+This file contains basic pio driver functions.
+
+\begin{itemize}
+\item Compiler: IAR EWAAVR32 and GNU GCC for AVR32\item Supported actDevices: All AVR32 actDevices with a PIO module can be used. The example is written for AP7000 and STK1000.\item AppNote: AVR32111 - Using the AVR32 PIO Controller\end{itemize}
+
+
+\begin{Desc}
+\item[Author:]Atmel Corporation: \href{http://www.atmel.com}{\tt http://www.atmel.com} \par
+ Support email: \href{mailto:avr32@atmel.com}{\tt avr32@atmel.com}\end{Desc}
+\begin{Desc}
+\item[Name]\end{Desc}
+\begin{Desc}
+\item[Revision]1.5 \end{Desc}
+\begin{Desc}
+\item[RCSfile]\hyperlink{pio_8h}{pio.h},v \end{Desc}
+\begin{Desc}
+\item[Date]2006/05/10 12:01:41 \end{Desc}
+
+
+\subsection{Typedef Documentation}
+\hypertarget{pio_8h_e3e4e5c4f0784fd66613f9aedffb758a}{
+\index{pio.h@{pio.h}!avr32\_\-piomap\_\-t@{avr32\_\-piomap\_\-t}}
+\index{avr32\_\-piomap\_\-t@{avr32\_\-piomap\_\-t}!pio.h@{pio.h}}
+\subsubsection[{avr32\_\-piomap\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef char {\bf avr32\_\-piomap\_\-t}\mbox{[}$\,$\mbox{]}\mbox{[}2\mbox{]}}}
+\label{pio_8h_e3e4e5c4f0784fd66613f9aedffb758a}
+
+
+A type definitions of pins and module connectivity. First column is the pin number, the second is pio connectivity 
+
+\subsection{Function Documentation}
+\hypertarget{pio_8h_45c2e62c9da21ea0aea60d9dcd8023fa}{
+\index{pio.h@{pio.h}!pio\_\-enable\_\-module@{pio\_\-enable\_\-module}}
+\index{pio\_\-enable\_\-module@{pio\_\-enable\_\-module}!pio.h@{pio.h}}
+\subsubsection[{pio\_\-enable\_\-module}]{\setlength{\rightskip}{0pt plus 5cm}void pio\_\-enable\_\-module ({\bf avr32\_\-piomap\_\-t} {\em piomap}, \/  int {\em size})}}
+\label{pio_8h_45c2e62c9da21ea0aea60d9dcd8023fa}
+
+
+This function will enable a module pin for a given set of pins and respective modules \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em $\ast$piomap}]A list of pins and pio connectivity \item[{\em size}]The number of pins in $\ast$piomap \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]nothing \end{Desc}
+\hypertarget{pio_8h_11350a4ffdfbbd00abb0acee8faefcfa}{
+\index{pio.h@{pio.h}!pio\_\-setup\_\-pin@{pio\_\-setup\_\-pin}}
+\index{pio\_\-setup\_\-pin@{pio\_\-setup\_\-pin}!pio.h@{pio.h}}
+\subsubsection[{pio\_\-setup\_\-pin}]{\setlength{\rightskip}{0pt plus 5cm}int pio\_\-setup\_\-pin (int {\em pin}, \/  int {\em function})}}
+\label{pio_8h_11350a4ffdfbbd00abb0acee8faefcfa}
+
+
+This function will put a single pin under a module's control \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em $\ast$pin}]The pin number \item[{\em $\ast$function}]The PIO module which to enable \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]PIO\_\-SUCCESS or PIO\_\-INVALID\_\-ARGUMENT \end{Desc}
+\hypertarget{pio_8h_0bd74eb36ce8ba84b30411571192a207}{
+\index{pio.h@{pio.h}!pioGetHandle@{pioGetHandle}}
+\index{pioGetHandle@{pioGetHandle}!pio.h@{pio.h}}
+\subsubsection[{pioGetHandle}]{\setlength{\rightskip}{0pt plus 5cm}volatile avr32\_\-pio\_\-t$\ast$ pioGetHandle (int {\em port})}}
+\label{pio_8h_0bd74eb36ce8ba84b30411571192a207}
+
+
+This function will return the baseaddress for a port \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em $\ast$port}]The port number \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]The port's baseaddress \end{Desc}

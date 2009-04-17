@@ -1,0 +1,116 @@
+\hypertarget{group___u_a_r_t}{
+\section{halos interrupt driven UART}
+\label{group___u_a_r_t}\index{halos interrupt driven UART@{halos interrupt driven UART}}
+}
+halos interrupt driven UART  
+
+
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+void \hyperlink{group___u_a_r_t_gd48c3413dab488fe3579ebcbee2466c7}{uart1\_\-set\_\-rx\_\-and\_\-tx\_\-buffer} (volatile \hyperlink{struct_serial_buffer_tag}{SerialBuffer} $\ast$txBuff, volatile \hyperlink{struct_serial_buffer_tag}{SerialBuffer} $\ast$rxBuff)
+\begin{CompactList}\small\item\em Sets the receive and transmit buffers. \item\end{CompactList}\item 
+void \hyperlink{group___u_a_r_t_gcc3cd7a0b6eb68cf02b2210cb8323459}{uart1\_\-init} (volatile \hyperlink{struct_serial_buffer_tag}{SerialBuffer} $\ast$txBuff, volatile \hyperlink{struct_serial_buffer_tag}{SerialBuffer} $\ast$rxBuff)
+\begin{CompactList}\small\item\em Initializes the UART. \item\end{CompactList}\item 
+void \hyperlink{group___u_a_r_t_g75dde68cc8f67ab4bfdf2ee60296265c}{uart1\_\-putch} (int32\_\-t ch)
+\begin{CompactList}\small\item\em writes a character into the write buffer \item\end{CompactList}\item 
+\hypertarget{group___u_a_r_t_gc8cf863b2fa1760aa3a7d78f45805c53}{
+int32\_\-t \hyperlink{group___u_a_r_t_gc8cf863b2fa1760aa3a7d78f45805c53}{uart1\_\-getch} (void)}
+\label{group___u_a_r_t_gc8cf863b2fa1760aa3a7d78f45805c53}
+
+\begin{CompactList}\small\item\em reads a character from the read buffer \item\end{CompactList}\item 
+void \hyperlink{group___u_a_r_t_ga5b52914c1970eda2abf78b6891c5202}{uart1\_\-puts} (const char $\ast$string)
+\begin{CompactList}\small\item\em writes a string into the write buffer \item\end{CompactList}\item 
+\hypertarget{group___u_a_r_t_g7a4362872363cb4449f1710361dab520}{
+void \hyperlink{group___u_a_r_t_g7a4362872363cb4449f1710361dab520}{usart\_\-int\_\-handler} ()}
+\label{group___u_a_r_t_g7a4362872363cb4449f1710361dab520}
+
+\begin{CompactList}\small\item\em UART interrupt handler; initiatzes focus switch when '$|$' received. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Variables}
+\begin{CompactItemize}
+\item 
+\hypertarget{group___u_a_r_t_gd7f6a2a3df8e38e27346cdce67a384e5}{
+volatile \hyperlink{struct_serial_buffer_tag}{SerialBuffer} $\ast$ \hyperlink{group___u_a_r_t_gd7f6a2a3df8e38e27346cdce67a384e5}{txBuffer}}
+\label{group___u_a_r_t_gd7f6a2a3df8e38e27346cdce67a384e5}
+
+\begin{CompactList}\small\item\em reference to the write buffer \item\end{CompactList}\item 
+\hypertarget{group___u_a_r_t_ga9654342dbd9496b7f76a6453a7f0dff}{
+volatile \hyperlink{struct_serial_buffer_tag}{SerialBuffer} $\ast$ \hyperlink{group___u_a_r_t_ga9654342dbd9496b7f76a6453a7f0dff}{rxBuffer}}
+\label{group___u_a_r_t_ga9654342dbd9496b7f76a6453a7f0dff}
+
+\begin{CompactList}\small\item\em reference to the read buffer \item\end{CompactList}\item 
+\hypertarget{group___u_a_r_t_g6dd5e0e639beaa7c61014c923478b465}{
+volatile avr32\_\-usart\_\-t $\ast$ \hyperlink{group___u_a_r_t_g6dd5e0e639beaa7c61014c923478b465}{myusart}}
+\label{group___u_a_r_t_g6dd5e0e639beaa7c61014c923478b465}
+
+\begin{CompactList}\small\item\em reference to the UART \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+halos interrupt driven UART 
+
+\begin{Desc}
+\item[Note:]... \end{Desc}
+\begin{Desc}
+\item[Author:]b83 \end{Desc}
+\begin{Desc}
+\item[Version:]0.0.0.1 \end{Desc}
+
+
+\subsection{Function Documentation}
+\hypertarget{group___u_a_r_t_gcc3cd7a0b6eb68cf02b2210cb8323459}{
+\index{UART@{UART}!uart1\_\-init@{uart1\_\-init}}
+\index{uart1\_\-init@{uart1\_\-init}!UART@{UART}}
+\subsubsection[{uart1\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void uart1\_\-init (volatile {\bf SerialBuffer} $\ast$ {\em txBuff}, \/  volatile {\bf SerialBuffer} $\ast$ {\em rxBuff})}}
+\label{group___u_a_r_t_gcc3cd7a0b6eb68cf02b2210cb8323459}
+
+
+Initializes the UART. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em txBuff}]the transmit buffer \item[{\em rxBuff}]the receive buffer \end{description}
+\end{Desc}
+\hypertarget{group___u_a_r_t_g75dde68cc8f67ab4bfdf2ee60296265c}{
+\index{UART@{UART}!uart1\_\-putch@{uart1\_\-putch}}
+\index{uart1\_\-putch@{uart1\_\-putch}!UART@{UART}}
+\subsubsection[{uart1\_\-putch}]{\setlength{\rightskip}{0pt plus 5cm}void uart1\_\-putch (int32\_\-t {\em ch})}}
+\label{group___u_a_r_t_g75dde68cc8f67ab4bfdf2ee60296265c}
+
+
+writes a character into the write buffer 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em ch}]the character to write \end{description}
+\end{Desc}
+\hypertarget{group___u_a_r_t_ga5b52914c1970eda2abf78b6891c5202}{
+\index{UART@{UART}!uart1\_\-puts@{uart1\_\-puts}}
+\index{uart1\_\-puts@{uart1\_\-puts}!UART@{UART}}
+\subsubsection[{uart1\_\-puts}]{\setlength{\rightskip}{0pt plus 5cm}void uart1\_\-puts (const char $\ast$ {\em string})}}
+\label{group___u_a_r_t_ga5b52914c1970eda2abf78b6891c5202}
+
+
+writes a string into the write buffer 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em string}]the string to write \end{description}
+\end{Desc}
+\hypertarget{group___u_a_r_t_gd48c3413dab488fe3579ebcbee2466c7}{
+\index{UART@{UART}!uart1\_\-set\_\-rx\_\-and\_\-tx\_\-buffer@{uart1\_\-set\_\-rx\_\-and\_\-tx\_\-buffer}}
+\index{uart1\_\-set\_\-rx\_\-and\_\-tx\_\-buffer@{uart1\_\-set\_\-rx\_\-and\_\-tx\_\-buffer}!UART@{UART}}
+\subsubsection[{uart1\_\-set\_\-rx\_\-and\_\-tx\_\-buffer}]{\setlength{\rightskip}{0pt plus 5cm}void uart1\_\-set\_\-rx\_\-and\_\-tx\_\-buffer (volatile {\bf SerialBuffer} $\ast$ {\em txBuff}, \/  volatile {\bf SerialBuffer} $\ast$ {\em rxBuff})}}
+\label{group___u_a_r_t_gd48c3413dab488fe3579ebcbee2466c7}
+
+
+Sets the receive and transmit buffers. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em txBuff}]the transmit buffer \item[{\em rxBuff}]the receive buffer \end{description}
+\end{Desc}

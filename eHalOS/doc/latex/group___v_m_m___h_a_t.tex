@@ -1,0 +1,154 @@
+\hypertarget{group___v_m_m___h_a_t}{
+\section{Hash Anchor Table}
+\label{group___v_m_m___h_a_t}\index{Hash Anchor Table@{Hash Anchor Table}}
+}
+description of Hash Anchor Table  
+
+
+\subsection*{Defines}
+\begin{CompactItemize}
+\item 
+\hypertarget{group___v_m_m___h_a_t_g35a8dc8d1a8ad33e7cab49639b6a12a1}{
+\#define \hyperlink{group___v_m_m___h_a_t_g35a8dc8d1a8ad33e7cab49639b6a12a1}{NROFBUCKETS}~256}
+\label{group___v_m_m___h_a_t_g35a8dc8d1a8ad33e7cab49639b6a12a1}
+
+\begin{CompactList}\small\item\em identifies the number of buckets i.e. entries in the Hash Anchor Table \item\end{CompactList}\end{CompactItemize}
+\subsection*{Typedefs}
+\begin{CompactItemize}
+\item 
+typedef int32\_\-t \hyperlink{group___v_m_m___h_a_t_g06b98a0b294446afee1b27a04682d7c2}{HashAnchorTableEntry}
+\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+void \hyperlink{group___v_m_m___h_a_t_ge31a05f91c4fb2cb19f80de59672a3fc}{initHashAnchorTable} ()
+\item 
+int32\_\-t \hyperlink{group___v_m_m___h_a_t_g25766528701c0fd3f34edbe61803e398}{getHashAnchorTableIndex} (int32\_\-t ASID, int32\_\-t VPN)
+\item 
+\hyperlink{group___v_m_m___h_a_t_g06b98a0b294446afee1b27a04682d7c2}{HashAnchorTableEntry} \hyperlink{group___v_m_m___h_a_t_g6d77bf5eb6d8b03e762b5b5c4f82a3d9}{getHATEntry} (int32\_\-t hatIndex)
+\item 
+BOOL \hyperlink{group___v_m_m___h_a_t_g04b252b48624d628fb9679afac037553}{setHATEntry} (int32\_\-t hatIndex, \hyperlink{group___v_m_m___h_a_t_g06b98a0b294446afee1b27a04682d7c2}{HashAnchorTableEntry} hatEntry)
+\item 
+BOOL \hyperlink{group___v_m_m___h_a_t_g65d55af720a6e86ea7018e5455047269}{setIllegalHATEntry} (int32\_\-t hatIndex)
+\item 
+\hyperlink{group___v_m_m___h_a_t_g06b98a0b294446afee1b27a04682d7c2}{HashAnchorTableEntry} \hyperlink{group___v_m_m___h_a_t_g675250e60a6a6b29b540d8a029db25bf}{createHATEntry} (int iptIndex)
+\item 
+BOOL \hyperlink{group___v_m_m___h_a_t_g310fed144216406f0affe436c1231342}{isIllegalHATIndex} (int32\_\-t hatIndex)
+\item 
+BOOL \hyperlink{group___v_m_m___h_a_t_g103d7fcf856a6ff6afb186439d1c308e}{isIllegalHATEntry} (\hyperlink{group___v_m_m___h_a_t_g06b98a0b294446afee1b27a04682d7c2}{HashAnchorTableEntry} hatEntry)
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+description of Hash Anchor Table 
+
+\begin{Desc}
+\item[Note:]... \end{Desc}
+\begin{Desc}
+\item[Author:]drb8w \end{Desc}
+\begin{Desc}
+\item[Version:]0.0.0.1 \end{Desc}
+
+
+\subsection{Typedef Documentation}
+\hypertarget{group___v_m_m___h_a_t_g06b98a0b294446afee1b27a04682d7c2}{
+\index{VMM\_\-HAT@{VMM\_\-HAT}!HashAnchorTableEntry@{HashAnchorTableEntry}}
+\index{HashAnchorTableEntry@{HashAnchorTableEntry}!VMM_HAT@{VMM\_\-HAT}}
+\subsubsection[{HashAnchorTableEntry}]{\setlength{\rightskip}{0pt plus 5cm}{\bf HashAnchorTableEntry}}}
+\label{group___v_m_m___h_a_t_g06b98a0b294446afee1b27a04682d7c2}
+
+
+hash anchor table entry 
+
+\subsection{Function Documentation}
+\hypertarget{group___v_m_m___h_a_t_g675250e60a6a6b29b540d8a029db25bf}{
+\index{VMM\_\-HAT@{VMM\_\-HAT}!createHATEntry@{createHATEntry}}
+\index{createHATEntry@{createHATEntry}!VMM_HAT@{VMM\_\-HAT}}
+\subsubsection[{createHATEntry}]{\setlength{\rightskip}{0pt plus 5cm}{\bf HashAnchorTableEntry} createHATEntry (int {\em iptIndex})}}
+\label{group___v_m_m___h_a_t_g675250e60a6a6b29b540d8a029db25bf}
+
+
+Creates an hash anchor table entry out of an inverted page table index. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em iptIndex}]the IPT index which determines the HAT Entry. \end{description}
+\end{Desc}
+\hypertarget{group___v_m_m___h_a_t_g25766528701c0fd3f34edbe61803e398}{
+\index{VMM\_\-HAT@{VMM\_\-HAT}!getHashAnchorTableIndex@{getHashAnchorTableIndex}}
+\index{getHashAnchorTableIndex@{getHashAnchorTableIndex}!VMM_HAT@{VMM\_\-HAT}}
+\subsubsection[{getHashAnchorTableIndex}]{\setlength{\rightskip}{0pt plus 5cm}int32\_\-t getHashAnchorTableIndex (int32\_\-t {\em ASID}, \/  int32\_\-t {\em VPN})}}
+\label{group___v_m_m___h_a_t_g25766528701c0fd3f34edbe61803e398}
+
+
+Hash-function that transforms the ASID and VPN to an anchor table index. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em ASID}]the ASID to integrate in hash \item[{\em VPN}]the VPN to integrate in hash \end{description}
+\end{Desc}
+\hypertarget{group___v_m_m___h_a_t_g6d77bf5eb6d8b03e762b5b5c4f82a3d9}{
+\index{VMM\_\-HAT@{VMM\_\-HAT}!getHATEntry@{getHATEntry}}
+\index{getHATEntry@{getHATEntry}!VMM_HAT@{VMM\_\-HAT}}
+\subsubsection[{getHATEntry}]{\setlength{\rightskip}{0pt plus 5cm}{\bf HashAnchorTableEntry} getHATEntry (int32\_\-t {\em hatIndex})}}
+\label{group___v_m_m___h_a_t_g6d77bf5eb6d8b03e762b5b5c4f82a3d9}
+
+
+Returns the hash anchor table entry of the given index in the hash anchor table. The hash anchor table entry is the index in the inverted page table. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em hatIndex}]the HAT index to be transformed \end{description}
+\end{Desc}
+\hypertarget{group___v_m_m___h_a_t_ge31a05f91c4fb2cb19f80de59672a3fc}{
+\index{VMM\_\-HAT@{VMM\_\-HAT}!initHashAnchorTable@{initHashAnchorTable}}
+\index{initHashAnchorTable@{initHashAnchorTable}!VMM_HAT@{VMM\_\-HAT}}
+\subsubsection[{initHashAnchorTable}]{\setlength{\rightskip}{0pt plus 5cm}void initHashAnchorTable ()}}
+\label{group___v_m_m___h_a_t_ge31a05f91c4fb2cb19f80de59672a3fc}
+
+
+Initialize the hash anchor table with ILLEGALHATENTRY's. \hypertarget{group___v_m_m___h_a_t_g103d7fcf856a6ff6afb186439d1c308e}{
+\index{VMM\_\-HAT@{VMM\_\-HAT}!isIllegalHATEntry@{isIllegalHATEntry}}
+\index{isIllegalHATEntry@{isIllegalHATEntry}!VMM_HAT@{VMM\_\-HAT}}
+\subsubsection[{isIllegalHATEntry}]{\setlength{\rightskip}{0pt plus 5cm}BOOL isIllegalHATEntry ({\bf HashAnchorTableEntry} {\em hatEntry})}}
+\label{group___v_m_m___h_a_t_g103d7fcf856a6ff6afb186439d1c308e}
+
+
+Checks if the hash anchor table entry is illegal. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em hatEntry}]the HAT Entry to be verified \end{description}
+\end{Desc}
+\hypertarget{group___v_m_m___h_a_t_g310fed144216406f0affe436c1231342}{
+\index{VMM\_\-HAT@{VMM\_\-HAT}!isIllegalHATIndex@{isIllegalHATIndex}}
+\index{isIllegalHATIndex@{isIllegalHATIndex}!VMM_HAT@{VMM\_\-HAT}}
+\subsubsection[{isIllegalHATIndex}]{\setlength{\rightskip}{0pt plus 5cm}BOOL isIllegalHATIndex (int32\_\-t {\em hatIndex})}}
+\label{group___v_m_m___h_a_t_g310fed144216406f0affe436c1231342}
+
+
+Checks if the hash anchor table index is illegal. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em hatIndex}]the HAT index to be verified \end{description}
+\end{Desc}
+\hypertarget{group___v_m_m___h_a_t_g04b252b48624d628fb9679afac037553}{
+\index{VMM\_\-HAT@{VMM\_\-HAT}!setHATEntry@{setHATEntry}}
+\index{setHATEntry@{setHATEntry}!VMM_HAT@{VMM\_\-HAT}}
+\subsubsection[{setHATEntry}]{\setlength{\rightskip}{0pt plus 5cm}BOOL setHATEntry (int32\_\-t {\em hatIndex}, \/  {\bf HashAnchorTableEntry} {\em hatEntry})}}
+\label{group___v_m_m___h_a_t_g04b252b48624d628fb9679afac037553}
+
+
+Set HAT entry if HAT index and HAT entry are not illegal. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em hatIndex}]the HAT index at which the HAT Entry is set \item[{\em hatEntry}]the HAT entry that is be set \end{description}
+\end{Desc}
+\hypertarget{group___v_m_m___h_a_t_g65d55af720a6e86ea7018e5455047269}{
+\index{VMM\_\-HAT@{VMM\_\-HAT}!setIllegalHATEntry@{setIllegalHATEntry}}
+\index{setIllegalHATEntry@{setIllegalHATEntry}!VMM_HAT@{VMM\_\-HAT}}
+\subsubsection[{setIllegalHATEntry}]{\setlength{\rightskip}{0pt plus 5cm}BOOL setIllegalHATEntry (int32\_\-t {\em hatIndex})}}
+\label{group___v_m_m___h_a_t_g65d55af720a6e86ea7018e5455047269}
+
+
+Set an ILLEGAL HAT entry if the given HAT index is not illegal. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em hatIndex}]the HAT index at which the ILLEGAL HAT Entry is set \end{description}
+\end{Desc}

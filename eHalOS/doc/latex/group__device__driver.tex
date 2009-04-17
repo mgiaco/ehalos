@@ -1,0 +1,106 @@
+\hypertarget{group__device__driver}{
+\section{Device independend structure}
+\label{group__device__driver}\index{Device independend structure@{Device independend structure}}
+}
+Device independend structure.  
+
+
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+\hyperlink{group___d_e_v_i_c_e___a_p_i_g9f427f7fc1dc07b788af60c2aaa6b8d3}{DEV\_\-UID} \hyperlink{group__device__driver_g66f128d4bb74eca88758ca73f2fa4f9c}{generate\_\-dev\_\-uid} (void)
+\begin{CompactList}\small\item\em generates an unique id for a device \item\end{CompactList}\item 
+\hypertarget{group__device__driver_gdebc80251d3a7020d049c948f308fdea}{
+void \hyperlink{group__device__driver_gdebc80251d3a7020d049c948f308fdea}{init\_\-all\_\-drivers} (void)}
+\label{group__device__driver_gdebc80251d3a7020d049c948f308fdea}
+
+\begin{CompactList}\small\item\em closes a device \item\end{CompactList}\item 
+device\_\-t $\ast$ \hyperlink{group__device__driver_gf52df4f2578f48dbe154d5cb1643e7a7}{open\_\-driver} (\hyperlink{group___d_e_v_i_c_e___a_p_i_g9f427f7fc1dc07b788af60c2aaa6b8d3}{DEV\_\-UID} $\ast$dev\_\-uid, uint32\_\-t device\_\-type, uint32\_\-t device\_\-number)
+\begin{CompactList}\small\item\em opens a device \item\end{CompactList}\item 
+int32\_\-t \hyperlink{group__device__driver_g908734a3944d1f0d08ba5490c13e1ac6}{read\_\-driver} (\hyperlink{group___d_e_v_i_c_e___a_p_i_g9f427f7fc1dc07b788af60c2aaa6b8d3}{DEV\_\-UID} dev\_\-uid, device\_\-t $\ast$dev, void $\ast$data)
+\begin{CompactList}\small\item\em reads data from a device \item\end{CompactList}\item 
+void \hyperlink{group__device__driver_gc3f852bf9a4da163836eb9bdd23e6dd8}{write\_\-driver} (\hyperlink{group___d_e_v_i_c_e___a_p_i_g9f427f7fc1dc07b788af60c2aaa6b8d3}{DEV\_\-UID} dev\_\-uid, device\_\-t $\ast$dev, void $\ast$data)
+\begin{CompactList}\small\item\em writes a unit of data to the device \item\end{CompactList}\item 
+int32\_\-t \hyperlink{group__device__driver_g4915a14d06f79d1c5a2d72b186cee40d}{close\_\-driver} (device\_\-t $\ast$dev, \hyperlink{group___d_e_v_i_c_e___a_p_i_g9f427f7fc1dc07b788af60c2aaa6b8d3}{DEV\_\-UID} dev\_\-uid)
+\begin{CompactList}\small\item\em closes a device \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Device independend structure. 
+
+\begin{Desc}
+\item[Note:]... \end{Desc}
+\begin{Desc}
+\item[Author:]b83 \end{Desc}
+\begin{Desc}
+\item[Version:]0.0.0.1 \end{Desc}
+
+
+\subsection{Function Documentation}
+\hypertarget{group__device__driver_g4915a14d06f79d1c5a2d72b186cee40d}{
+\index{device\_\-driver@{device\_\-driver}!close\_\-driver@{close\_\-driver}}
+\index{close\_\-driver@{close\_\-driver}!device_driver@{device\_\-driver}}
+\subsubsection[{close\_\-driver}]{\setlength{\rightskip}{0pt plus 5cm}int32\_\-t close\_\-driver (device\_\-t $\ast$ {\em dev}, \/  {\bf DEV\_\-UID} {\em dev\_\-uid})}}
+\label{group__device__driver_g4915a14d06f79d1c5a2d72b186cee40d}
+
+
+closes a device 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em dev}]pointer to device struct \item[{\em dev\_\-uid}]unique device number \end{description}
+\end{Desc}
+\hypertarget{group__device__driver_g66f128d4bb74eca88758ca73f2fa4f9c}{
+\index{device\_\-driver@{device\_\-driver}!generate\_\-dev\_\-uid@{generate\_\-dev\_\-uid}}
+\index{generate\_\-dev\_\-uid@{generate\_\-dev\_\-uid}!device_driver@{device\_\-driver}}
+\subsubsection[{generate\_\-dev\_\-uid}]{\setlength{\rightskip}{0pt plus 5cm}{\bf DEV\_\-UID} generate\_\-dev\_\-uid (void)}}
+\label{group__device__driver_g66f128d4bb74eca88758ca73f2fa4f9c}
+
+
+generates an unique id for a device 
+
+\begin{Desc}
+\item[Returns:]unique id \end{Desc}
+\hypertarget{group__device__driver_gf52df4f2578f48dbe154d5cb1643e7a7}{
+\index{device\_\-driver@{device\_\-driver}!open\_\-driver@{open\_\-driver}}
+\index{open\_\-driver@{open\_\-driver}!device_driver@{device\_\-driver}}
+\subsubsection[{open\_\-driver}]{\setlength{\rightskip}{0pt plus 5cm}device\_\-t$\ast$ open\_\-driver ({\bf DEV\_\-UID} $\ast$ {\em dev\_\-uid}, \/  uint32\_\-t {\em device\_\-type}, \/  uint32\_\-t {\em device\_\-number})}}
+\label{group__device__driver_gf52df4f2578f48dbe154d5cb1643e7a7}
+
+
+opens a device 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em dev\_\-uid}]unique device number \item[{\em device\_\-type}]the type of device which should be opened(USART, BIT, ...) \item[{\em device\_\-number}]the index of the device, because there could be multiple of the same type \end{description}
+\end{Desc}
+\hypertarget{group__device__driver_g908734a3944d1f0d08ba5490c13e1ac6}{
+\index{device\_\-driver@{device\_\-driver}!read\_\-driver@{read\_\-driver}}
+\index{read\_\-driver@{read\_\-driver}!device_driver@{device\_\-driver}}
+\subsubsection[{read\_\-driver}]{\setlength{\rightskip}{0pt plus 5cm}int32\_\-t read\_\-driver ({\bf DEV\_\-UID} {\em dev\_\-uid}, \/  device\_\-t $\ast$ {\em dev}, \/  void $\ast$ {\em data})}}
+\label{group__device__driver_g908734a3944d1f0d08ba5490c13e1ac6}
+
+
+reads data from a device 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em dev\_\-uid}]unique device number \item[{\em dev}]pointer to device struct \item[{\em data}]pointer to data buffer \end{description}
+\end{Desc}
+\hypertarget{group__device__driver_gc3f852bf9a4da163836eb9bdd23e6dd8}{
+\index{device\_\-driver@{device\_\-driver}!write\_\-driver@{write\_\-driver}}
+\index{write\_\-driver@{write\_\-driver}!device_driver@{device\_\-driver}}
+\subsubsection[{write\_\-driver}]{\setlength{\rightskip}{0pt plus 5cm}void write\_\-driver ({\bf DEV\_\-UID} {\em dev\_\-uid}, \/  device\_\-t $\ast$ {\em dev}, \/  void $\ast$ {\em data})}}
+\label{group__device__driver_gc3f852bf9a4da163836eb9bdd23e6dd8}
+
+
+writes a unit of data to the device 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em dev\_\-uid}]unique device number \item[{\em dev}]device independent structure \item[{\em data}]pointer to data \end{description}
+\end{Desc}

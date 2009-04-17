@@ -1,0 +1,185 @@
+\hypertarget{group___d_e_v_i_c_e___a_p_i}{
+\section{Halos Device Api}
+\label{group___d_e_v_i_c_e___a_p_i}\index{Halos Device Api@{Halos Device Api}}
+}
+Halos Device API.  
+
+
+\subsection*{Modules}
+\begin{CompactItemize}
+\item 
+\hyperlink{group___a_p7000___d_e_v}{AP7000 specific devices}
+\begin{CompactList}\small\item\em AP7000 specific device types. \item\end{CompactList}
+
+\end{CompactItemize}
+\subsection*{Typedefs}
+\begin{CompactItemize}
+\item 
+\hypertarget{group___d_e_v_i_c_e___a_p_i_g9f427f7fc1dc07b788af60c2aaa6b8d3}{
+typedef int32\_\-t \hyperlink{group___d_e_v_i_c_e___a_p_i_g9f427f7fc1dc07b788af60c2aaa6b8d3}{DEV\_\-UID}}
+\label{group___d_e_v_i_c_e___a_p_i_g9f427f7fc1dc07b788af60c2aaa6b8d3}
+
+\begin{CompactList}\small\item\em typedef for unique device identifier \item\end{CompactList}\item 
+\hypertarget{group___d_e_v_i_c_e___a_p_i_g53a212d0c5c1447ccc5325ca00c90e98}{
+typedef int32\_\-t \hyperlink{group___d_e_v_i_c_e___a_p_i_g53a212d0c5c1447ccc5325ca00c90e98}{DRV\_\-ID}}
+\label{group___d_e_v_i_c_e___a_p_i_g53a212d0c5c1447ccc5325ca00c90e98}
+
+\begin{CompactList}\small\item\em typedef for driver type \item\end{CompactList}\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+\hypertarget{group___d_e_v_i_c_e___a_p_i_g811bf83f91422a12605214335366a38d}{
+void \hyperlink{group___d_e_v_i_c_e___a_p_i_g811bf83f91422a12605214335366a38d}{device\_\-init} (void)}
+\label{group___d_e_v_i_c_e___a_p_i_g811bf83f91422a12605214335366a38d}
+
+\begin{CompactList}\small\item\em initalize all devices for use with Halos \item\end{CompactList}\item 
+device\_\-t $\ast$ \hyperlink{group___d_e_v_i_c_e___a_p_i_gb4bf1da93b05a0e9b89351a6f14b8d86}{device\_\-open} (\hyperlink{group___d_e_v_i_c_e___a_p_i_g9f427f7fc1dc07b788af60c2aaa6b8d3}{DEV\_\-UID} $\ast$dev\_\-uid, int32\_\-t device\_\-type, int32\_\-t device\_\-number)
+\begin{CompactList}\small\item\em open device \item\end{CompactList}\item 
+void \hyperlink{group___d_e_v_i_c_e___a_p_i_gdbf6ebde9656a7eee490f554ac3dcbea}{device\_\-write\_\-byte} (device\_\-t $\ast$dev, \hyperlink{group___d_e_v_i_c_e___a_p_i_g9f427f7fc1dc07b788af60c2aaa6b8d3}{DEV\_\-UID} dev\_\-uid, char data)
+\begin{CompactList}\small\item\em write byte to device \item\end{CompactList}\item 
+int16\_\-t \hyperlink{group___d_e_v_i_c_e___a_p_i_g61a1f3d441ef22c1fe3d42420134c51d}{device\_\-read\_\-byte} (device\_\-t $\ast$dev, \hyperlink{group___d_e_v_i_c_e___a_p_i_g9f427f7fc1dc07b788af60c2aaa6b8d3}{DEV\_\-UID} dev\_\-uid)
+\begin{CompactList}\small\item\em read byte from device \item\end{CompactList}\item 
+int32\_\-t \hyperlink{group___d_e_v_i_c_e___a_p_i_gca0e04a4b3f9379a4d094ca2dcd4388b}{device\_\-close} (device\_\-t $\ast$dev, \hyperlink{group___d_e_v_i_c_e___a_p_i_g9f427f7fc1dc07b788af60c2aaa6b8d3}{DEV\_\-UID} dev\_\-uid)
+\begin{CompactList}\small\item\em close device \item\end{CompactList}\item 
+device\_\-t $\ast$ \hyperlink{group___d_e_v_i_c_e___a_p_i_g2b7371d08d6707e136b6027980c5e49f}{rm\_\-device\_\-open} (\hyperlink{group___d_e_v_i_c_e___a_p_i_g9f427f7fc1dc07b788af60c2aaa6b8d3}{DEV\_\-UID} $\ast$dev\_\-uid, int32\_\-t device\_\-type, int32\_\-t device\_\-number)
+\begin{CompactList}\small\item\em open device (ressource manager) \item\end{CompactList}\item 
+void \hyperlink{group___d_e_v_i_c_e___a_p_i_g21fbe79e12278075a0999eb4650db12e}{rm\_\-device\_\-write\_\-byte} (device\_\-t $\ast$dev, \hyperlink{group___d_e_v_i_c_e___a_p_i_g9f427f7fc1dc07b788af60c2aaa6b8d3}{DEV\_\-UID} dev\_\-uid, char data)
+\begin{CompactList}\small\item\em write byte to device (ressource manager) \item\end{CompactList}\item 
+int16\_\-t \hyperlink{group___d_e_v_i_c_e___a_p_i_gf62d9b836db6b6a2d17d6b6f86c556d2}{rm\_\-device\_\-read\_\-byte} (device\_\-t $\ast$dev, \hyperlink{group___d_e_v_i_c_e___a_p_i_g9f427f7fc1dc07b788af60c2aaa6b8d3}{DEV\_\-UID} dev\_\-uid)
+\begin{CompactList}\small\item\em read byte from device (ressource manager) \item\end{CompactList}\item 
+int32\_\-t \hyperlink{group___d_e_v_i_c_e___a_p_i_g43618e7de934afd7241ae12191fb15d2}{rm\_\-device\_\-close} (device\_\-t $\ast$dev, \hyperlink{group___d_e_v_i_c_e___a_p_i_g9f427f7fc1dc07b788af60c2aaa6b8d3}{DEV\_\-UID} dev\_\-uid)
+\begin{CompactList}\small\item\em close device (ressource manager) \item\end{CompactList}\end{CompactItemize}
+\subsection*{Variables}
+\begin{CompactItemize}
+\item 
+\hypertarget{group___d_e_v_i_c_e___a_p_i_ga20a83acab6e9ba5c69b47092a295521}{
+device\_\-t \hyperlink{group___d_e_v_i_c_e___a_p_i_ga20a83acab6e9ba5c69b47092a295521}{actDevices} \mbox{[}$\,$\mbox{]}}
+\label{group___d_e_v_i_c_e___a_p_i_ga20a83acab6e9ba5c69b47092a295521}
+
+\begin{CompactList}\small\item\em array for all available devices \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Halos Device API. 
+
+\subsection{Function Documentation}
+\hypertarget{group___d_e_v_i_c_e___a_p_i_gca0e04a4b3f9379a4d094ca2dcd4388b}{
+\index{DEVICE\_\-API@{DEVICE\_\-API}!device\_\-close@{device\_\-close}}
+\index{device\_\-close@{device\_\-close}!DEVICE_API@{DEVICE\_\-API}}
+\subsubsection[{device\_\-close}]{\setlength{\rightskip}{0pt plus 5cm}int32\_\-t device\_\-close (device\_\-t $\ast$ {\em dev}, \/  {\bf DEV\_\-UID} {\em dev\_\-uid})}}
+\label{group___d_e_v_i_c_e___a_p_i_gca0e04a4b3f9379a4d094ca2dcd4388b}
+
+
+close device 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em dev}]device \item[{\em dev\_\-uid}]unique device identifier \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]Status \end{Desc}
+\hypertarget{group___d_e_v_i_c_e___a_p_i_gb4bf1da93b05a0e9b89351a6f14b8d86}{
+\index{DEVICE\_\-API@{DEVICE\_\-API}!device\_\-open@{device\_\-open}}
+\index{device\_\-open@{device\_\-open}!DEVICE_API@{DEVICE\_\-API}}
+\subsubsection[{device\_\-open}]{\setlength{\rightskip}{0pt plus 5cm}device\_\-t$\ast$ device\_\-open ({\bf DEV\_\-UID} $\ast$ {\em dev\_\-uid}, \/  int32\_\-t {\em device\_\-type}, \/  int32\_\-t {\em device\_\-number})}}
+\label{group___d_e_v_i_c_e___a_p_i_gb4bf1da93b05a0e9b89351a6f14b8d86}
+
+
+open device 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em dev\_\-uid}]unique device identifier \item[{\em device\_\-type}]device type which should be opened \item[{\em device\_\-number}]device number to open \end{description}
+\end{Desc}
+\hypertarget{group___d_e_v_i_c_e___a_p_i_g61a1f3d441ef22c1fe3d42420134c51d}{
+\index{DEVICE\_\-API@{DEVICE\_\-API}!device\_\-read\_\-byte@{device\_\-read\_\-byte}}
+\index{device\_\-read\_\-byte@{device\_\-read\_\-byte}!DEVICE_API@{DEVICE\_\-API}}
+\subsubsection[{device\_\-read\_\-byte}]{\setlength{\rightskip}{0pt plus 5cm}int16\_\-t device\_\-read\_\-byte (device\_\-t $\ast$ {\em dev}, \/  {\bf DEV\_\-UID} {\em dev\_\-uid})}}
+\label{group___d_e_v_i_c_e___a_p_i_g61a1f3d441ef22c1fe3d42420134c51d}
+
+
+read byte from device 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em dev}]device \item[{\em dev\_\-uid}]unique device identifier \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]databyte \end{Desc}
+\hypertarget{group___d_e_v_i_c_e___a_p_i_gdbf6ebde9656a7eee490f554ac3dcbea}{
+\index{DEVICE\_\-API@{DEVICE\_\-API}!device\_\-write\_\-byte@{device\_\-write\_\-byte}}
+\index{device\_\-write\_\-byte@{device\_\-write\_\-byte}!DEVICE_API@{DEVICE\_\-API}}
+\subsubsection[{device\_\-write\_\-byte}]{\setlength{\rightskip}{0pt plus 5cm}void device\_\-write\_\-byte (device\_\-t $\ast$ {\em dev}, \/  {\bf DEV\_\-UID} {\em dev\_\-uid}, \/  char {\em data})}}
+\label{group___d_e_v_i_c_e___a_p_i_gdbf6ebde9656a7eee490f554ac3dcbea}
+
+
+write byte to device 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em dev}]device \item[{\em dev\_\-uid}]unique device identifier \item[{\em data}]databyte which is written to device \end{description}
+\end{Desc}
+\hypertarget{group___d_e_v_i_c_e___a_p_i_g43618e7de934afd7241ae12191fb15d2}{
+\index{DEVICE\_\-API@{DEVICE\_\-API}!rm\_\-device\_\-close@{rm\_\-device\_\-close}}
+\index{rm\_\-device\_\-close@{rm\_\-device\_\-close}!DEVICE_API@{DEVICE\_\-API}}
+\subsubsection[{rm\_\-device\_\-close}]{\setlength{\rightskip}{0pt plus 5cm}int32\_\-t rm\_\-device\_\-close (device\_\-t $\ast$ {\em dev}, \/  {\bf DEV\_\-UID} {\em dev\_\-uid})}}
+\label{group___d_e_v_i_c_e___a_p_i_g43618e7de934afd7241ae12191fb15d2}
+
+
+close device (ressource manager) 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em dev}]device \item[{\em dev\_\-uid}]unique device identifier \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]Status \end{Desc}
+\hypertarget{group___d_e_v_i_c_e___a_p_i_g2b7371d08d6707e136b6027980c5e49f}{
+\index{DEVICE\_\-API@{DEVICE\_\-API}!rm\_\-device\_\-open@{rm\_\-device\_\-open}}
+\index{rm\_\-device\_\-open@{rm\_\-device\_\-open}!DEVICE_API@{DEVICE\_\-API}}
+\subsubsection[{rm\_\-device\_\-open}]{\setlength{\rightskip}{0pt plus 5cm}device\_\-t$\ast$ rm\_\-device\_\-open ({\bf DEV\_\-UID} $\ast$ {\em dev\_\-uid}, \/  int32\_\-t {\em device\_\-type}, \/  int32\_\-t {\em device\_\-number})}}
+\label{group___d_e_v_i_c_e___a_p_i_g2b7371d08d6707e136b6027980c5e49f}
+
+
+open device (ressource manager) 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em dev\_\-uid}]unique device identifier \item[{\em device\_\-type}]device type which should be opened \item[{\em device\_\-number}]device number to open \end{description}
+\end{Desc}
+\hypertarget{group___d_e_v_i_c_e___a_p_i_gf62d9b836db6b6a2d17d6b6f86c556d2}{
+\index{DEVICE\_\-API@{DEVICE\_\-API}!rm\_\-device\_\-read\_\-byte@{rm\_\-device\_\-read\_\-byte}}
+\index{rm\_\-device\_\-read\_\-byte@{rm\_\-device\_\-read\_\-byte}!DEVICE_API@{DEVICE\_\-API}}
+\subsubsection[{rm\_\-device\_\-read\_\-byte}]{\setlength{\rightskip}{0pt plus 5cm}int16\_\-t rm\_\-device\_\-read\_\-byte (device\_\-t $\ast$ {\em dev}, \/  {\bf DEV\_\-UID} {\em dev\_\-uid})}}
+\label{group___d_e_v_i_c_e___a_p_i_gf62d9b836db6b6a2d17d6b6f86c556d2}
+
+
+read byte from device (ressource manager) 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em dev}]device \item[{\em dev\_\-uid}]unique device identifier \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]databyte \end{Desc}
+\hypertarget{group___d_e_v_i_c_e___a_p_i_g21fbe79e12278075a0999eb4650db12e}{
+\index{DEVICE\_\-API@{DEVICE\_\-API}!rm\_\-device\_\-write\_\-byte@{rm\_\-device\_\-write\_\-byte}}
+\index{rm\_\-device\_\-write\_\-byte@{rm\_\-device\_\-write\_\-byte}!DEVICE_API@{DEVICE\_\-API}}
+\subsubsection[{rm\_\-device\_\-write\_\-byte}]{\setlength{\rightskip}{0pt plus 5cm}void rm\_\-device\_\-write\_\-byte (device\_\-t $\ast$ {\em dev}, \/  {\bf DEV\_\-UID} {\em dev\_\-uid}, \/  char {\em data})}}
+\label{group___d_e_v_i_c_e___a_p_i_g21fbe79e12278075a0999eb4650db12e}
+
+
+write byte to device (ressource manager) 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em dev}]device \item[{\em dev\_\-uid}]unique device identifier \item[{\em data}]databyte which is written to device \end{description}
+\end{Desc}

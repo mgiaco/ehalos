@@ -1,0 +1,96 @@
+\hypertarget{structprocess_control_block}{
+\section{processControlBlock Struct Reference}
+\label{structprocess_control_block}\index{processControlBlock@{processControlBlock}}
+}
+Control Block for holding all the task informations, used mainly by the schuduler.  
+
+
+{\tt \#include $<$pcb.h$>$}
+
+\subsection*{Data Fields}
+\begin{CompactItemize}
+\item 
+\hypertarget{structprocess_control_block_8ecf4f4cf7cf110755d39adcbdcf6dc4}{
+unsigned int \hyperlink{structprocess_control_block_8ecf4f4cf7cf110755d39adcbdcf6dc4}{regStack} \mbox{[}REGISTER\_\-STACK\_\-SIZE\mbox{]}}
+\label{structprocess_control_block_8ecf4f4cf7cf110755d39adcbdcf6dc4}
+
+\begin{CompactList}\small\item\em Register Stack Array. \item\end{CompactList}\item 
+\hypertarget{structprocess_control_block_b2af277c72882910be2b136976551d54}{
+uint32\_\-t $\ast$ \hyperlink{structprocess_control_block_b2af277c72882910be2b136976551d54}{ptrToStack}}
+\label{structprocess_control_block_b2af277c72882910be2b136976551d54}
+
+\begin{CompactList}\small\item\em Points to the start of the stack. \item\end{CompactList}\item 
+\hypertarget{structprocess_control_block_f7f2be4cd50729f89344d33f9bfb74cd}{
+char \hyperlink{structprocess_control_block_f7f2be4cd50729f89344d33f9bfb74cd}{processName} \mbox{[}20\mbox{]}}
+\label{structprocess_control_block_f7f2be4cd50729f89344d33f9bfb74cd}
+
+\begin{CompactList}\small\item\em Descriptive name given to the task when created. Facilitates debugging only. \item\end{CompactList}\item 
+\hypertarget{structprocess_control_block_cafa2bbce99614e6736f2590b765943a}{
+unsigned long \hyperlink{structprocess_control_block_cafa2bbce99614e6736f2590b765943a}{pgd}}
+\label{structprocess_control_block_cafa2bbce99614e6736f2590b765943a}
+
+\begin{CompactList}\small\item\em Pagetable, pointer to the Page Global Directory of the task, every task has exactly one Page Global Directory. \item\end{CompactList}\item 
+volatile long \hyperlink{structprocess_control_block_b4db55d4f01fe77a8afe8debb9c701fd}{state}
+\begin{CompactList}\small\item\em used for task states, \item\end{CompactList}\item 
+\hypertarget{structprocess_control_block_6f4757b4e3c771f3b7251fc947f87864}{
+unsigned long \hyperlink{structprocess_control_block_6f4757b4e3c771f3b7251fc947f87864}{start\_\-time}}
+\label{structprocess_control_block_6f4757b4e3c771f3b7251fc947f87864}
+
+\begin{CompactList}\small\item\em creation timestamp \item\end{CompactList}\item 
+\hypertarget{structprocess_control_block_459444de3deb07d946e9e51b2d42a743}{
+unsigned long \hyperlink{structprocess_control_block_459444de3deb07d946e9e51b2d42a743}{cpu\_\-time\_\-running}}
+\label{structprocess_control_block_459444de3deb07d946e9e51b2d42a743}
+
+\begin{CompactList}\small\item\em cputime (in running mode)... jiffies / how long already running / for performance counting \item\end{CompactList}\item 
+\hypertarget{structprocess_control_block_e47d6266c3d12363d51288c00bb8dcd3}{
+unsigned long \hyperlink{structprocess_control_block_e47d6266c3d12363d51288c00bb8dcd3}{cpu\_\-time\_\-waiting}}
+\label{structprocess_control_block_e47d6266c3d12363d51288c00bb8dcd3}
+
+\begin{CompactList}\small\item\em cputime (in runnalbe or iowaiting mode)..... jiffies/ how long already running / for performance counting \item\end{CompactList}\item 
+\hypertarget{structprocess_control_block_e1ec74771382f57fa0b561b1f3350cf0}{
+int32\_\-t \hyperlink{structprocess_control_block_e1ec74771382f57fa0b561b1f3350cf0}{sched\_\-priority}}
+\label{structprocess_control_block_e1ec74771382f57fa0b561b1f3350cf0}
+
+\begin{CompactList}\small\item\em priority for standard round robin (priority changes every scheduler-run) \item\end{CompactList}\item 
+\hypertarget{structprocess_control_block_2b3b876b8030e23294fbce5deba0ac3d}{
+int32\_\-t \hyperlink{structprocess_control_block_2b3b876b8030e23294fbce5deba0ac3d}{sched\_\-realtime\_\-deadline}}
+\label{structprocess_control_block_2b3b876b8030e23294fbce5deba0ac3d}
+
+\begin{CompactList}\small\item\em for realtime scheduling, EDF: Earliest Deadline First (NOT USED YET) \item\end{CompactList}\item 
+\hypertarget{structprocess_control_block_9a4c948bc3150853aa90553bc21f2a23}{
+int32\_\-t \hyperlink{structprocess_control_block_9a4c948bc3150853aa90553bc21f2a23}{suspend\_\-time}}
+\label{structprocess_control_block_9a4c948bc3150853aa90553bc21f2a23}
+
+\begin{CompactList}\small\item\em how long task have to be suspended \item\end{CompactList}\item 
+\hypertarget{structprocess_control_block_a63851f8df2f18c1dd47055e3a77dc76}{
+processFkt \hyperlink{structprocess_control_block_a63851f8df2f18c1dd47055e3a77dc76}{pfkt}}
+\label{structprocess_control_block_a63851f8df2f18c1dd47055e3a77dc76}
+
+\begin{CompactList}\small\item\em process function pointer \item\end{CompactList}\item 
+\hypertarget{structprocess_control_block_90ad408d94361ba70a6871a5dc6dd873}{
+struct \hyperlink{structprocess_control_block}{processControlBlock} $\ast$ \hyperlink{structprocess_control_block_90ad408d94361ba70a6871a5dc6dd873}{ptrNextTask}}
+\label{structprocess_control_block_90ad408d94361ba70a6871a5dc6dd873}
+
+\begin{CompactList}\small\item\em pointer to next task \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Control Block for holding all the task informations, used mainly by the schuduler. 
+
+\subsection{Field Documentation}
+\hypertarget{structprocess_control_block_b4db55d4f01fe77a8afe8debb9c701fd}{
+\index{processControlBlock@{processControlBlock}!state@{state}}
+\index{state@{state}!processControlBlock@{processControlBlock}}
+\subsubsection[{state}]{\setlength{\rightskip}{0pt plus 5cm}volatile long {\bf processControlBlock::state}}}
+\label{structprocess_control_block_b4db55d4f01fe77a8afe8debb9c701fd}
+
+
+used for task states, 
+
+\begin{Desc}
+\item[See also:]\hyperlink{sched_8h}{sched.h} - Constants for the different task states \end{Desc}
+
+
+The documentation for this struct was generated from the following file:\begin{CompactItemize}
+\item 
+E:/Ausbildung/Semester3/AVR32\_\-Work1/Halos\_\-Development/src/kernel/process\_\-manager/inc/\hyperlink{pcb_8h}{pcb.h}\end{CompactItemize}

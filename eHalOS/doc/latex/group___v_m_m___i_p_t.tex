@@ -1,0 +1,189 @@
+\hypertarget{group___v_m_m___i_p_t}{
+\section{Inverted Page Table}
+\label{group___v_m_m___i_p_t}\index{Inverted Page Table@{Inverted Page Table}}
+}
+Inverted Page Table. The basic idea of an inverted page table is to have only one page table for the complete memory and all loaded processes. The entries identify the physical frames rather than the virtual pages. The main advantage is that no TLB flush is necessary between process switches. Another advantage is that the memory usage of the page table is moderate. The search speed of a given Page Table Entry depends heavily on the hash-algorithm that uses ASID and VPN. With a goog hash-algorithm two to three lookups are necessary. A disadvantage is that no memory sharing is possible with the standard variant.  
+
+
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+void \hyperlink{group___v_m_m___i_p_t_g633bd0e0b24708177aebf72079714748}{initInvertedPageTable} ()
+\item 
+\hyperlink{struct_page_table_entry}{PageTableEntryPtr} \hyperlink{group___v_m_m___i_p_t_g4495d1e87487776b13d7c0f8c8c75ec9}{searchPageTableEntryAndHashAnchorAndPreviousInIPT} (\hyperlink{struct_t_l_b_e_h_i}{TLBEHIPtr} pTLBEntryHigh, \hyperlink{struct_page_table_entry}{PageTableEntryHdl} hHashAnchorPTEntry, \hyperlink{struct_page_table_entry}{PageTableEntryHdl} hPrevPTEntry)
+\item 
+\hyperlink{struct_page_table_entry}{PageTableEntryPtr} \hyperlink{group___v_m_m___i_p_t_g1ce348812f454f6c840bbbbcbad37add}{searchPageTableEntryAndHashAnchorInIPT} (\hyperlink{struct_t_l_b_e_h_i}{TLBEHIPtr} pTLBEntryHigh, \hyperlink{struct_page_table_entry}{PageTableEntryHdl} hHashAnchorPTEntry)
+\item 
+\hyperlink{struct_page_table_entry}{PageTableEntryPtr} \hyperlink{group___v_m_m___i_p_t_g6a86fa230ac72f34daf47257381eb181}{searchPageTableEntryAndPreviousInIPT} (\hyperlink{struct_t_l_b_e_h_i}{TLBEHIPtr} pTLBEntryHigh, \hyperlink{group___v_m_m___h_a_t_g06b98a0b294446afee1b27a04682d7c2}{HashAnchorTableEntry} hatEntry, \hyperlink{struct_page_table_entry}{PageTableEntryHdl} hPrevPTEntry)
+\item 
+\hyperlink{struct_page_table_entry}{PageTableEntryPtr} \hyperlink{group___v_m_m___i_p_t_g150394a17b25cd9912983172c7b3803a}{searchPageTableEntryInIPT} (\hyperlink{struct_t_l_b_e_h_i}{TLBEHIPtr} pTLBEntryHigh, \hyperlink{group___v_m_m___h_a_t_g06b98a0b294446afee1b27a04682d7c2}{HashAnchorTableEntry} hatEntry)
+\item 
+\hyperlink{struct_page_table_entry}{PageTableEntryPtr} \hyperlink{group___v_m_m___i_p_t_gceafcd302dd2b1aca0074e443f53d093}{searchPageTableEntryAndPreviousInPTE} (\hyperlink{struct_page_table_entry}{PageTableEntryPtr} pPTEntry, \hyperlink{struct_t_l_b_e_h_i}{TLBEHIPtr} pTLBEntryHigh, \hyperlink{struct_page_table_entry}{PageTableEntryHdl} hPrevPTEntry)
+\item 
+\hyperlink{struct_page_table_entry}{PageTableEntryPtr} \hyperlink{group___v_m_m___i_p_t_g87ad4a7444ff78fa4502299524d8a5b9}{searchPageTableEntryInPTE} (\hyperlink{struct_page_table_entry}{PageTableEntryPtr} pPTEntry, \hyperlink{struct_t_l_b_e_h_i}{TLBEHIPtr} pTLBEntryHigh)
+\item 
+\hyperlink{struct_t_l_b_e_l_o}{TLBELOPtr} \hyperlink{group___v_m_m___i_p_t_ga1a233ecd4f829d64f29c55c5c2b369b}{searchPageTableEntryLowInIPT} (\hyperlink{struct_t_l_b_e_h_i}{TLBEHIPtr} pTLBEntryHigh, \hyperlink{group___v_m_m___h_a_t_g06b98a0b294446afee1b27a04682d7c2}{HashAnchorTableEntry} hatEntry)
+\item 
+\hyperlink{struct_t_l_b_e_l_o}{TLBELOPtr} \hyperlink{group___v_m_m___i_p_t_g4d5cd060a657ba3d732c739461a583a9}{searchPageTableEntryLowInPTE} (\hyperlink{struct_page_table_entry}{PageTableEntryPtr} pPTEntry, \hyperlink{struct_t_l_b_e_h_i}{TLBEHIPtr} pTLBEntryHigh)
+\item 
+int32\_\-t \hyperlink{group___v_m_m___i_p_t_g84c6b60a0c0d560611edc86fd07a072f}{getIPTIndex} (\hyperlink{group___v_m_m___h_a_t_g06b98a0b294446afee1b27a04682d7c2}{HashAnchorTableEntry} hatEntry)
+\item 
+\hyperlink{struct_page_table_entry}{PageTableEntryPtr} \hyperlink{group___v_m_m___i_p_t_g5bf5d5affcca902498ae333f71928885}{lastPageTableEntryOfPTEChain} (\hyperlink{struct_page_table_entry}{PageTableEntryPtr} pPTEntry)
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Inverted Page Table. The basic idea of an inverted page table is to have only one page table for the complete memory and all loaded processes. The entries identify the physical frames rather than the virtual pages. The main advantage is that no TLB flush is necessary between process switches. Another advantage is that the memory usage of the page table is moderate. The search speed of a given Page Table Entry depends heavily on the hash-algorithm that uses ASID and VPN. With a goog hash-algorithm two to three lookups are necessary. A disadvantage is that no memory sharing is possible with the standard variant. 
+
+\begin{Desc}
+\item[Note:]... \end{Desc}
+\begin{Desc}
+\item[Author:]drb8w \end{Desc}
+\begin{Desc}
+\item[Version:]0.0.0.1 \end{Desc}
+
+
+\subsection{Function Documentation}
+\hypertarget{group___v_m_m___i_p_t_g84c6b60a0c0d560611edc86fd07a072f}{
+\index{VMM\_\-IPT@{VMM\_\-IPT}!getIPTIndex@{getIPTIndex}}
+\index{getIPTIndex@{getIPTIndex}!VMM_IPT@{VMM\_\-IPT}}
+\subsubsection[{getIPTIndex}]{\setlength{\rightskip}{0pt plus 5cm}int32\_\-t getIPTIndex ({\bf HashAnchorTableEntry} {\em hatEntry})}}
+\label{group___v_m_m___i_p_t_g84c6b60a0c0d560611edc86fd07a072f}
+
+
+Transforms an Hash Anchor Table Entry to an appropriate Inverted Page Table index. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em hatEntry}]the HAT Entry to transform \end{description}
+\end{Desc}
+\hypertarget{group___v_m_m___i_p_t_g633bd0e0b24708177aebf72079714748}{
+\index{VMM\_\-IPT@{VMM\_\-IPT}!initInvertedPageTable@{initInvertedPageTable}}
+\index{initInvertedPageTable@{initInvertedPageTable}!VMM_IPT@{VMM\_\-IPT}}
+\subsubsection[{initInvertedPageTable}]{\setlength{\rightskip}{0pt plus 5cm}void initInvertedPageTable ()}}
+\label{group___v_m_m___i_p_t_g633bd0e0b24708177aebf72079714748}
+
+
+Initialize the inverted page table with IllegalTLBEntryHigh for the tlbEntryHigh-Parts to indicate possible usage and appropriate page frame numbers for the tlbEntryLow-Parts to indicate the physical frame. The page frame numbers start from PFNOFFSET to upper end. \hypertarget{group___v_m_m___i_p_t_g5bf5d5affcca902498ae333f71928885}{
+\index{VMM\_\-IPT@{VMM\_\-IPT}!lastPageTableEntryOfPTEChain@{lastPageTableEntryOfPTEChain}}
+\index{lastPageTableEntryOfPTEChain@{lastPageTableEntryOfPTEChain}!VMM_IPT@{VMM\_\-IPT}}
+\subsubsection[{lastPageTableEntryOfPTEChain}]{\setlength{\rightskip}{0pt plus 5cm}{\bf PageTableEntryPtr} lastPageTableEntryOfPTEChain ({\bf PageTableEntryPtr} {\em pPTEntry})}}
+\label{group___v_m_m___i_p_t_g5bf5d5affcca902498ae333f71928885}
+
+
+Returns the last Page Table Entry of the chain where given Page Table Entry is in. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em pPTEntry}]a Page Table Entry in the chain \end{description}
+\end{Desc}
+\hypertarget{group___v_m_m___i_p_t_g4495d1e87487776b13d7c0f8c8c75ec9}{
+\index{VMM\_\-IPT@{VMM\_\-IPT}!searchPageTableEntryAndHashAnchorAndPreviousInIPT@{searchPageTableEntryAndHashAnchorAndPreviousInIPT}}
+\index{searchPageTableEntryAndHashAnchorAndPreviousInIPT@{searchPageTableEntryAndHashAnchorAndPreviousInIPT}!VMM_IPT@{VMM\_\-IPT}}
+\subsubsection[{searchPageTableEntryAndHashAnchorAndPreviousInIPT}]{\setlength{\rightskip}{0pt plus 5cm}{\bf PageTableEntryPtr} searchPageTableEntryAndHashAnchorAndPreviousInIPT ({\bf TLBEHIPtr} {\em pTLBEntryHigh}, \/  {\bf PageTableEntryHdl} {\em hHashAnchorPTEntry}, \/  {\bf PageTableEntryHdl} {\em hPrevPTEntry})}}
+\label{group___v_m_m___i_p_t_g4495d1e87487776b13d7c0f8c8c75ec9}
+
+
+Search the corresponding page table entry depending on ASID and VPN of given page table high part in the Inverted Page Table. Also returns the corresponding Hash Anchor - Page Table Entry and the Page Table Entry before the searched Page Table Entry. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em pTLBEntryHigh}]the Page Table Entry high part that delivers the ASID and VPN for the search \item[{\em hHashAnchorPTEntry}]the Page Table Entry that is identified by the Hash Anchor Table \item[{\em hPrevPTEntry}]the Page Table Entry in the hash chain before the searched Page Table Entry \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]the found Page Table Entry pointer or NULL if not found \end{Desc}
+\hypertarget{group___v_m_m___i_p_t_g1ce348812f454f6c840bbbbcbad37add}{
+\index{VMM\_\-IPT@{VMM\_\-IPT}!searchPageTableEntryAndHashAnchorInIPT@{searchPageTableEntryAndHashAnchorInIPT}}
+\index{searchPageTableEntryAndHashAnchorInIPT@{searchPageTableEntryAndHashAnchorInIPT}!VMM_IPT@{VMM\_\-IPT}}
+\subsubsection[{searchPageTableEntryAndHashAnchorInIPT}]{\setlength{\rightskip}{0pt plus 5cm}{\bf PageTableEntryPtr} searchPageTableEntryAndHashAnchorInIPT ({\bf TLBEHIPtr} {\em pTLBEntryHigh}, \/  {\bf PageTableEntryHdl} {\em hHashAnchorPTEntry})}}
+\label{group___v_m_m___i_p_t_g1ce348812f454f6c840bbbbcbad37add}
+
+
+Search the corresponding page table entry depending on ASID and VPN of given page table high part in the Inverted Page Table. Also returns the corresponding Hash Anchor - Page Table Entry. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em pTLBEntryHigh}]the Page Table Entry high part that delivers the ASID and VPN for the search \item[{\em hHashAnchorPTEntry}]the Page Table Entry that is identified by the Hash Anchor Table \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]the found Page Table Entry pointer or NULL if not found \end{Desc}
+\hypertarget{group___v_m_m___i_p_t_g6a86fa230ac72f34daf47257381eb181}{
+\index{VMM\_\-IPT@{VMM\_\-IPT}!searchPageTableEntryAndPreviousInIPT@{searchPageTableEntryAndPreviousInIPT}}
+\index{searchPageTableEntryAndPreviousInIPT@{searchPageTableEntryAndPreviousInIPT}!VMM_IPT@{VMM\_\-IPT}}
+\subsubsection[{searchPageTableEntryAndPreviousInIPT}]{\setlength{\rightskip}{0pt plus 5cm}{\bf PageTableEntryPtr} searchPageTableEntryAndPreviousInIPT ({\bf TLBEHIPtr} {\em pTLBEntryHigh}, \/  {\bf HashAnchorTableEntry} {\em hatEntry}, \/  {\bf PageTableEntryHdl} {\em hPrevPTEntry})}}
+\label{group___v_m_m___i_p_t_g6a86fa230ac72f34daf47257381eb181}
+
+
+Search the corresponding page table entry depending on ASID and VPN of given page table high part in the Inverted Page Table. Additional the Hash Anchor Table Entry of the actual hash chain must be delivered to improve search space. Also returns the Page Table Entry before the searched Page Table Entry. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em pTLBEntryHigh}]the Page Table Entry high part that delivers the ASID and VPN for the search \item[{\em hatEntry}]the Hash Anchor Table Entry that identified the hash chain \item[{\em hPrevPTEntry}]the Page Table Entry in the hash chain before the searched Page Table Entry \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]the found Page Table Entry pointer or NULL if not found \end{Desc}
+\hypertarget{group___v_m_m___i_p_t_gceafcd302dd2b1aca0074e443f53d093}{
+\index{VMM\_\-IPT@{VMM\_\-IPT}!searchPageTableEntryAndPreviousInPTE@{searchPageTableEntryAndPreviousInPTE}}
+\index{searchPageTableEntryAndPreviousInPTE@{searchPageTableEntryAndPreviousInPTE}!VMM_IPT@{VMM\_\-IPT}}
+\subsubsection[{searchPageTableEntryAndPreviousInPTE}]{\setlength{\rightskip}{0pt plus 5cm}{\bf PageTableEntryPtr} searchPageTableEntryAndPreviousInPTE ({\bf PageTableEntryPtr} {\em pPTEntry}, \/  {\bf TLBEHIPtr} {\em pTLBEntryHigh}, \/  {\bf PageTableEntryHdl} {\em hPrevPTEntry})}}
+\label{group___v_m_m___i_p_t_gceafcd302dd2b1aca0074e443f53d093}
+
+
+Search the corresponding page table entry depending on ASID and VPN of given page table high part in the hash chain of given Page Table Entry. Additionally the Page Table Entry before the searched Page Table Entry is delivered. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em pPTEntry}]the Page Table Entry that is the start entry of the hash chain \item[{\em pTLBEntryHigh}]the Page Table Entry high part that delivers the ASID and VPN for the search \item[{\em hPrevPTEntry}]the Page Table Entry in the hash chain before the searched Page Table Entry \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]the found Page Table Entry pointer or NULL if not found \end{Desc}
+\hypertarget{group___v_m_m___i_p_t_g150394a17b25cd9912983172c7b3803a}{
+\index{VMM\_\-IPT@{VMM\_\-IPT}!searchPageTableEntryInIPT@{searchPageTableEntryInIPT}}
+\index{searchPageTableEntryInIPT@{searchPageTableEntryInIPT}!VMM_IPT@{VMM\_\-IPT}}
+\subsubsection[{searchPageTableEntryInIPT}]{\setlength{\rightskip}{0pt plus 5cm}{\bf PageTableEntryPtr} searchPageTableEntryInIPT ({\bf TLBEHIPtr} {\em pTLBEntryHigh}, \/  {\bf HashAnchorTableEntry} {\em hatEntry})}}
+\label{group___v_m_m___i_p_t_g150394a17b25cd9912983172c7b3803a}
+
+
+Search the corresponding page table entry depending on ASID and VPN of given page table high part in the Inverted Page Table. Additional the Hash Anchor Table Entry of the actual hash chain must be delivered to improve search space. Also returns the Page Table Entry before the searched Page Table Entry. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em pTLBEntryHigh}]the Page Table Entry high part that delivers the ASID and VPN for the search \item[{\em hatEntry}]the Hash Anchor Table Entry that identified the hash chain \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]the found Page Table Entry pointer or NULL if not found \end{Desc}
+\hypertarget{group___v_m_m___i_p_t_g87ad4a7444ff78fa4502299524d8a5b9}{
+\index{VMM\_\-IPT@{VMM\_\-IPT}!searchPageTableEntryInPTE@{searchPageTableEntryInPTE}}
+\index{searchPageTableEntryInPTE@{searchPageTableEntryInPTE}!VMM_IPT@{VMM\_\-IPT}}
+\subsubsection[{searchPageTableEntryInPTE}]{\setlength{\rightskip}{0pt plus 5cm}{\bf PageTableEntryPtr} searchPageTableEntryInPTE ({\bf PageTableEntryPtr} {\em pPTEntry}, \/  {\bf TLBEHIPtr} {\em pTLBEntryHigh})}}
+\label{group___v_m_m___i_p_t_g87ad4a7444ff78fa4502299524d8a5b9}
+
+
+Search the corresponding page table entry depending on ASID and VPN of given page table high part in the hash chain of given Page Table Entry. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em pPTEntry}]the Page Table Entry that is the start entry of the hash chain \item[{\em pTLBEntryHigh}]the Page Table Entry high part that delivers the ASID and VPN for the search \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]the found Page Table Entry pointer or NULL if not found \end{Desc}
+\hypertarget{group___v_m_m___i_p_t_ga1a233ecd4f829d64f29c55c5c2b369b}{
+\index{VMM\_\-IPT@{VMM\_\-IPT}!searchPageTableEntryLowInIPT@{searchPageTableEntryLowInIPT}}
+\index{searchPageTableEntryLowInIPT@{searchPageTableEntryLowInIPT}!VMM_IPT@{VMM\_\-IPT}}
+\subsubsection[{searchPageTableEntryLowInIPT}]{\setlength{\rightskip}{0pt plus 5cm}{\bf TLBELOPtr} searchPageTableEntryLowInIPT ({\bf TLBEHIPtr} {\em pTLBEntryHigh}, \/  {\bf HashAnchorTableEntry} {\em hatEntry})}}
+\label{group___v_m_m___i_p_t_ga1a233ecd4f829d64f29c55c5c2b369b}
+
+
+Search the low part of the Page Table Entry in the given hash chain identified by given Hash Anchor Table Entry. The searched Page Table Entry is identified by the ASID and VPN of given high part of the searched Page Table Entry. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em pTLBEntryHigh}]the high part of the searched Page Table Entry i.e. its low part \item[{\em hatEntry}]the Hash Anchor Table Entry that identifies the hash chain of Page Table Entries \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]low part of found Page Table Entry or NULL otherwise \end{Desc}
+\hypertarget{group___v_m_m___i_p_t_g4d5cd060a657ba3d732c739461a583a9}{
+\index{VMM\_\-IPT@{VMM\_\-IPT}!searchPageTableEntryLowInPTE@{searchPageTableEntryLowInPTE}}
+\index{searchPageTableEntryLowInPTE@{searchPageTableEntryLowInPTE}!VMM_IPT@{VMM\_\-IPT}}
+\subsubsection[{searchPageTableEntryLowInPTE}]{\setlength{\rightskip}{0pt plus 5cm}{\bf TLBELOPtr} searchPageTableEntryLowInPTE ({\bf PageTableEntryPtr} {\em pPTEntry}, \/  {\bf TLBEHIPtr} {\em pTLBEntryHigh})}}
+\label{group___v_m_m___i_p_t_g4d5cd060a657ba3d732c739461a583a9}
+
+
+Search the low part of the Page Table Entry in the given hash chain via the given Page Table Entry. The searched Page Table Entry is identified by the ASID and VPN of given high part of the searched Page Table Entry. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em pPTEntry}]the Page Table Entry that delivers the hash chain \item[{\em pTLBEntryHigh}]the high part of the searched Page Table Entry i.e. its low part \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]low part of found Page Table Entry or NULL otherwise \end{Desc}

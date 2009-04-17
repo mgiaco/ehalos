@@ -1,0 +1,136 @@
+\hypertarget{group___v_m_m}{
+\section{Virtual Memory Management}
+\label{group___v_m_m}\index{Virtual Memory Management@{Virtual Memory Management}}
+}
+Virtual Memory Management. The central communication point to other modules. Especially \hyperlink{struct_process}{Process} Loading and Unloading is supported from the module. Only the Memory Exceptions undergo this module border.  
+
+
+\subsection*{Modules}
+\begin{CompactItemize}
+\item 
+\hyperlink{group___v_m_m___h_a_t}{Hash Anchor Table}
+\begin{CompactList}\small\item\em description of Hash Anchor Table \item\end{CompactList}
+
+\item 
+\hyperlink{group___v_m_m___h_e_a_p}{Heap Management}
+\begin{CompactList}\small\item\em Heap Management to add dynamically allocated regions to \hyperlink{struct_process}{Process} Region Table. Benefits: + Free all Pages at process termination + Memory Protection at Page Level. \item\end{CompactList}
+
+\item 
+\hyperlink{group___v_m_m___h_e_x}{iHex Parser}
+\begin{CompactList}\small\item\em iHex Parser. Should transform iHex \hyperlink{struct_process}{Process} Images to Bin \hyperlink{struct_process}{Process} Images. Not used at the moment. \item\end{CompactList}
+
+\item 
+\hyperlink{group___v_m_m___i_p_t}{Inverted Page Table}
+\begin{CompactList}\small\item\em Inverted Page Table. The basic idea of an inverted page table is to have only one page table for the complete memory and all loaded processes. The entries identify the physical frames rather than the virtual pages. The main advantage is that no TLB flush is necessary between process switches. Another advantage is that the memory usage of the page table is moderate. The search speed of a given Page Table Entry depends heavily on the hash-algorithm that uses ASID and VPN. With a goog hash-algorithm two to three lookups are necessary. A disadvantage is that no memory sharing is possible with the standard variant. \item\end{CompactList}
+
+\item 
+\hyperlink{group___v_m_m___l_d_r}{Loader}
+\begin{CompactList}\small\item\em Loader. The Loader loads the complete \hyperlink{struct_process}{Process} Image into Virtual Memory. This causes multiple initial page faults which actualize the TLB. \item\end{CompactList}
+
+\item 
+\hyperlink{group___v_m_m___p_t}{Page Table}
+\begin{CompactList}\small\item\em The Page Table consists of two parts, namely the Hash Anchor Table and the Inverted Page Table. This is to improve the search speed via a hashing algorithm for given ASID-VPN combinations. The init-, search-, update- and free-methods should be used from Memory Management to handle the Page Table, other methods are for internal use only. \item\end{CompactList}
+
+\item 
+\hyperlink{group___v_m_m___p_t_e}{Page Table Entry}
+\begin{CompactList}\small\item\em Page Table Entry. Holds the TLB High and Low part that could also be found in the TLB. Essentially holds virtual Addresses and ASID (High) and physical Addresses (Low) along with other data. \item\end{CompactList}
+
+\item 
+\hyperlink{group___v_m_m___p_r_t}{Process Region Table}
+\begin{CompactList}\small\item\em The \hyperlink{struct_process}{Process} Region Table should manage the regions and access-rights for a given process. Swapping and Demand-Paging links to different Page Tables. At the moment no swapping is supported and the \hyperlink{struct_process}{Process} Region Table is simply used for unloading the process from the virtual memory system. \item\end{CompactList}
+
+\item 
+\hyperlink{group___v_m_m___t_l_b}{Transition Lookaside Buffer}
+\begin{CompactList}\small\item\em Transition Lookaside Buffer. Manages the 32 data entries of the AVR32 AP7000. Used by memory exception handler. \item\end{CompactList}
+
+\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+int \hyperlink{group___v_m_m_g243fac608384b4b91246e465a206e72d}{initMemoryManagement} ()
+\item 
+void \hyperlink{group___v_m_m_g95c733b81f5f912811660319f6dede57}{switchMemoryManagementToAppLoadMode} ()
+\item 
+void \hyperlink{group___v_m_m_g5c5572a6e8f5df265dd936c6e3e9c062}{switchMemoryManagementToAppRunMode} ()
+\item 
+void \hyperlink{group___v_m_m_g818719d1d1577fd4cb90e1ef13994386}{actualiseASID} (uint32\_\-t pid)
+\item 
+BOOL \hyperlink{group___v_m_m_gfbd1dbe50bf30f665f1a4fc181655778}{loadProcessInMemorySystem} (int ASID, BinImagePtr pBinImage)
+\item 
+BOOL \hyperlink{group___v_m_m_g8769d0f39e7a7bab4a27e72db8b31ef3}{unloadProcessFromMemorySystem} (int ASID)
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Virtual Memory Management. The central communication point to other modules. Especially \hyperlink{struct_process}{Process} Loading and Unloading is supported from the module. Only the Memory Exceptions undergo this module border. 
+
+\begin{Desc}
+\item[Note:]... \end{Desc}
+\begin{Desc}
+\item[Author:]drb8w \end{Desc}
+\begin{Desc}
+\item[Version:]0.0.0.1 \end{Desc}
+
+
+\subsection{Function Documentation}
+\hypertarget{group___v_m_m_g818719d1d1577fd4cb90e1ef13994386}{
+\index{VMM@{VMM}!actualiseASID@{actualiseASID}}
+\index{actualiseASID@{actualiseASID}!VMM@{VMM}}
+\subsubsection[{actualiseASID}]{\setlength{\rightskip}{0pt plus 5cm}void actualiseASID (uint32\_\-t {\em pid})}}
+\label{group___v_m_m_g818719d1d1577fd4cb90e1ef13994386}
+
+
+Set the given pid as ASID. Used especially for loading purposes. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em pid}]the process id that should be the ASID. \end{description}
+\end{Desc}
+\hypertarget{group___v_m_m_g243fac608384b4b91246e465a206e72d}{
+\index{VMM@{VMM}!initMemoryManagement@{initMemoryManagement}}
+\index{initMemoryManagement@{initMemoryManagement}!VMM@{VMM}}
+\subsubsection[{initMemoryManagement}]{\setlength{\rightskip}{0pt plus 5cm}int initMemoryManagement ()}}
+\label{group___v_m_m_g243fac608384b4b91246e465a206e72d}
+
+
+Central Place for all Memory Interactions. Initialize Page Table, set page table base register, reset and initialize MMU and MMU-Exceptions. \hypertarget{group___v_m_m_gfbd1dbe50bf30f665f1a4fc181655778}{
+\index{VMM@{VMM}!loadProcessInMemorySystem@{loadProcessInMemorySystem}}
+\index{loadProcessInMemorySystem@{loadProcessInMemorySystem}!VMM@{VMM}}
+\subsubsection[{loadProcessInMemorySystem}]{\setlength{\rightskip}{0pt plus 5cm}BOOL loadProcessInMemorySystem (int {\em ASID}, \/  BinImagePtr {\em pBinImage})}}
+\label{group___v_m_m_gfbd1dbe50bf30f665f1a4fc181655778}
+
+
+Loads the \hyperlink{struct_process}{Process} Image in Memory. Actualise RegionTable, \hyperlink{struct_page_table}{PageTable} and TLB. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em ASID}]the PID of the process in charge \item[{\em pBinImage}]the Image of the process \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]TRUE if successful, FALSE otherwise \end{Desc}
+\hypertarget{group___v_m_m_g95c733b81f5f912811660319f6dede57}{
+\index{VMM@{VMM}!switchMemoryManagementToAppLoadMode@{switchMemoryManagementToAppLoadMode}}
+\index{switchMemoryManagementToAppLoadMode@{switchMemoryManagementToAppLoadMode}!VMM@{VMM}}
+\subsubsection[{switchMemoryManagementToAppLoadMode}]{\setlength{\rightskip}{0pt plus 5cm}void switchMemoryManagementToAppLoadMode ()}}
+\label{group___v_m_m_g95c733b81f5f912811660319f6dede57}
+
+
+State should be held in \hyperlink{struct_process}{Process} Management. Unused at the moment. \hypertarget{group___v_m_m_g5c5572a6e8f5df265dd936c6e3e9c062}{
+\index{VMM@{VMM}!switchMemoryManagementToAppRunMode@{switchMemoryManagementToAppRunMode}}
+\index{switchMemoryManagementToAppRunMode@{switchMemoryManagementToAppRunMode}!VMM@{VMM}}
+\subsubsection[{switchMemoryManagementToAppRunMode}]{\setlength{\rightskip}{0pt plus 5cm}void switchMemoryManagementToAppRunMode ()}}
+\label{group___v_m_m_g5c5572a6e8f5df265dd936c6e3e9c062}
+
+
+State should be held in \hyperlink{struct_process}{Process} Management. Unused at the moment. \hypertarget{group___v_m_m_g8769d0f39e7a7bab4a27e72db8b31ef3}{
+\index{VMM@{VMM}!unloadProcessFromMemorySystem@{unloadProcessFromMemorySystem}}
+\index{unloadProcessFromMemorySystem@{unloadProcessFromMemorySystem}!VMM@{VMM}}
+\subsubsection[{unloadProcessFromMemorySystem}]{\setlength{\rightskip}{0pt plus 5cm}BOOL unloadProcessFromMemorySystem (int {\em ASID})}}
+\label{group___v_m_m_g8769d0f39e7a7bab4a27e72db8b31ef3}
+
+
+Unloads process with given ASID from all Pagers i.e. from RamPage and SwapPage. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em ASID}]the PID of the process \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]true if a complete remove of all Memory and Swap-Resources was successful, false otherwise \end{Desc}

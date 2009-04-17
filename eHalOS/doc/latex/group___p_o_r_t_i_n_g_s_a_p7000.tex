@@ -1,0 +1,54 @@
+\hypertarget{group___p_o_r_t_i_n_g_s_a_p7000}{
+\section{Halos Portings for AVR AP7000}
+\label{group___p_o_r_t_i_n_g_s_a_p7000}\index{Halos Portings for AVR AP7000@{Halos Portings for AVR AP7000}}
+}
+Porting of AVR AP7000 implementations, register/stack initializing (process manager stuff).  
+
+
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+void \hyperlink{group___p_o_r_t_i_n_g_s_a_p7000_g8a59b14b092df2468062b4083839ec54}{ptr\_\-uc\_\-init\_\-stack} (unsigned int $\ast$ptrTopOfRegStack, unsigned int $\ast$ptrTopOfStack, processFkt ptrTaskCode)
+\item 
+void \hyperlink{group___p_o_r_t_i_n_g_s_a_p7000_g3f08a8875f9050ca642a553fb7a59bb2}{ptr\_\-uc\_\-init\_\-stack2} (unsigned int $\ast$ptrTopOfRegStack, unsigned int $\ast$ptrTopOfStack, uint32\_\-t virtualLoadAddress, uint32\_\-t pid)
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Porting of AVR AP7000 implementations, register/stack initializing (process manager stuff). 
+
+\begin{Desc}
+\item[Note:]... \end{Desc}
+\begin{Desc}
+\item[Author:]giacco \end{Desc}
+\begin{Desc}
+\item[Version:]0.0.0.1 \end{Desc}
+
+
+\subsection{Function Documentation}
+\hypertarget{group___p_o_r_t_i_n_g_s_a_p7000_g8a59b14b092df2468062b4083839ec54}{
+\index{PORTINGSAP7000@{PORTINGSAP7000}!ptr\_\-uc\_\-init\_\-stack@{ptr\_\-uc\_\-init\_\-stack}}
+\index{ptr\_\-uc\_\-init\_\-stack@{ptr\_\-uc\_\-init\_\-stack}!PORTINGSAP7000@{PORTINGSAP7000}}
+\subsubsection[{ptr\_\-uc\_\-init\_\-stack}]{\setlength{\rightskip}{0pt plus 5cm}void ptr\_\-uc\_\-init\_\-stack (unsigned int $\ast$ {\em ptrTopOfRegStack}, \/  unsigned int $\ast$ {\em ptrTopOfStack}, \/  processFkt {\em ptrTaskCode})}}
+\label{group___p_o_r_t_i_n_g_s_a_p7000_g8a59b14b092df2468062b4083839ec54}
+
+
+\begin{Desc}
+\item[Note:]TCB layout R0 R1 ... SP LR PC SR ulCriticalNesting Init the stack of a process to look exactly as if a call to portSAVE\_\-CONTEXT had been called. \end{Desc}
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em ptrTopOfRegStack}]pointer to top of register stack \item[{\em ptrTopOfStack}]pointer to top of stack \item[{\em ptrTaskCode}]pointer to task/process code \end{description}
+\end{Desc}
+\hypertarget{group___p_o_r_t_i_n_g_s_a_p7000_g3f08a8875f9050ca642a553fb7a59bb2}{
+\index{PORTINGSAP7000@{PORTINGSAP7000}!ptr\_\-uc\_\-init\_\-stack2@{ptr\_\-uc\_\-init\_\-stack2}}
+\index{ptr\_\-uc\_\-init\_\-stack2@{ptr\_\-uc\_\-init\_\-stack2}!PORTINGSAP7000@{PORTINGSAP7000}}
+\subsubsection[{ptr\_\-uc\_\-init\_\-stack2}]{\setlength{\rightskip}{0pt plus 5cm}void ptr\_\-uc\_\-init\_\-stack2 (unsigned int $\ast$ {\em ptrTopOfRegStack}, \/  unsigned int $\ast$ {\em ptrTopOfStack}, \/  uint32\_\-t {\em virtualLoadAddress}, \/  uint32\_\-t {\em pid})}}
+\label{group___p_o_r_t_i_n_g_s_a_p7000_g3f08a8875f9050ca642a553fb7a59bb2}
+
+
+Init the stack of a process to look exactly as if a call to portSAVE\_\-CONTEXT had been called. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em ptrTopOfRegStack}]pointer to top of register stack \item[{\em ptrTopOfStack}]pointer to top of stack \item[{\em virtualLoadAddress}]virtual load address \item[{\em pid}]\end{description}
+\end{Desc}

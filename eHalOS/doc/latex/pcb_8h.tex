@@ -1,0 +1,70 @@
+\hypertarget{pcb_8h}{
+\section{E:/Ausbildung/Semester3/AVR32\_\-Work1/Halos\_\-Development/src/kernel/process\_\-manager/inc/pcb.h File Reference}
+\label{pcb_8h}\index{E:/Ausbildung/Semester3/AVR32\_\-Work1/Halos\_\-Development/src/kernel/process\_\-manager/inc/pcb.h@{E:/Ausbildung/Semester3/AVR32\_\-Work1/Halos\_\-Development/src/kernel/process\_\-manager/inc/pcb.h}}
+}
+\hyperlink{struct_process}{Process} Control Block for Scheduler.  
+
+
+{\tt \#include \char`\"{}port.h\char`\"{}}\par
+{\tt \#include \char`\"{}Loader.h\char`\"{}}\par
+\subsection*{Data Structures}
+\begin{CompactItemize}
+\item 
+struct \hyperlink{structprocess_control_block}{processControlBlock}
+\begin{CompactList}\small\item\em Control Block for holding all the task informations, used mainly by the schuduler. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Defines}
+\begin{CompactItemize}
+\item 
+\hypertarget{group___p_c_b_g4cc9b44b9d0676b3f2ed29949017f889}{
+\#define \hyperlink{group___p_c_b_g4cc9b44b9d0676b3f2ed29949017f889}{REGISTER\_\-STACK\_\-SIZE}~20}
+\label{group___p_c_b_g4cc9b44b9d0676b3f2ed29949017f889}
+
+\begin{CompactList}\small\item\em constant for stack size \item\end{CompactList}\item 
+\hypertarget{group___p_c_b_g3cf3e9b0bf546d9629508ba4ec4b7c50}{
+\#define \hyperlink{group___p_c_b_g3cf3e9b0bf546d9629508ba4ec4b7c50}{REGISTER\_\-0\_\-OFFSET}~16}
+\label{group___p_c_b_g3cf3e9b0bf546d9629508ba4ec4b7c50}
+
+\begin{CompactList}\small\item\em constant for register 0 offset \item\end{CompactList}\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+\hyperlink{structprocess_control_block}{PCtrlBlock\_\-t} $\ast$ \hyperlink{group___p_c_b_g387d4213f53fdf9464524819d03cab62}{processCreate} (processFkt pFkt, const char $\ast$pName, uint32\_\-t stackSize)
+\item 
+\hyperlink{structprocess_control_block}{PCtrlBlock\_\-t} $\ast$ \hyperlink{group___p_c_b_ga67eb0979dcbd97d5e1a1023cf2bbe09}{mmuProcessCreate} (uint32\_\-t virtualLoadAddress, const char $\ast$pName)
+\item 
+void \hyperlink{group___p_c_b_g8e154be3f7e3b394bfe771ba2b73fc07}{start\_\-first\_\-process} (\hyperlink{structprocess_control_block}{PCtrlBlock\_\-t} $\ast$pcb) \_\-\_\-attribute\_\-\_\-((naked))
+\item 
+void \hyperlink{group___p_c_b_g70927fcffcb94cf5e5489161c8bc5a47}{setup\_\-and\_\-start\_\-new\_\-process} (char $\ast$processName)
+\item 
+void \hyperlink{group___p_c_b_g1ee7e6105aedabb1f1aa0cf8e77b453b}{setupFirstProcess} ()
+\item 
+void \hyperlink{group___p_c_b_g5a00b737864b285963b61f755d34629b}{startFirstProcess} ()
+\end{CompactItemize}
+\subsection*{Variables}
+\begin{CompactItemize}
+\item 
+\hypertarget{group___p_c_b_g186be0def8dfc704f43e446e25c5d5d4}{
+BinImage \hyperlink{group___p_c_b_g186be0def8dfc704f43e446e25c5d5d4}{BinImages} \mbox{[}$\,$\mbox{]}}
+\label{group___p_c_b_g186be0def8dfc704f43e446e25c5d5d4}
+
+\begin{CompactList}\small\item\em \hyperlink{struct_binary}{Binary} images for the tasks we want to load (holds all the memory adresses to our applications like idle-task, shell, space invaders, ...) \mbox{[}0\mbox{]} = idle process \mbox{[}1\mbox{]} = shell process \mbox{[}2\mbox{]} = space invaders game. \item\end{CompactList}\item 
+\hypertarget{group___p_c_b_gf190a046213a394375f51fa3fe5e4bdb}{
+uint32\_\-t \hyperlink{group___p_c_b_gf190a046213a394375f51fa3fe5e4bdb}{activeASID}}
+\label{group___p_c_b_gf190a046213a394375f51fa3fe5e4bdb}
+
+\begin{CompactList}\small\item\em current active ASID for MMU \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{struct_process}{Process} Control Block for Scheduler. 
+
+\begin{Desc}
+\item[Author:]Team Halos \end{Desc}
+\begin{Desc}
+\item[Version:]0.0.1 \end{Desc}
+\begin{Desc}
+\item[Date:]2008-2009 \end{Desc}
+\begin{Desc}
+\item[Note:]Hardware: NGW100, Software: AVR32-GCC \end{Desc}
+\begin{Desc}
+\item[License: ]LGPLv2.1 \end{Desc}

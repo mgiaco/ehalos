@@ -1,0 +1,104 @@
+\hypertarget{group___u_a_r_t___d_r_i_v_e_r}{
+\section{UART Driver}
+\label{group___u_a_r_t___d_r_i_v_e_r}\index{UART Driver@{UART Driver}}
+}
+AP7000 UART driver.  
+
+
+\subsection*{Defines}
+\begin{CompactItemize}
+\item 
+\#define \hyperlink{group___u_a_r_t___d_r_i_v_e_r_g8a3ec48b54d63808ed4c386c320fed47}{DEV\_\-NULL}~0
+\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+\hypertarget{group___u_a_r_t___d_r_i_v_e_r_g4d1dc433ab7e055098aabcf36ee3b8b9}{
+void \hyperlink{group___u_a_r_t___d_r_i_v_e_r_g4d1dc433ab7e055098aabcf36ee3b8b9}{uart\_\-driver\_\-init} (void)}
+\label{group___u_a_r_t___d_r_i_v_e_r_g4d1dc433ab7e055098aabcf36ee3b8b9}
+
+\begin{CompactList}\small\item\em initializes the UART driver \item\end{CompactList}\item 
+\hyperlink{group___d_e_v_i_c_e___a_p_i_g9f427f7fc1dc07b788af60c2aaa6b8d3}{DEV\_\-UID} \hyperlink{group___u_a_r_t___d_r_i_v_e_r_g21a2031520a7294468c5e6f74829a741}{uart\_\-driver\_\-open} (uint32\_\-t device\_\-type, uint32\_\-t device\_\-number)
+\begin{CompactList}\small\item\em opens the UART driver \item\end{CompactList}\item 
+int32\_\-t \hyperlink{group___u_a_r_t___d_r_i_v_e_r_ga6928ddd61de1141bef635bdf78c178a}{uart\_\-driver\_\-read\_\-byte} (\hyperlink{group___d_e_v_i_c_e___a_p_i_g9f427f7fc1dc07b788af60c2aaa6b8d3}{DEV\_\-UID} dev\_\-uid, void $\ast$data)
+\begin{CompactList}\small\item\em reads a byte from the UART \item\end{CompactList}\item 
+void \hyperlink{group___u_a_r_t___d_r_i_v_e_r_gfa04867da082deef4ff11e19691b0a7d}{uart\_\-driver\_\-write\_\-byte} (\hyperlink{group___d_e_v_i_c_e___a_p_i_g9f427f7fc1dc07b788af60c2aaa6b8d3}{DEV\_\-UID} dev\_\-uid, void $\ast$data)
+\begin{CompactList}\small\item\em writes a byte to the UART \item\end{CompactList}\item 
+int32\_\-t \hyperlink{group___u_a_r_t___d_r_i_v_e_r_ga894da78cf2a50d46371a5db778827b6}{uart\_\-driver\_\-close} (\hyperlink{group___d_e_v_i_c_e___a_p_i_g9f427f7fc1dc07b788af60c2aaa6b8d3}{DEV\_\-UID} dev\_\-uid)
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+AP7000 UART driver. 
+
+\subsection{Define Documentation}
+\hypertarget{group___u_a_r_t___d_r_i_v_e_r_g8a3ec48b54d63808ed4c386c320fed47}{
+\index{UART\_\-DRIVER@{UART\_\-DRIVER}!DEV\_\-NULL@{DEV\_\-NULL}}
+\index{DEV\_\-NULL@{DEV\_\-NULL}!UART_DRIVER@{UART\_\-DRIVER}}
+\subsubsection[{DEV\_\-NULL}]{\setlength{\rightskip}{0pt plus 5cm}\#define DEV\_\-NULL~0}}
+\label{group___u_a_r_t___d_r_i_v_e_r_g8a3ec48b54d63808ed4c386c320fed47}
+
+
+\begin{Desc}
+\item[Note:]... \end{Desc}
+\begin{Desc}
+\item[Author:]momo \end{Desc}
+\begin{Desc}
+\item[Version:]0.0.0.1 \end{Desc}
+
+
+\subsection{Function Documentation}
+\hypertarget{group___u_a_r_t___d_r_i_v_e_r_ga894da78cf2a50d46371a5db778827b6}{
+\index{UART\_\-DRIVER@{UART\_\-DRIVER}!uart\_\-driver\_\-close@{uart\_\-driver\_\-close}}
+\index{uart\_\-driver\_\-close@{uart\_\-driver\_\-close}!UART_DRIVER@{UART\_\-DRIVER}}
+\subsubsection[{uart\_\-driver\_\-close}]{\setlength{\rightskip}{0pt plus 5cm}int32\_\-t uart\_\-driver\_\-close ({\bf DEV\_\-UID} {\em dev\_\-uid})}}
+\label{group___u_a_r_t___d_r_i_v_e_r_ga894da78cf2a50d46371a5db778827b6}
+
+
+closes the UART driver \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em dev\_\-uid}]unique device number \end{description}
+\end{Desc}
+\hypertarget{group___u_a_r_t___d_r_i_v_e_r_g21a2031520a7294468c5e6f74829a741}{
+\index{UART\_\-DRIVER@{UART\_\-DRIVER}!uart\_\-driver\_\-open@{uart\_\-driver\_\-open}}
+\index{uart\_\-driver\_\-open@{uart\_\-driver\_\-open}!UART_DRIVER@{UART\_\-DRIVER}}
+\subsubsection[{uart\_\-driver\_\-open}]{\setlength{\rightskip}{0pt plus 5cm}{\bf DEV\_\-UID} uart\_\-driver\_\-open (uint32\_\-t {\em device\_\-type}, \/  uint32\_\-t {\em device\_\-number})}}
+\label{group___u_a_r_t___d_r_i_v_e_r_g21a2031520a7294468c5e6f74829a741}
+
+
+opens the UART driver 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em device\_\-type}]the type of device which should be opened(USART, BIT, ...) \item[{\em device\_\-number}]unique device number \end{description}
+\end{Desc}
+\hypertarget{group___u_a_r_t___d_r_i_v_e_r_ga6928ddd61de1141bef635bdf78c178a}{
+\index{UART\_\-DRIVER@{UART\_\-DRIVER}!uart\_\-driver\_\-read\_\-byte@{uart\_\-driver\_\-read\_\-byte}}
+\index{uart\_\-driver\_\-read\_\-byte@{uart\_\-driver\_\-read\_\-byte}!UART_DRIVER@{UART\_\-DRIVER}}
+\subsubsection[{uart\_\-driver\_\-read\_\-byte}]{\setlength{\rightskip}{0pt plus 5cm}int32\_\-t uart\_\-driver\_\-read\_\-byte ({\bf DEV\_\-UID} {\em dev\_\-uid}, \/  void $\ast$ {\em data})}}
+\label{group___u_a_r_t___d_r_i_v_e_r_ga6928ddd61de1141bef635bdf78c178a}
+
+
+reads a byte from the UART 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em dev\_\-uid}]unique device number \item[{\em data}]pointer to data buffer \end{description}
+\end{Desc}
+\hypertarget{group___u_a_r_t___d_r_i_v_e_r_gfa04867da082deef4ff11e19691b0a7d}{
+\index{UART\_\-DRIVER@{UART\_\-DRIVER}!uart\_\-driver\_\-write\_\-byte@{uart\_\-driver\_\-write\_\-byte}}
+\index{uart\_\-driver\_\-write\_\-byte@{uart\_\-driver\_\-write\_\-byte}!UART_DRIVER@{UART\_\-DRIVER}}
+\subsubsection[{uart\_\-driver\_\-write\_\-byte}]{\setlength{\rightskip}{0pt plus 5cm}void uart\_\-driver\_\-write\_\-byte ({\bf DEV\_\-UID} {\em dev\_\-uid}, \/  void $\ast$ {\em data})}}
+\label{group___u_a_r_t___d_r_i_v_e_r_gfa04867da082deef4ff11e19691b0a7d}
+
+
+writes a byte to the UART 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em dev\_\-uid}]unique device number \item[{\em data}]pointer to data \end{description}
+\end{Desc}

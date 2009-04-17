@@ -1,0 +1,241 @@
+\hypertarget{group__serialbuffer}{
+\section{Serial Buffer for Halos UART}
+\label{group__serialbuffer}\index{Serial Buffer for Halos UART@{Serial Buffer for Halos UART}}
+}
+Routines for a circular Buffer.  
+
+
+\subsection*{Data Structures}
+\begin{CompactItemize}
+\item 
+struct \hyperlink{struct_serial_buffer_tag}{SerialBufferTag}
+\end{CompactItemize}
+\subsection*{Variables}
+\begin{CompactItemize}
+\item 
+\hypertarget{group__serialbuffer_g6dd5e0e639beaa7c61014c923478b465}{
+volatile avr32\_\-usart\_\-t $\ast$ \hyperlink{group__serialbuffer_g6dd5e0e639beaa7c61014c923478b465}{myusart}}
+\label{group__serialbuffer_g6dd5e0e639beaa7c61014c923478b465}
+
+\begin{CompactList}\small\item\em reference to the UART \item\end{CompactList}\item 
+uint16\_\-t \hyperlink{group__serialbuffer_g80fec57b0c1089e49be601c8e154011f}{SerialBufferTag::bp}
+\item 
+uint16\_\-t \hyperlink{group__serialbuffer_gf764ad82a3af5651722c23326f28adbd}{SerialBufferTag::count}
+\item 
+char \hyperlink{group__serialbuffer_g0cbebf4bc14ed97a7d673795fccb8f26}{SerialBufferTag::fifo} \mbox{[}SERIAL\_\-BUFFSIZE\mbox{]}
+\end{CompactItemize}
+\subsection*{constants, macros,}
+\begin{CompactItemize}
+\item 
+typedef uint8\_\-t \hyperlink{group__serialbuffer_g034c66ab1e1a09145312b106c2300a8b}{buffertype}
+\item 
+typedef struct \hyperlink{struct_serial_buffer_tag}{SerialBufferTag} \hyperlink{group__serialbuffer_g36e664fa27ce3c7a3bac11261a96d3fc}{SerialBuffer}
+\item 
+void \hyperlink{group__serialbuffer_g4e993e27527b5b7362c46ca16fce9854}{SerialBuffer\_\-ctor} (volatile \hyperlink{struct_serial_buffer_tag}{SerialBuffer} $\ast$me)
+\item 
+uint16\_\-t \hyperlink{group__serialbuffer_g1e7c23fc0a9712d2e3097154c8b85a6f}{SerialBuffer\_\-isEmpty} (volatile \hyperlink{struct_serial_buffer_tag}{SerialBuffer} $\ast$me)
+\item 
+uint16\_\-t \hyperlink{group__serialbuffer_g522e245db6b26c1b5dc72ec08d84e7d0}{SerialBuffer\_\-isFull} (volatile \hyperlink{struct_serial_buffer_tag}{SerialBuffer} $\ast$me)
+\item 
+void \hyperlink{group__serialbuffer_g2b16eeee32d0ed95d1beb03252b10933}{SerialBuffer\_\-add} (volatile \hyperlink{struct_serial_buffer_tag}{SerialBuffer} $\ast$me, const char c)
+\item 
+char \hyperlink{group__serialbuffer_g71d90db4bcb16a30c48d68c8ec1d2df2}{SerialBuffer\_\-remove} (volatile \hyperlink{struct_serial_buffer_tag}{SerialBuffer} $\ast$me)
+\item 
+uint16\_\-t \hyperlink{group__serialbuffer_g069daa68af8643f07570329943ddfed0}{SerialBuffer\_\-size} (volatile \hyperlink{struct_serial_buffer_tag}{SerialBuffer} $\ast$me)
+\item 
+\#define \hyperlink{group__serialbuffer_gd47283ecaa82d1fd076f405ba3172fc1}{SERIAL\_\-BUFFSIZE}~128
+\item 
+\#define \hyperlink{group__serialbuffer_g8c36b7f3380a02dc72bd23604acb63c5}{SerialBuffer\_\-put}(a, b)~SerialBuffer\_\-add(a,b);
+\item 
+\#define \hyperlink{group__serialbuffer_g557d78acaa759e408254896ba66cbb66}{SerialBuffer\_\-get}(a)~SerialBuffer\_\-remove(a);
+\item 
+\#define \hyperlink{group__serialbuffer_ge32a6db48ef3832f49f6551fcdfa19d9}{SerialBuffer\_\-getFreeSpace}(a)~(SERIAL\_\-BUFFSIZE-SerialBuffer\_\-size(a));
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Routines for a circular Buffer. 
+
+
+
+\begin{Code}\begin{verbatim} #include <SerialBuffer.h> 
+\end{verbatim}
+\end{Code}
+
+ \begin{Desc}
+\item[Note:]... \end{Desc}
+\begin{Desc}
+\item[Author:]mgiaco \end{Desc}
+\begin{Desc}
+\item[Version:]0.0.1 \end{Desc}
+
+
+\subsection{Define Documentation}
+\hypertarget{group__serialbuffer_gd47283ecaa82d1fd076f405ba3172fc1}{
+\index{serialbuffer@{serialbuffer}!SERIAL\_\-BUFFSIZE@{SERIAL\_\-BUFFSIZE}}
+\index{SERIAL\_\-BUFFSIZE@{SERIAL\_\-BUFFSIZE}!serialbuffer@{serialbuffer}}
+\subsubsection[{SERIAL\_\-BUFFSIZE}]{\setlength{\rightskip}{0pt plus 5cm}\#define SERIAL\_\-BUFFSIZE~128}}
+\label{group__serialbuffer_gd47283ecaa82d1fd076f405ba3172fc1}
+
+
+SERIAL\_\-BUFFSIZE in Bytes \hypertarget{group__serialbuffer_g557d78acaa759e408254896ba66cbb66}{
+\index{serialbuffer@{serialbuffer}!SerialBuffer\_\-get@{SerialBuffer\_\-get}}
+\index{SerialBuffer\_\-get@{SerialBuffer\_\-get}!serialbuffer@{serialbuffer}}
+\subsubsection[{SerialBuffer\_\-get}]{\setlength{\rightskip}{0pt plus 5cm}\#define SerialBuffer\_\-get(a)~SerialBuffer\_\-remove(a);}}
+\label{group__serialbuffer_g557d78acaa759e408254896ba66cbb66}
+
+
+Get data object from buffer. \begin{Desc}
+\item[See also:]\hyperlink{group__serialbuffer_g71d90db4bcb16a30c48d68c8ec1d2df2}{SerialBuffer\_\-remove} \end{Desc}
+\hypertarget{group__serialbuffer_ge32a6db48ef3832f49f6551fcdfa19d9}{
+\index{serialbuffer@{serialbuffer}!SerialBuffer\_\-getFreeSpace@{SerialBuffer\_\-getFreeSpace}}
+\index{SerialBuffer\_\-getFreeSpace@{SerialBuffer\_\-getFreeSpace}!serialbuffer@{serialbuffer}}
+\subsubsection[{SerialBuffer\_\-getFreeSpace}]{\setlength{\rightskip}{0pt plus 5cm}\#define SerialBuffer\_\-getFreeSpace(a)~(SERIAL\_\-BUFFSIZE-SerialBuffer\_\-size(a));}}
+\label{group__serialbuffer_ge32a6db48ef3832f49f6551fcdfa19d9}
+
+
+Get the number of free Buffer Space \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em a}]actual circular buffer pointer \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]number of free space \end{Desc}
+\hypertarget{group__serialbuffer_g8c36b7f3380a02dc72bd23604acb63c5}{
+\index{serialbuffer@{serialbuffer}!SerialBuffer\_\-put@{SerialBuffer\_\-put}}
+\index{SerialBuffer\_\-put@{SerialBuffer\_\-put}!serialbuffer@{serialbuffer}}
+\subsubsection[{SerialBuffer\_\-put}]{\setlength{\rightskip}{0pt plus 5cm}\#define SerialBuffer\_\-put(a, \/  b)~SerialBuffer\_\-add(a,b);}}
+\label{group__serialbuffer_g8c36b7f3380a02dc72bd23604acb63c5}
+
+
+Put data object to buffer \begin{Desc}
+\item[See also:]\hyperlink{group__serialbuffer_g2b16eeee32d0ed95d1beb03252b10933}{SerialBuffer\_\-add} \end{Desc}
+
+
+\subsection{Typedef Documentation}
+\hypertarget{group__serialbuffer_g034c66ab1e1a09145312b106c2300a8b}{
+\index{serialbuffer@{serialbuffer}!buffertype@{buffertype}}
+\index{buffertype@{buffertype}!serialbuffer@{serialbuffer}}
+\subsubsection[{buffertype}]{\setlength{\rightskip}{0pt plus 5cm}{\bf buffertype}}}
+\label{group__serialbuffer_g034c66ab1e1a09145312b106c2300a8b}
+
+
+Buffer Type \hypertarget{group__serialbuffer_g36e664fa27ce3c7a3bac11261a96d3fc}{
+\index{serialbuffer@{serialbuffer}!SerialBuffer@{SerialBuffer}}
+\index{SerialBuffer@{SerialBuffer}!serialbuffer@{serialbuffer}}
+\subsubsection[{SerialBuffer}]{\setlength{\rightskip}{0pt plus 5cm}{\bf SerialBuffer}}}
+\label{group__serialbuffer_g36e664fa27ce3c7a3bac11261a96d3fc}
+
+
+Class SerialBuffer 
+
+\subsection{Function Documentation}
+\hypertarget{group__serialbuffer_g2b16eeee32d0ed95d1beb03252b10933}{
+\index{serialbuffer@{serialbuffer}!SerialBuffer\_\-add@{SerialBuffer\_\-add}}
+\index{SerialBuffer\_\-add@{SerialBuffer\_\-add}!serialbuffer@{serialbuffer}}
+\subsubsection[{SerialBuffer\_\-add}]{\setlength{\rightskip}{0pt plus 5cm}void SerialBuffer\_\-add (volatile {\bf SerialBuffer} $\ast$ {\em me}, \/  const char {\em c})}}
+\label{group__serialbuffer_g2b16eeee32d0ed95d1beb03252b10933}
+
+
+Insert a Data Object at rear. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em me}]actual circular buffer pointer \item[{\em c}]char to save(send) \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]none \end{Desc}
+\hypertarget{group__serialbuffer_g4e993e27527b5b7362c46ca16fce9854}{
+\index{serialbuffer@{serialbuffer}!SerialBuffer\_\-ctor@{SerialBuffer\_\-ctor}}
+\index{SerialBuffer\_\-ctor@{SerialBuffer\_\-ctor}!serialbuffer@{serialbuffer}}
+\subsubsection[{SerialBuffer\_\-ctor}]{\setlength{\rightskip}{0pt plus 5cm}void SerialBuffer\_\-ctor (volatile {\bf SerialBuffer} $\ast$ {\em me})}}
+\label{group__serialbuffer_g4e993e27527b5b7362c46ca16fce9854}
+
+
+Initialize the Circular Data Buffer. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em me}]actual circular buffer pointer \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]none \end{Desc}
+\hypertarget{group__serialbuffer_g1e7c23fc0a9712d2e3097154c8b85a6f}{
+\index{serialbuffer@{serialbuffer}!SerialBuffer\_\-isEmpty@{SerialBuffer\_\-isEmpty}}
+\index{SerialBuffer\_\-isEmpty@{SerialBuffer\_\-isEmpty}!serialbuffer@{serialbuffer}}
+\subsubsection[{SerialBuffer\_\-isEmpty}]{\setlength{\rightskip}{0pt plus 5cm}uint16\_\-t SerialBuffer\_\-isEmpty (volatile {\bf SerialBuffer} $\ast$ {\em me})}}
+\label{group__serialbuffer_g1e7c23fc0a9712d2e3097154c8b85a6f}
+
+
+Check Is buffer empty. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em me}]actual circular buffer pointer \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]true if empty or false if not \end{Desc}
+\hypertarget{group__serialbuffer_g522e245db6b26c1b5dc72ec08d84e7d0}{
+\index{serialbuffer@{serialbuffer}!SerialBuffer\_\-isFull@{SerialBuffer\_\-isFull}}
+\index{SerialBuffer\_\-isFull@{SerialBuffer\_\-isFull}!serialbuffer@{serialbuffer}}
+\subsubsection[{SerialBuffer\_\-isFull}]{\setlength{\rightskip}{0pt plus 5cm}uint16\_\-t SerialBuffer\_\-isFull (volatile {\bf SerialBuffer} $\ast$ {\em me})}}
+\label{group__serialbuffer_g522e245db6b26c1b5dc72ec08d84e7d0}
+
+
+Check Is buffer full. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em me}]actual circular buffer pointer \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]true if full or false if not \end{Desc}
+\hypertarget{group__serialbuffer_g71d90db4bcb16a30c48d68c8ec1d2df2}{
+\index{serialbuffer@{serialbuffer}!SerialBuffer\_\-remove@{SerialBuffer\_\-remove}}
+\index{SerialBuffer\_\-remove@{SerialBuffer\_\-remove}!serialbuffer@{serialbuffer}}
+\subsubsection[{SerialBuffer\_\-remove}]{\setlength{\rightskip}{0pt plus 5cm}char SerialBuffer\_\-remove (volatile {\bf SerialBuffer} $\ast$ {\em me})}}
+\label{group__serialbuffer_g71d90db4bcb16a30c48d68c8ec1d2df2}
+
+
+Remove a byte at front. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em me}]actual circular buffer pointer \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]user data \end{Desc}
+\hypertarget{group__serialbuffer_g069daa68af8643f07570329943ddfed0}{
+\index{serialbuffer@{serialbuffer}!SerialBuffer\_\-size@{SerialBuffer\_\-size}}
+\index{SerialBuffer\_\-size@{SerialBuffer\_\-size}!serialbuffer@{serialbuffer}}
+\subsubsection[{SerialBuffer\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}uint16\_\-t SerialBuffer\_\-size (volatile {\bf SerialBuffer} $\ast$ {\em me})}}
+\label{group__serialbuffer_g069daa68af8643f07570329943ddfed0}
+
+
+Number of bytes in buffer. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em me}]actual circular buffer pointer \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]number of saved elements \end{Desc}
+
+
+\subsection{Variable Documentation}
+\hypertarget{group__serialbuffer_g80fec57b0c1089e49be601c8e154011f}{
+\index{serialbuffer@{serialbuffer}!bp@{bp}}
+\index{bp@{bp}!serialbuffer@{serialbuffer}}
+\subsubsection[{bp}]{\setlength{\rightskip}{0pt plus 5cm}uint16\_\-t {\bf SerialBufferTag::bp}\hspace{0.3cm}{\tt  \mbox{[}inherited\mbox{]}}}}
+\label{group__serialbuffer_g80fec57b0c1089e49be601c8e154011f}
+
+
+back pointer \hypertarget{group__serialbuffer_gf764ad82a3af5651722c23326f28adbd}{
+\index{serialbuffer@{serialbuffer}!count@{count}}
+\index{count@{count}!serialbuffer@{serialbuffer}}
+\subsubsection[{count}]{\setlength{\rightskip}{0pt plus 5cm}uint16\_\-t {\bf SerialBufferTag::count}\hspace{0.3cm}{\tt  \mbox{[}inherited\mbox{]}}}}
+\label{group__serialbuffer_gf764ad82a3af5651722c23326f28adbd}
+
+
+number of items in buffer \hypertarget{group__serialbuffer_g0cbebf4bc14ed97a7d673795fccb8f26}{
+\index{serialbuffer@{serialbuffer}!fifo@{fifo}}
+\index{fifo@{fifo}!serialbuffer@{serialbuffer}}
+\subsubsection[{fifo}]{\setlength{\rightskip}{0pt plus 5cm}char {\bf SerialBufferTag::fifo}\mbox{[}SERIAL\_\-BUFFSIZE\mbox{]}\hspace{0.3cm}{\tt  \mbox{[}inherited\mbox{]}}}}
+\label{group__serialbuffer_g0cbebf4bc14ed97a7d673795fccb8f26}
+
+
+data array 

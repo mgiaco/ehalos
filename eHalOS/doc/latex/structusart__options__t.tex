@@ -1,0 +1,65 @@
+\hypertarget{structusart__options__t}{
+\section{usart\_\-options\_\-t Struct Reference}
+\label{structusart__options__t}\index{usart\_\-options\_\-t@{usart\_\-options\_\-t}}
+}
+{\tt \#include $<$usart.h$>$}
+
+\subsection*{Data Fields}
+\begin{CompactItemize}
+\item 
+unsigned long \hyperlink{structusart__options__t_276ad428776a25b8247762bd2c82b35b}{baudrate}
+\item 
+unsigned char \hyperlink{structusart__options__t_a6b77cc05829d2e70ee7f96194c6ce23}{charlength}
+\item 
+unsigned char \hyperlink{structusart__options__t_85401f7a6f516a5883adc0538dc27f8e}{paritytype}
+\item 
+unsigned short \hyperlink{structusart__options__t_433a6ede2186d42b4cf19ef4b370cd61}{stopbits}
+\item 
+unsigned char \hyperlink{structusart__options__t_0dc365b8779891743180e9b69116f5ea}{channelmode}
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Input parameters when initializing rs232 mode, and some similar modes. 
+
+\subsection{Field Documentation}
+\hypertarget{structusart__options__t_276ad428776a25b8247762bd2c82b35b}{
+\index{usart\_\-options\_\-t@{usart\_\-options\_\-t}!baudrate@{baudrate}}
+\index{baudrate@{baudrate}!usart_options_t@{usart\_\-options\_\-t}}
+\subsubsection[{baudrate}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long {\bf usart\_\-options\_\-t::baudrate}}}
+\label{structusart__options__t_276ad428776a25b8247762bd2c82b35b}
+
+
+Set baudrate of the usart \hypertarget{structusart__options__t_0dc365b8779891743180e9b69116f5ea}{
+\index{usart\_\-options\_\-t@{usart\_\-options\_\-t}!channelmode@{channelmode}}
+\index{channelmode@{channelmode}!usart_options_t@{usart\_\-options\_\-t}}
+\subsubsection[{channelmode}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char {\bf usart\_\-options\_\-t::channelmode}}}
+\label{structusart__options__t_0dc365b8779891743180e9b69116f5ea}
+
+
+Run the channel in testmode: 0=normal tx/rx, 1=auto echo(tx-$>$rx), 2=local loopback(tx-$>$rx), 3=remote loopback(rx-$>$tx) \hypertarget{structusart__options__t_a6b77cc05829d2e70ee7f96194c6ce23}{
+\index{usart\_\-options\_\-t@{usart\_\-options\_\-t}!charlength@{charlength}}
+\index{charlength@{charlength}!usart_options_t@{usart\_\-options\_\-t}}
+\subsubsection[{charlength}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char {\bf usart\_\-options\_\-t::charlength}}}
+\label{structusart__options__t_a6b77cc05829d2e70ee7f96194c6ce23}
+
+
+Number of bits to transmit as a character (5-9) \hypertarget{structusart__options__t_85401f7a6f516a5883adc0538dc27f8e}{
+\index{usart\_\-options\_\-t@{usart\_\-options\_\-t}!paritytype@{paritytype}}
+\index{paritytype@{paritytype}!usart_options_t@{usart\_\-options\_\-t}}
+\subsubsection[{paritytype}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char {\bf usart\_\-options\_\-t::paritytype}}}
+\label{structusart__options__t_85401f7a6f516a5883adc0538dc27f8e}
+
+
+How to calculate the parity bit: 0=even parity, 1=odd parity, 2=space, 3=mark, 4$|$5=no parity bit, 6$|$7=multidrop mode \hypertarget{structusart__options__t_433a6ede2186d42b4cf19ef4b370cd61}{
+\index{usart\_\-options\_\-t@{usart\_\-options\_\-t}!stopbits@{stopbits}}
+\index{stopbits@{stopbits}!usart_options_t@{usart\_\-options\_\-t}}
+\subsubsection[{stopbits}]{\setlength{\rightskip}{0pt plus 5cm}unsigned short {\bf usart\_\-options\_\-t::stopbits}}}
+\label{structusart__options__t_433a6ede2186d42b4cf19ef4b370cd61}
+
+
+Number of stop bits between to characters: 0=1bit, 1=1.5bit(async mode only), 2=2bits, the numbers 3 to 257 will result in a time guard period of that length between characters. 
+
+The documentation for this struct was generated from the following file:\begin{CompactItemize}
+\item 
+E:/Ausbildung/Semester3/AVR32\_\-Work1/Halos\_\-Development/src/hal/ports/avr32/ap7x/ap7000/\hyperlink{usart_8h}{usart.h}\end{CompactItemize}
