@@ -1,0 +1,1 @@
+avr32-objcopy -O binary "E:\Ausbildung\Semester3\AVR32_Work1\App_SpaceInvaders\Debug\App_SpaceInvaders.elf" "E:\Ausbildung\Semester3\AVR32_Work1\App_SpaceInvaders\Debug\App_SpaceInvaders.bin"
