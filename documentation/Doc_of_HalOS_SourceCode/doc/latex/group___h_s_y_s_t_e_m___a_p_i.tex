@@ -1,0 +1,164 @@
+\hypertarget{group___h_s_y_s_t_e_m___a_p_i}{
+\section{System API}
+\label{group___h_s_y_s_t_e_m___a_p_i}\index{System API@{System API}}
+}
+System Call API manages all system calls from usermode to halOS (supervisormode).  
+
+
+\subsection*{Data Structures}
+\begin{CompactItemize}
+\item 
+struct \hyperlink{struct_process}{Process}
+\end{CompactItemize}
+\subsection*{Typedefs}
+\begin{CompactItemize}
+\item 
+\hypertarget{group___h_s_y_s_t_e_m___a_p_i_g3be61222bdb3a1adfbf7720dec596851}{
+typedef struct processInfoBlock \hyperlink{group___h_s_y_s_t_e_m___a_p_i_g3be61222bdb3a1adfbf7720dec596851}{process\_\-info\_\-block\_\-t}}
+\label{group___h_s_y_s_t_e_m___a_p_i_g3be61222bdb3a1adfbf7720dec596851}
+
+\begin{CompactList}\small\item\em Used for \hyperlink{group___s_c_h_e_d_u_l_e_r_g98be6cb7c674631c08f257f0f361bdba}{top()} comand, presents current process information in a new datastructure. \item\end{CompactList}\item 
+\hypertarget{group___h_s_y_s_t_e_m___a_p_i_g0c5816d04d0bbc3e6ddab0c6a1ba855a}{
+typedef struct processPtrBlock \hyperlink{group___h_s_y_s_t_e_m___a_p_i_g0c5816d04d0bbc3e6ddab0c6a1ba855a}{processPtrBlock\_\-t}}
+\label{group___h_s_y_s_t_e_m___a_p_i_g0c5816d04d0bbc3e6ddab0c6a1ba855a}
+
+\begin{CompactList}\small\item\em Used for the Ressource Manager in the halOS kernel for determining the foreground/background process and for switching trough all processes (task switch through user), ATTENTION: this should only accessed for reading, otherwise the scheduler will get in troubles. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+void \hyperlink{group___h_s_y_s_t_e_m___a_p_i_gb225a2aa0d2d8bcaa2536fa20c5a5a58}{system\_\-call4} (int32\_\-t scall\_\-number, int32\_\-t param1, int32\_\-t param2, int32\_\-t param3, void $\ast$ret\_\-param) \_\-\_\-attribute\_\-\_\-((always\_\-inline))
+\item 
+void \hyperlink{group___h_s_y_s_t_e_m___a_p_i_gc2a14d9e7b11a7aadcbe3e2fecb920b8}{system\_\-call0} (int32\_\-t scall\_\-number, void $\ast$ret\_\-param)
+\item 
+void \hyperlink{group___h_s_y_s_t_e_m___a_p_i_g9d47c8a4ca7ec749557ea6462f8c9fc8}{system\_\-call1} (int32\_\-t scall\_\-number, int32\_\-t param1)
+\item 
+void \hyperlink{group___h_s_y_s_t_e_m___a_p_i_g33d0bfaec0c957c63e5eecd9b2957a21}{system\_\-call2} (int32\_\-t scall\_\-number, int32\_\-t param1, int32\_\-t param2)
+\item 
+void \hyperlink{group___h_s_y_s_t_e_m___a_p_i_g9d888d0cd06a14252c4b3358ad2e8fdd}{start\_\-process} (char $\ast$processName)
+\item 
+int32\_\-t \hyperlink{group___h_s_y_s_t_e_m___a_p_i_g13bb69d9873dac8fb09bc47becdda0a4}{kill\_\-process} (char $\ast$pidName)
+\item 
+uint64\_\-t \hyperlink{group___h_s_y_s_t_e_m___a_p_i_gdbf1c32e05601efd0bc50077ef0b74d2}{get\_\-kernel\_\-time} ()
+\item 
+int8\_\-t \hyperlink{group___h_s_y_s_t_e_m___a_p_i_gc60fbbb40b86f6d30216c28a1627dd7a}{get\_\-nr\_\-of\_\-running\_\-processes} ()
+\item 
+void \hyperlink{group___h_s_y_s_t_e_m___a_p_i_ge906df6a1d1c0e47401b8296a8487f86}{get\_\-running\_\-processes} (\hyperlink{group___h_s_y_s_t_e_m___a_p_i_g3be61222bdb3a1adfbf7720dec596851}{process\_\-info\_\-block\_\-t} $\ast$ret\_\-parm)
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+System Call API manages all system calls from usermode to halOS (supervisormode). 
+
+\begin{Desc}
+\item[Note:]... \end{Desc}
+\begin{Desc}
+\item[Author:]giaco, momo \end{Desc}
+\begin{Desc}
+\item[Version:]0.0.1 \end{Desc}
+
+
+\subsection{Function Documentation}
+\hypertarget{group___h_s_y_s_t_e_m___a_p_i_gdbf1c32e05601efd0bc50077ef0b74d2}{
+\index{HSYSTEM\_\-API@{HSYSTEM\_\-API}!get\_\-kernel\_\-time@{get\_\-kernel\_\-time}}
+\index{get\_\-kernel\_\-time@{get\_\-kernel\_\-time}!HSYSTEM_API@{HSYSTEM\_\-API}}
+\subsubsection[{get\_\-kernel\_\-time}]{\setlength{\rightskip}{0pt plus 5cm}uint64\_\-t get\_\-kernel\_\-time ()}}
+\label{group___h_s_y_s_t_e_m___a_p_i_gdbf1c32e05601efd0bc50077ef0b74d2}
+
+
+Gets the current system kernel time of halOS \begin{Desc}
+\item[Returns:]kernel time \end{Desc}
+\hypertarget{group___h_s_y_s_t_e_m___a_p_i_gc60fbbb40b86f6d30216c28a1627dd7a}{
+\index{HSYSTEM\_\-API@{HSYSTEM\_\-API}!get\_\-nr\_\-of\_\-running\_\-processes@{get\_\-nr\_\-of\_\-running\_\-processes}}
+\index{get\_\-nr\_\-of\_\-running\_\-processes@{get\_\-nr\_\-of\_\-running\_\-processes}!HSYSTEM_API@{HSYSTEM\_\-API}}
+\subsubsection[{get\_\-nr\_\-of\_\-running\_\-processes}]{\setlength{\rightskip}{0pt plus 5cm}int8\_\-t get\_\-nr\_\-of\_\-running\_\-processes ()}}
+\label{group___h_s_y_s_t_e_m___a_p_i_gc60fbbb40b86f6d30216c28a1627dd7a}
+
+
+Gets the number of running processes, this is often used by the \hyperlink{group___s_c_h_e_d_u_l_e_r_g98be6cb7c674631c08f257f0f361bdba}{top()} comand to determine the size of memory which have to be allocated \begin{Desc}
+\item[Returns:]number of all processes in the system (including the running and idle process) \end{Desc}
+\hypertarget{group___h_s_y_s_t_e_m___a_p_i_ge906df6a1d1c0e47401b8296a8487f86}{
+\index{HSYSTEM\_\-API@{HSYSTEM\_\-API}!get\_\-running\_\-processes@{get\_\-running\_\-processes}}
+\index{get\_\-running\_\-processes@{get\_\-running\_\-processes}!HSYSTEM_API@{HSYSTEM\_\-API}}
+\subsubsection[{get\_\-running\_\-processes}]{\setlength{\rightskip}{0pt plus 5cm}void get\_\-running\_\-processes ({\bf process\_\-info\_\-block\_\-t} $\ast$ {\em ret\_\-parm})}}
+\label{group___h_s_y_s_t_e_m___a_p_i_ge906df6a1d1c0e47401b8296a8487f86}
+
+
+Gets information about the current running process, info: running process can change very quickly because the scheduler switches the tasks very often (depending on TIMESLICE and available possible RUNNABLE processes) \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em ret\_\-parm}]\end{description}
+\end{Desc}
+\hypertarget{group___h_s_y_s_t_e_m___a_p_i_g13bb69d9873dac8fb09bc47becdda0a4}{
+\index{HSYSTEM\_\-API@{HSYSTEM\_\-API}!kill\_\-process@{kill\_\-process}}
+\index{kill\_\-process@{kill\_\-process}!HSYSTEM_API@{HSYSTEM\_\-API}}
+\subsubsection[{kill\_\-process}]{\setlength{\rightskip}{0pt plus 5cm}int32\_\-t kill\_\-process (char $\ast$ {\em pidName})}}
+\label{group___h_s_y_s_t_e_m___a_p_i_g13bb69d9873dac8fb09bc47becdda0a4}
+
+
+Kills and deletes a process \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em processName}]the process to kill \end{description}
+\end{Desc}
+\hypertarget{group___h_s_y_s_t_e_m___a_p_i_g9d888d0cd06a14252c4b3358ad2e8fdd}{
+\index{HSYSTEM\_\-API@{HSYSTEM\_\-API}!start\_\-process@{start\_\-process}}
+\index{start\_\-process@{start\_\-process}!HSYSTEM_API@{HSYSTEM\_\-API}}
+\subsubsection[{start\_\-process}]{\setlength{\rightskip}{0pt plus 5cm}void start\_\-process (char $\ast$ {\em processName})}}
+\label{group___h_s_y_s_t_e_m___a_p_i_g9d888d0cd06a14252c4b3358ad2e8fdd}
+
+
+System call for starting a process by the process name, \begin{Desc}
+\item[See also:]\hyperlink{group___p_c_b_g186be0def8dfc704f43e446e25c5d5d4}{BinImages}\mbox{[}\mbox{]} in pcb.c for available processes/applications to start \end{Desc}
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em processName}]name of the process to start \end{description}
+\end{Desc}
+\hypertarget{group___h_s_y_s_t_e_m___a_p_i_gc2a14d9e7b11a7aadcbe3e2fecb920b8}{
+\index{HSYSTEM\_\-API@{HSYSTEM\_\-API}!system\_\-call0@{system\_\-call0}}
+\index{system\_\-call0@{system\_\-call0}!HSYSTEM_API@{HSYSTEM\_\-API}}
+\subsubsection[{system\_\-call0}]{\setlength{\rightskip}{0pt plus 5cm}void system\_\-call0 (int32\_\-t {\em scall\_\-number}, \/  void $\ast$ {\em ret\_\-param})}}
+\label{group___h_s_y_s_t_e_m___a_p_i_gc2a14d9e7b11a7aadcbe3e2fecb920b8}
+
+
+System call without any parameter \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em scall\_\-number}]specifys the number of the systemcall, see also hsystem\_\-call\_\-table in \hyperlink{hsystem__call__table_8h}{hsystem\_\-call\_\-table.h} \item[{\em ret\_\-param}]can be used as void pointer for everthing or as return parameter \end{description}
+\end{Desc}
+\hypertarget{group___h_s_y_s_t_e_m___a_p_i_g9d47c8a4ca7ec749557ea6462f8c9fc8}{
+\index{HSYSTEM\_\-API@{HSYSTEM\_\-API}!system\_\-call1@{system\_\-call1}}
+\index{system\_\-call1@{system\_\-call1}!HSYSTEM_API@{HSYSTEM\_\-API}}
+\subsubsection[{system\_\-call1}]{\setlength{\rightskip}{0pt plus 5cm}void system\_\-call1 (int32\_\-t {\em scall\_\-number}, \/  int32\_\-t {\em param1})}}
+\label{group___h_s_y_s_t_e_m___a_p_i_g9d47c8a4ca7ec749557ea6462f8c9fc8}
+
+
+System call with one parameter \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em scall\_\-number}]specifys the number of the systemcall, see also hsystem\_\-call\_\-table in \hyperlink{hsystem__call__table_8h}{hsystem\_\-call\_\-table.h} \item[{\em param1}]first parameter \end{description}
+\end{Desc}
+\hypertarget{group___h_s_y_s_t_e_m___a_p_i_g33d0bfaec0c957c63e5eecd9b2957a21}{
+\index{HSYSTEM\_\-API@{HSYSTEM\_\-API}!system\_\-call2@{system\_\-call2}}
+\index{system\_\-call2@{system\_\-call2}!HSYSTEM_API@{HSYSTEM\_\-API}}
+\subsubsection[{system\_\-call2}]{\setlength{\rightskip}{0pt plus 5cm}void system\_\-call2 (int32\_\-t {\em scall\_\-number}, \/  int32\_\-t {\em param1}, \/  int32\_\-t {\em param2})}}
+\label{group___h_s_y_s_t_e_m___a_p_i_g33d0bfaec0c957c63e5eecd9b2957a21}
+
+
+System call with two parameter \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em scall\_\-number}]specifys the number of the systemcall, see also hsystem\_\-call\_\-table in \hyperlink{hsystem__call__table_8h}{hsystem\_\-call\_\-table.h} \item[{\em param1}]first parameter \item[{\em param2}]second parameter \end{description}
+\end{Desc}
+\hypertarget{group___h_s_y_s_t_e_m___a_p_i_gb225a2aa0d2d8bcaa2536fa20c5a5a58}{
+\index{HSYSTEM\_\-API@{HSYSTEM\_\-API}!system\_\-call4@{system\_\-call4}}
+\index{system\_\-call4@{system\_\-call4}!HSYSTEM_API@{HSYSTEM\_\-API}}
+\subsubsection[{system\_\-call4}]{\setlength{\rightskip}{0pt plus 5cm}void system\_\-call4 (int32\_\-t {\em scall\_\-number}, \/  int32\_\-t {\em param1}, \/  int32\_\-t {\em param2}, \/  int32\_\-t {\em param3}, \/  void $\ast$ {\em ret\_\-param})}}
+\label{group___h_s_y_s_t_e_m___a_p_i_gb225a2aa0d2d8bcaa2536fa20c5a5a58}
+
+
+System call up to 4 parameters (including ret\_\-parameter as void pointer) \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em scall\_\-number}]specifys the number of the systemcall, see also hsystem\_\-call\_\-table in \hyperlink{hsystem__call__table_8h}{hsystem\_\-call\_\-table.h} \item[{\em param1}]first parameter \item[{\em param2}]second parameter \item[{\em param3}]third parameter \item[{\em ret\_\-param}]can be used as void pointer for everthing or as return parameter \end{description}
+\end{Desc}

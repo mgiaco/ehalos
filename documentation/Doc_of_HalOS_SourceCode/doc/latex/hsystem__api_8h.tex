@@ -1,0 +1,58 @@
+\hypertarget{hsystem__api_8h}{
+\section{E:/Ausbildung/Semester3/Kopie von AVR32\_\-Work1/Halos\_\-Development/src/halos\_\-apis/halos\_\-system\_\-api/inc/hsystem\_\-api.h File Reference}
+\label{hsystem__api_8h}\index{E:/Ausbildung/Semester3/Kopie von AVR32\_\-Work1/Halos\_\-Development/src/halos\_\-apis/halos\_\-system\_\-api/inc/hsystem\_\-api.h@{E:/Ausbildung/Semester3/Kopie von AVR32\_\-Work1/Halos\_\-Development/src/halos\_\-apis/halos\_\-system\_\-api/inc/hsystem\_\-api.h}}
+}
+HalOS System API.  
+
+
+{\tt \#include $<$inttypes.h$>$}\par
+{\tt \#include \char`\"{}hsystem\_\-call\_\-table.h\char`\"{}}\par
+\subsection*{Typedefs}
+\begin{CompactItemize}
+\item 
+\hypertarget{group___h_s_y_s_t_e_m___a_p_i_g3be61222bdb3a1adfbf7720dec596851}{
+typedef struct processInfoBlock \hyperlink{group___h_s_y_s_t_e_m___a_p_i_g3be61222bdb3a1adfbf7720dec596851}{process\_\-info\_\-block\_\-t}}
+\label{group___h_s_y_s_t_e_m___a_p_i_g3be61222bdb3a1adfbf7720dec596851}
+
+\begin{CompactList}\small\item\em Used for \hyperlink{group___s_c_h_e_d_u_l_e_r_g98be6cb7c674631c08f257f0f361bdba}{top()} comand, presents current process information in a new datastructure. \item\end{CompactList}\item 
+\hypertarget{group___h_s_y_s_t_e_m___a_p_i_g0c5816d04d0bbc3e6ddab0c6a1ba855a}{
+typedef struct processPtrBlock \hyperlink{group___h_s_y_s_t_e_m___a_p_i_g0c5816d04d0bbc3e6ddab0c6a1ba855a}{processPtrBlock\_\-t}}
+\label{group___h_s_y_s_t_e_m___a_p_i_g0c5816d04d0bbc3e6ddab0c6a1ba855a}
+
+\begin{CompactList}\small\item\em Used for the Ressource Manager in the halOS kernel for determining the foreground/background process and for switching trough all processes (task switch through user), ATTENTION: this should only accessed for reading, otherwise the scheduler will get in troubles. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+void \hyperlink{group___h_s_y_s_t_e_m___a_p_i_gb225a2aa0d2d8bcaa2536fa20c5a5a58}{system\_\-call4} (int32\_\-t scall\_\-number, int32\_\-t param1, int32\_\-t param2, int32\_\-t param3, void $\ast$ret\_\-param) \_\-\_\-attribute\_\-\_\-((always\_\-inline))
+\item 
+void \hyperlink{group___h_s_y_s_t_e_m___a_p_i_gc2a14d9e7b11a7aadcbe3e2fecb920b8}{system\_\-call0} (int32\_\-t scall\_\-number, void $\ast$ret\_\-param)
+\item 
+void \hyperlink{group___h_s_y_s_t_e_m___a_p_i_g9d47c8a4ca7ec749557ea6462f8c9fc8}{system\_\-call1} (int32\_\-t scall\_\-number, int32\_\-t param1)
+\item 
+void \hyperlink{group___h_s_y_s_t_e_m___a_p_i_g33d0bfaec0c957c63e5eecd9b2957a21}{system\_\-call2} (int32\_\-t scall\_\-number, int32\_\-t param1, int32\_\-t param2)
+\item 
+void \hyperlink{group___h_s_y_s_t_e_m___a_p_i_g9d888d0cd06a14252c4b3358ad2e8fdd}{start\_\-process} (char $\ast$processName)
+\item 
+int32\_\-t \hyperlink{group___h_s_y_s_t_e_m___a_p_i_g13bb69d9873dac8fb09bc47becdda0a4}{kill\_\-process} (char $\ast$pidName)
+\item 
+uint64\_\-t \hyperlink{group___h_s_y_s_t_e_m___a_p_i_gdbf1c32e05601efd0bc50077ef0b74d2}{get\_\-kernel\_\-time} ()
+\item 
+int8\_\-t \hyperlink{group___h_s_y_s_t_e_m___a_p_i_gc60fbbb40b86f6d30216c28a1627dd7a}{get\_\-nr\_\-of\_\-running\_\-processes} ()
+\item 
+void \hyperlink{group___h_s_y_s_t_e_m___a_p_i_ge906df6a1d1c0e47401b8296a8487f86}{get\_\-running\_\-processes} (\hyperlink{group___h_s_y_s_t_e_m___a_p_i_g3be61222bdb3a1adfbf7720dec596851}{process\_\-info\_\-block\_\-t} $\ast$ret\_\-parm)
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+HalOS System API. 
+
+\begin{Desc}
+\item[Author:]Team Halos \end{Desc}
+\begin{Desc}
+\item[Version:]0.0.1 \end{Desc}
+\begin{Desc}
+\item[Date:]2008-2009 \end{Desc}
+\begin{Desc}
+\item[Note:]Hardware: NGW100, Software: AVR32-GCC \end{Desc}
+\begin{Desc}
+\item[License: ]LGPLv2.1 \end{Desc}

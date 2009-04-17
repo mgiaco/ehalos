@@ -1,0 +1,144 @@
+\hypertarget{group___v_m_m___p_t_e}{
+\section{Page Table Entry}
+\label{group___v_m_m___p_t_e}\index{Page Table Entry@{Page Table Entry}}
+}
+Page Table Entry. Holds the TLB High and Low part that could also be found in the TLB. Essentially holds virtual Addresses and ASID (High) and physical Addresses (Low) along with other data.  
+
+
+\subsection*{Data Structures}
+\begin{CompactItemize}
+\item 
+struct \hyperlink{struct_t_l_b_e_h_i_v_n_p_l_e_s_s}{TLBEHIVNPLESS}
+\item 
+struct \hyperlink{struct_t_l_b_e_h_i}{TLBEHI}
+\item 
+struct \hyperlink{struct_t_l_b_e_l_o_p_f_n_l_e_s_s}{TLBELOPFNLESS}
+\item 
+struct \hyperlink{struct_t_l_b_e_l_o}{TLBELO}
+\item 
+struct \hyperlink{struct_page_table_entry}{PageTableEntry}
+\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+BOOL \hyperlink{group___v_m_m___p_t_e_gb048909cf624c30137211a111e947112}{equalTLBEntryHigh} (\hyperlink{struct_t_l_b_e_h_i}{TLBEHIPtr} pEntry1, \hyperlink{struct_t_l_b_e_h_i}{TLBEHIPtr} pEntry2)
+\item 
+BOOL \hyperlink{group___v_m_m___p_t_e_gae1fa5dc951be8567919098dbb0d3255}{equalTLBEntryLow} (\hyperlink{struct_t_l_b_e_l_o}{TLBELOPtr} pEntry1, \hyperlink{struct_t_l_b_e_l_o}{TLBELOPtr} pEntry2)
+\item 
+BOOL \hyperlink{group___v_m_m___p_t_e_g39d9945124ca0c249463753e6e67716b}{equalTLBEntryLowPFNLess} (\hyperlink{struct_t_l_b_e_l_o}{TLBELOPtr} pEntry1, \hyperlink{struct_t_l_b_e_l_o_p_f_n_l_e_s_s}{TLBELOPFNLESSPtr} pEntry2)
+\item 
+BOOL \hyperlink{group___v_m_m___p_t_e_gd1c7bd735d03446658cc746c07187839}{equalTLBEntryHighVPNLess} (\hyperlink{struct_t_l_b_e_h_i}{TLBEHIPtr} pEntry1, \hyperlink{struct_t_l_b_e_h_i_v_n_p_l_e_s_s}{TLBEHIVNPLESSPtr} pEntry2)
+\item 
+BOOL \hyperlink{group___v_m_m___p_t_e_g9903712483c2afdfad28dcca0768115f}{equal\_\-ASIDVPN\_\-TLBEntryHigh} (\hyperlink{struct_t_l_b_e_h_i}{TLBEHIPtr} pEntry1, \hyperlink{struct_t_l_b_e_h_i}{TLBEHIPtr} pEntry2)
+\item 
+BOOL \hyperlink{group___v_m_m___p_t_e_g58ccb6826bcf8c712b7c69d18b928f7e}{equal\_\-PFN\_\-TLBEntryLow} (\hyperlink{struct_t_l_b_e_l_o}{TLBELOPtr} pEntry1, \hyperlink{struct_t_l_b_e_l_o}{TLBELOPtr} pEntry2)
+\item 
+BOOL \hyperlink{group___v_m_m___p_t_e_g89cd5f7eaa1cd827f630285c9a56443c}{isUnusedTLBEntryHigh} (\hyperlink{struct_t_l_b_e_h_i}{TLBEHIPtr} pEntry)
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Page Table Entry. Holds the TLB High and Low part that could also be found in the TLB. Essentially holds virtual Addresses and ASID (High) and physical Addresses (Low) along with other data. 
+
+\begin{Desc}
+\item[Note:]... \end{Desc}
+\begin{Desc}
+\item[Author:]drb8w \end{Desc}
+\begin{Desc}
+\item[Version:]0.0.1 \end{Desc}
+
+
+\subsection{Function Documentation}
+\hypertarget{group___v_m_m___p_t_e_g9903712483c2afdfad28dcca0768115f}{
+\index{VMM\_\-PTE@{VMM\_\-PTE}!equal\_\-ASIDVPN\_\-TLBEntryHigh@{equal\_\-ASIDVPN\_\-TLBEntryHigh}}
+\index{equal\_\-ASIDVPN\_\-TLBEntryHigh@{equal\_\-ASIDVPN\_\-TLBEntryHigh}!VMM_PTE@{VMM\_\-PTE}}
+\subsubsection[{equal\_\-ASIDVPN\_\-TLBEntryHigh}]{\setlength{\rightskip}{0pt plus 5cm}BOOL equal\_\-ASIDVPN\_\-TLBEntryHigh ({\bf TLBEHIPtr} {\em pEntry1}, \/  {\bf TLBEHIPtr} {\em pEntry2})}}
+\label{group___v_m_m___p_t_e_g9903712483c2afdfad28dcca0768115f}
+
+
+Determines if ASID and VPN of given TLB High components are equal. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em pEntry1}]first TLB High to compare \item[{\em pEntry2}]second TLB High to compare \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]TRUE if equal, FALSE otherwise \end{Desc}
+\hypertarget{group___v_m_m___p_t_e_g58ccb6826bcf8c712b7c69d18b928f7e}{
+\index{VMM\_\-PTE@{VMM\_\-PTE}!equal\_\-PFN\_\-TLBEntryLow@{equal\_\-PFN\_\-TLBEntryLow}}
+\index{equal\_\-PFN\_\-TLBEntryLow@{equal\_\-PFN\_\-TLBEntryLow}!VMM_PTE@{VMM\_\-PTE}}
+\subsubsection[{equal\_\-PFN\_\-TLBEntryLow}]{\setlength{\rightskip}{0pt plus 5cm}BOOL equal\_\-PFN\_\-TLBEntryLow ({\bf TLBELOPtr} {\em pEntry1}, \/  {\bf TLBELOPtr} {\em pEntry2})}}
+\label{group___v_m_m___p_t_e_g58ccb6826bcf8c712b7c69d18b928f7e}
+
+
+Determines if PFN of given TLB Low components are equal. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em pEntry1}]first TLB Low to compare \item[{\em pEntry2}]second TLB Low to compare \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]TRUE if equal, FALSE otherwise \end{Desc}
+\hypertarget{group___v_m_m___p_t_e_gb048909cf624c30137211a111e947112}{
+\index{VMM\_\-PTE@{VMM\_\-PTE}!equalTLBEntryHigh@{equalTLBEntryHigh}}
+\index{equalTLBEntryHigh@{equalTLBEntryHigh}!VMM_PTE@{VMM\_\-PTE}}
+\subsubsection[{equalTLBEntryHigh}]{\setlength{\rightskip}{0pt plus 5cm}BOOL equalTLBEntryHigh ({\bf TLBEHIPtr} {\em pEntry1}, \/  {\bf TLBEHIPtr} {\em pEntry2})}}
+\label{group___v_m_m___p_t_e_gb048909cf624c30137211a111e947112}
+
+
+Determines full member-value equality of given TLB High components. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em pEntry1}]first TLB High to compare \item[{\em pEntry2}]second TLB High to compare \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]TRUE if equal, FALSE otherwise \end{Desc}
+\hypertarget{group___v_m_m___p_t_e_gd1c7bd735d03446658cc746c07187839}{
+\index{VMM\_\-PTE@{VMM\_\-PTE}!equalTLBEntryHighVPNLess@{equalTLBEntryHighVPNLess}}
+\index{equalTLBEntryHighVPNLess@{equalTLBEntryHighVPNLess}!VMM_PTE@{VMM\_\-PTE}}
+\subsubsection[{equalTLBEntryHighVPNLess}]{\setlength{\rightskip}{0pt plus 5cm}BOOL equalTLBEntryHighVPNLess ({\bf TLBEHIPtr} {\em pEntry1}, \/  {\bf TLBEHIVNPLESSPtr} {\em pEntry2})}}
+\label{group___v_m_m___p_t_e_gd1c7bd735d03446658cc746c07187839}
+
+
+Determines member-value equality without VPN of given TLB High components. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em pEntry1}]first TLB High to compare \item[{\em pEntry2}]second TLB High to compare \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]TRUE if equal, FALSE otherwise \end{Desc}
+\hypertarget{group___v_m_m___p_t_e_gae1fa5dc951be8567919098dbb0d3255}{
+\index{VMM\_\-PTE@{VMM\_\-PTE}!equalTLBEntryLow@{equalTLBEntryLow}}
+\index{equalTLBEntryLow@{equalTLBEntryLow}!VMM_PTE@{VMM\_\-PTE}}
+\subsubsection[{equalTLBEntryLow}]{\setlength{\rightskip}{0pt plus 5cm}BOOL equalTLBEntryLow ({\bf TLBELOPtr} {\em pEntry1}, \/  {\bf TLBELOPtr} {\em pEntry2})}}
+\label{group___v_m_m___p_t_e_gae1fa5dc951be8567919098dbb0d3255}
+
+
+Determines full member-value equality of given TLB Low components. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em pEntry1}]first TLB Low to compare \item[{\em pEntry2}]second TLB Low to compare \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]TRUE if equal, FALSE otherwise \end{Desc}
+\hypertarget{group___v_m_m___p_t_e_g39d9945124ca0c249463753e6e67716b}{
+\index{VMM\_\-PTE@{VMM\_\-PTE}!equalTLBEntryLowPFNLess@{equalTLBEntryLowPFNLess}}
+\index{equalTLBEntryLowPFNLess@{equalTLBEntryLowPFNLess}!VMM_PTE@{VMM\_\-PTE}}
+\subsubsection[{equalTLBEntryLowPFNLess}]{\setlength{\rightskip}{0pt plus 5cm}BOOL equalTLBEntryLowPFNLess ({\bf TLBELOPtr} {\em pEntry1}, \/  {\bf TLBELOPFNLESSPtr} {\em pEntry2})}}
+\label{group___v_m_m___p_t_e_g39d9945124ca0c249463753e6e67716b}
+
+
+Determines member-value equality without PFN of given TLB Low components. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em pEntry1}]first TLB Low to compare \item[{\em pEntry2}]second TLB Low to compare \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]TRUE if equal, FALSE otherwise \end{Desc}
+\hypertarget{group___v_m_m___p_t_e_g89cd5f7eaa1cd827f630285c9a56443c}{
+\index{VMM\_\-PTE@{VMM\_\-PTE}!isUnusedTLBEntryHigh@{isUnusedTLBEntryHigh}}
+\index{isUnusedTLBEntryHigh@{isUnusedTLBEntryHigh}!VMM_PTE@{VMM\_\-PTE}}
+\subsubsection[{isUnusedTLBEntryHigh}]{\setlength{\rightskip}{0pt plus 5cm}BOOL isUnusedTLBEntryHigh ({\bf TLBEHIPtr} {\em pEntry})}}
+\label{group___v_m_m___p_t_e_g89cd5f7eaa1cd827f630285c9a56443c}
+
+
+Compares the given high component of an page table entry with IllegalTLBEntryHigh. \begin{Desc}
+\item[Returns:]TRUE if same as IllegalTLBEntryHigh, FALSE otherwise \end{Desc}

@@ -1,0 +1,654 @@
+\hypertarget{pm__at32ap7000_8h}{
+\section{E:/Ausbildung/Semester3/Kopie von AVR32\_\-Work1/Halos\_\-Development/src/hal/ports/avr32/ap7x/ap7000/pm\_\-at32ap7000.h File Reference}
+\label{pm__at32ap7000_8h}\index{E:/Ausbildung/Semester3/Kopie von AVR32\_\-Work1/Halos\_\-Development/src/hal/ports/avr32/ap7x/ap7000/pm\_\-at32ap7000.h@{E:/Ausbildung/Semester3/Kopie von AVR32\_\-Work1/Halos\_\-Development/src/hal/ports/avr32/ap7x/ap7000/pm\_\-at32ap7000.h}}
+}
+Power Manager driver.  
+
+
+{\tt \#include \char`\"{}compiler.h\char`\"{}}\par
+{\tt \#include $<$avr32/io.h$>$}\par
+{\tt \#include \char`\"{}ngw100.h\char`\"{}}\par
+{\tt \#include \char`\"{}error.h\char`\"{}}\par
+\subsection*{Data Structures}
+\begin{CompactItemize}
+\item 
+struct \hyperlink{structpm__gen__clk__opt__t}{pm\_\-gen\_\-clk\_\-opt\_\-t}
+\begin{CompactList}\small\item\em Generic clock genration options. \item\end{CompactList}\item 
+struct \hyperlink{structpm__osc__opt__t}{pm\_\-osc\_\-opt\_\-t}
+\begin{CompactList}\small\item\em Oscilator startup options. \item\end{CompactList}\item 
+struct \hyperlink{structpm__pll__opt__t}{pm\_\-pll\_\-opt\_\-t}
+\begin{CompactList}\small\item\em Pll settings. The new frequency will be set according to the following formula: pll = osc $\ast$ mul / div. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Enumerations}
+\begin{CompactItemize}
+\item 
+enum \hyperlink{pm__at32ap7000_8h_e3792d2f861d39eed0dd8a82ec76346e}{pm\_\-clock\_\-source\_\-e} 
+\begin{CompactList}\small\item\em The different clock sources of the power manager. \item\end{CompactList}\item 
+enum \hyperlink{pm__at32ap7000_8h_fa4843677768667f989b444539b1dfb2}{pm\_\-calibration\_\-src\_\-e} 
+\begin{CompactList}\small\item\em The different sources of the power manager that can be calibrated. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+int \hyperlink{pm__at32ap7000_8h_f4866c8d515de18a7e6438de6721af48}{pm\_\-reset} (void)
+\begin{CompactList}\small\item\em Resets the power manager and enables the default startup clock. \item\end{CompactList}\item 
+unsigned int \hyperlink{pm__at32ap7000_8h_e1735a2bad0e0a6f069c04ca6b3b1af2}{pm\_\-get\_\-reset\_\-cause} (void)
+\begin{CompactList}\small\item\em Returns cause for the last reset. \item\end{CompactList}\item 
+int \hyperlink{pm__at32ap7000_8h_4436c169f5df21cf76dbb36cffc14d13}{pm\_\-start\_\-osc} (const \hyperlink{structpm__osc__opt__t}{pm\_\-osc\_\-opt\_\-t} $\ast$opt)
+\begin{CompactList}\small\item\em Starts a specific oscillator. Used for both internal and external osc. \item\end{CompactList}\item 
+int \hyperlink{pm__at32ap7000_8h_9debf3ed8dc26162c0748362290a01d9}{pm\_\-stop\_\-osc} (int osc\_\-id)
+\begin{CompactList}\small\item\em Stops a specific oscillator. \item\end{CompactList}\item 
+int \hyperlink{pm__at32ap7000_8h_ebc593fde3a2e1acd446c01f5bcc4f09}{pm\_\-start\_\-pll} (\hyperlink{structpm__pll__opt__t}{pm\_\-pll\_\-opt\_\-t} $\ast$opt)
+\begin{CompactList}\small\item\em Setup and configure a specific pll. \item\end{CompactList}\item 
+int \hyperlink{pm__at32ap7000_8h_8147ed2dbc0c7fdcb1f527f7acd26d64}{pm\_\-start\_\-pll\_\-freq} (int pll\_\-id, unsigned int freq, Bool wait\_\-for\_\-lock)
+\begin{CompactList}\small\item\em Setup and configure a specific pll to a match target frequency. \item\end{CompactList}\item 
+int \hyperlink{pm__at32ap7000_8h_2710176ba5372efa941705025b137d6c}{pm\_\-stop\_\-pll} (int pll\_\-id)
+\begin{CompactList}\small\item\em Stop a pll. \item\end{CompactList}\item 
+int \hyperlink{pm__at32ap7000_8h_9224e706f8d2315f0c79e696e5f0b5f6}{pm\_\-get\_\-clock\_\-source\_\-freq\_\-hz} (int clock\_\-source)
+\begin{CompactList}\small\item\em Gets the frequency in hz for the specified clock source. \item\end{CompactList}\item 
+int \hyperlink{pm__at32ap7000_8h_31a91be95a610162eb7bebe9d42b165d}{pm\_\-wait\_\-for\_\-clock\_\-source\_\-lock} (int clock\_\-source)
+\begin{CompactList}\small\item\em Wait actively for a clock source to successfully lock. \item\end{CompactList}\item 
+int \hyperlink{pm__at32ap7000_8h_b62e6b877cfc3c234c8f760875b20f23}{pm\_\-wait\_\-for\_\-status} (unsigned int status)
+\begin{CompactList}\small\item\em Wait for status bit(s) to be set. \item\end{CompactList}\item 
+int \hyperlink{pm__at32ap7000_8h_f145842da93437f0c495e3e51ed1ab0e}{pm\_\-enable\_\-interrupt} (unsigned int mask)
+\begin{CompactList}\small\item\em Enable power manager interrupts. \item\end{CompactList}\item 
+int \hyperlink{pm__at32ap7000_8h_d87d30daae346049ee87bf2d9fdebf6e}{pm\_\-disable\_\-interrupt} (unsigned int mask)
+\begin{CompactList}\small\item\em Disable power manager interrupts. \item\end{CompactList}\item 
+unsigned int \hyperlink{pm__at32ap7000_8h_2b529babc28b6bc956043ad664c787e6}{pm\_\-get\_\-enabled\_\-interrupts} (void)
+\begin{CompactList}\small\item\em Read the enable power manager interrupts. \item\end{CompactList}\item 
+unsigned int \hyperlink{pm__at32ap7000_8h_20db9ca7c7e6ad9cb8527c7dd08c044a}{pm\_\-get\_\-interrupt\_\-status} (void)
+\begin{CompactList}\small\item\em Read the interrupt status of the power manager. \item\end{CompactList}\item 
+int \hyperlink{pm__at32ap7000_8h_a0c26dc6ad9826adc7908844228d04f5}{pm\_\-clear\_\-interrupt\_\-status} (unsigned int mask)
+\begin{CompactList}\small\item\em Clear raised interrupts from the power manager. \item\end{CompactList}\item 
+int \hyperlink{pm__at32ap7000_8h_29a1c4f9e136202580fd8ed42ca65522}{pm\_\-calibrate} (int source, unsigned int calibration\_\-value)
+\begin{CompactList}\small\item\em Calibrate the hardware. \item\end{CompactList}\item 
+int \hyperlink{pm__at32ap7000_8h_2c97d6029e8587d8d5685a5358f99f3b}{pm\_\-set\_\-bod\_\-settings} (unsigned int bod\_\-control, Bool hysteresis, unsigned char level)
+\begin{CompactList}\small\item\em Calibrate and set the BOD. \item\end{CompactList}\item 
+int \hyperlink{pm__at32ap7000_8h_4b02f0d6c17c9aa7a01997e368ae9d91}{pm\_\-get\_\-bod\_\-settings} (unsigned int bod\_\-control, Bool hysteresis, unsigned char level)
+\begin{CompactList}\small\item\em Read Bod settings. \item\end{CompactList}\item 
+int \hyperlink{pm__at32ap7000_8h_1107f87a6a42385e6e16835aa33e1a2a}{pm\_\-set\_\-mclk\_\-source} (int clock\_\-source)
+\begin{CompactList}\small\item\em Set the main clock. \item\end{CompactList}\item 
+int \hyperlink{pm__at32ap7000_8h_c13a885066b75fb2d3d1cd9a0373a9e7}{pm\_\-get\_\-mclk\_\-source} (void)
+\begin{CompactList}\small\item\em Read source of the main clock. \item\end{CompactList}\item 
+int \hyperlink{pm__at32ap7000_8h_72346cb8ad0cc784189585fb838a84fe}{pm\_\-get\_\-mclk\_\-freq\_\-hz} (void)
+\begin{CompactList}\small\item\em Read the current cpu speed. \item\end{CompactList}\item 
+int \hyperlink{pm__at32ap7000_8h_0f2a943733b661e4eaf234349224886c}{pm\_\-read\_\-clock\_\-domain\_\-scaler} (unsigned int clock\_\-domain)
+\begin{CompactList}\small\item\em Read the clock domain scaler. \item\end{CompactList}\item 
+int \hyperlink{pm__at32ap7000_8h_d9847017385140f272398387269030c9}{pm\_\-set\_\-clock\_\-domain\_\-scaler} (unsigned int clock\_\-domain, int divider)
+\begin{CompactList}\small\item\em Set the relative divider for a clock domain. \item\end{CompactList}\item 
+int \hyperlink{pm__at32ap7000_8h_96763a086925da75bb30818584b55e3a}{pm\_\-read\_\-module\_\-freq\_\-hz} (unsigned int module)
+\begin{CompactList}\small\item\em Read the running frequency of a module. \item\end{CompactList}\item 
+int \hyperlink{pm__at32ap7000_8h_7b28051cf6fed51b207c656a74af454f}{pm\_\-enable\_\-module} (unsigned int module)
+\begin{CompactList}\small\item\em Enable the main clock of a specified module. \item\end{CompactList}\item 
+int \hyperlink{pm__at32ap7000_8h_b6179a57292838fe7e445d2a2577bda0}{pm\_\-disable\_\-module} (unsigned int module)
+\begin{CompactList}\small\item\em Disable a module. \item\end{CompactList}\item 
+int \hyperlink{pm__at32ap7000_8h_254bd207136bbb99a8a12fce888c4a13}{pm\_\-start\_\-generic\_\-clock} (unsigned int clock, const \hyperlink{structpm__gen__clk__opt__t}{pm\_\-gen\_\-clk\_\-opt\_\-t} $\ast$opt)
+\begin{CompactList}\small\item\em Setup a genclock. \item\end{CompactList}\item 
+int \hyperlink{pm__at32ap7000_8h_9fdc1aafc734de477483c9008fdc32b5}{pm\_\-stop\_\-generic\_\-clock} (unsigned int clock)
+\begin{CompactList}\small\item\em Stop a generic clock. \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Power Manager driver. 
+
+\begin{itemize}
+\item Compiler: IAR EWAVR32 and GNU GCC for AVR32\item Supported devices: All AVR32 devices.\item AppNote:\end{itemize}
+
+
+\begin{Desc}
+\item[Author:]Atmel Corporation: \href{http://www.atmel.com}{\tt http://www.atmel.com} \par
+ Support and FAQ: \href{http://support.atmel.no/}{\tt http://support.atmel.no/} \end{Desc}
+
+
+\subsection{Function Documentation}
+\hypertarget{pm__at32ap7000_8h_29a1c4f9e136202580fd8ed42ca65522}{
+\index{pm\_\-at32ap7000.h@{pm\_\-at32ap7000.h}!pm\_\-calibrate@{pm\_\-calibrate}}
+\index{pm\_\-calibrate@{pm\_\-calibrate}!pm_at32ap7000.h@{pm\_\-at32ap7000.h}}
+\subsubsection[{pm\_\-calibrate}]{\setlength{\rightskip}{0pt plus 5cm}int pm\_\-calibrate (int {\em source}, \/  unsigned int {\em calibration\_\-value})}}
+\label{pm__at32ap7000_8h_29a1c4f9e136202580fd8ed42ca65522}
+
+
+Calibrate the hardware. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em source}]The source to calibrate \item[{\em calibration\_\-value}]Consult the datasheet for your device for vaules.\end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]Status. \end{Desc}
+\begin{Desc}
+\item[Return values:]
+\begin{description}
+\item[{\em =0}]Bandgap successfully calibrated. \item[{\em $<$0}]Unable to calibrate bandgap. \end{description}
+\end{Desc}
+\hypertarget{pm__at32ap7000_8h_a0c26dc6ad9826adc7908844228d04f5}{
+\index{pm\_\-at32ap7000.h@{pm\_\-at32ap7000.h}!pm\_\-clear\_\-interrupt\_\-status@{pm\_\-clear\_\-interrupt\_\-status}}
+\index{pm\_\-clear\_\-interrupt\_\-status@{pm\_\-clear\_\-interrupt\_\-status}!pm_at32ap7000.h@{pm\_\-at32ap7000.h}}
+\subsubsection[{pm\_\-clear\_\-interrupt\_\-status}]{\setlength{\rightskip}{0pt plus 5cm}int pm\_\-clear\_\-interrupt\_\-status (unsigned int {\em mask})}}
+\label{pm__at32ap7000_8h_a0c26dc6ad9826adc7908844228d04f5}
+
+
+Clear raised interrupts from the power manager. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em mask}]The interrupts to clear.\end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]Status. \end{Desc}
+\begin{Desc}
+\item[Return values:]
+\begin{description}
+\item[{\em $>$0}]The interrupts which have been cleared. \item[{\em $<$0}]Unable to clear the desired interrupts. \end{description}
+\end{Desc}
+\hypertarget{pm__at32ap7000_8h_d87d30daae346049ee87bf2d9fdebf6e}{
+\index{pm\_\-at32ap7000.h@{pm\_\-at32ap7000.h}!pm\_\-disable\_\-interrupt@{pm\_\-disable\_\-interrupt}}
+\index{pm\_\-disable\_\-interrupt@{pm\_\-disable\_\-interrupt}!pm_at32ap7000.h@{pm\_\-at32ap7000.h}}
+\subsubsection[{pm\_\-disable\_\-interrupt}]{\setlength{\rightskip}{0pt plus 5cm}int pm\_\-disable\_\-interrupt (unsigned int {\em mask})}}
+\label{pm__at32ap7000_8h_d87d30daae346049ee87bf2d9fdebf6e}
+
+
+Disable power manager interrupts. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em mask}]the interrupts to disable\end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]Status. \end{Desc}
+\begin{Desc}
+\item[Return values:]
+\begin{description}
+\item[{\em =0}]Success. The interrupts set in the mask is disabled \item[{\em $<$0}]Unable to set the desired mask. \end{description}
+\end{Desc}
+\hypertarget{pm__at32ap7000_8h_b6179a57292838fe7e445d2a2577bda0}{
+\index{pm\_\-at32ap7000.h@{pm\_\-at32ap7000.h}!pm\_\-disable\_\-module@{pm\_\-disable\_\-module}}
+\index{pm\_\-disable\_\-module@{pm\_\-disable\_\-module}!pm_at32ap7000.h@{pm\_\-at32ap7000.h}}
+\subsubsection[{pm\_\-disable\_\-module}]{\setlength{\rightskip}{0pt plus 5cm}int pm\_\-disable\_\-module (unsigned int {\em module})}}
+\label{pm__at32ap7000_8h_b6179a57292838fe7e445d2a2577bda0}
+
+
+Disable a module. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em module}]The module to shut down.\end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]Status \end{Desc}
+\begin{Desc}
+\item[Return values:]
+\begin{description}
+\item[{\em 0}]Success. \item[{\em $<$0}]An error occured. \end{description}
+\end{Desc}
+\hypertarget{pm__at32ap7000_8h_f145842da93437f0c495e3e51ed1ab0e}{
+\index{pm\_\-at32ap7000.h@{pm\_\-at32ap7000.h}!pm\_\-enable\_\-interrupt@{pm\_\-enable\_\-interrupt}}
+\index{pm\_\-enable\_\-interrupt@{pm\_\-enable\_\-interrupt}!pm_at32ap7000.h@{pm\_\-at32ap7000.h}}
+\subsubsection[{pm\_\-enable\_\-interrupt}]{\setlength{\rightskip}{0pt plus 5cm}int pm\_\-enable\_\-interrupt (unsigned int {\em mask})}}
+\label{pm__at32ap7000_8h_f145842da93437f0c495e3e51ed1ab0e}
+
+
+Enable power manager interrupts. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em mask}]the interrupts to enable\end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]Status. \end{Desc}
+\begin{Desc}
+\item[Return values:]
+\begin{description}
+\item[{\em 0}]Success. The interrupts set in the mask is enabled \item[{\em $<$0}]Unable to set the desired mask. \end{description}
+\end{Desc}
+\hypertarget{pm__at32ap7000_8h_7b28051cf6fed51b207c656a74af454f}{
+\index{pm\_\-at32ap7000.h@{pm\_\-at32ap7000.h}!pm\_\-enable\_\-module@{pm\_\-enable\_\-module}}
+\index{pm\_\-enable\_\-module@{pm\_\-enable\_\-module}!pm_at32ap7000.h@{pm\_\-at32ap7000.h}}
+\subsubsection[{pm\_\-enable\_\-module}]{\setlength{\rightskip}{0pt plus 5cm}int pm\_\-enable\_\-module (unsigned int {\em module})}}
+\label{pm__at32ap7000_8h_7b28051cf6fed51b207c656a74af454f}
+
+
+Enable the main clock of a specified module. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em module}]The module to start\end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]Status \end{Desc}
+\begin{Desc}
+\item[Return values:]
+\begin{description}
+\item[{\em 0}]Success. \item[{\em $<$0}]An error occured. \end{description}
+\end{Desc}
+\hypertarget{pm__at32ap7000_8h_4b02f0d6c17c9aa7a01997e368ae9d91}{
+\index{pm\_\-at32ap7000.h@{pm\_\-at32ap7000.h}!pm\_\-get\_\-bod\_\-settings@{pm\_\-get\_\-bod\_\-settings}}
+\index{pm\_\-get\_\-bod\_\-settings@{pm\_\-get\_\-bod\_\-settings}!pm_at32ap7000.h@{pm\_\-at32ap7000.h}}
+\subsubsection[{pm\_\-get\_\-bod\_\-settings}]{\setlength{\rightskip}{0pt plus 5cm}int pm\_\-get\_\-bod\_\-settings (unsigned int {\em bod\_\-control}, \/  Bool {\em hysteresis}, \/  unsigned char {\em level})}}
+\label{pm__at32ap7000_8h_4b02f0d6c17c9aa7a01997e368ae9d91}
+
+
+Read Bod settings. 
+
+\begin{Desc}
+\item[Returns:]Status. \end{Desc}
+\begin{Desc}
+\item[Return values:]
+\begin{description}
+\item[{\em $>$=0}]Success. BOD settings returned. \item[{\em $<$0}]Error reading BOD. \end{description}
+\end{Desc}
+\hypertarget{pm__at32ap7000_8h_9224e706f8d2315f0c79e696e5f0b5f6}{
+\index{pm\_\-at32ap7000.h@{pm\_\-at32ap7000.h}!pm\_\-get\_\-clock\_\-source\_\-freq\_\-hz@{pm\_\-get\_\-clock\_\-source\_\-freq\_\-hz}}
+\index{pm\_\-get\_\-clock\_\-source\_\-freq\_\-hz@{pm\_\-get\_\-clock\_\-source\_\-freq\_\-hz}!pm_at32ap7000.h@{pm\_\-at32ap7000.h}}
+\subsubsection[{pm\_\-get\_\-clock\_\-source\_\-freq\_\-hz}]{\setlength{\rightskip}{0pt plus 5cm}int pm\_\-get\_\-clock\_\-source\_\-freq\_\-hz (int {\em clock\_\-source})}}
+\label{pm__at32ap7000_8h_9224e706f8d2315f0c79e696e5f0b5f6}
+
+
+Gets the frequency in hz for the specified clock source. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em clock\_\-source}]The clock source to use. See \hyperlink{pm__at32ap7000_8h_e3792d2f861d39eed0dd8a82ec76346e}{pm\_\-clock\_\-source\_\-e}\end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]Status. \end{Desc}
+\begin{Desc}
+\item[Return values:]
+\begin{description}
+\item[{\em $>$=0}]Success. The running frequency is return \item[{\em $<$0}]Unable to read clock source frequency \end{description}
+\end{Desc}
+\hypertarget{pm__at32ap7000_8h_2b529babc28b6bc956043ad664c787e6}{
+\index{pm\_\-at32ap7000.h@{pm\_\-at32ap7000.h}!pm\_\-get\_\-enabled\_\-interrupts@{pm\_\-get\_\-enabled\_\-interrupts}}
+\index{pm\_\-get\_\-enabled\_\-interrupts@{pm\_\-get\_\-enabled\_\-interrupts}!pm_at32ap7000.h@{pm\_\-at32ap7000.h}}
+\subsubsection[{pm\_\-get\_\-enabled\_\-interrupts}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int pm\_\-get\_\-enabled\_\-interrupts (void)}}
+\label{pm__at32ap7000_8h_2b529babc28b6bc956043ad664c787e6}
+
+
+Read the enable power manager interrupts. 
+
+\begin{Desc}
+\item[Returns:]Status. \end{Desc}
+\begin{Desc}
+\item[Return values:]
+\begin{description}
+\item[{\em The}]enabled interrupts. \end{description}
+\end{Desc}
+\hypertarget{pm__at32ap7000_8h_20db9ca7c7e6ad9cb8527c7dd08c044a}{
+\index{pm\_\-at32ap7000.h@{pm\_\-at32ap7000.h}!pm\_\-get\_\-interrupt\_\-status@{pm\_\-get\_\-interrupt\_\-status}}
+\index{pm\_\-get\_\-interrupt\_\-status@{pm\_\-get\_\-interrupt\_\-status}!pm_at32ap7000.h@{pm\_\-at32ap7000.h}}
+\subsubsection[{pm\_\-get\_\-interrupt\_\-status}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int pm\_\-get\_\-interrupt\_\-status (void)}}
+\label{pm__at32ap7000_8h_20db9ca7c7e6ad9cb8527c7dd08c044a}
+
+
+Read the interrupt status of the power manager. 
+
+\begin{Desc}
+\item[Returns:]Status. \end{Desc}
+\begin{Desc}
+\item[Return values:]
+\begin{description}
+\item[{\em The}]interrupts which have been trigged \end{description}
+\end{Desc}
+\hypertarget{pm__at32ap7000_8h_72346cb8ad0cc784189585fb838a84fe}{
+\index{pm\_\-at32ap7000.h@{pm\_\-at32ap7000.h}!pm\_\-get\_\-mclk\_\-freq\_\-hz@{pm\_\-get\_\-mclk\_\-freq\_\-hz}}
+\index{pm\_\-get\_\-mclk\_\-freq\_\-hz@{pm\_\-get\_\-mclk\_\-freq\_\-hz}!pm_at32ap7000.h@{pm\_\-at32ap7000.h}}
+\subsubsection[{pm\_\-get\_\-mclk\_\-freq\_\-hz}]{\setlength{\rightskip}{0pt plus 5cm}int pm\_\-get\_\-mclk\_\-freq\_\-hz (void)}}
+\label{pm__at32ap7000_8h_72346cb8ad0cc784189585fb838a84fe}
+
+
+Read the current cpu speed. 
+
+\begin{Desc}
+\item[Returns:]freq. \end{Desc}
+\begin{Desc}
+\item[Return values:]
+\begin{description}
+\item[{\em The}]current frequency of the main clock \end{description}
+\end{Desc}
+\hypertarget{pm__at32ap7000_8h_c13a885066b75fb2d3d1cd9a0373a9e7}{
+\index{pm\_\-at32ap7000.h@{pm\_\-at32ap7000.h}!pm\_\-get\_\-mclk\_\-source@{pm\_\-get\_\-mclk\_\-source}}
+\index{pm\_\-get\_\-mclk\_\-source@{pm\_\-get\_\-mclk\_\-source}!pm_at32ap7000.h@{pm\_\-at32ap7000.h}}
+\subsubsection[{pm\_\-get\_\-mclk\_\-source}]{\setlength{\rightskip}{0pt plus 5cm}int pm\_\-get\_\-mclk\_\-source (void)}}
+\label{pm__at32ap7000_8h_c13a885066b75fb2d3d1cd9a0373a9e7}
+
+
+Read source of the main clock. 
+
+\begin{Desc}
+\item[Returns:]source. \end{Desc}
+\begin{Desc}
+\item[Return values:]
+\begin{description}
+\item[{\em The}]source of the main clock. See \hyperlink{pm__at32ap7000_8h_e3792d2f861d39eed0dd8a82ec76346e}{pm\_\-clock\_\-source\_\-e} \end{description}
+\end{Desc}
+\hypertarget{pm__at32ap7000_8h_e1735a2bad0e0a6f069c04ca6b3b1af2}{
+\index{pm\_\-at32ap7000.h@{pm\_\-at32ap7000.h}!pm\_\-get\_\-reset\_\-cause@{pm\_\-get\_\-reset\_\-cause}}
+\index{pm\_\-get\_\-reset\_\-cause@{pm\_\-get\_\-reset\_\-cause}!pm_at32ap7000.h@{pm\_\-at32ap7000.h}}
+\subsubsection[{pm\_\-get\_\-reset\_\-cause}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int pm\_\-get\_\-reset\_\-cause (void)}}
+\label{pm__at32ap7000_8h_e1735a2bad0e0a6f069c04ca6b3b1af2}
+
+
+Returns cause for the last reset. 
+
+\begin{Desc}
+\item[Returns:]Status. \end{Desc}
+\begin{Desc}
+\item[Return values:]
+\begin{description}
+\item[{\em $>$0}]The reset cause \item[{\em =0}]Unknown reset cause \end{description}
+\end{Desc}
+\hypertarget{pm__at32ap7000_8h_0f2a943733b661e4eaf234349224886c}{
+\index{pm\_\-at32ap7000.h@{pm\_\-at32ap7000.h}!pm\_\-read\_\-clock\_\-domain\_\-scaler@{pm\_\-read\_\-clock\_\-domain\_\-scaler}}
+\index{pm\_\-read\_\-clock\_\-domain\_\-scaler@{pm\_\-read\_\-clock\_\-domain\_\-scaler}!pm_at32ap7000.h@{pm\_\-at32ap7000.h}}
+\subsubsection[{pm\_\-read\_\-clock\_\-domain\_\-scaler}]{\setlength{\rightskip}{0pt plus 5cm}int pm\_\-read\_\-clock\_\-domain\_\-scaler (unsigned int {\em clock\_\-domain})}}
+\label{pm__at32ap7000_8h_0f2a943733b661e4eaf234349224886c}
+
+
+Read the clock domain scaler. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em clock\_\-domain}]The clock domain in question\end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]Status. \end{Desc}
+\begin{Desc}
+\item[Return values:]
+\begin{description}
+\item[{\em $>$0}]Success. The divider is returned \item[{\em $<$0}]An error occured. \end{description}
+\end{Desc}
+\hypertarget{pm__at32ap7000_8h_96763a086925da75bb30818584b55e3a}{
+\index{pm\_\-at32ap7000.h@{pm\_\-at32ap7000.h}!pm\_\-read\_\-module\_\-freq\_\-hz@{pm\_\-read\_\-module\_\-freq\_\-hz}}
+\index{pm\_\-read\_\-module\_\-freq\_\-hz@{pm\_\-read\_\-module\_\-freq\_\-hz}!pm_at32ap7000.h@{pm\_\-at32ap7000.h}}
+\subsubsection[{pm\_\-read\_\-module\_\-freq\_\-hz}]{\setlength{\rightskip}{0pt plus 5cm}int pm\_\-read\_\-module\_\-freq\_\-hz (unsigned int {\em module})}}
+\label{pm__at32ap7000_8h_96763a086925da75bb30818584b55e3a}
+
+
+Read the running frequency of a module. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em module}]The module to read.\end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]Status. \end{Desc}
+\begin{Desc}
+\item[Return values:]
+\begin{description}
+\item[{\em $>$0}]Success. The running frequency is returned. \item[{\em $<$1}]An error occured. \end{description}
+\end{Desc}
+\hypertarget{pm__at32ap7000_8h_f4866c8d515de18a7e6438de6721af48}{
+\index{pm\_\-at32ap7000.h@{pm\_\-at32ap7000.h}!pm\_\-reset@{pm\_\-reset}}
+\index{pm\_\-reset@{pm\_\-reset}!pm_at32ap7000.h@{pm\_\-at32ap7000.h}}
+\subsubsection[{pm\_\-reset}]{\setlength{\rightskip}{0pt plus 5cm}int pm\_\-reset (void)}}
+\label{pm__at32ap7000_8h_f4866c8d515de18a7e6438de6721af48}
+
+
+Resets the power manager and enables the default startup clock. 
+
+\begin{Desc}
+\item[Returns:]Status. \end{Desc}
+\begin{Desc}
+\item[Return values:]
+\begin{description}
+\item[{\em 0}]Reset successful. \item[{\em $<$0}]Error reseting the power manager. \end{description}
+\end{Desc}
+\hypertarget{pm__at32ap7000_8h_2c97d6029e8587d8d5685a5358f99f3b}{
+\index{pm\_\-at32ap7000.h@{pm\_\-at32ap7000.h}!pm\_\-set\_\-bod\_\-settings@{pm\_\-set\_\-bod\_\-settings}}
+\index{pm\_\-set\_\-bod\_\-settings@{pm\_\-set\_\-bod\_\-settings}!pm_at32ap7000.h@{pm\_\-at32ap7000.h}}
+\subsubsection[{pm\_\-set\_\-bod\_\-settings}]{\setlength{\rightskip}{0pt plus 5cm}int pm\_\-set\_\-bod\_\-settings (unsigned int {\em bod\_\-control}, \/  Bool {\em hysteresis}, \/  unsigned char {\em level})}}
+\label{pm__at32ap7000_8h_2c97d6029e8587d8d5685a5358f99f3b}
+
+
+Calibrate and set the BOD. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em bod\_\-control}]Specify behaviour upon BOD event \item[{\em hysteresis}]Enable/disable hysteresis on the BOD \item[{\em level}]Consult the datasheet for your device for vaules.\end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]Status. \end{Desc}
+\begin{Desc}
+\item[Return values:]
+\begin{description}
+\item[{\em =0}]Bandgap successfully calibrated. \item[{\em $<$0}]Unable to calibrate the BOD. \end{description}
+\end{Desc}
+\hypertarget{pm__at32ap7000_8h_d9847017385140f272398387269030c9}{
+\index{pm\_\-at32ap7000.h@{pm\_\-at32ap7000.h}!pm\_\-set\_\-clock\_\-domain\_\-scaler@{pm\_\-set\_\-clock\_\-domain\_\-scaler}}
+\index{pm\_\-set\_\-clock\_\-domain\_\-scaler@{pm\_\-set\_\-clock\_\-domain\_\-scaler}!pm_at32ap7000.h@{pm\_\-at32ap7000.h}}
+\subsubsection[{pm\_\-set\_\-clock\_\-domain\_\-scaler}]{\setlength{\rightskip}{0pt plus 5cm}int pm\_\-set\_\-clock\_\-domain\_\-scaler (unsigned int {\em clock\_\-domain}, \/  int {\em divider})}}
+\label{pm__at32ap7000_8h_d9847017385140f272398387269030c9}
+
+
+Set the relative divider for a clock domain. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em clock\_\-domain}]The clock domain to alter \item[{\em divider}]The scaler to set. Valid values are 1, 2, 4, 8, 16, 32, 64, 128, 256\end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]Status. \end{Desc}
+\begin{Desc}
+\item[Return values:]
+\begin{description}
+\item[{\em $>$=0}]Success. The divider is returned \item[{\em $<$0}]An error occured. \end{description}
+\end{Desc}
+\hypertarget{pm__at32ap7000_8h_1107f87a6a42385e6e16835aa33e1a2a}{
+\index{pm\_\-at32ap7000.h@{pm\_\-at32ap7000.h}!pm\_\-set\_\-mclk\_\-source@{pm\_\-set\_\-mclk\_\-source}}
+\index{pm\_\-set\_\-mclk\_\-source@{pm\_\-set\_\-mclk\_\-source}!pm_at32ap7000.h@{pm\_\-at32ap7000.h}}
+\subsubsection[{pm\_\-set\_\-mclk\_\-source}]{\setlength{\rightskip}{0pt plus 5cm}int pm\_\-set\_\-mclk\_\-source (int {\em clock\_\-source})}}
+\label{pm__at32ap7000_8h_1107f87a6a42385e6e16835aa33e1a2a}
+
+
+Set the main clock. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em clock\_\-source}]The clock to use as the main clock. See \hyperlink{pm__at32ap7000_8h_e3792d2f861d39eed0dd8a82ec76346e}{pm\_\-clock\_\-source\_\-e}\end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]Status. \end{Desc}
+\begin{Desc}
+\item[Return values:]
+\begin{description}
+\item[{\em 0}]Success. \item[{\em $<$0}]An error occured when trying to set the main clock \end{description}
+\end{Desc}
+\hypertarget{pm__at32ap7000_8h_254bd207136bbb99a8a12fce888c4a13}{
+\index{pm\_\-at32ap7000.h@{pm\_\-at32ap7000.h}!pm\_\-start\_\-generic\_\-clock@{pm\_\-start\_\-generic\_\-clock}}
+\index{pm\_\-start\_\-generic\_\-clock@{pm\_\-start\_\-generic\_\-clock}!pm_at32ap7000.h@{pm\_\-at32ap7000.h}}
+\subsubsection[{pm\_\-start\_\-generic\_\-clock}]{\setlength{\rightskip}{0pt plus 5cm}int pm\_\-start\_\-generic\_\-clock (unsigned int {\em clock}, \/  const {\bf pm\_\-gen\_\-clk\_\-opt\_\-t} $\ast$ {\em opt})}}
+\label{pm__at32ap7000_8h_254bd207136bbb99a8a12fce888c4a13}
+
+
+Setup a genclock. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em clock}]The generick clock number to setup \item[{\em opt}]The settings for the clock\end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]Status \end{Desc}
+\begin{Desc}
+\item[Return values:]
+\begin{description}
+\item[{\em 0}]Success. \item[{\em $<$0}]An error occured. \end{description}
+\end{Desc}
+\hypertarget{pm__at32ap7000_8h_4436c169f5df21cf76dbb36cffc14d13}{
+\index{pm\_\-at32ap7000.h@{pm\_\-at32ap7000.h}!pm\_\-start\_\-osc@{pm\_\-start\_\-osc}}
+\index{pm\_\-start\_\-osc@{pm\_\-start\_\-osc}!pm_at32ap7000.h@{pm\_\-at32ap7000.h}}
+\subsubsection[{pm\_\-start\_\-osc}]{\setlength{\rightskip}{0pt plus 5cm}int pm\_\-start\_\-osc (const {\bf pm\_\-osc\_\-opt\_\-t} $\ast$ {\em opt})}}
+\label{pm__at32ap7000_8h_4436c169f5df21cf76dbb36cffc14d13}
+
+
+Starts a specific oscillator. Used for both internal and external osc. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em opt}]The oscillator options (\hyperlink{structpm__osc__opt__t}{pm\_\-osc\_\-opt\_\-t})\end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]Status. \end{Desc}
+\begin{Desc}
+\item[Return values:]
+\begin{description}
+\item[{\em 0}]Oscillator start successfull. \item[{\em $<$0}]Error starting the oscillator. \end{description}
+\end{Desc}
+\hypertarget{pm__at32ap7000_8h_ebc593fde3a2e1acd446c01f5bcc4f09}{
+\index{pm\_\-at32ap7000.h@{pm\_\-at32ap7000.h}!pm\_\-start\_\-pll@{pm\_\-start\_\-pll}}
+\index{pm\_\-start\_\-pll@{pm\_\-start\_\-pll}!pm_at32ap7000.h@{pm\_\-at32ap7000.h}}
+\subsubsection[{pm\_\-start\_\-pll}]{\setlength{\rightskip}{0pt plus 5cm}int pm\_\-start\_\-pll ({\bf pm\_\-pll\_\-opt\_\-t} $\ast$ {\em opt})}}
+\label{pm__at32ap7000_8h_ebc593fde3a2e1acd446c01f5bcc4f09}
+
+
+Setup and configure a specific pll. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em opt}]The pll setting options (\hyperlink{structpm__pll__opt__t}{pm\_\-pll\_\-opt\_\-t})\end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]Status. \end{Desc}
+\begin{Desc}
+\item[Return values:]
+\begin{description}
+\item[{\em $>$=0}]Success. Actual pll frequency returned \item[{\em $<$0}]Not able to set pll according to input. \end{description}
+\end{Desc}
+\hypertarget{pm__at32ap7000_8h_8147ed2dbc0c7fdcb1f527f7acd26d64}{
+\index{pm\_\-at32ap7000.h@{pm\_\-at32ap7000.h}!pm\_\-start\_\-pll\_\-freq@{pm\_\-start\_\-pll\_\-freq}}
+\index{pm\_\-start\_\-pll\_\-freq@{pm\_\-start\_\-pll\_\-freq}!pm_at32ap7000.h@{pm\_\-at32ap7000.h}}
+\subsubsection[{pm\_\-start\_\-pll\_\-freq}]{\setlength{\rightskip}{0pt plus 5cm}int pm\_\-start\_\-pll\_\-freq (int {\em pll\_\-id}, \/  unsigned int {\em freq}, \/  Bool {\em wait\_\-for\_\-lock})}}
+\label{pm__at32ap7000_8h_8147ed2dbc0c7fdcb1f527f7acd26d64}
+
+
+Setup and configure a specific pll to a match target frequency. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em pll\_\-id}]Id number of the pll to set up. \item[{\em freq}]The desired frequency \item[{\em wait\_\-for\_\-lock}]Assert to poll for lockbit.\end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]Status. \end{Desc}
+\begin{Desc}
+\item[Return values:]
+\begin{description}
+\item[{\em $>$=0}]Success. Actual pll frequency returned \item[{\em $<$0}]An error occured when stopping the oscillator. \end{description}
+\end{Desc}
+\hypertarget{pm__at32ap7000_8h_9fdc1aafc734de477483c9008fdc32b5}{
+\index{pm\_\-at32ap7000.h@{pm\_\-at32ap7000.h}!pm\_\-stop\_\-generic\_\-clock@{pm\_\-stop\_\-generic\_\-clock}}
+\index{pm\_\-stop\_\-generic\_\-clock@{pm\_\-stop\_\-generic\_\-clock}!pm_at32ap7000.h@{pm\_\-at32ap7000.h}}
+\subsubsection[{pm\_\-stop\_\-generic\_\-clock}]{\setlength{\rightskip}{0pt plus 5cm}int pm\_\-stop\_\-generic\_\-clock (unsigned int {\em clock})}}
+\label{pm__at32ap7000_8h_9fdc1aafc734de477483c9008fdc32b5}
+
+
+Stop a generic clock. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em clock}]The generic clock source to try to stop\end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]Status \end{Desc}
+\begin{Desc}
+\item[Return values:]
+\begin{description}
+\item[{\em 0}]Success. \item[{\em $<$0}]Unable to stop generic clock \end{description}
+\end{Desc}
+\hypertarget{pm__at32ap7000_8h_9debf3ed8dc26162c0748362290a01d9}{
+\index{pm\_\-at32ap7000.h@{pm\_\-at32ap7000.h}!pm\_\-stop\_\-osc@{pm\_\-stop\_\-osc}}
+\index{pm\_\-stop\_\-osc@{pm\_\-stop\_\-osc}!pm_at32ap7000.h@{pm\_\-at32ap7000.h}}
+\subsubsection[{pm\_\-stop\_\-osc}]{\setlength{\rightskip}{0pt plus 5cm}int pm\_\-stop\_\-osc (int {\em osc\_\-id})}}
+\label{pm__at32ap7000_8h_9debf3ed8dc26162c0748362290a01d9}
+
+
+Stops a specific oscillator. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em osc\_\-id}]ID number of the oscillator that is to be stopped\end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]Status. \end{Desc}
+\begin{Desc}
+\item[Return values:]
+\begin{description}
+\item[{\em 0}]Oscillator successfully stopped. \item[{\em $<$0}]An error occured when stopping the oscillator. \end{description}
+\end{Desc}
+\hypertarget{pm__at32ap7000_8h_2710176ba5372efa941705025b137d6c}{
+\index{pm\_\-at32ap7000.h@{pm\_\-at32ap7000.h}!pm\_\-stop\_\-pll@{pm\_\-stop\_\-pll}}
+\index{pm\_\-stop\_\-pll@{pm\_\-stop\_\-pll}!pm_at32ap7000.h@{pm\_\-at32ap7000.h}}
+\subsubsection[{pm\_\-stop\_\-pll}]{\setlength{\rightskip}{0pt plus 5cm}int pm\_\-stop\_\-pll (int {\em pll\_\-id})}}
+\label{pm__at32ap7000_8h_2710176ba5372efa941705025b137d6c}
+
+
+Stop a pll. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em pll\_\-id}]Id number of the pll to stop\end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]Status. \end{Desc}
+\begin{Desc}
+\item[Return values:]
+\begin{description}
+\item[{\em 0}]Success. The pll is stopped \item[{\em $<$0}]An error occured when trying to stop pll \end{description}
+\end{Desc}
+\hypertarget{pm__at32ap7000_8h_31a91be95a610162eb7bebe9d42b165d}{
+\index{pm\_\-at32ap7000.h@{pm\_\-at32ap7000.h}!pm\_\-wait\_\-for\_\-clock\_\-source\_\-lock@{pm\_\-wait\_\-for\_\-clock\_\-source\_\-lock}}
+\index{pm\_\-wait\_\-for\_\-clock\_\-source\_\-lock@{pm\_\-wait\_\-for\_\-clock\_\-source\_\-lock}!pm_at32ap7000.h@{pm\_\-at32ap7000.h}}
+\subsubsection[{pm\_\-wait\_\-for\_\-clock\_\-source\_\-lock}]{\setlength{\rightskip}{0pt plus 5cm}int pm\_\-wait\_\-for\_\-clock\_\-source\_\-lock (int {\em clock\_\-source})}}
+\label{pm__at32ap7000_8h_31a91be95a610162eb7bebe9d42b165d}
+
+
+Wait actively for a clock source to successfully lock. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em clock\_\-source}]The clock source to wait for. See \hyperlink{pm__at32ap7000_8h_e3792d2f861d39eed0dd8a82ec76346e}{pm\_\-clock\_\-source\_\-e}\end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]Status. \end{Desc}
+\begin{Desc}
+\item[Return values:]
+\begin{description}
+\item[{\em 0}]Success. \item[{\em $<$0}]Unable to lock clock source \end{description}
+\end{Desc}
+\hypertarget{pm__at32ap7000_8h_b62e6b877cfc3c234c8f760875b20f23}{
+\index{pm\_\-at32ap7000.h@{pm\_\-at32ap7000.h}!pm\_\-wait\_\-for\_\-status@{pm\_\-wait\_\-for\_\-status}}
+\index{pm\_\-wait\_\-for\_\-status@{pm\_\-wait\_\-for\_\-status}!pm_at32ap7000.h@{pm\_\-at32ap7000.h}}
+\subsubsection[{pm\_\-wait\_\-for\_\-status}]{\setlength{\rightskip}{0pt plus 5cm}int pm\_\-wait\_\-for\_\-status (unsigned int {\em status})}}
+\label{pm__at32ap7000_8h_b62e6b877cfc3c234c8f760875b20f23}
+
+
+Wait for status bit(s) to be set. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em status}]Status bit mask to wait for\end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]Status. \end{Desc}
+\begin{Desc}
+\item[Return values:]
+\begin{description}
+\item[{\em 0}]Success. The status bit(s) are set \item[{\em $<$0}]An error occured when waiting for status \end{description}
+\end{Desc}

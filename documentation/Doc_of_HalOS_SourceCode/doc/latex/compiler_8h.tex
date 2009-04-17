@@ -1,0 +1,124 @@
+\hypertarget{compiler_8h}{
+\section{E:/Ausbildung/Semester3/Kopie von AVR32\_\-Work1/Halos\_\-Development/src/hal/ports/avr32/ap7x/ap7000/compiler.h File Reference}
+\label{compiler_8h}\index{E:/Ausbildung/Semester3/Kopie von AVR32\_\-Work1/Halos\_\-Development/src/hal/ports/avr32/ap7x/ap7000/compiler.h@{E:/Ausbildung/Semester3/Kopie von AVR32\_\-Work1/Halos\_\-Development/src/hal/ports/avr32/ap7x/ap7000/compiler.h}}
+}
+Compiler file for AVR32.  
+
+
+{\tt \#include \char`\"{}tpaste.h\char`\"{}}\par
+\subsection*{Defines}
+\begin{CompactItemize}
+\item 
+\#define \hyperlink{compiler_8h_ef15a44287d382d2f4e7238b508180b3}{BIG\_\-ENDIAN\_\-MCU}~(!LITTLE\_\-ENDIAN\_\-MCU)
+\begin{CompactList}\small\item\em Boolean evaluating MCU little endianism. \item\end{CompactList}\end{CompactItemize}
+\begin{Indent}{\bf Usual Constants}\par
+\begin{CompactItemize}
+\item 
+\hypertarget{compiler_8h_99496f7308834e8b220f7894efa0b6ab}{
+\#define \textbf{DISABLE}~0}
+\label{compiler_8h_99496f7308834e8b220f7894efa0b6ab}
+
+\item 
+\hypertarget{compiler_8h_514ad415fb6125ba296793df7d1a468a}{
+\#define \textbf{ENABLE}~1}
+\label{compiler_8h_514ad415fb6125ba296793df7d1a468a}
+
+\item 
+\hypertarget{compiler_8h_bd5c8ab57c190a6522ccdbf0ed7577da}{
+\#define \textbf{DISABLED}~0}
+\label{compiler_8h_bd5c8ab57c190a6522ccdbf0ed7577da}
+
+\item 
+\hypertarget{compiler_8h_73c228f87e038e8295ee8ea8eceaa5ac}{
+\#define \textbf{ENABLED}~1}
+\label{compiler_8h_73c228f87e038e8295ee8ea8eceaa5ac}
+
+\item 
+\hypertarget{compiler_8h_29e413f6725b2ba32d165ffaa35b01e5}{
+\#define \textbf{OFF}~0}
+\label{compiler_8h_29e413f6725b2ba32d165ffaa35b01e5}
+
+\item 
+\hypertarget{compiler_8h_d76d1750a6cdeebd506bfcd6752554d2}{
+\#define \textbf{ON}~1}
+\label{compiler_8h_d76d1750a6cdeebd506bfcd6752554d2}
+
+\item 
+\hypertarget{compiler_8h_a93f0eb578d23995850d61f7d61c55c1}{
+\#define \textbf{FALSE}~0}
+\label{compiler_8h_a93f0eb578d23995850d61f7d61c55c1}
+
+\item 
+\hypertarget{compiler_8h_a8cecfc5c5c054d2875c03e77b7be15d}{
+\#define \textbf{TRUE}~1}
+\label{compiler_8h_a8cecfc5c5c054d2875c03e77b7be15d}
+
+\item 
+\hypertarget{compiler_8h_cb00992efca56626cdf0907e5edb5b51}{
+\#define \textbf{KO}~0}
+\label{compiler_8h_cb00992efca56626cdf0907e5edb5b51}
+
+\item 
+\hypertarget{compiler_8h_ba51915c87d64af47fb1cc59348961c9}{
+\#define \textbf{OK}~1}
+\label{compiler_8h_ba51915c87d64af47fb1cc59348961c9}
+
+\item 
+\hypertarget{compiler_8h_ba5c54fadff8d880b1945dde87496e31}{
+\#define \textbf{PASS}~0}
+\label{compiler_8h_ba5c54fadff8d880b1945dde87496e31}
+
+\item 
+\hypertarget{compiler_8h_bb508ea8227673f419e9fe3a86c30d8e}{
+\#define \textbf{FAIL}~1}
+\label{compiler_8h_bb508ea8227673f419e9fe3a86c30d8e}
+
+\item 
+\hypertarget{compiler_8h_b811d8c6ff3a505312d3276590444289}{
+\#define \textbf{LOW}~0}
+\label{compiler_8h_b811d8c6ff3a505312d3276590444289}
+
+\item 
+\hypertarget{compiler_8h_5bb885982ff66a2e0a0a45a8ee9c35e2}{
+\#define \textbf{HIGH}~1}
+\label{compiler_8h_5bb885982ff66a2e0a0a45a8ee9c35e2}
+
+\item 
+\hypertarget{compiler_8h_7ef10ef4f3d493a4fa398cbfcb525495}{
+\#define \textbf{CLR}~0}
+\label{compiler_8h_7ef10ef4f3d493a4fa398cbfcb525495}
+
+\item 
+\hypertarget{compiler_8h_59da1d65e87a723efe808dbabb4fc205}{
+\#define \textbf{SET}~1}
+\label{compiler_8h_59da1d65e87a723efe808dbabb4fc205}
+
+\end{CompactItemize}
+\end{Indent}
+
+
+\subsection{Detailed Description}
+Compiler file for AVR32. 
+
+This file defines commonly used types and macros.
+
+\begin{itemize}
+\item Compiler: IAR EWAVR32 and GNU GCC for AVR32\item Supported devices: All AVR32 devices can be used.\item AppNote:\end{itemize}
+
+
+\begin{Desc}
+\item[Author:]Atmel Corporation: \href{http://www.atmel.com}{\tt http://www.atmel.com} \par
+ Support and FAQ: \href{http://support.atmel.no/}{\tt http://support.atmel.no/} \end{Desc}
+
+
+\subsection{Define Documentation}
+\hypertarget{compiler_8h_ef15a44287d382d2f4e7238b508180b3}{
+\index{compiler.h@{compiler.h}!BIG\_\-ENDIAN\_\-MCU@{BIG\_\-ENDIAN\_\-MCU}}
+\index{BIG\_\-ENDIAN\_\-MCU@{BIG\_\-ENDIAN\_\-MCU}!compiler.h@{compiler.h}}
+\subsubsection[{BIG\_\-ENDIAN\_\-MCU}]{\setlength{\rightskip}{0pt plus 5cm}\#define BIG\_\-ENDIAN\_\-MCU~(!LITTLE\_\-ENDIAN\_\-MCU)}}
+\label{compiler_8h_ef15a44287d382d2f4e7238b508180b3}
+
+
+Boolean evaluating MCU little endianism. 
+
+Boolean evaluating MCU big endianism. 

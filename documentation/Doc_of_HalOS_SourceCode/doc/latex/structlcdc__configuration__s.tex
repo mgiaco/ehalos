@@ -1,0 +1,334 @@
+\hypertarget{structlcdc__configuration__s}{
+\section{lcdc\_\-configuration\_\-s Struct Reference}
+\label{structlcdc__configuration__s}\index{lcdc\_\-configuration\_\-s@{lcdc\_\-configuration\_\-s}}
+}
+Struct that defines the configuration of the LCD controller.  
+
+
+{\tt \#include $<$ap7000\_\-lcd.h$>$}
+
+\subsection*{Data Fields}
+\begin{CompactItemize}
+\item 
+\hypertarget{structlcdc__configuration__s_5c7a9f39f360e5ea9b82acfc91917060}{
+unsigned int \hyperlink{structlcdc__configuration__s_5c7a9f39f360e5ea9b82acfc91917060}{dmabaddr1}}
+\label{structlcdc__configuration__s_5c7a9f39f360e5ea9b82acfc91917060}
+
+\begin{CompactList}\small\item\em Base address for the upper panel (in dual scan mode) or complete frame. \item\end{CompactList}\item 
+\hypertarget{structlcdc__configuration__s_760c0453ffd1f4112d5a540a24b3da72}{
+unsigned int \hyperlink{structlcdc__configuration__s_760c0453ffd1f4112d5a540a24b3da72}{dmabaddr2}}
+\label{structlcdc__configuration__s_760c0453ffd1f4112d5a540a24b3da72}
+
+\begin{CompactList}\small\item\em Base address of lower panel (dual scan mode only). \item\end{CompactList}\item 
+\hypertarget{structlcdc__configuration__s_c48b98efba736f156ef780945cfa11ea}{
+unsigned char \hyperlink{structlcdc__configuration__s_c48b98efba736f156ef780945cfa11ea}{burst\_\-length}}
+\label{structlcdc__configuration__s_c48b98efba736f156ef780945cfa11ea}
+
+\begin{CompactList}\small\item\em Burst length of DMA controller. \item\end{CompactList}\item 
+\hypertarget{structlcdc__configuration__s_5e7f931337fd8b529ee90f4260b36097}{
+unsigned short \hyperlink{structlcdc__configuration__s_5e7f931337fd8b529ee90f4260b36097}{xres}}
+\label{structlcdc__configuration__s_5e7f931337fd8b529ee90f4260b36097}
+
+\begin{CompactList}\small\item\em Number of columns on the display (in pixels). \item\end{CompactList}\item 
+\hypertarget{structlcdc__configuration__s_6504fea2287f932252a4a7dafbced98f}{
+unsigned short \hyperlink{structlcdc__configuration__s_6504fea2287f932252a4a7dafbced98f}{yres}}
+\label{structlcdc__configuration__s_6504fea2287f932252a4a7dafbced98f}
+
+\begin{CompactList}\small\item\em Number of rows on the display (in pixels). \item\end{CompactList}\item 
+unsigned char \hyperlink{structlcdc__configuration__s_67cfa60b1c4a0f5ac452de527f7d3563}{set2dmode}
+\begin{CompactList}\small\item\em Enables or disables the 2D addressing mode If 2D addressing is activated the values in \hyperlink{structlcdc__configuration__s_0b732746f63d5191f561b71be3f0d377}{virtual\_\-xres} and \hyperlink{structlcdc__configuration__s_26201aad2ad05301e6dd06ed5c174bbe}{virtual\_\-yres} must be set according to the virtual frame size. \item\end{CompactList}\item 
+\hypertarget{structlcdc__configuration__s_0b732746f63d5191f561b71be3f0d377}{
+unsigned int \hyperlink{structlcdc__configuration__s_0b732746f63d5191f561b71be3f0d377}{virtual\_\-xres}}
+\label{structlcdc__configuration__s_0b732746f63d5191f561b71be3f0d377}
+
+\begin{CompactList}\small\item\em Virtual horizontal size of the display (in pixels) Use this in 2D addressing mode to set the size of the frame buffer. \item\end{CompactList}\item 
+\hypertarget{structlcdc__configuration__s_26201aad2ad05301e6dd06ed5c174bbe}{
+unsigned int \hyperlink{structlcdc__configuration__s_26201aad2ad05301e6dd06ed5c174bbe}{virtual\_\-yres}}
+\label{structlcdc__configuration__s_26201aad2ad05301e6dd06ed5c174bbe}
+
+\begin{CompactList}\small\item\em Virtual vertical size of the display (in pixels) Use this value in 2D addressing mode to set the size of the frame buffer. \item\end{CompactList}\item 
+\hypertarget{structlcdc__configuration__s_a39f4d0126fa4216476e6407781dab43}{
+unsigned short \hyperlink{structlcdc__configuration__s_a39f4d0126fa4216476e6407781dab43}{frame\_\-rate}}
+\label{structlcdc__configuration__s_a39f4d0126fa4216476e6407781dab43}
+
+\begin{CompactList}\small\item\em Frame rate of the display. \item\end{CompactList}\item 
+\hypertarget{structlcdc__configuration__s_b805eb3d36039ee5609b3fc3fa22a169}{
+unsigned int \hyperlink{structlcdc__configuration__s_b805eb3d36039ee5609b3fc3fa22a169}{lcdcclock}}
+\label{structlcdc__configuration__s_b805eb3d36039ee5609b3fc3fa22a169}
+
+\begin{CompactList}\small\item\em LCD controller clock Frequency in MHz at which the LCD module runs. This can be set in the generic clock setup. \item\end{CompactList}\item 
+\hypertarget{structlcdc__configuration__s_06a6e0f9bf91c61ef6d4565f0a01680f}{
+unsigned short \hyperlink{structlcdc__configuration__s_06a6e0f9bf91c61ef6d4565f0a01680f}{guard\_\-time}}
+\label{structlcdc__configuration__s_06a6e0f9bf91c61ef6d4565f0a01680f}
+
+\begin{CompactList}\small\item\em Delay in frame periods between applying control signals to the LCD module and setting PWR high, and between setting PWR low and removing control signals from LCD module. \item\end{CompactList}\item 
+unsigned char \hyperlink{structlcdc__configuration__s_1f7b0da117a8f440c6073a09b8e22ab8}{memor}
+\begin{CompactList}\small\item\em Memory organization. \item\end{CompactList}\item 
+unsigned char \hyperlink{structlcdc__configuration__s_17aee7070ad85eab6da7f46c638de72a}{ifwidth}
+\begin{CompactList}\small\item\em Interface width (only valid for STN mode). \item\end{CompactList}\item 
+unsigned char \hyperlink{structlcdc__configuration__s_e208162dfd1fd4be065ae86243fbf1f0}{scanmod}
+\begin{CompactList}\small\item\em Scan mode. \item\end{CompactList}\item 
+unsigned char \hyperlink{structlcdc__configuration__s_dad6838254de608ddf7a52b687b5a89a}{distype}
+\begin{CompactList}\small\item\em Display type. \item\end{CompactList}\item 
+unsigned char \hyperlink{structlcdc__configuration__s_0b8a7d6d1459c92c2f675506a203deb8}{invvd}
+\begin{CompactList}\small\item\em Data polarity. \item\end{CompactList}\item 
+unsigned char \hyperlink{structlcdc__configuration__s_c5fc90d8386ff108dccda3269f936ea0}{invframe}
+\begin{CompactList}\small\item\em Vertical sync polarity. \item\end{CompactList}\item 
+unsigned char \hyperlink{structlcdc__configuration__s_6a43a0033a760ff44fff218c2c7e4fa6}{invline}
+\begin{CompactList}\small\item\em Horizontal sync polarity. \item\end{CompactList}\item 
+unsigned char \hyperlink{structlcdc__configuration__s_38bd4d20773d7477fd04f68a02564963}{invclk}
+\begin{CompactList}\small\item\em Pixel clock polarity. \item\end{CompactList}\item 
+unsigned char \hyperlink{structlcdc__configuration__s_911af56af449dcee1a610299619dd914}{invdval}
+\begin{CompactList}\small\item\em Data valid polarity. \item\end{CompactList}\item 
+unsigned char \hyperlink{structlcdc__configuration__s_399605434d25fa42df8f7d5142a93b9e}{clkmod}
+\begin{CompactList}\small\item\em Pixel clock mode. \item\end{CompactList}\item 
+unsigned char \hyperlink{structlcdc__configuration__s_3725097d44bfecb6396b9143ac302f24}{pixelsize}
+\begin{CompactList}\small\item\em Bits per pixel. \item\end{CompactList}\item 
+\hypertarget{structlcdc__configuration__s_63e7bb2ad3e2a853d47e495a78d87d49}{
+unsigned char \hyperlink{structlcdc__configuration__s_63e7bb2ad3e2a853d47e495a78d87d49}{ctrstval}}
+\label{structlcdc__configuration__s_63e7bb2ad3e2a853d47e495a78d87d49}
+
+\begin{CompactList}\small\item\em Contrast value PWM compare value used to adjust the analog value obtained after an external filter to control the contrast of the display. \item\end{CompactList}\item 
+unsigned char \hyperlink{structlcdc__configuration__s_c2eb547fd86497e3e57a46ea4e712881}{ctrst\_\-ps}
+\begin{CompactList}\small\item\em Contrast PWM prescaler This Prescaler divides the LCD controller clock for the contrast PWM generator. \item\end{CompactList}\item 
+unsigned char \hyperlink{structlcdc__configuration__s_4e933794a6cfe4618b226d15b04a2ea2}{ctrst\_\-pol}
+\begin{CompactList}\small\item\em Contrast PWM polarity This value defines the polarity of the contrast PWM output. If NORMAL, the output pulses are high level (the output will be high whenever the value in the counter is less than the value in the compare register CONTRAST\_\-VAL \hyperlink{structlcdc__configuration__s_63e7bb2ad3e2a853d47e495a78d87d49}{ctrstval} ). If INVERTED, the output pulses are low level. \item\end{CompactList}\item 
+unsigned char \hyperlink{structlcdc__configuration__s_01ba7740730856ce7d608653cf7f1eaa}{ctrst\_\-ena}
+\begin{CompactList}\small\item\em Contrast PWM generator enable. \item\end{CompactList}\item 
+unsigned char \hyperlink{structlcdc__configuration__s_aa3546e4cd6be09fb7e6eaf23a49543b}{mmode}
+\begin{CompactList}\small\item\em Toggle rate Toggle the polarity after each frame (EACH\_\-FRAME) or by a specified value (MVAL\_\-DEFINED). \item\end{CompactList}\item 
+unsigned char \hyperlink{structlcdc__configuration__s_740b398c5684557414208ae5197b01d4}{mval}
+\begin{CompactList}\small\item\em Toggle rate value. If Toggle rate is set to MVAL\_\-DEFINED this value sets toggle rate to mval + 1 line periods. \item\end{CompactList}\item 
+\hypertarget{structlcdc__configuration__s_07e008a5d6752719d23da6949c06acad}{
+unsigned short \hyperlink{structlcdc__configuration__s_07e008a5d6752719d23da6949c06acad}{hpw}}
+\label{structlcdc__configuration__s_07e008a5d6752719d23da6949c06acad}
+
+\begin{CompactList}\small\item\em Horizontal sync pulse width Width of the HSYNC pulse, given in pixel clock cycles. Width is (HPW+1) PCLK cycles. \item\end{CompactList}\item 
+\hypertarget{structlcdc__configuration__s_316da3ed91db5048ede48e62b6be77f7}{
+unsigned char \hyperlink{structlcdc__configuration__s_316da3ed91db5048ede48e62b6be77f7}{hbp}}
+\label{structlcdc__configuration__s_316da3ed91db5048ede48e62b6be77f7}
+
+\begin{CompactList}\small\item\em Horizontal back porch Number of idle pixel clock cycles at the beginning of the line. Idle period is (HBP+1) pixel clock cycles. \item\end{CompactList}\item 
+\hypertarget{structlcdc__configuration__s_f3e2bf84cec7907050560a4568e67583}{
+unsigned char \hyperlink{structlcdc__configuration__s_f3e2bf84cec7907050560a4568e67583}{hfp}}
+\label{structlcdc__configuration__s_f3e2bf84cec7907050560a4568e67583}
+
+\begin{CompactList}\small\item\em Horizontal front porch Number of idle pixel clock cycles at the end of the line. Idle period is (HFP+1) pixel clock cycles. \item\end{CompactList}\item 
+\hypertarget{structlcdc__configuration__s_56d7dd5b0140e43cb113636b07fbf846}{
+unsigned char \hyperlink{structlcdc__configuration__s_56d7dd5b0140e43cb113636b07fbf846}{vpw}}
+\label{structlcdc__configuration__s_56d7dd5b0140e43cb113636b07fbf846}
+
+\begin{CompactList}\small\item\em Vertical sync pulse width In TFT mode, these bits equal the vertical synchronization pulse width, given in number of lines. VSYNC width is equal to (VPW+1) lines. In STN mode, these bits should be set to 0. \item\end{CompactList}\item 
+\hypertarget{structlcdc__configuration__s_151f01d6514e8dc399e1a68112ffeca2}{
+unsigned char \hyperlink{structlcdc__configuration__s_151f01d6514e8dc399e1a68112ffeca2}{vbp}}
+\label{structlcdc__configuration__s_151f01d6514e8dc399e1a68112ffeca2}
+
+\begin{CompactList}\small\item\em Vertical back porch In TFT mode, these bits equal the number of idle lines at the beginning of the frame. In STN mode, these bits should be set to 0. \item\end{CompactList}\item 
+\hypertarget{structlcdc__configuration__s_84d32f91e79f6b962458a4b7ee7cff14}{
+unsigned char \hyperlink{structlcdc__configuration__s_84d32f91e79f6b962458a4b7ee7cff14}{vfp}}
+\label{structlcdc__configuration__s_84d32f91e79f6b962458a4b7ee7cff14}
+
+\begin{CompactList}\small\item\em Vertical front porch In TFT mode, these bits equal the number of idle lines at the end of the frame. In STN mode, these bits should be set to 0. \item\end{CompactList}\item 
+\hypertarget{structlcdc__configuration__s_1f0be879ae9be791ef1891b9bf58001c}{
+unsigned char \hyperlink{structlcdc__configuration__s_1f0be879ae9be791ef1891b9bf58001c}{vhdly}}
+\label{structlcdc__configuration__s_1f0be879ae9be791ef1891b9bf58001c}
+
+\begin{CompactList}\small\item\em Vertical to horizontal delay In TFT mode, this is the delay between VSYNC rising or falling edge and HSYNC rising edge. Delay is (VHDLY+1) pixel clock cycles. In STN mode, these bits should be set to 0. \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Struct that defines the configuration of the LCD controller. 
+
+\subsection{Field Documentation}
+\hypertarget{structlcdc__configuration__s_399605434d25fa42df8f7d5142a93b9e}{
+\index{lcdc\_\-configuration\_\-s@{lcdc\_\-configuration\_\-s}!clkmod@{clkmod}}
+\index{clkmod@{clkmod}!lcdc_configuration_s@{lcdc\_\-configuration\_\-s}}
+\subsubsection[{clkmod}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char {\bf lcdc\_\-configuration\_\-s::clkmod}}}
+\label{structlcdc__configuration__s_399605434d25fa42df8f7d5142a93b9e}
+
+
+Pixel clock mode. 
+
+\begin{itemize}
+\item PARTLY\_\-ACTIVE (only active during display period) \item ALWAYS\_\-ACTIVE (needed for TFT mode) \end{itemize}
+\hypertarget{structlcdc__configuration__s_01ba7740730856ce7d608653cf7f1eaa}{
+\index{lcdc\_\-configuration\_\-s@{lcdc\_\-configuration\_\-s}!ctrst\_\-ena@{ctrst\_\-ena}}
+\index{ctrst\_\-ena@{ctrst\_\-ena}!lcdc_configuration_s@{lcdc\_\-configuration\_\-s}}
+\subsubsection[{ctrst\_\-ena}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char {\bf lcdc\_\-configuration\_\-s::ctrst\_\-ena}}}
+\label{structlcdc__configuration__s_01ba7740730856ce7d608653cf7f1eaa}
+
+
+Contrast PWM generator enable. 
+
+\begin{itemize}
+\item ENABLED \item DISABLED \end{itemize}
+\hypertarget{structlcdc__configuration__s_4e933794a6cfe4618b226d15b04a2ea2}{
+\index{lcdc\_\-configuration\_\-s@{lcdc\_\-configuration\_\-s}!ctrst\_\-pol@{ctrst\_\-pol}}
+\index{ctrst\_\-pol@{ctrst\_\-pol}!lcdc_configuration_s@{lcdc\_\-configuration\_\-s}}
+\subsubsection[{ctrst\_\-pol}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char {\bf lcdc\_\-configuration\_\-s::ctrst\_\-pol}}}
+\label{structlcdc__configuration__s_4e933794a6cfe4618b226d15b04a2ea2}
+
+
+Contrast PWM polarity This value defines the polarity of the contrast PWM output. If NORMAL, the output pulses are high level (the output will be high whenever the value in the counter is less than the value in the compare register CONTRAST\_\-VAL \hyperlink{structlcdc__configuration__s_63e7bb2ad3e2a853d47e495a78d87d49}{ctrstval} ). If INVERTED, the output pulses are low level. 
+
+\begin{itemize}
+\item NORMAL \item INVERTED \end{itemize}
+\hypertarget{structlcdc__configuration__s_c2eb547fd86497e3e57a46ea4e712881}{
+\index{lcdc\_\-configuration\_\-s@{lcdc\_\-configuration\_\-s}!ctrst\_\-ps@{ctrst\_\-ps}}
+\index{ctrst\_\-ps@{ctrst\_\-ps}!lcdc_configuration_s@{lcdc\_\-configuration\_\-s}}
+\subsubsection[{ctrst\_\-ps}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char {\bf lcdc\_\-configuration\_\-s::ctrst\_\-ps}}}
+\label{structlcdc__configuration__s_c2eb547fd86497e3e57a46ea4e712881}
+
+
+Contrast PWM prescaler This Prescaler divides the LCD controller clock for the contrast PWM generator. 
+
+\begin{itemize}
+\item PRE\_\-NONE No prescaling \item PRE\_\-HALF LCD controller clock divided by 1/2 \item PRE\_\-FOURTH LCD controller clock divided by 1/4 \item PRE\_\-EIGTH LCD controller clock divided by 1/8 \end{itemize}
+\hypertarget{structlcdc__configuration__s_dad6838254de608ddf7a52b687b5a89a}{
+\index{lcdc\_\-configuration\_\-s@{lcdc\_\-configuration\_\-s}!distype@{distype}}
+\index{distype@{distype}!lcdc_configuration_s@{lcdc\_\-configuration\_\-s}}
+\subsubsection[{distype}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char {\bf lcdc\_\-configuration\_\-s::distype}}}
+\label{structlcdc__configuration__s_dad6838254de608ddf7a52b687b5a89a}
+
+
+Display type. 
+
+\begin{itemize}
+\item STN\_\-MONO \item STN\_\-COLOR \item TFT \end{itemize}
+\hypertarget{structlcdc__configuration__s_17aee7070ad85eab6da7f46c638de72a}{
+\index{lcdc\_\-configuration\_\-s@{lcdc\_\-configuration\_\-s}!ifwidth@{ifwidth}}
+\index{ifwidth@{ifwidth}!lcdc_configuration_s@{lcdc\_\-configuration\_\-s}}
+\subsubsection[{ifwidth}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char {\bf lcdc\_\-configuration\_\-s::ifwidth}}}
+\label{structlcdc__configuration__s_17aee7070ad85eab6da7f46c638de72a}
+
+
+Interface width (only valid for STN mode). 
+
+\begin{itemize}
+\item IF\_\-WIDTH4 (only valid in STN single scan mode) \item IF\_\-WIDTH8 \item IF\_\-WIDTH16 (only valid in dual scan mode) \end{itemize}
+\hypertarget{structlcdc__configuration__s_38bd4d20773d7477fd04f68a02564963}{
+\index{lcdc\_\-configuration\_\-s@{lcdc\_\-configuration\_\-s}!invclk@{invclk}}
+\index{invclk@{invclk}!lcdc_configuration_s@{lcdc\_\-configuration\_\-s}}
+\subsubsection[{invclk}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char {\bf lcdc\_\-configuration\_\-s::invclk}}}
+\label{structlcdc__configuration__s_38bd4d20773d7477fd04f68a02564963}
+
+
+Pixel clock polarity. 
+
+\begin{itemize}
+\item NORMAL (data fetched at falling edge) \item INVERTED (data fetched at rising edge) \end{itemize}
+\hypertarget{structlcdc__configuration__s_911af56af449dcee1a610299619dd914}{
+\index{lcdc\_\-configuration\_\-s@{lcdc\_\-configuration\_\-s}!invdval@{invdval}}
+\index{invdval@{invdval}!lcdc_configuration_s@{lcdc\_\-configuration\_\-s}}
+\subsubsection[{invdval}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char {\bf lcdc\_\-configuration\_\-s::invdval}}}
+\label{structlcdc__configuration__s_911af56af449dcee1a610299619dd914}
+
+
+Data valid polarity. 
+
+\begin{itemize}
+\item NORMAL (active high) \item INVERTED (active low) \end{itemize}
+\hypertarget{structlcdc__configuration__s_c5fc90d8386ff108dccda3269f936ea0}{
+\index{lcdc\_\-configuration\_\-s@{lcdc\_\-configuration\_\-s}!invframe@{invframe}}
+\index{invframe@{invframe}!lcdc_configuration_s@{lcdc\_\-configuration\_\-s}}
+\subsubsection[{invframe}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char {\bf lcdc\_\-configuration\_\-s::invframe}}}
+\label{structlcdc__configuration__s_c5fc90d8386ff108dccda3269f936ea0}
+
+
+Vertical sync polarity. 
+
+\begin{itemize}
+\item NORMAL (active high) \item INVERTED (active low) \end{itemize}
+\hypertarget{structlcdc__configuration__s_6a43a0033a760ff44fff218c2c7e4fa6}{
+\index{lcdc\_\-configuration\_\-s@{lcdc\_\-configuration\_\-s}!invline@{invline}}
+\index{invline@{invline}!lcdc_configuration_s@{lcdc\_\-configuration\_\-s}}
+\subsubsection[{invline}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char {\bf lcdc\_\-configuration\_\-s::invline}}}
+\label{structlcdc__configuration__s_6a43a0033a760ff44fff218c2c7e4fa6}
+
+
+Horizontal sync polarity. 
+
+\begin{itemize}
+\item NORMAL (active high) \item INVERTED (active low) \end{itemize}
+\hypertarget{structlcdc__configuration__s_0b8a7d6d1459c92c2f675506a203deb8}{
+\index{lcdc\_\-configuration\_\-s@{lcdc\_\-configuration\_\-s}!invvd@{invvd}}
+\index{invvd@{invvd}!lcdc_configuration_s@{lcdc\_\-configuration\_\-s}}
+\subsubsection[{invvd}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char {\bf lcdc\_\-configuration\_\-s::invvd}}}
+\label{structlcdc__configuration__s_0b8a7d6d1459c92c2f675506a203deb8}
+
+
+Data polarity. 
+
+\begin{itemize}
+\item NORMAL \item INVERTED \end{itemize}
+\hypertarget{structlcdc__configuration__s_1f7b0da117a8f440c6073a09b8e22ab8}{
+\index{lcdc\_\-configuration\_\-s@{lcdc\_\-configuration\_\-s}!memor@{memor}}
+\index{memor@{memor}!lcdc_configuration_s@{lcdc\_\-configuration\_\-s}}
+\subsubsection[{memor}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char {\bf lcdc\_\-configuration\_\-s::memor}}}
+\label{structlcdc__configuration__s_1f7b0da117a8f440c6073a09b8e22ab8}
+
+
+Memory organization. 
+
+\begin{itemize}
+\item BIG\_\-ENDIAN \item LITTLE\_\-ENDIAN \item WIN\_\-CE \end{itemize}
+\hypertarget{structlcdc__configuration__s_aa3546e4cd6be09fb7e6eaf23a49543b}{
+\index{lcdc\_\-configuration\_\-s@{lcdc\_\-configuration\_\-s}!mmode@{mmode}}
+\index{mmode@{mmode}!lcdc_configuration_s@{lcdc\_\-configuration\_\-s}}
+\subsubsection[{mmode}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char {\bf lcdc\_\-configuration\_\-s::mmode}}}
+\label{structlcdc__configuration__s_aa3546e4cd6be09fb7e6eaf23a49543b}
+
+
+Toggle rate Toggle the polarity after each frame (EACH\_\-FRAME) or by a specified value (MVAL\_\-DEFINED). 
+
+\begin{itemize}
+\item EACH\_\-FRAME \item MVAL\_\-DEFINED \end{itemize}
+\hypertarget{structlcdc__configuration__s_740b398c5684557414208ae5197b01d4}{
+\index{lcdc\_\-configuration\_\-s@{lcdc\_\-configuration\_\-s}!mval@{mval}}
+\index{mval@{mval}!lcdc_configuration_s@{lcdc\_\-configuration\_\-s}}
+\subsubsection[{mval}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char {\bf lcdc\_\-configuration\_\-s::mval}}}
+\label{structlcdc__configuration__s_740b398c5684557414208ae5197b01d4}
+
+
+Toggle rate value. If Toggle rate is set to MVAL\_\-DEFINED this value sets toggle rate to mval + 1 line periods. 
+
+\begin{itemize}
+\item MVAL\_\-DEFINED \item EACH\_\-FRAME \end{itemize}
+\hypertarget{structlcdc__configuration__s_3725097d44bfecb6396b9143ac302f24}{
+\index{lcdc\_\-configuration\_\-s@{lcdc\_\-configuration\_\-s}!pixelsize@{pixelsize}}
+\index{pixelsize@{pixelsize}!lcdc_configuration_s@{lcdc\_\-configuration\_\-s}}
+\subsubsection[{pixelsize}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char {\bf lcdc\_\-configuration\_\-s::pixelsize}}}
+\label{structlcdc__configuration__s_3725097d44bfecb6396b9143ac302f24}
+
+
+Bits per pixel. 
+
+\begin{itemize}
+\item BPP\_\-1 \item BPP\_\-2 \item BPP\_\-4 \item BPP\_\-8 \item BPP\_\-16 \item BPP\_\-24 (packed 24bpp) \item BPP\_\-32 (unpacked 24bpp) \end{itemize}
+\hypertarget{structlcdc__configuration__s_e208162dfd1fd4be065ae86243fbf1f0}{
+\index{lcdc\_\-configuration\_\-s@{lcdc\_\-configuration\_\-s}!scanmod@{scanmod}}
+\index{scanmod@{scanmod}!lcdc_configuration_s@{lcdc\_\-configuration\_\-s}}
+\subsubsection[{scanmod}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char {\bf lcdc\_\-configuration\_\-s::scanmod}}}
+\label{structlcdc__configuration__s_e208162dfd1fd4be065ae86243fbf1f0}
+
+
+Scan mode. 
+
+\begin{itemize}
+\item SINGLE\_\-SCAN \item DUAL\_\-SCAN \end{itemize}
+\hypertarget{structlcdc__configuration__s_67cfa60b1c4a0f5ac452de527f7d3563}{
+\index{lcdc\_\-configuration\_\-s@{lcdc\_\-configuration\_\-s}!set2dmode@{set2dmode}}
+\index{set2dmode@{set2dmode}!lcdc_configuration_s@{lcdc\_\-configuration\_\-s}}
+\subsubsection[{set2dmode}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char {\bf lcdc\_\-configuration\_\-s::set2dmode}}}
+\label{structlcdc__configuration__s_67cfa60b1c4a0f5ac452de527f7d3563}
+
+
+Enables or disables the 2D addressing mode If 2D addressing is activated the values in \hyperlink{structlcdc__configuration__s_0b732746f63d5191f561b71be3f0d377}{virtual\_\-xres} and \hyperlink{structlcdc__configuration__s_26201aad2ad05301e6dd06ed5c174bbe}{virtual\_\-yres} must be set according to the virtual frame size. 
+
+\begin{itemize}
+\item MODE\_\-2D\_\-ON \item MODE\_\-2D\_\-OFF \end{itemize}
+
+
+The documentation for this struct was generated from the following file:\begin{CompactItemize}
+\item 
+E:/Ausbildung/Semester3/Kopie von AVR32\_\-Work1/Halos\_\-Development/src/devices/ports/avr32/ap7x/ap7000/displays/inc/\hyperlink{ap7000__lcd_8h}{ap7000\_\-lcd.h}\end{CompactItemize}

@@ -1,0 +1,93 @@
+\hypertarget{sched_8h}{
+\section{E:/Ausbildung/Semester3/Kopie von AVR32\_\-Work1/Halos\_\-Development/src/kernel/process\_\-manager/inc/sched.h File Reference}
+\label{sched_8h}\index{E:/Ausbildung/Semester3/Kopie von AVR32\_\-Work1/Halos\_\-Development/src/kernel/process\_\-manager/inc/sched.h@{E:/Ausbildung/Semester3/Kopie von AVR32\_\-Work1/Halos\_\-Development/src/kernel/process\_\-manager/inc/sched.h}}
+}
+For defined states scheduler in.  
+
+
+{\tt \#include \char`\"{}pcb.h\char`\"{}}\par
+{\tt \#include \char`\"{}hsystem\_\-api.h\char`\"{}}\par
+{\tt \#include \char`\"{}MemoryManagement.h\char`\"{}}\par
+\subsection*{Defines}
+\begin{CompactItemize}
+\item 
+\hypertarget{group___s_c_h_e_d_u_l_e_r_ga40645236fdec3db71ba1c464fc61012}{
+\#define \hyperlink{group___s_c_h_e_d_u_l_e_r_ga40645236fdec3db71ba1c464fc61012}{TASK\_\-INITIALIZED}~0}
+\label{group___s_c_h_e_d_u_l_e_r_ga40645236fdec3db71ba1c464fc61012}
+
+\begin{CompactList}\small\item\em Constants for the different task states. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+\hyperlink{structprocess_control_block}{PCtrlBlock\_\-t} $\ast$ \hyperlink{group___s_c_h_e_d_u_l_e_r_g6f966a27cb81e25cbbeb00209e4f425a}{init\_\-scheduler} (\hyperlink{structprocess_control_block}{PCtrlBlock\_\-t} $\ast$\hyperlink{group___s_c_h_e_d_u_l_e_r_gc4ccbf885c8f3faf19274dced0c7216a}{ptrIdleTask}, \hyperlink{structprocess_control_block}{PCtrlBlock\_\-t} $\ast$ptrNewTask)
+\item 
+void \hyperlink{group___s_c_h_e_d_u_l_e_r_g8cf010ead07e0d3c9f2fec540ca41222}{initIdleTask} (\hyperlink{structprocess_control_block}{PCtrlBlock\_\-t} $\ast$ptrIdleT)
+\item 
+void \hyperlink{group___s_c_h_e_d_u_l_e_r_g0a823bd7dfbe610f6fb79f213bad887a}{putTask\_\-to\_\-RUNABLQ} (\hyperlink{structprocess_control_block}{PCtrlBlock\_\-t} $\ast$ptrNewTask)
+\item 
+void \hyperlink{group___s_c_h_e_d_u_l_e_r_g915e6a1a7af8610eb748b2a71aed8e25}{putTask\_\-to\_\-SUSPENDEDQ} (\hyperlink{structprocess_control_block}{PCtrlBlock\_\-t} $\ast$ptrNewTask, uint32\_\-t suspendTime)
+\item 
+void \hyperlink{group___s_c_h_e_d_u_l_e_r_gb30df8d2157564bf9b3ab2fb0fc4e416}{removeTask\_\-from\_\-RUNABLQ} (\hyperlink{structprocess_control_block}{PCtrlBlock\_\-t} $\ast$ptrRemTask)
+\item 
+\hyperlink{structprocess_control_block}{PCtrlBlock\_\-t} $\ast$ \hyperlink{group___s_c_h_e_d_u_l_e_r_g37148b0b5230fbd6a7e27996d7c7559b}{schedule} (void)
+\item 
+\hyperlink{structprocess_control_block}{PCtrlBlock\_\-t} $\ast$ \hyperlink{group___s_c_h_e_d_u_l_e_r_g7f3d982256a144718b4d566764ab3380}{getRunningTask} (void)
+\item 
+void \hyperlink{group___s_c_h_e_d_u_l_e_r_g30026f24b7df3171d12eac61e94c654e}{changeTaskStateAndReorg} (\hyperlink{structprocess_control_block}{PCtrlBlock\_\-t} $\ast$ptrCurTask, uint8\_\-t newState)
+\item 
+int8\_\-t \hyperlink{group___s_c_h_e_d_u_l_e_r_g98be6cb7c674631c08f257f0f361bdba}{top} (\hyperlink{group___h_s_y_s_t_e_m___a_p_i_g3be61222bdb3a1adfbf7720dec596851}{process\_\-info\_\-block\_\-t} $\ast$allocatedListOfInfBlks)
+\item 
+uint8\_\-t \hyperlink{group___s_c_h_e_d_u_l_e_r_g464f3d8698435a2cce5660213ad5e2a1}{get\_\-nr\_\-of\_\-processes} ()
+\item 
+uint8\_\-t \hyperlink{group___s_c_h_e_d_u_l_e_r_g2c41093c81844ed2a2b8336ea7e65c22}{count\_\-queue} (\hyperlink{structprocess_control_block}{PCtrlBlock\_\-t} $\ast$ptrTaskList)
+\item 
+void \hyperlink{group___s_c_h_e_d_u_l_e_r_g65919f434a296ebe721e10c695c76fd7}{cleanupScheduler} (void)
+\item 
+void \hyperlink{group___s_c_h_e_d_u_l_e_r_ge4efef9d981ec735fdb928fa859e90c8}{updateAllSupendedTasks} (void)
+\item 
+void \hyperlink{group___s_c_h_e_d_u_l_e_r_g4f5f47b0e6e09f0d8f20b174a451d3f9}{putTask\_\-to\_\-BLOCKEDQ} (\hyperlink{structprocess_control_block}{PCtrlBlock\_\-t} $\ast$ptrNewTask)
+\item 
+void \hyperlink{group___s_c_h_e_d_u_l_e_r_g5b3f8e0a1ef0153e3701fd5c353ffb30}{putTask\_\-to\_\-STOPPEDQ} (\hyperlink{structprocess_control_block}{PCtrlBlock\_\-t} $\ast$ptrNewTask)
+\item 
+void \hyperlink{group___s_c_h_e_d_u_l_e_r_g36b5565a1de28332f76c8201e3978710}{removeTask\_\-from\_\-BLOCKEDQ} (\hyperlink{structprocess_control_block}{PCtrlBlock\_\-t} $\ast$ptrRemTask)
+\item 
+void \hyperlink{group___s_c_h_e_d_u_l_e_r_gdd6fd538df662b324399533cd7ee6983}{removeTask\_\-from\_\-STOPPEDQ} (\hyperlink{structprocess_control_block}{PCtrlBlock\_\-t} $\ast$ptrRemTask)
+\item 
+void \hyperlink{group___s_c_h_e_d_u_l_e_r_g6269ef2491853b54f6857e84a495e0a3}{removeTask\_\-from\_\-SUSPENDEDQ} (\hyperlink{structprocess_control_block}{PCtrlBlock\_\-t} $\ast$ptrRemTask)
+\item 
+void \hyperlink{group___s_c_h_e_d_u_l_e_r_g2b9b2d937366c49222722abf3d3ca448}{deleteTask} (\hyperlink{structprocess_control_block}{PCtrlBlock\_\-t} $\ast$ptrCurTask)
+\item 
+void \hyperlink{group___s_c_h_e_d_u_l_e_r_gbc336985438a0d2ef4e4386aca2fec83}{updateCpuTimes} (void)
+\item 
+uint8\_\-t \hyperlink{group___s_c_h_e_d_u_l_e_r_g037e710f906b1ff253e859e70add039b}{reorganizeSuspendedTasks} (void)
+\end{CompactItemize}
+\subsection*{Variables}
+\begin{CompactItemize}
+\item 
+\hypertarget{group___s_c_h_e_d_u_l_e_r_g4e6e6409119b57e144bf39f102d3aa4c}{
+volatile \hyperlink{structprocess_control_block}{PCtrlBlock\_\-t} $\ast$ \hyperlink{group___s_c_h_e_d_u_l_e_r_g4e6e6409119b57e144bf39f102d3aa4c}{ptrRunningTask}}
+\label{group___s_c_h_e_d_u_l_e_r_g4e6e6409119b57e144bf39f102d3aa4c}
+
+\begin{CompactList}\small\item\em Current Running Task - pointer to current running task (holds only one task!). \item\end{CompactList}\item 
+\hypertarget{group___s_c_h_e_d_u_l_e_r_gc4ccbf885c8f3faf19274dced0c7216a}{
+\hyperlink{structprocess_control_block}{PCtrlBlock\_\-t} $\ast$ \hyperlink{group___s_c_h_e_d_u_l_e_r_gc4ccbf885c8f3faf19274dced0c7216a}{ptrIdleTask}}
+\label{group___s_c_h_e_d_u_l_e_r_gc4ccbf885c8f3faf19274dced0c7216a}
+
+\begin{CompactList}\small\item\em Idle Task for Scheduler - pointer to idle task, is used if system has no other task to run and for performance metrics. \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+For defined states scheduler in. 
+
+Scheduler for \hyperlink{struct_process}{Process} Manager.
+
+\begin{Desc}
+\item[Author:]Team Halos \end{Desc}
+\begin{Desc}
+\item[Version:]0.0.1 \end{Desc}
+\begin{Desc}
+\item[Date:]2008-2009 \end{Desc}
+\begin{Desc}
+\item[Note:]Hardware: NGW100, Software: AVR32-GCC \end{Desc}
+\begin{Desc}
+\item[License: ]LGPLv2.1 \end{Desc}

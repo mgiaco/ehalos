@@ -1,0 +1,243 @@
+\hypertarget{mmu_8h}{
+\section{E:/Ausbildung/Semester3/Kopie von AVR32\_\-Work1/Halos\_\-Development/src/hal/ports/avr32/ap7x/ap7000/mmu.h File Reference}
+\label{mmu_8h}\index{E:/Ausbildung/Semester3/Kopie von AVR32\_\-Work1/Halos\_\-Development/src/hal/ports/avr32/ap7x/ap7000/mmu.h@{E:/Ausbildung/Semester3/Kopie von AVR32\_\-Work1/Halos\_\-Development/src/hal/ports/avr32/ap7x/ap7000/mmu.h}}
+}
+MMU example application.  
+
+
+{\tt \#include $<$avr32/io.h$>$}\par
+{\tt \#include $<$stdint.h$>$}\par
+\subsection*{Data Structures}
+\begin{CompactItemize}
+\item 
+struct \hyperlink{structmmu__tlb__t}{mmu\_\-tlb\_\-t}
+\begin{CompactList}\small\item\em Struct which defines options for operating on TLB entries. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Enumerations}
+\begin{CompactItemize}
+\item 
+enum 
+\begin{CompactList}\small\item\em MMU defines for readable setup. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+int \hyperlink{mmu_8h_d8b393b9b4cc3742ea0ebd14bc5bb673}{mmu\_\-init} (int enable, int mode, int segmentation)
+\begin{CompactList}\small\item\em Changes mode on the MMU according to input. \item\end{CompactList}\item 
+int \hyperlink{mmu_8h_ca2d93163e27390c1524c0776fc4d9dd}{mmu\_\-reset} ()
+\begin{CompactList}\small\item\em Resets the MMU and invalidates all TLB entries. \item\end{CompactList}\item 
+int \hyperlink{mmu_8h_129dfbf48ce190ebbf14cb5950e8f0cc}{mmu\_\-search\_\-virtual\_\-ptr} (void $\ast$virtual\_\-ptr, long $\ast$physical\_\-addr)
+\begin{CompactList}\small\item\em Search a virtual address and get the physical address from the TLB. The function searches the data TLBs first before searching the instruction TLBs. \item\end{CompactList}\item 
+int \hyperlink{mmu_8h_774287d35e3d44f16b948867bcea7f70}{mmu\_\-search\_\-physical\_\-ptr} (void $\ast$physical\_\-ptr, long $\ast$virtual\_\-addr)
+\begin{CompactList}\small\item\em Search a physical address and get the virtual address from the TLB. The function searches the data TLBs first before searching the instruction TLBs. \item\end{CompactList}\item 
+int \hyperlink{mmu_8h_73dd1cbbb1f348a6a69706775b448443}{mmu\_\-lock\_\-entries} (int entries, int type)
+\begin{CompactList}\small\item\em Locks a specified number of entries. \item\end{CompactList}\item 
+int \hyperlink{mmu_8h_56a402c481bf73fc848d630aae916880}{mmu\_\-add\_\-tlb\_\-entry} (long physical\_\-addr\_\-base, long virtual\_\-addr\_\-base, struct \hyperlink{structmmu__tlb__t}{mmu\_\-tlb\_\-t} $\ast$options)
+\begin{CompactList}\small\item\em Adds an entry to the TLB. \item\end{CompactList}\item 
+void \hyperlink{mmu_8h_ff94d347cd9755d3102270a75e61dc47}{mmu\_\-read\_\-bear\_\-and\_\-tlbehi} (long $\ast$bear, long $\ast$vpn)
+\begin{CompactList}\small\item\em Reads the TLBEAR and \hyperlink{struct_t_l_b_e_h_i}{TLBEHI} registers and place the contents in {\tt bear} and {\tt vpn}. \item\end{CompactList}\item 
+int \hyperlink{mmu_8h_af249de7c8b5dc3e1846975a77103e5f}{mmu\_\-find\_\-index\_\-to\_\-entry} (long physical\_\-addr, long virtual\_\-addr, long $\ast$index)
+\begin{CompactList}\small\item\em Search the TLB for an entry matching the given physical and virtual address and return the index. \item\end{CompactList}\item 
+int \hyperlink{mmu_8h_239a60c95170611179f94a053e8aa9ec}{mmu\_\-invalidate\_\-entry} (int index, int type)
+\begin{CompactList}\small\item\em Invalidates an entry in the TLB. \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+MMU example application. 
+
+This file gives an example of using the MMU to manage the memory on AVR32 MCUs.
+
+\begin{itemize}
+\item Compiler: IAR EWAAVR32 and GNU GCC for AVR32\item Supported devices: All AVR32 devices with MMU.\item AppNote: AVR32113 Configuration and Use of the Memory Management Unit\end{itemize}
+
+
+\begin{Desc}
+\item[Author:]Atmel Corporation: \href{http://www.atmel.com}{\tt http://www.atmel.com} \par
+ Support email: \href{mailto:avr32@atmel.com}{\tt avr32@atmel.com}\end{Desc}
+\$Name\$ \begin{Desc}
+\item[Revision]679 \end{Desc}
+\$RCSfile\$ \begin{Desc}
+\item[Date]2007-10-12 09:44:30 +0200 (Fri, 12 Oct 2007) \end{Desc}
+
+
+\subsection{Function Documentation}
+\hypertarget{mmu_8h_56a402c481bf73fc848d630aae916880}{
+\index{mmu.h@{mmu.h}!mmu\_\-add\_\-tlb\_\-entry@{mmu\_\-add\_\-tlb\_\-entry}}
+\index{mmu\_\-add\_\-tlb\_\-entry@{mmu\_\-add\_\-tlb\_\-entry}!mmu.h@{mmu.h}}
+\subsubsection[{mmu\_\-add\_\-tlb\_\-entry}]{\setlength{\rightskip}{0pt plus 5cm}int mmu\_\-add\_\-tlb\_\-entry (long {\em physical\_\-addr\_\-base}, \/  long {\em virtual\_\-addr\_\-base}, \/  struct {\bf mmu\_\-tlb\_\-t} $\ast$ {\em options})}}
+\label{mmu_8h_56a402c481bf73fc848d630aae916880}
+
+
+Adds an entry to the TLB. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em physical\_\-addr\_\-base}]base address of the physical placement \item[{\em virtual\_\-addr\_\-base}]base address of the virtual placement \item[{\em options}]options to the entry\end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]Status \end{Desc}
+\begin{Desc}
+\item[Return values:]
+\begin{description}
+\item[{\em MMU\_\-OK}]on success \item[{\em MMU\_\-ERROR\_\-ARGUMENT}]on invalid arguments \end{description}
+\end{Desc}
+\hypertarget{mmu_8h_af249de7c8b5dc3e1846975a77103e5f}{
+\index{mmu.h@{mmu.h}!mmu\_\-find\_\-index\_\-to\_\-entry@{mmu\_\-find\_\-index\_\-to\_\-entry}}
+\index{mmu\_\-find\_\-index\_\-to\_\-entry@{mmu\_\-find\_\-index\_\-to\_\-entry}!mmu.h@{mmu.h}}
+\subsubsection[{mmu\_\-find\_\-index\_\-to\_\-entry}]{\setlength{\rightskip}{0pt plus 5cm}int mmu\_\-find\_\-index\_\-to\_\-entry (long {\em physical\_\-addr}, \/  long {\em virtual\_\-addr}, \/  long $\ast$ {\em index})}}
+\label{mmu_8h_af249de7c8b5dc3e1846975a77103e5f}
+
+
+Search the TLB for an entry matching the given physical and virtual address and return the index. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em physical\_\-addr}]the physical address to find \item[{\em virtual\_\-addr}]the virtual address to find \item[{\em index}]the index of the entry from the search\end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]Status \end{Desc}
+\begin{Desc}
+\item[Return values:]
+\begin{description}
+\item[{\em MMU\_\-OK}]on success \item[{\em MMU\_\-TLB\_\-MISS}]on TLB search miss \end{description}
+\end{Desc}
+\hypertarget{mmu_8h_d8b393b9b4cc3742ea0ebd14bc5bb673}{
+\index{mmu.h@{mmu.h}!mmu\_\-init@{mmu\_\-init}}
+\index{mmu\_\-init@{mmu\_\-init}!mmu.h@{mmu.h}}
+\subsubsection[{mmu\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}int mmu\_\-init (int {\em enable}, \/  int {\em mode}, \/  int {\em segmentation})}}
+\label{mmu_8h_d8b393b9b4cc3742ea0ebd14bc5bb673}
+
+
+Changes mode on the MMU according to input. 
+
+This function only changes the mode, it will not invalidate all the TLB entries. If this is needed use the \hyperlink{mmu_8h_ca2d93163e27390c1524c0776fc4d9dd}{mmu\_\-reset} function to reset the MMU back to default setup.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em enable}]enable or disable the MMU \begin{itemize}
+\item MMU\_\-ENABLE \item MMU\_\-DISABLE \end{itemize}
+\item[{\em mode}]Set the MMU in private virtual mode or 1-shared virtual mode \begin{itemize}
+\item MMU\_\-PRIVATE\_\-VIRTUAL\_\-MODE \item MMU\_\-SHARED\_\-VIRTUAL\_\-MODE \end{itemize}
+\item[{\em segmentation}]Turns on or off segmentation \begin{itemize}
+\item MMU\_\-SEGMENTATION\_\-ON \item MMU\_\-SEGMENTATION\_\-OFF\end{itemize}
+\end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]Status \end{Desc}
+\begin{Desc}
+\item[Return values:]
+\begin{description}
+\item[{\em MMU\_\-OK}]on success \item[{\em MMU\_\-ERROR}]if unable to initialize the MMU \end{description}
+\end{Desc}
+\hypertarget{mmu_8h_239a60c95170611179f94a053e8aa9ec}{
+\index{mmu.h@{mmu.h}!mmu\_\-invalidate\_\-entry@{mmu\_\-invalidate\_\-entry}}
+\index{mmu\_\-invalidate\_\-entry@{mmu\_\-invalidate\_\-entry}!mmu.h@{mmu.h}}
+\subsubsection[{mmu\_\-invalidate\_\-entry}]{\setlength{\rightskip}{0pt plus 5cm}int mmu\_\-invalidate\_\-entry (int {\em index}, \/  int {\em type})}}
+\label{mmu_8h_239a60c95170611179f94a053e8aa9ec}
+
+
+Invalidates an entry in the TLB. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em index}]the TLB index of the entry to be invalidated \item[{\em type}]data or instruction entries to invalidate \begin{itemize}
+\item MMU\_\-TLB\_\-TYPE\_\-INSTRUCTION \item MMU\_\-TLB\_\-TYPE\_\-DATA\end{itemize}
+\end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]Status \end{Desc}
+\begin{Desc}
+\item[Return values:]
+\begin{description}
+\item[{\em MMU\_\-OK}]on success \item[{\em MMU\_\-ERROR\_\-ARGUMENT}]on invalid argument \end{description}
+\end{Desc}
+\hypertarget{mmu_8h_73dd1cbbb1f348a6a69706775b448443}{
+\index{mmu.h@{mmu.h}!mmu\_\-lock\_\-entries@{mmu\_\-lock\_\-entries}}
+\index{mmu\_\-lock\_\-entries@{mmu\_\-lock\_\-entries}!mmu.h@{mmu.h}}
+\subsubsection[{mmu\_\-lock\_\-entries}]{\setlength{\rightskip}{0pt plus 5cm}int mmu\_\-lock\_\-entries (int {\em entries}, \/  int {\em type})}}
+\label{mmu_8h_73dd1cbbb1f348a6a69706775b448443}
+
+
+Locks a specified number of entries. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em entries}]number of entries to lock \item[{\em type}]data or instruction entries to lock \begin{itemize}
+\item MMU\_\-TLB\_\-TYPE\_\-DATA \item MMU\_\-TLB\_\-TYPE\_\-INSTRUCTION \end{itemize}
+\end{description}
+\end{Desc}
+\hypertarget{mmu_8h_ff94d347cd9755d3102270a75e61dc47}{
+\index{mmu.h@{mmu.h}!mmu\_\-read\_\-bear\_\-and\_\-tlbehi@{mmu\_\-read\_\-bear\_\-and\_\-tlbehi}}
+\index{mmu\_\-read\_\-bear\_\-and\_\-tlbehi@{mmu\_\-read\_\-bear\_\-and\_\-tlbehi}!mmu.h@{mmu.h}}
+\subsubsection[{mmu\_\-read\_\-bear\_\-and\_\-tlbehi}]{\setlength{\rightskip}{0pt plus 5cm}void mmu\_\-read\_\-bear\_\-and\_\-tlbehi (long $\ast$ {\em bear}, \/  long $\ast$ {\em vpn})}}
+\label{mmu_8h_ff94d347cd9755d3102270a75e61dc47}
+
+
+Reads the TLBEAR and \hyperlink{struct_t_l_b_e_h_i}{TLBEHI} registers and place the contents in {\tt bear} and {\tt vpn}. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em bear}]pointer to where to put the TLBEAR data \item[{\em vpn}]pointer to where to put the \hyperlink{struct_t_l_b_e_h_i}{TLBEHI} data \end{description}
+\end{Desc}
+\hypertarget{mmu_8h_ca2d93163e27390c1524c0776fc4d9dd}{
+\index{mmu.h@{mmu.h}!mmu\_\-reset@{mmu\_\-reset}}
+\index{mmu\_\-reset@{mmu\_\-reset}!mmu.h@{mmu.h}}
+\subsubsection[{mmu\_\-reset}]{\setlength{\rightskip}{0pt plus 5cm}int mmu\_\-reset ()}}
+\label{mmu_8h_ca2d93163e27390c1524c0776fc4d9dd}
+
+
+Resets the MMU and invalidates all TLB entries. 
+
+\begin{Desc}
+\item[Returns:]Status \end{Desc}
+\begin{Desc}
+\item[Return values:]
+\begin{description}
+\item[{\em MMU\_\-OK}]on success \item[{\em MMU\_\-ERROR}]if unable to reset the MMU \end{description}
+\end{Desc}
+\hypertarget{mmu_8h_774287d35e3d44f16b948867bcea7f70}{
+\index{mmu.h@{mmu.h}!mmu\_\-search\_\-physical\_\-ptr@{mmu\_\-search\_\-physical\_\-ptr}}
+\index{mmu\_\-search\_\-physical\_\-ptr@{mmu\_\-search\_\-physical\_\-ptr}!mmu.h@{mmu.h}}
+\subsubsection[{mmu\_\-search\_\-physical\_\-ptr}]{\setlength{\rightskip}{0pt plus 5cm}int mmu\_\-search\_\-physical\_\-ptr (void $\ast$ {\em physical\_\-ptr}, \/  long $\ast$ {\em virtual\_\-addr})}}
+\label{mmu_8h_774287d35e3d44f16b948867bcea7f70}
+
+
+Search a physical address and get the virtual address from the TLB. The function searches the data TLBs first before searching the instruction TLBs. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em physical\_\-ptr}]the physical address to search for \item[{\em virtual\_\-addr}]pointer to a variable the virtual address will be written\end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]Status \end{Desc}
+\begin{Desc}
+\item[Return values:]
+\begin{description}
+\item[{\em MMU\_\-OK}]on success \item[{\em MMU\_\-ERROR\_\-ARGUMENT}]on invalid arguments \item[{\em MMU\_\-TLB\_\-MISS}]on TLB search miss \end{description}
+\end{Desc}
+\hypertarget{mmu_8h_129dfbf48ce190ebbf14cb5950e8f0cc}{
+\index{mmu.h@{mmu.h}!mmu\_\-search\_\-virtual\_\-ptr@{mmu\_\-search\_\-virtual\_\-ptr}}
+\index{mmu\_\-search\_\-virtual\_\-ptr@{mmu\_\-search\_\-virtual\_\-ptr}!mmu.h@{mmu.h}}
+\subsubsection[{mmu\_\-search\_\-virtual\_\-ptr}]{\setlength{\rightskip}{0pt plus 5cm}int mmu\_\-search\_\-virtual\_\-ptr (void $\ast$ {\em virtual\_\-ptr}, \/  long $\ast$ {\em physical\_\-addr})}}
+\label{mmu_8h_129dfbf48ce190ebbf14cb5950e8f0cc}
+
+
+Search a virtual address and get the physical address from the TLB. The function searches the data TLBs first before searching the instruction TLBs. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em virtual\_\-ptr}]the virtual address to search for \item[{\em physical\_\-addr}]pointer to a variable the physical address will be written\end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]Status \end{Desc}
+\begin{Desc}
+\item[Return values:]
+\begin{description}
+\item[{\em MMU\_\-OK}]on success \item[{\em MMU\_\-ERROR\_\-ARGUMENT}]on invalid arguments \item[{\em MMU\_\-TLB\_\-MISS}]on TLB search miss \end{description}
+\end{Desc}

@@ -1,0 +1,59 @@
+\hypertarget{ap7000__lcd_8c}{
+\section{E:/Ausbildung/Semester3/Kopie von AVR32\_\-Work1/Halos\_\-Development/src/devices/ports/avr32/ap7x/ap7000/displays/src/ap7000\_\-lcd.c File Reference}
+\label{ap7000__lcd_8c}\index{E:/Ausbildung/Semester3/Kopie von AVR32\_\-Work1/Halos\_\-Development/src/devices/ports/avr32/ap7x/ap7000/displays/src/ap7000\_\-lcd.c@{E:/Ausbildung/Semester3/Kopie von AVR32\_\-Work1/Halos\_\-Development/src/devices/ports/avr32/ap7x/ap7000/displays/src/ap7000\_\-lcd.c}}
+}
+AP7000 hardware dependet graphic/lcd implementation.  
+
+
+{\tt \#include $<$stdint.h$>$}\par
+{\tt \#include $<$string.h$>$}\par
+{\tt \#include \char`\"{}ap7000\_\-lcd.h\char`\"{}}\par
+{\tt \#include \char`\"{}ap7000\_\-lcd\_\-bg.h\char`\"{}}\par
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+void \hyperlink{group__ap7000__lcd_gb241bf31e7011997b92062d0a4777168}{SetLCD\_\-Conf} (\hyperlink{structlcdc__configuration__s}{lcdc\_\-conf\_\-t} $\ast$lcdconf)
+\begin{CompactList}\small\item\em Configures the LCD module. \item\end{CompactList}\item 
+void \hyperlink{group__ap7000__lcd_gf5e9e0c22e0b24937dd062a816e80cfc}{SetDeviceContext} (\hyperlink{struct_device_context__t}{DeviceContext\_\-t} $\ast$DC, uint8\_\-t deviceNumber)
+\begin{CompactList}\small\item\em Sets the device context. \item\end{CompactList}\item 
+\hypertarget{group__ap7000__lcd_g235164669919b33f46e08b3290006e75}{
+void \hyperlink{group__ap7000__lcd_g235164669919b33f46e08b3290006e75}{InitDriver} (void)}
+\label{group__ap7000__lcd_g235164669919b33f46e08b3290006e75}
+
+\begin{CompactList}\small\item\em Initalize Driver. \item\end{CompactList}\item 
+\hypertarget{group__ap7000__lcd_g56383c24c79cdc986208c6cd3dacc081}{
+void \hyperlink{group__ap7000__lcd_g56383c24c79cdc986208c6cd3dacc081}{lcd\_\-pio\_\-config} (void)}
+\label{group__ap7000__lcd_g56383c24c79cdc986208c6cd3dacc081}
+
+\begin{CompactList}\small\item\em Configures PIO. \item\end{CompactList}\item 
+int \hyperlink{group__ap7000__lcd_gdaab935823d9ec8447c28b6c56b221c4}{init\_\-gdi\_\-driver} (\hyperlink{structlcdc__configuration__s}{lcdc\_\-conf\_\-t} $\ast$lcdc\_\-conf)
+\begin{CompactList}\small\item\em Configures the LCD module. \item\end{CompactList}\item 
+\hypertarget{group__ap7000__lcd_g22c97331a55371956dcd6942b2846734}{
+void \hyperlink{group__ap7000__lcd_g22c97331a55371956dcd6942b2846734}{real\_\-buffer\_\-clear} (void)}
+\label{group__ap7000__lcd_g22c97331a55371956dcd6942b2846734}
+
+\begin{CompactList}\small\item\em real frame buffer clean \item\end{CompactList}\item 
+void \hyperlink{group__ap7000__lcd_g8ce36407397a9552d2fc31dc420161c8}{init\_\-graphics2} ()
+\begin{CompactList}\small\item\em Initalization of graphic device. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Variables}
+\begin{CompactItemize}
+\item 
+\hyperlink{struct_device_context__t}{DeviceContext\_\-t} $\ast$ \hyperlink{group__ap7000__lcd_gba0cd39ac57537de654bae9fd5bab786}{myDC}
+\item 
+\hyperlink{structlcdc__configuration__s}{lcdc\_\-conf\_\-t} $\ast$ \hyperlink{group__ap7000__lcd_ga3707e3377bafcb6d796ce38a46273c5}{myLCD}
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+AP7000 hardware dependet graphic/lcd implementation. 
+
+\begin{Desc}
+\item[Author:]Team Halos \end{Desc}
+\begin{Desc}
+\item[Version:]0.0.1 \end{Desc}
+\begin{Desc}
+\item[Date:]2008-2009 \end{Desc}
+\begin{Desc}
+\item[Note:]Hardware: NGW100, Software: AVR32-GCC \end{Desc}
+\begin{Desc}
+\item[License: ]LGPLv2.1 \end{Desc}

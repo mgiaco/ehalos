@@ -1,0 +1,217 @@
+\hypertarget{group__ap7000__lcd}{
+\section{LCD}
+\label{group__ap7000__lcd}\index{LCD@{LCD}}
+}
+AP7000 dependent graphic code.  
+
+
+\subsection*{Data Structures}
+\begin{CompactItemize}
+\item 
+struct \hyperlink{structlcdc__configuration__s}{lcdc\_\-configuration\_\-s}
+\begin{CompactList}\small\item\em Struct that defines the configuration of the LCD controller. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Defines}
+\begin{CompactItemize}
+\item 
+\#define \hyperlink{group__ap7000__lcd_gcf3edd4d44a99cff73b884e9ab496718}{LCD\_\-FRAMEBUFFER}~0x90000000
+\item 
+\#define \hyperlink{group__ap7000__lcd_g4a20e62f00af437f0751229dbe5f155c}{GLCD\_\-LEFT}~0
+\item 
+\#define \hyperlink{group__ap7000__lcd_gf2ee96404297ed47a1437012251aaf08}{GLCD\_\-TOP}~0
+\item 
+\#define \hyperlink{group__ap7000__lcd_g159d4b69cc8ba37f5e689e1ca132add6}{GLCD\_\-RIGHT}~480
+\item 
+\#define \hyperlink{group__ap7000__lcd_g5472b3d9706ac3335f1f22b0cdd6d18f}{GLCD\_\-BOTTOM}~272
+\end{CompactItemize}
+\subsection*{Typedefs}
+\begin{CompactItemize}
+\item 
+\hypertarget{group__ap7000__lcd_g73bd598b8ec465e0962110c640cd7a65}{
+typedef struct \hyperlink{structlcdc__configuration__s}{lcdc\_\-configuration\_\-s} \hyperlink{group__ap7000__lcd_g73bd598b8ec465e0962110c640cd7a65}{lcdc\_\-conf\_\-t}}
+\label{group__ap7000__lcd_g73bd598b8ec465e0962110c640cd7a65}
+
+\begin{CompactList}\small\item\em Struct that defines the configuration of the LCD controller. \item\end{CompactList}\item 
+\hypertarget{group__ap7000__lcd_g9c639bd343606632b938f16f4adf516a}{
+typedef uint8\_\-t \hyperlink{group__ap7000__lcd_g9c639bd343606632b938f16f4adf516a}{boolean}}
+\label{group__ap7000__lcd_g9c639bd343606632b938f16f4adf516a}
+
+\begin{CompactList}\small\item\em typedef enum \{False, True\} boolean \item\end{CompactList}\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+int \hyperlink{group__ap7000__lcd_gdaab935823d9ec8447c28b6c56b221c4}{init\_\-gdi\_\-driver} (\hyperlink{structlcdc__configuration__s}{lcdc\_\-conf\_\-t} $\ast$lcdc\_\-conf)
+\begin{CompactList}\small\item\em Configures the LCD module. \item\end{CompactList}\item 
+void \hyperlink{group__ap7000__lcd_g8ce36407397a9552d2fc31dc420161c8}{init\_\-graphics2} ()
+\begin{CompactList}\small\item\em Initalization of graphic device. \item\end{CompactList}\item 
+\hypertarget{group__ap7000__lcd_g22c97331a55371956dcd6942b2846734}{
+void \hyperlink{group__ap7000__lcd_g22c97331a55371956dcd6942b2846734}{real\_\-buffer\_\-clear} (void)}
+\label{group__ap7000__lcd_g22c97331a55371956dcd6942b2846734}
+
+\begin{CompactList}\small\item\em real frame buffer clean \item\end{CompactList}\item 
+void \hyperlink{group__ap7000__lcd_gb241bf31e7011997b92062d0a4777168}{SetLCD\_\-Conf} (\hyperlink{structlcdc__configuration__s}{lcdc\_\-conf\_\-t} $\ast$lcdconf)
+\begin{CompactList}\small\item\em Configures the LCD module. \item\end{CompactList}\item 
+\hypertarget{group__ap7000__lcd_g235164669919b33f46e08b3290006e75}{
+void \hyperlink{group__ap7000__lcd_g235164669919b33f46e08b3290006e75}{InitDriver} (void)}
+\label{group__ap7000__lcd_g235164669919b33f46e08b3290006e75}
+
+\begin{CompactList}\small\item\em Initalize Driver. \item\end{CompactList}\item 
+void \hyperlink{group__ap7000__lcd_gf5e9e0c22e0b24937dd062a816e80cfc}{SetDeviceContext} (\hyperlink{struct_device_context__t}{DeviceContext\_\-t} $\ast$DC, uint8\_\-t deviceNumber)
+\begin{CompactList}\small\item\em Sets the device context. \item\end{CompactList}\item 
+\hypertarget{group__ap7000__lcd_g56383c24c79cdc986208c6cd3dacc081}{
+void \hyperlink{group__ap7000__lcd_g56383c24c79cdc986208c6cd3dacc081}{lcd\_\-pio\_\-config} (void)}
+\label{group__ap7000__lcd_g56383c24c79cdc986208c6cd3dacc081}
+
+\begin{CompactList}\small\item\em Configures PIO. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Variables}
+\begin{CompactItemize}
+\item 
+\hyperlink{struct_device_context__t}{DeviceContext\_\-t} $\ast$ \hyperlink{group__ap7000__lcd_gba0cd39ac57537de654bae9fd5bab786}{myDC}
+\item 
+\hyperlink{structlcdc__configuration__s}{lcdc\_\-conf\_\-t} $\ast$ \hyperlink{group__ap7000__lcd_ga3707e3377bafcb6d796ce38a46273c5}{myLCD}
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+AP7000 dependent graphic code. 
+
+\begin{Desc}
+\item[Note:]... \end{Desc}
+\begin{Desc}
+\item[Author:]momo, giaco \end{Desc}
+\begin{Desc}
+\item[Version:]0.0.1\end{Desc}
+\begin{Desc}
+\item[Note:]... \end{Desc}
+\begin{Desc}
+\item[Author:]momo \end{Desc}
+\begin{Desc}
+\item[Version:]0.0.0.1 \end{Desc}
+
+
+\subsection{Define Documentation}
+\hypertarget{group__ap7000__lcd_g5472b3d9706ac3335f1f22b0cdd6d18f}{
+\index{ap7000\_\-lcd@{ap7000\_\-lcd}!GLCD\_\-BOTTOM@{GLCD\_\-BOTTOM}}
+\index{GLCD\_\-BOTTOM@{GLCD\_\-BOTTOM}!ap7000_lcd@{ap7000\_\-lcd}}
+\subsubsection[{GLCD\_\-BOTTOM}]{\setlength{\rightskip}{0pt plus 5cm}\#define GLCD\_\-BOTTOM~272}}
+\label{group__ap7000__lcd_g5472b3d9706ac3335f1f22b0cdd6d18f}
+
+
+maximal horizontal position \hypertarget{group__ap7000__lcd_g4a20e62f00af437f0751229dbe5f155c}{
+\index{ap7000\_\-lcd@{ap7000\_\-lcd}!GLCD\_\-LEFT@{GLCD\_\-LEFT}}
+\index{GLCD\_\-LEFT@{GLCD\_\-LEFT}!ap7000_lcd@{ap7000\_\-lcd}}
+\subsubsection[{GLCD\_\-LEFT}]{\setlength{\rightskip}{0pt plus 5cm}\#define GLCD\_\-LEFT~0}}
+\label{group__ap7000__lcd_g4a20e62f00af437f0751229dbe5f155c}
+
+
+minimal vertical position \hypertarget{group__ap7000__lcd_g159d4b69cc8ba37f5e689e1ca132add6}{
+\index{ap7000\_\-lcd@{ap7000\_\-lcd}!GLCD\_\-RIGHT@{GLCD\_\-RIGHT}}
+\index{GLCD\_\-RIGHT@{GLCD\_\-RIGHT}!ap7000_lcd@{ap7000\_\-lcd}}
+\subsubsection[{GLCD\_\-RIGHT}]{\setlength{\rightskip}{0pt plus 5cm}\#define GLCD\_\-RIGHT~480}}
+\label{group__ap7000__lcd_g159d4b69cc8ba37f5e689e1ca132add6}
+
+
+maximal vertical position \hypertarget{group__ap7000__lcd_gf2ee96404297ed47a1437012251aaf08}{
+\index{ap7000\_\-lcd@{ap7000\_\-lcd}!GLCD\_\-TOP@{GLCD\_\-TOP}}
+\index{GLCD\_\-TOP@{GLCD\_\-TOP}!ap7000_lcd@{ap7000\_\-lcd}}
+\subsubsection[{GLCD\_\-TOP}]{\setlength{\rightskip}{0pt plus 5cm}\#define GLCD\_\-TOP~0}}
+\label{group__ap7000__lcd_gf2ee96404297ed47a1437012251aaf08}
+
+
+minimal horizontal position \hypertarget{group__ap7000__lcd_gcf3edd4d44a99cff73b884e9ab496718}{
+\index{ap7000\_\-lcd@{ap7000\_\-lcd}!LCD\_\-FRAMEBUFFER@{LCD\_\-FRAMEBUFFER}}
+\index{LCD\_\-FRAMEBUFFER@{LCD\_\-FRAMEBUFFER}!ap7000_lcd@{ap7000\_\-lcd}}
+\subsubsection[{LCD\_\-FRAMEBUFFER}]{\setlength{\rightskip}{0pt plus 5cm}\#define LCD\_\-FRAMEBUFFER~0x90000000}}
+\label{group__ap7000__lcd_gcf3edd4d44a99cff73b884e9ab496718}
+
+
+startaddress of framebuffer 
+
+\subsection{Function Documentation}
+\hypertarget{group__ap7000__lcd_gdaab935823d9ec8447c28b6c56b221c4}{
+\index{ap7000\_\-lcd@{ap7000\_\-lcd}!init\_\-gdi\_\-driver@{init\_\-gdi\_\-driver}}
+\index{init\_\-gdi\_\-driver@{init\_\-gdi\_\-driver}!ap7000_lcd@{ap7000\_\-lcd}}
+\subsubsection[{init\_\-gdi\_\-driver}]{\setlength{\rightskip}{0pt plus 5cm}int init\_\-gdi\_\-driver ({\bf lcdc\_\-conf\_\-t} $\ast$ {\em lcdc\_\-conf})}}
+\label{group__ap7000__lcd_gdaab935823d9ec8447c28b6c56b221c4}
+
+
+Configures the LCD module. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em lcdc\_\-conf}]Pointer to LCD controller configuration structure\end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]Status \end{Desc}
+\begin{Desc}
+\item[Return values:]
+\begin{description}
+\item[{\em 0}]= success \item[{\em -1}]= failure \end{description}
+\end{Desc}
+\hypertarget{group__ap7000__lcd_g8ce36407397a9552d2fc31dc420161c8}{
+\index{ap7000\_\-lcd@{ap7000\_\-lcd}!init\_\-graphics2@{init\_\-graphics2}}
+\index{init\_\-graphics2@{init\_\-graphics2}!ap7000_lcd@{ap7000\_\-lcd}}
+\subsubsection[{init\_\-graphics2}]{\setlength{\rightskip}{0pt plus 5cm}void init\_\-graphics2 ()}}
+\label{group__ap7000__lcd_g8ce36407397a9552d2fc31dc420161c8}
+
+
+Initalization of graphic device. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em lcdc\_\-conf}]Pointer to LCD controller configuration structure Initalization of graphic device \end{description}
+\end{Desc}
+\hypertarget{group__ap7000__lcd_gf5e9e0c22e0b24937dd062a816e80cfc}{
+\index{ap7000\_\-lcd@{ap7000\_\-lcd}!SetDeviceContext@{SetDeviceContext}}
+\index{SetDeviceContext@{SetDeviceContext}!ap7000_lcd@{ap7000\_\-lcd}}
+\subsubsection[{SetDeviceContext}]{\setlength{\rightskip}{0pt plus 5cm}void SetDeviceContext ({\bf DeviceContext\_\-t} $\ast$ {\em DC}, \/  uint8\_\-t {\em deviceNumber})}}
+\label{group__ap7000__lcd_gf5e9e0c22e0b24937dd062a816e80cfc}
+
+
+Sets the device context. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em DC}]pointer to device context \item[{\em deviceNumber}]Number of device \end{description}
+\end{Desc}
+\hypertarget{group__ap7000__lcd_gb241bf31e7011997b92062d0a4777168}{
+\index{ap7000\_\-lcd@{ap7000\_\-lcd}!SetLCD\_\-Conf@{SetLCD\_\-Conf}}
+\index{SetLCD\_\-Conf@{SetLCD\_\-Conf}!ap7000_lcd@{ap7000\_\-lcd}}
+\subsubsection[{SetLCD\_\-Conf}]{\setlength{\rightskip}{0pt plus 5cm}void SetLCD\_\-Conf ({\bf lcdc\_\-conf\_\-t} $\ast$ {\em lcdconf})}}
+\label{group__ap7000__lcd_gb241bf31e7011997b92062d0a4777168}
+
+
+Configures the LCD module. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em lcdconf}]Pointer to LCD controller configuration structure\end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]Status \end{Desc}
+\begin{Desc}
+\item[Return values:]
+\begin{description}
+\item[{\em 0}]= success \item[{\em -1}]= failure \end{description}
+\end{Desc}
+
+
+\subsection{Variable Documentation}
+\hypertarget{group__ap7000__lcd_gba0cd39ac57537de654bae9fd5bab786}{
+\index{ap7000\_\-lcd@{ap7000\_\-lcd}!myDC@{myDC}}
+\index{myDC@{myDC}!ap7000_lcd@{ap7000\_\-lcd}}
+\subsubsection[{myDC}]{\setlength{\rightskip}{0pt plus 5cm}{\bf DeviceContext\_\-t}$\ast$ {\bf myDC}}}
+\label{group__ap7000__lcd_gba0cd39ac57537de654bae9fd5bab786}
+
+
+pointer to current device context \hypertarget{group__ap7000__lcd_ga3707e3377bafcb6d796ce38a46273c5}{
+\index{ap7000\_\-lcd@{ap7000\_\-lcd}!myLCD@{myLCD}}
+\index{myLCD@{myLCD}!ap7000_lcd@{ap7000\_\-lcd}}
+\subsubsection[{myLCD}]{\setlength{\rightskip}{0pt plus 5cm}{\bf lcdc\_\-conf\_\-t}$\ast$ {\bf myLCD}}}
+\label{group__ap7000__lcd_ga3707e3377bafcb6d796ce38a46273c5}
+
+
+pointer to lcd configuration structure 

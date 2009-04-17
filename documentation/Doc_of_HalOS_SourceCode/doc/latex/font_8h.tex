@@ -1,0 +1,105 @@
+\hypertarget{font_8h}{
+\section{E:/Ausbildung/Semester3/Kopie von AVR32\_\-Work1/Halos\_\-Development/src/devices/gdi/font/inc/font.h File Reference}
+\label{font_8h}\index{E:/Ausbildung/Semester3/Kopie von AVR32\_\-Work1/Halos\_\-Development/src/devices/gdi/font/inc/font.h@{E:/Ausbildung/Semester3/Kopie von AVR32\_\-Work1/Halos\_\-Development/src/devices/gdi/font/inc/font.h}}
+}
+device independet graphic/font header  
+
+
+{\tt \#include $<$inttypes.h$>$}\par
+{\tt \#include \char`\"{}ap7000\_\-lcd.h\char`\"{}}\par
+{\tt \#include \char`\"{}graphics.h\char`\"{}}\par
+{\tt \#include \char`\"{}graphis\_\-hw\_\-interface.h\char`\"{}}\par
+{\tt \#include \char`\"{}colors.h\char`\"{}}\par
+{\tt \#include \char`\"{}fonts.h\char`\"{}}\par
+{\tt \#include \char`\"{}handel\_\-bold\_\-14.h\char`\"{}}\par
+{\tt \#include \char`\"{}arial\_\-bold\_\-14.h\char`\"{}}\par
+\subsection*{Defines}
+\begin{Indent}{\bf Constants}\par
+\begin{CompactItemize}
+\item 
+\hypertarget{group__graphic__device__font_ge06dc7b9804bb102859f0e32754e79a5}{
+\#define \textbf{FONT\_\-LENGTH}~0}
+\label{group__graphic__device__font_ge06dc7b9804bb102859f0e32754e79a5}
+
+\item 
+\hypertarget{group__graphic__device__font_gfc65866121cd2eba3caa85d2946eeec0}{
+\#define \textbf{FONT\_\-FIXED\_\-WIDTH}~2}
+\label{group__graphic__device__font_gfc65866121cd2eba3caa85d2946eeec0}
+
+\item 
+\hypertarget{group__graphic__device__font_g33f4fac49f2a5e27e2857eb27f054510}{
+\#define \textbf{FONT\_\-HEIGHT}~3}
+\label{group__graphic__device__font_g33f4fac49f2a5e27e2857eb27f054510}
+
+\item 
+\hypertarget{group__graphic__device__font_gbf840ca631179d25994d5f1dc3594646}{
+\#define \textbf{FONT\_\-FIRST\_\-CHAR}~4}
+\label{group__graphic__device__font_gbf840ca631179d25994d5f1dc3594646}
+
+\item 
+\hypertarget{group__graphic__device__font_g4546cd12e3ae03bca0659ed77eeb872e}{
+\#define \textbf{FONT\_\-CHAR\_\-COUNT}~5}
+\label{group__graphic__device__font_g4546cd12e3ae03bca0659ed77eeb872e}
+
+\item 
+\hypertarget{group__graphic__device__font_ge6bf0901cff58e47324da9487d0ee938}{
+\#define \textbf{FONT\_\-WIDTH\_\-TABLE}~6}
+\label{group__graphic__device__font_ge6bf0901cff58e47324da9487d0ee938}
+
+\item 
+\#define \hyperlink{group__graphic__device__font_geaf74eaabed8649b362d27e238658343}{LEFT\_\-TEXT}~0
+\item 
+\#define \hyperlink{group__graphic__device__font_gd0ae9e6dc7894a5b6b1e36fc5260b862}{CENTER\_\-TEXT}~1
+\item 
+\#define \hyperlink{group__graphic__device__font_g17e416c21fb4d19bc55179c55d452de9}{RIGHT\_\-TEXT}~2
+\item 
+\#define \hyperlink{group__graphic__device__font_g02b7607c323731f6b5d4c4aba6eb8f70}{BOTTOM\_\-TEXT}~0
+\item 
+\#define \hyperlink{group__graphic__device__font_gffe790b2fe3846e872da3498e2ec2f43}{TOP\_\-TEXT}~2
+\end{CompactItemize}
+\end{Indent}
+\subsection*{Typedefs}
+\begin{Indent}{\bf Callback}\par
+\begin{CompactItemize}
+\item 
+typedef uint8\_\-t($\ast$ \hyperlink{group__graphic__device__font_ge7d259c434193cdc93d4d4136d77612a}{FontReadCallback} )(const uint8\_\-t $\ast$)
+\end{CompactItemize}
+\end{Indent}
+\subsection*{Functions}
+\begin{Indent}{\bf Functions}\par
+\begin{CompactItemize}
+\item 
+void \hyperlink{group__graphic__device__font_ga343406213368d6304b31a9fce39c19d}{init\_\-font} (\hyperlink{struct_device_context__t}{DeviceContext\_\-t} $\ast$DC)
+\begin{CompactList}\small\item\em initialize font \item\end{CompactList}\item 
+uint8\_\-t \hyperlink{group__graphic__device__font_g56c9e56353b4b51cda195a17a23748ea}{read\_\-font\_\-data} (const uint8\_\-t $\ast$ptr)
+\begin{CompactList}\small\item\em read font data \item\end{CompactList}\item 
+void \hyperlink{group__graphic__device__font_g65f96d48c2f92aac9b7b71208826bdaf}{select\_\-new\_\-font} (\hyperlink{group__hgdi__fonts_gec86a33a52fa97333da1074389df46a3}{halos\_\-font\_\-t} fonts, \hyperlink{group__graphic__device__font_ge7d259c434193cdc93d4d4136d77612a}{FontReadCallback} callback, uint32\_\-t color)
+\begin{CompactList}\small\item\em select font, called from GDI-API \item\end{CompactList}\item 
+uint8\_\-t \hyperlink{group__graphic__device__font_ged8f749179799860fc51de0900f6460a}{glcd\_\-draw\_\-char} (const char c)
+\begin{CompactList}\small\item\em draw character, called from GDI-API \item\end{CompactList}\item 
+void \hyperlink{group__graphic__device__font_gcd9fe916d077689750b8db36268e97e5}{glcd\_\-draw\_\-string} (const char $\ast$str)
+\item 
+void \hyperlink{group__graphic__device__font_g526db8c9babc556c5a4cc0fca4375b57}{glcd\_\-set\_\-text\_\-justify} (uint8\_\-t horiz, uint8\_\-t vert)
+\begin{CompactList}\small\item\em set text alignment, called from GDI-API \item\end{CompactList}\item 
+uint8\_\-t \hyperlink{group__graphic__device__font_gac9f46ba71240ab10226e2301453baca}{glcd\_\-get\_\-char\_\-width} (char c)
+\begin{CompactList}\small\item\em get character width, called from GDI-API \item\end{CompactList}\item 
+uint16\_\-t \hyperlink{group__graphic__device__font_g7139ef355833e99644e2149b6e908759}{glcd\_\-get\_\-string\_\-width} (const char $\ast$str)
+\begin{CompactList}\small\item\em get string width, called from GDI-API \item\end{CompactList}\item 
+uint8\_\-t \hyperlink{group__graphic__device__font_g98c36633bb1b0db1ac26c4b07a392d2c}{glcd\_\-get\_\-font\_\-height} ()
+\begin{CompactList}\small\item\em get font height, called from GDI-API \item\end{CompactList}\end{CompactItemize}
+\end{Indent}
+
+
+\subsection{Detailed Description}
+device independet graphic/font header 
+
+\begin{Desc}
+\item[Author:]Team Halos \end{Desc}
+\begin{Desc}
+\item[Version:]0.0.1 \end{Desc}
+\begin{Desc}
+\item[Date:]2008-2009 \end{Desc}
+\begin{Desc}
+\item[Note:]Hardware: NGW100, Software: AVR32-GCC \end{Desc}
+\begin{Desc}
+\item[License: ]LGPLv2.1 \end{Desc}

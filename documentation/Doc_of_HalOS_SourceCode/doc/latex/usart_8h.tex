@@ -1,0 +1,384 @@
+\hypertarget{usart_8h}{
+\section{E:/Ausbildung/Semester3/Kopie von AVR32\_\-Work1/Halos\_\-Development/src/hal/ports/avr32/ap7x/ap7000/usart.h File Reference}
+\label{usart_8h}\index{E:/Ausbildung/Semester3/Kopie von AVR32\_\-Work1/Halos\_\-Development/src/hal/ports/avr32/ap7x/ap7000/usart.h@{E:/Ausbildung/Semester3/Kopie von AVR32\_\-Work1/Halos\_\-Development/src/hal/ports/avr32/ap7x/ap7000/usart.h}}
+}
+USART driver library.  
+
+
+{\tt \#include $<$avr32/io.h$>$}\par
+{\tt \#include \char`\"{}error.h\char`\"{}}\par
+\subsection*{Data Structures}
+\begin{CompactItemize}
+\item 
+struct \hyperlink{structusart__options__t}{usart\_\-options\_\-t}
+\end{CompactItemize}
+\subsection*{Defines}
+\begin{CompactItemize}
+\item 
+\#define \hyperlink{usart_8h_c8dc7a35914ec78bd7382630499bd856}{USART\_\-DEFAULT\_\-TIMEOUT}~10000
+\item 
+\#define \hyperlink{usart_8h_e1d9b4bad8db5bd7118657f6a6b07e7f}{USART\_\-EVEN\_\-PARITY}~0
+\item 
+\#define \hyperlink{usart_8h_e5d244f72f291b826d489fdfd929f968}{USART\_\-ODD\_\-PARITY}~1
+\item 
+\#define \hyperlink{usart_8h_0e63ca7313cd01a9210c4a4613859a68}{USART\_\-SPACE\_\-PARITY}~2
+\item 
+\#define \hyperlink{usart_8h_d6691109f6d7e9b0f32865cf13729a4c}{USART\_\-MARK\_\-PARITY}~3
+\item 
+\#define \hyperlink{usart_8h_0b656451a78c0f602ee8855d52c719a8}{USART\_\-NO\_\-PARITY}~4
+\item 
+\#define \hyperlink{usart_8h_815b919d198dd0e5c8c5930c41eaeb19}{USART\_\-MULTIDROP\_\-PARITY}~6
+\item 
+\#define \hyperlink{usart_8h_dcf25792248002bfc467859827b40c2a}{USART\_\-MODE\_\-NORMAL}~0x00
+\item 
+\#define \hyperlink{usart_8h_a2946a63275da85d3b578044a88bbd7d}{USART\_\-MODE\_\-RS485}~0x01
+\item 
+\#define \hyperlink{usart_8h_20f58bd59d4177ad2981c8fa338a95af}{USART\_\-MODE\_\-HW\_\-HSH}~0x02
+\item 
+\#define \hyperlink{usart_8h_e01dfbdf6f2d1c148b0320e19f8fa98e}{USART\_\-MODE\_\-MODEM}~0x03
+\item 
+\#define \hyperlink{usart_8h_af44f2a4560d84b228624189aad26d5e}{USART\_\-MODE\_\-ISO7816\_\-T0}~0x04
+\item 
+\#define \hyperlink{usart_8h_20cc4cd0b851232cd6b3680713792a44}{USART\_\-MODE\_\-ISO7816\_\-T1}~0x06
+\item 
+\#define \hyperlink{usart_8h_e3e7ce1ee302ade431ad5f8eb99685c4}{USART\_\-MODE\_\-IRDA}~0x08
+\item 
+\#define \hyperlink{usart_8h_1af49d7b84d7323c6842945413559e94}{USART\_\-MODE\_\-SW\_\-HSH}~0x0C
+\item 
+\#define \hyperlink{usart_8h_0bd9f61e5232af833543eac9419c2d70}{USART\_\-NORMAL\_\-CHMODE}~0
+\item 
+\#define \hyperlink{usart_8h_33c55e1ccb5ab9bd14ba0d12f1914835}{USART\_\-AUTO\_\-ECHO}~1
+\item 
+\#define \hyperlink{usart_8h_c3018913929c37ce6bf21eea4b4993cb}{USART\_\-LOCAL\_\-LOOPBACK}~2
+\item 
+\#define \hyperlink{usart_8h_dba8a9b92a249dfaa3c1137e5bf7fd84}{USART\_\-REMOTE\_\-LOOPBACK}~3
+\item 
+\#define \hyperlink{usart_8h_f2d819c8836b2d7838ab501d36458969}{USART\_\-1\_\-STOPBIT}~0
+\item 
+\#define \hyperlink{usart_8h_f923bf04659a9d03bc09218c7a715f67}{USART\_\-1\_\-5\_\-STOPBITS}~1
+\item 
+\#define \hyperlink{usart_8h_33058202439211b539aa2e9478f785bd}{USART\_\-2\_\-STOPBITS}~2
+\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+void \hyperlink{usart_8h_e994c1e7797dda76388176f208a2e6f2}{usart\_\-reset} (volatile struct avr32\_\-usart\_\-t $\ast$usart)
+\item 
+int \hyperlink{usart_8h_48c8d76fc9fdde84b94a6e09184a6446}{usart\_\-init\_\-rs232} (volatile struct avr32\_\-usart\_\-t $\ast$usart, struct \hyperlink{structusart__options__t}{usart\_\-options\_\-t} $\ast$opt, long cpu\_\-hz)
+\item 
+int \hyperlink{usart_8h_a4ca349377ae12db7bfe43336f98121e}{usart\_\-send\_\-addr} (volatile struct avr32\_\-usart\_\-t $\ast$usart, int addr)
+\item 
+int \hyperlink{usart_8h_26a849327e3bccdef17734f30667d9bd}{usart\_\-write\_\-char} (volatile struct avr32\_\-usart\_\-t $\ast$usart, int c)
+\item 
+void \hyperlink{usart_8h_0cd4c3b95035f5943696ffd9b56ee494}{usart\_\-bw\_\-write\_\-char} (volatile struct avr32\_\-usart\_\-t $\ast$usart, int c)
+\item 
+int \hyperlink{usart_8h_908695fc913f77a6c1ab2a89e201a1fd}{usart\_\-putchar} (volatile struct avr32\_\-usart\_\-t $\ast$usart, int c)
+\item 
+int \hyperlink{usart_8h_ada9ca86fda25626da4a1c4b1e723682}{usart\_\-read\_\-char} (volatile struct avr32\_\-usart\_\-t $\ast$usart, int $\ast$c)
+\item 
+int \hyperlink{usart_8h_ad19b20067ca5ccf90d584e3b09ab02a}{usart\_\-getchar} (volatile struct avr32\_\-usart\_\-t $\ast$usart)
+\item 
+void \hyperlink{usart_8h_5f5ba5edef2948c6e5e8c37ba07e5989}{usart\_\-reset\_\-status} (volatile struct avr32\_\-usart\_\-t $\ast$usart)
+\begin{CompactList}\small\item\em Reset error status. \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+USART driver library. 
+
+This file contains basic drivers for the AVR32 USART, with support for all all modes, settings and clock speeds.
+
+\begin{itemize}
+\item Compiler: IAR EWAAVR32 and GNU GCC for AVR32\item Supported actDevices: All AVR32 actDevices with a USART module can be used.\item AppNote: AVR32100 - Communication with the AVR32 USART\end{itemize}
+
+
+\begin{Desc}
+\item[Author:]Atmel Corporation: \href{http://www.atmel.com}{\tt http://www.atmel.com} \par
+ Support email: \href{mailto:avr32@atmel.com}{\tt avr32@atmel.com}\end{Desc}
+\$Name\$ \begin{Desc}
+\item[Revision]67 \end{Desc}
+\$RCSfile\$ \begin{Desc}
+\item[Date]2006-05-10 15:00:07 +0200 (Wed, 10 May 2006) \end{Desc}
+
+
+\subsection{Define Documentation}
+\hypertarget{usart_8h_f923bf04659a9d03bc09218c7a715f67}{
+\index{usart.h@{usart.h}!USART\_\-1\_\-5\_\-STOPBITS@{USART\_\-1\_\-5\_\-STOPBITS}}
+\index{USART\_\-1\_\-5\_\-STOPBITS@{USART\_\-1\_\-5\_\-STOPBITS}!usart.h@{usart.h}}
+\subsubsection[{USART\_\-1\_\-5\_\-STOPBITS}]{\setlength{\rightskip}{0pt plus 5cm}\#define USART\_\-1\_\-5\_\-STOPBITS~1}}
+\label{usart_8h_f923bf04659a9d03bc09218c7a715f67}
+
+
+Use 1.5 stop bits \hypertarget{usart_8h_f2d819c8836b2d7838ab501d36458969}{
+\index{usart.h@{usart.h}!USART\_\-1\_\-STOPBIT@{USART\_\-1\_\-STOPBIT}}
+\index{USART\_\-1\_\-STOPBIT@{USART\_\-1\_\-STOPBIT}!usart.h@{usart.h}}
+\subsubsection[{USART\_\-1\_\-STOPBIT}]{\setlength{\rightskip}{0pt plus 5cm}\#define USART\_\-1\_\-STOPBIT~0}}
+\label{usart_8h_f2d819c8836b2d7838ab501d36458969}
+
+
+Use 1 stop bit \hypertarget{usart_8h_33058202439211b539aa2e9478f785bd}{
+\index{usart.h@{usart.h}!USART\_\-2\_\-STOPBITS@{USART\_\-2\_\-STOPBITS}}
+\index{USART\_\-2\_\-STOPBITS@{USART\_\-2\_\-STOPBITS}!usart.h@{usart.h}}
+\subsubsection[{USART\_\-2\_\-STOPBITS}]{\setlength{\rightskip}{0pt plus 5cm}\#define USART\_\-2\_\-STOPBITS~2}}
+\label{usart_8h_33058202439211b539aa2e9478f785bd}
+
+
+Use 2 stop bits (for more, just give the number of bits) \hypertarget{usart_8h_33c55e1ccb5ab9bd14ba0d12f1914835}{
+\index{usart.h@{usart.h}!USART\_\-AUTO\_\-ECHO@{USART\_\-AUTO\_\-ECHO}}
+\index{USART\_\-AUTO\_\-ECHO@{USART\_\-AUTO\_\-ECHO}!usart.h@{usart.h}}
+\subsubsection[{USART\_\-AUTO\_\-ECHO}]{\setlength{\rightskip}{0pt plus 5cm}\#define USART\_\-AUTO\_\-ECHO~1}}
+\label{usart_8h_33c55e1ccb5ab9bd14ba0d12f1914835}
+
+
+Set usart channel to echo data \hypertarget{usart_8h_c8dc7a35914ec78bd7382630499bd856}{
+\index{usart.h@{usart.h}!USART\_\-DEFAULT\_\-TIMEOUT@{USART\_\-DEFAULT\_\-TIMEOUT}}
+\index{USART\_\-DEFAULT\_\-TIMEOUT@{USART\_\-DEFAULT\_\-TIMEOUT}!usart.h@{usart.h}}
+\subsubsection[{USART\_\-DEFAULT\_\-TIMEOUT}]{\setlength{\rightskip}{0pt plus 5cm}\#define USART\_\-DEFAULT\_\-TIMEOUT~10000}}
+\label{usart_8h_c8dc7a35914ec78bd7382630499bd856}
+
+
+Default timeout value; number of tries before timing out \hypertarget{usart_8h_e1d9b4bad8db5bd7118657f6a6b07e7f}{
+\index{usart.h@{usart.h}!USART\_\-EVEN\_\-PARITY@{USART\_\-EVEN\_\-PARITY}}
+\index{USART\_\-EVEN\_\-PARITY@{USART\_\-EVEN\_\-PARITY}!usart.h@{usart.h}}
+\subsubsection[{USART\_\-EVEN\_\-PARITY}]{\setlength{\rightskip}{0pt plus 5cm}\#define USART\_\-EVEN\_\-PARITY~0}}
+\label{usart_8h_e1d9b4bad8db5bd7118657f6a6b07e7f}
+
+
+Use even parity on character transmission \hypertarget{usart_8h_c3018913929c37ce6bf21eea4b4993cb}{
+\index{usart.h@{usart.h}!USART\_\-LOCAL\_\-LOOPBACK@{USART\_\-LOCAL\_\-LOOPBACK}}
+\index{USART\_\-LOCAL\_\-LOOPBACK@{USART\_\-LOCAL\_\-LOOPBACK}!usart.h@{usart.h}}
+\subsubsection[{USART\_\-LOCAL\_\-LOOPBACK}]{\setlength{\rightskip}{0pt plus 5cm}\#define USART\_\-LOCAL\_\-LOOPBACK~2}}
+\label{usart_8h_c3018913929c37ce6bf21eea4b4993cb}
+
+
+Set usart channel to local loopback \hypertarget{usart_8h_d6691109f6d7e9b0f32865cf13729a4c}{
+\index{usart.h@{usart.h}!USART\_\-MARK\_\-PARITY@{USART\_\-MARK\_\-PARITY}}
+\index{USART\_\-MARK\_\-PARITY@{USART\_\-MARK\_\-PARITY}!usart.h@{usart.h}}
+\subsubsection[{USART\_\-MARK\_\-PARITY}]{\setlength{\rightskip}{0pt plus 5cm}\#define USART\_\-MARK\_\-PARITY~3}}
+\label{usart_8h_d6691109f6d7e9b0f32865cf13729a4c}
+
+
+Use a mark as parity bit \hypertarget{usart_8h_20f58bd59d4177ad2981c8fa338a95af}{
+\index{usart.h@{usart.h}!USART\_\-MODE\_\-HW\_\-HSH@{USART\_\-MODE\_\-HW\_\-HSH}}
+\index{USART\_\-MODE\_\-HW\_\-HSH@{USART\_\-MODE\_\-HW\_\-HSH}!usart.h@{usart.h}}
+\subsubsection[{USART\_\-MODE\_\-HW\_\-HSH}]{\setlength{\rightskip}{0pt plus 5cm}\#define USART\_\-MODE\_\-HW\_\-HSH~0x02}}
+\label{usart_8h_20f58bd59d4177ad2981c8fa338a95af}
+
+
+Operate usart in rs232 with hardware handshaking \hypertarget{usart_8h_e3e7ce1ee302ade431ad5f8eb99685c4}{
+\index{usart.h@{usart.h}!USART\_\-MODE\_\-IRDA@{USART\_\-MODE\_\-IRDA}}
+\index{USART\_\-MODE\_\-IRDA@{USART\_\-MODE\_\-IRDA}!usart.h@{usart.h}}
+\subsubsection[{USART\_\-MODE\_\-IRDA}]{\setlength{\rightskip}{0pt plus 5cm}\#define USART\_\-MODE\_\-IRDA~0x08}}
+\label{usart_8h_e3e7ce1ee302ade431ad5f8eb99685c4}
+
+
+Oparte usart in irda mode \hypertarget{usart_8h_af44f2a4560d84b228624189aad26d5e}{
+\index{usart.h@{usart.h}!USART\_\-MODE\_\-ISO7816\_\-T0@{USART\_\-MODE\_\-ISO7816\_\-T0}}
+\index{USART\_\-MODE\_\-ISO7816\_\-T0@{USART\_\-MODE\_\-ISO7816\_\-T0}!usart.h@{usart.h}}
+\subsubsection[{USART\_\-MODE\_\-ISO7816\_\-T0}]{\setlength{\rightskip}{0pt plus 5cm}\#define USART\_\-MODE\_\-ISO7816\_\-T0~0x04}}
+\label{usart_8h_af44f2a4560d84b228624189aad26d5e}
+
+
+Operate usart in iso7816, T=0 mode \hypertarget{usart_8h_20cc4cd0b851232cd6b3680713792a44}{
+\index{usart.h@{usart.h}!USART\_\-MODE\_\-ISO7816\_\-T1@{USART\_\-MODE\_\-ISO7816\_\-T1}}
+\index{USART\_\-MODE\_\-ISO7816\_\-T1@{USART\_\-MODE\_\-ISO7816\_\-T1}!usart.h@{usart.h}}
+\subsubsection[{USART\_\-MODE\_\-ISO7816\_\-T1}]{\setlength{\rightskip}{0pt plus 5cm}\#define USART\_\-MODE\_\-ISO7816\_\-T1~0x06}}
+\label{usart_8h_20cc4cd0b851232cd6b3680713792a44}
+
+
+Operate usart in iso7816, T=1 mode \hypertarget{usart_8h_e01dfbdf6f2d1c148b0320e19f8fa98e}{
+\index{usart.h@{usart.h}!USART\_\-MODE\_\-MODEM@{USART\_\-MODE\_\-MODEM}}
+\index{USART\_\-MODE\_\-MODEM@{USART\_\-MODE\_\-MODEM}!usart.h@{usart.h}}
+\subsubsection[{USART\_\-MODE\_\-MODEM}]{\setlength{\rightskip}{0pt plus 5cm}\#define USART\_\-MODE\_\-MODEM~0x03}}
+\label{usart_8h_e01dfbdf6f2d1c148b0320e19f8fa98e}
+
+
+Operate usart in modem mode \hypertarget{usart_8h_dcf25792248002bfc467859827b40c2a}{
+\index{usart.h@{usart.h}!USART\_\-MODE\_\-NORMAL@{USART\_\-MODE\_\-NORMAL}}
+\index{USART\_\-MODE\_\-NORMAL@{USART\_\-MODE\_\-NORMAL}!usart.h@{usart.h}}
+\subsubsection[{USART\_\-MODE\_\-NORMAL}]{\setlength{\rightskip}{0pt plus 5cm}\#define USART\_\-MODE\_\-NORMAL~0x00}}
+\label{usart_8h_dcf25792248002bfc467859827b40c2a}
+
+
+Operate usart in normal rs232 mode \hypertarget{usart_8h_a2946a63275da85d3b578044a88bbd7d}{
+\index{usart.h@{usart.h}!USART\_\-MODE\_\-RS485@{USART\_\-MODE\_\-RS485}}
+\index{USART\_\-MODE\_\-RS485@{USART\_\-MODE\_\-RS485}!usart.h@{usart.h}}
+\subsubsection[{USART\_\-MODE\_\-RS485}]{\setlength{\rightskip}{0pt plus 5cm}\#define USART\_\-MODE\_\-RS485~0x01}}
+\label{usart_8h_a2946a63275da85d3b578044a88bbd7d}
+
+
+Operate usart in rs485 mode \hypertarget{usart_8h_1af49d7b84d7323c6842945413559e94}{
+\index{usart.h@{usart.h}!USART\_\-MODE\_\-SW\_\-HSH@{USART\_\-MODE\_\-SW\_\-HSH}}
+\index{USART\_\-MODE\_\-SW\_\-HSH@{USART\_\-MODE\_\-SW\_\-HSH}!usart.h@{usart.h}}
+\subsubsection[{USART\_\-MODE\_\-SW\_\-HSH}]{\setlength{\rightskip}{0pt plus 5cm}\#define USART\_\-MODE\_\-SW\_\-HSH~0x0C}}
+\label{usart_8h_1af49d7b84d7323c6842945413559e94}
+
+
+Operate usart in rs232 with software handshaking \hypertarget{usart_8h_815b919d198dd0e5c8c5930c41eaeb19}{
+\index{usart.h@{usart.h}!USART\_\-MULTIDROP\_\-PARITY@{USART\_\-MULTIDROP\_\-PARITY}}
+\index{USART\_\-MULTIDROP\_\-PARITY@{USART\_\-MULTIDROP\_\-PARITY}!usart.h@{usart.h}}
+\subsubsection[{USART\_\-MULTIDROP\_\-PARITY}]{\setlength{\rightskip}{0pt plus 5cm}\#define USART\_\-MULTIDROP\_\-PARITY~6}}
+\label{usart_8h_815b919d198dd0e5c8c5930c41eaeb19}
+
+
+Parity bit is used to flag address characters \hypertarget{usart_8h_0b656451a78c0f602ee8855d52c719a8}{
+\index{usart.h@{usart.h}!USART\_\-NO\_\-PARITY@{USART\_\-NO\_\-PARITY}}
+\index{USART\_\-NO\_\-PARITY@{USART\_\-NO\_\-PARITY}!usart.h@{usart.h}}
+\subsubsection[{USART\_\-NO\_\-PARITY}]{\setlength{\rightskip}{0pt plus 5cm}\#define USART\_\-NO\_\-PARITY~4}}
+\label{usart_8h_0b656451a78c0f602ee8855d52c719a8}
+
+
+Don't use a parity bit \hypertarget{usart_8h_0bd9f61e5232af833543eac9419c2d70}{
+\index{usart.h@{usart.h}!USART\_\-NORMAL\_\-CHMODE@{USART\_\-NORMAL\_\-CHMODE}}
+\index{USART\_\-NORMAL\_\-CHMODE@{USART\_\-NORMAL\_\-CHMODE}!usart.h@{usart.h}}
+\subsubsection[{USART\_\-NORMAL\_\-CHMODE}]{\setlength{\rightskip}{0pt plus 5cm}\#define USART\_\-NORMAL\_\-CHMODE~0}}
+\label{usart_8h_0bd9f61e5232af833543eac9419c2d70}
+
+
+Set usart channel to normal communcation \hypertarget{usart_8h_e5d244f72f291b826d489fdfd929f968}{
+\index{usart.h@{usart.h}!USART\_\-ODD\_\-PARITY@{USART\_\-ODD\_\-PARITY}}
+\index{USART\_\-ODD\_\-PARITY@{USART\_\-ODD\_\-PARITY}!usart.h@{usart.h}}
+\subsubsection[{USART\_\-ODD\_\-PARITY}]{\setlength{\rightskip}{0pt plus 5cm}\#define USART\_\-ODD\_\-PARITY~1}}
+\label{usart_8h_e5d244f72f291b826d489fdfd929f968}
+
+
+Use odd parity on character transmission \hypertarget{usart_8h_dba8a9b92a249dfaa3c1137e5bf7fd84}{
+\index{usart.h@{usart.h}!USART\_\-REMOTE\_\-LOOPBACK@{USART\_\-REMOTE\_\-LOOPBACK}}
+\index{USART\_\-REMOTE\_\-LOOPBACK@{USART\_\-REMOTE\_\-LOOPBACK}!usart.h@{usart.h}}
+\subsubsection[{USART\_\-REMOTE\_\-LOOPBACK}]{\setlength{\rightskip}{0pt plus 5cm}\#define USART\_\-REMOTE\_\-LOOPBACK~3}}
+\label{usart_8h_dba8a9b92a249dfaa3c1137e5bf7fd84}
+
+
+Set usart channel to remote loopback \hypertarget{usart_8h_0e63ca7313cd01a9210c4a4613859a68}{
+\index{usart.h@{usart.h}!USART\_\-SPACE\_\-PARITY@{USART\_\-SPACE\_\-PARITY}}
+\index{USART\_\-SPACE\_\-PARITY@{USART\_\-SPACE\_\-PARITY}!usart.h@{usart.h}}
+\subsubsection[{USART\_\-SPACE\_\-PARITY}]{\setlength{\rightskip}{0pt plus 5cm}\#define USART\_\-SPACE\_\-PARITY~2}}
+\label{usart_8h_0e63ca7313cd01a9210c4a4613859a68}
+
+
+Use a space as parity bit 
+
+\subsection{Function Documentation}
+\hypertarget{usart_8h_0cd4c3b95035f5943696ffd9b56ee494}{
+\index{usart.h@{usart.h}!usart\_\-bw\_\-write\_\-char@{usart\_\-bw\_\-write\_\-char}}
+\index{usart\_\-bw\_\-write\_\-char@{usart\_\-bw\_\-write\_\-char}!usart.h@{usart.h}}
+\subsubsection[{usart\_\-bw\_\-write\_\-char}]{\setlength{\rightskip}{0pt plus 5cm}void usart\_\-bw\_\-write\_\-char (volatile struct avr32\_\-usart\_\-t $\ast$ {\em usart}, \/  int {\em c})\hspace{0.3cm}{\tt  \mbox{[}inline\mbox{]}}}}
+\label{usart_8h_0cd4c3b95035f5943696ffd9b56ee494}
+
+
+A busy wait for writing a character to the usart. Use with $\ast$caution$\ast$ \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em $\ast$usart}]Base address of the usart \item[{\em c}]The character (up to 9 bits) to transmit \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]None \end{Desc}
+\hypertarget{usart_8h_ad19b20067ca5ccf90d584e3b09ab02a}{
+\index{usart.h@{usart.h}!usart\_\-getchar@{usart\_\-getchar}}
+\index{usart\_\-getchar@{usart\_\-getchar}!usart.h@{usart.h}}
+\subsubsection[{usart\_\-getchar}]{\setlength{\rightskip}{0pt plus 5cm}int usart\_\-getchar (volatile struct avr32\_\-usart\_\-t $\ast$ {\em usart})}}
+\label{usart_8h_ad19b20067ca5ccf90d584e3b09ab02a}
+
+
+Wait until a character is recevied, and return this. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em $\ast$usart}]Base address of the usart \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]The received character, or -1 upon error \end{Desc}
+\hypertarget{usart_8h_48c8d76fc9fdde84b94a6e09184a6446}{
+\index{usart.h@{usart.h}!usart\_\-init\_\-rs232@{usart\_\-init\_\-rs232}}
+\index{usart\_\-init\_\-rs232@{usart\_\-init\_\-rs232}!usart.h@{usart.h}}
+\subsubsection[{usart\_\-init\_\-rs232}]{\setlength{\rightskip}{0pt plus 5cm}int usart\_\-init\_\-rs232 (volatile struct avr32\_\-usart\_\-t $\ast$ {\em usart}, \/  struct {\bf usart\_\-options\_\-t} $\ast$ {\em opt}, \/  long {\em cpu\_\-hz})}}
+\label{usart_8h_48c8d76fc9fdde84b94a6e09184a6446}
+
+
+Setup the usart to use the standard RS232 protocol \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em $\ast$usart}]Base address of the usart \item[{\em $\ast$opt}]Options needed to set up RS232 communcation (see \hyperlink{structusart__options__t}{usart\_\-options\_\-t}) \item[{\em cpu\_\-hz}]The usart clk frequency \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]USART\_\-SUCCESS or USART\_\-INVALID\_\-INPUT \end{Desc}
+\hypertarget{usart_8h_908695fc913f77a6c1ab2a89e201a1fd}{
+\index{usart.h@{usart.h}!usart\_\-putchar@{usart\_\-putchar}}
+\index{usart\_\-putchar@{usart\_\-putchar}!usart.h@{usart.h}}
+\subsubsection[{usart\_\-putchar}]{\setlength{\rightskip}{0pt plus 5cm}int usart\_\-putchar (volatile struct avr32\_\-usart\_\-t $\ast$ {\em usart}, \/  int {\em c})}}
+\label{usart_8h_908695fc913f77a6c1ab2a89e201a1fd}
+
+
+Send a character with the usart \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em $\ast$usart}]Base address of the usart \item[{\em c}]Character to write \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]0 if char was written, -1 if the function timed out before the usart transmitter became ready to send \end{Desc}
+\hypertarget{usart_8h_ada9ca86fda25626da4a1c4b1e723682}{
+\index{usart.h@{usart.h}!usart\_\-read\_\-char@{usart\_\-read\_\-char}}
+\index{usart\_\-read\_\-char@{usart\_\-read\_\-char}!usart.h@{usart.h}}
+\subsubsection[{usart\_\-read\_\-char}]{\setlength{\rightskip}{0pt plus 5cm}int usart\_\-read\_\-char (volatile struct avr32\_\-usart\_\-t $\ast$ {\em usart}, \/  int $\ast$ {\em c})}}
+\label{usart_8h_ada9ca86fda25626da4a1c4b1e723682}
+
+
+Checks the RX buffer for a received character, and puts this at the memory location given. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em $\ast$usart}]Base address of the usart \item[{\em $\ast$c}]Pointer to the where the read charcter should be writen (must be short in order to accept 9 bit characters) \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]USART\_\-SUCCESS if the character was read successfully\par
+ USART\_\-RX\_\-EMPTY if the RX buffer was empty\par
+ USART\_\-RX\_\-ERROR if an error was deteceted\par
+ USART\_\-ADDR\_\-RECEIVED if an address is received while in multidrop mode \end{Desc}
+\hypertarget{usart_8h_e994c1e7797dda76388176f208a2e6f2}{
+\index{usart.h@{usart.h}!usart\_\-reset@{usart\_\-reset}}
+\index{usart\_\-reset@{usart\_\-reset}!usart.h@{usart.h}}
+\subsubsection[{usart\_\-reset}]{\setlength{\rightskip}{0pt plus 5cm}void usart\_\-reset (volatile struct avr32\_\-usart\_\-t $\ast$ {\em usart})}}
+\label{usart_8h_e994c1e7797dda76388176f208a2e6f2}
+
+
+This function will reset the USART, and disable TX and RX \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em $\ast$usart}]Base address of the usart \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]nothing \end{Desc}
+\hypertarget{usart_8h_5f5ba5edef2948c6e5e8c37ba07e5989}{
+\index{usart.h@{usart.h}!usart\_\-reset\_\-status@{usart\_\-reset\_\-status}}
+\index{usart\_\-reset\_\-status@{usart\_\-reset\_\-status}!usart.h@{usart.h}}
+\subsubsection[{usart\_\-reset\_\-status}]{\setlength{\rightskip}{0pt plus 5cm}void usart\_\-reset\_\-status (volatile struct avr32\_\-usart\_\-t $\ast$ {\em usart})}}
+\label{usart_8h_5f5ba5edef2948c6e5e8c37ba07e5989}
+
+
+Reset error status. 
+
+This function resets the status bits indicating that a parity error, framing error or overrun has occured. The rxbreak bit, indicating a start/end of break condition on the rx-line, is also reset. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em $\ast$usart}]Base address of the usart \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]nothing \end{Desc}
+\hypertarget{usart_8h_a4ca349377ae12db7bfe43336f98121e}{
+\index{usart.h@{usart.h}!usart\_\-send\_\-addr@{usart\_\-send\_\-addr}}
+\index{usart\_\-send\_\-addr@{usart\_\-send\_\-addr}!usart.h@{usart.h}}
+\subsubsection[{usart\_\-send\_\-addr}]{\setlength{\rightskip}{0pt plus 5cm}int usart\_\-send\_\-addr (volatile struct avr32\_\-usart\_\-t $\ast$ {\em usart}, \/  int {\em addr})}}
+\label{usart_8h_a4ca349377ae12db7bfe43336f98121e}
+
+
+Description: While in RS485-mode, receviers only accept data addressed to them. A packet/char with the address tag set has to preceed any data. \hyperlink{usart_8h_a4ca349377ae12db7bfe43336f98121e}{usart\_\-send\_\-addr()} is used to address a receiver. This receiver should read all the following data, until an address packet addresses someone else. Arguments: $\ast$usart: Base address of the usart addr: the address of the target device Returns: USART\_\-SUCCESS if the current mode is RS485 USART\_\-MODE\_\-FAULT if called while in wrong mode \hypertarget{usart_8h_26a849327e3bccdef17734f30667d9bd}{
+\index{usart.h@{usart.h}!usart\_\-write\_\-char@{usart\_\-write\_\-char}}
+\index{usart\_\-write\_\-char@{usart\_\-write\_\-char}!usart.h@{usart.h}}
+\subsubsection[{usart\_\-write\_\-char}]{\setlength{\rightskip}{0pt plus 5cm}int usart\_\-write\_\-char (volatile struct avr32\_\-usart\_\-t $\ast$ {\em usart}, \/  int {\em c})}}
+\label{usart_8h_26a849327e3bccdef17734f30667d9bd}
+
+
+If the transmitter is ready; write the given character to the TX buffer \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em $\ast$usart}]Base address of the usart \item[{\em c}]The character (up to 9 bits) to transmit \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]USART\_\-SUCCESS when the transmitter is ready USART\_\-TX\_\-BUSY when the transmitter is busy \end{Desc}

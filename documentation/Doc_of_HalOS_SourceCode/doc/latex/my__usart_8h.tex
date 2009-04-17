@@ -1,0 +1,56 @@
+\hypertarget{my__usart_8h}{
+\section{E:/Ausbildung/Semester3/Kopie von AVR32\_\-Work1/Halos\_\-Development/src/hal/ports/avr32/ap7x/ap7000/my\_\-usart.h File Reference}
+\label{my__usart_8h}\index{E:/Ausbildung/Semester3/Kopie von AVR32\_\-Work1/Halos\_\-Development/src/hal/ports/avr32/ap7x/ap7000/my\_\-usart.h@{E:/Ausbildung/Semester3/Kopie von AVR32\_\-Work1/Halos\_\-Development/src/hal/ports/avr32/ap7x/ap7000/my\_\-usart.h}}
+}
+interrupt driven UART  
+
+
+{\tt \#include $<$inttypes.h$>$}\par
+{\tt \#include \char`\"{}SerialBuffer.h\char`\"{}}\par
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+void \hyperlink{group___u_a_r_t_gd48c3413dab488fe3579ebcbee2466c7}{uart1\_\-set\_\-rx\_\-and\_\-tx\_\-buffer} (volatile \hyperlink{struct_serial_buffer_tag}{SerialBuffer} $\ast$txBuff, volatile \hyperlink{struct_serial_buffer_tag}{SerialBuffer} $\ast$rxBuff)
+\begin{CompactList}\small\item\em Sets the receive and transmit buffers. \item\end{CompactList}\item 
+void \hyperlink{group___u_a_r_t_gcc3cd7a0b6eb68cf02b2210cb8323459}{uart1\_\-init} (volatile \hyperlink{struct_serial_buffer_tag}{SerialBuffer} $\ast$txBuff, volatile \hyperlink{struct_serial_buffer_tag}{SerialBuffer} $\ast$rxBuff)
+\begin{CompactList}\small\item\em Initializes the UART. \item\end{CompactList}\item 
+void \hyperlink{group___u_a_r_t_g75dde68cc8f67ab4bfdf2ee60296265c}{uart1\_\-putch} (int32\_\-t ch)
+\begin{CompactList}\small\item\em writes a character into the write buffer \item\end{CompactList}\item 
+\hypertarget{group___u_a_r_t_gc8cf863b2fa1760aa3a7d78f45805c53}{
+int32\_\-t \hyperlink{group___u_a_r_t_gc8cf863b2fa1760aa3a7d78f45805c53}{uart1\_\-getch} (void)}
+\label{group___u_a_r_t_gc8cf863b2fa1760aa3a7d78f45805c53}
+
+\begin{CompactList}\small\item\em reads a character from the read buffer \item\end{CompactList}\item 
+void \hyperlink{group___u_a_r_t_ga5b52914c1970eda2abf78b6891c5202}{uart1\_\-puts} (const char $\ast$string)
+\begin{CompactList}\small\item\em writes a string into the write buffer \item\end{CompactList}\end{CompactItemize}
+\subsection*{Variables}
+\begin{CompactItemize}
+\item 
+\hypertarget{group___u_a_r_t_gd7f6a2a3df8e38e27346cdce67a384e5}{
+volatile \hyperlink{struct_serial_buffer_tag}{SerialBuffer} $\ast$ \hyperlink{group___u_a_r_t_gd7f6a2a3df8e38e27346cdce67a384e5}{txBuffer}}
+\label{group___u_a_r_t_gd7f6a2a3df8e38e27346cdce67a384e5}
+
+\begin{CompactList}\small\item\em reference to the write buffer \item\end{CompactList}\item 
+\hypertarget{group___u_a_r_t_ga9654342dbd9496b7f76a6453a7f0dff}{
+volatile \hyperlink{struct_serial_buffer_tag}{SerialBuffer} $\ast$ \hyperlink{group___u_a_r_t_ga9654342dbd9496b7f76a6453a7f0dff}{rxBuffer}}
+\label{group___u_a_r_t_ga9654342dbd9496b7f76a6453a7f0dff}
+
+\begin{CompactList}\small\item\em reference to the read buffer \item\end{CompactList}\item 
+\hypertarget{group___u_a_r_t_g6dd5e0e639beaa7c61014c923478b465}{
+volatile avr32\_\-usart\_\-t $\ast$ \hyperlink{group___u_a_r_t_g6dd5e0e639beaa7c61014c923478b465}{myusart}}
+\label{group___u_a_r_t_g6dd5e0e639beaa7c61014c923478b465}
+
+\begin{CompactList}\small\item\em reference to the UART \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+interrupt driven UART 
+
+\begin{Desc}
+\item[Author:]Team Halos \end{Desc}
+\begin{Desc}
+\item[Version:]0.0.1 \end{Desc}
+\begin{Desc}
+\item[Date:]2008-2009 \end{Desc}
+\begin{Desc}
+\item[Note:]Hardware: NGW100, Software: AVR32-GCC \end{Desc}

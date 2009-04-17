@@ -1,0 +1,51 @@
+\hypertarget{syscalls_8c}{
+\section{E:/Ausbildung/Semester3/Kopie von AVR32\_\-Work1/Halos\_\-Development/src/hal/ports/avr32/ap7x/ap7000/newlib/syscalls.c File Reference}
+\label{syscalls_8c}\index{E:/Ausbildung/Semester3/Kopie von AVR32\_\-Work1/Halos\_\-Development/src/hal/ports/avr32/ap7x/ap7000/newlib/syscalls.c@{E:/Ausbildung/Semester3/Kopie von AVR32\_\-Work1/Halos\_\-Development/src/hal/ports/avr32/ap7x/ap7000/newlib/syscalls.c}}
+}
+NEWLIB\_\-ADDONS system calls overloading file for AVR32.  
+
+
+{\tt \#include $<$sys/times.h$>$}\par
+{\tt \#include $<$stdio.h$>$}\par
+{\tt \#include $<$stdlib.h$>$}\par
+{\tt \#include $<$errno.h$>$}\par
+{\tt \#include \char`\"{}nlao\_\-io.h\char`\"{}}\par
+{\tt \#include \char`\"{}../interrupts/inc/interrupts.h\char`\"{}}\par
+{\tt \#include \char`\"{}../exceptions/inc/exceptions.h\char`\"{}}\par
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+int \hyperlink{syscalls_8c_eb0fee7e25692380f5346f304f4b6e5a}{\_\-\_\-attribute\_\-\_\-} ((weak))
+\item 
+void \hyperlink{syscalls_8c_ecd1ec62403a33bb27ca18bc4b04f236}{\_\-init\_\-argv\_\-sim} ()
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+NEWLIB\_\-ADDONS system calls overloading file for AVR32. 
+
+\begin{itemize}
+\item Compiler: GNU GCC for AVR32\item Supported devices: All AVR32 devices can be used.\item AppNote:\end{itemize}
+
+
+\begin{Desc}
+\item[Author:]Atmel Corporation: \href{http://www.atmel.com}{\tt http://www.atmel.com} \par
+ Support and FAQ: \href{http://support.atmel.no/}{\tt http://support.atmel.no/} \end{Desc}
+
+
+\subsection{Function Documentation}
+\hypertarget{syscalls_8c_eb0fee7e25692380f5346f304f4b6e5a}{
+\index{syscalls.c@{syscalls.c}!\_\-\_\-attribute\_\-\_\-@{\_\-\_\-attribute\_\-\_\-}}
+\index{\_\-\_\-attribute\_\-\_\-@{\_\-\_\-attribute\_\-\_\-}!syscalls.c@{syscalls.c}}
+\subsubsection[{\_\-\_\-attribute\_\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}int \_\-\_\-attribute\_\-\_\- ((weak))}}
+\label{syscalls_8c_eb0fee7e25692380f5346f304f4b6e5a}
+
+
+Low-level write command. When newlib buffer is full or fflush is called, this will output data to correct location. 1 and 2 is stdout and stderr which goes to usart 3 is framebuffer \hypertarget{syscalls_8c_ecd1ec62403a33bb27ca18bc4b04f236}{
+\index{syscalls.c@{syscalls.c}!\_\-init\_\-argv\_\-sim@{\_\-init\_\-argv\_\-sim}}
+\index{\_\-init\_\-argv\_\-sim@{\_\-init\_\-argv\_\-sim}!syscalls.c@{syscalls.c}}
+\subsubsection[{\_\-init\_\-argv\_\-sim}]{\setlength{\rightskip}{0pt plus 5cm}void \_\-init\_\-argv\_\-sim ()}}
+\label{syscalls_8c_ecd1ec62403a33bb27ca18bc4b04f236}
+
+
+Low-level open operator. Will return integer 3 if you open the \char`\"{}/dev/fb\char`\"{} framebuffer. The user will never use this command, only call fopen(\char`\"{}fb\char`\"{}, \char`\"{}a\char`\"{}) to get a FILE handle. This can in the future be extended to open MMC files. 

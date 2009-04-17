@@ -1,0 +1,73 @@
+\hypertarget{group___t_i_m_e_a_p_i}{
+\section{System Time API}
+\label{group___t_i_m_e_a_p_i}\index{System Time API@{System Time API}}
+}
+System Time routines.  
+
+
+\subsection*{Data Structures}
+\begin{CompactItemize}
+\item 
+struct \hyperlink{struct_time_tag}{TimeTag}
+\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+void \hyperlink{group___t_i_m_e_a_p_i_g67bfcc9f80489905bbe4152f32cd7d59}{Time\_\-ctor} (\hyperlink{struct_time_tag}{Time} $\ast$me, int8\_\-t hour, int8\_\-t minute, int8\_\-t second)
+\item 
+void \hyperlink{group___t_i_m_e_a_p_i_g365e8c6d726ee14937fc0041c91c50aa}{Time\_\-increment} (\hyperlink{struct_time_tag}{Time} $\ast$me)
+\item 
+char $\ast$ \hyperlink{group___t_i_m_e_a_p_i_gbb031a679ff73e5c3a6ee651233e9c2c}{Time\_\-toString} (\hyperlink{struct_time_tag}{Time} $\ast$me)
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+System Time routines. 
+
+\begin{Desc}
+\item[Note:]... \end{Desc}
+\begin{Desc}
+\item[Author:]giaco \end{Desc}
+\begin{Desc}
+\item[Version:]0.0.1 \end{Desc}
+
+
+\subsection{Function Documentation}
+\hypertarget{group___t_i_m_e_a_p_i_g67bfcc9f80489905bbe4152f32cd7d59}{
+\index{TIMEAPI@{TIMEAPI}!Time\_\-ctor@{Time\_\-ctor}}
+\index{Time\_\-ctor@{Time\_\-ctor}!TIMEAPI@{TIMEAPI}}
+\subsubsection[{Time\_\-ctor}]{\setlength{\rightskip}{0pt plus 5cm}void Time\_\-ctor ({\bf Time} $\ast$ {\em me}, \/  int8\_\-t {\em hour}, \/  int8\_\-t {\em minute}, \/  int8\_\-t {\em second})}}
+\label{group___t_i_m_e_a_p_i_g67bfcc9f80489905bbe4152f32cd7d59}
+
+
+Time constructor \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em me}]pointer of Time \item[{\em hour}]\item[{\em minute}]\item[{\em second}]\end{description}
+\end{Desc}
+\hypertarget{group___t_i_m_e_a_p_i_g365e8c6d726ee14937fc0041c91c50aa}{
+\index{TIMEAPI@{TIMEAPI}!Time\_\-increment@{Time\_\-increment}}
+\index{Time\_\-increment@{Time\_\-increment}!TIMEAPI@{TIMEAPI}}
+\subsubsection[{Time\_\-increment}]{\setlength{\rightskip}{0pt plus 5cm}void Time\_\-increment ({\bf Time} $\ast$ {\em me})}}
+\label{group___t_i_m_e_a_p_i_g365e8c6d726ee14937fc0041c91c50aa}
+
+
+Increments time \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em me}]\end{description}
+\end{Desc}
+\hypertarget{group___t_i_m_e_a_p_i_gbb031a679ff73e5c3a6ee651233e9c2c}{
+\index{TIMEAPI@{TIMEAPI}!Time\_\-toString@{Time\_\-toString}}
+\index{Time\_\-toString@{Time\_\-toString}!TIMEAPI@{TIMEAPI}}
+\subsubsection[{Time\_\-toString}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ Time\_\-toString ({\bf Time} $\ast$ {\em me})}}
+\label{group___t_i_m_e_a_p_i_gbb031a679ff73e5c3a6ee651233e9c2c}
+
+
+Converts Time into a char\mbox{[}\mbox{]} \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em me}]\end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]time as a char array \end{Desc}

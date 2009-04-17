@@ -1,0 +1,41 @@
+\hypertarget{device__driver_8h}{
+\section{E:/Ausbildung/Semester3/Kopie von AVR32\_\-Work1/Halos\_\-Development/src/devices/device\_\-driver.h File Reference}
+\label{device__driver_8h}\index{E:/Ausbildung/Semester3/Kopie von AVR32\_\-Work1/Halos\_\-Development/src/devices/device\_\-driver.h@{E:/Ausbildung/Semester3/Kopie von AVR32\_\-Work1/Halos\_\-Development/src/devices/device\_\-driver.h}}
+}
+Device Hardware Interface.  
+
+
+{\tt \#include $<$stdlib.h$>$}\par
+{\tt \#include $<$stdint.h$>$}\par
+{\tt \#include \char`\"{}device\_\-struct.h\char`\"{}}\par
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+\hyperlink{group___d_e_v_i_c_e___a_p_i_g9f427f7fc1dc07b788af60c2aaa6b8d3}{DEV\_\-UID} \hyperlink{group__device__driver_g66f128d4bb74eca88758ca73f2fa4f9c}{generate\_\-dev\_\-uid} (void)
+\begin{CompactList}\small\item\em generates an unique id for a device \item\end{CompactList}\item 
+\hypertarget{group__device__driver_gdebc80251d3a7020d049c948f308fdea}{
+void \hyperlink{group__device__driver_gdebc80251d3a7020d049c948f308fdea}{init\_\-all\_\-drivers} (void)}
+\label{group__device__driver_gdebc80251d3a7020d049c948f308fdea}
+
+\begin{CompactList}\small\item\em closes a device \item\end{CompactList}\item 
+device\_\-t $\ast$ \hyperlink{group__device__driver_gf52df4f2578f48dbe154d5cb1643e7a7}{open\_\-driver} (\hyperlink{group___d_e_v_i_c_e___a_p_i_g9f427f7fc1dc07b788af60c2aaa6b8d3}{DEV\_\-UID} $\ast$dev\_\-uid, uint32\_\-t device\_\-type, uint32\_\-t device\_\-number)
+\begin{CompactList}\small\item\em opens a device \item\end{CompactList}\item 
+int32\_\-t \hyperlink{group__device__driver_g908734a3944d1f0d08ba5490c13e1ac6}{read\_\-driver} (\hyperlink{group___d_e_v_i_c_e___a_p_i_g9f427f7fc1dc07b788af60c2aaa6b8d3}{DEV\_\-UID} dev\_\-uid, device\_\-t $\ast$dev, void $\ast$data)
+\begin{CompactList}\small\item\em reads data from a device \item\end{CompactList}\item 
+void \hyperlink{group__device__driver_gc3f852bf9a4da163836eb9bdd23e6dd8}{write\_\-driver} (\hyperlink{group___d_e_v_i_c_e___a_p_i_g9f427f7fc1dc07b788af60c2aaa6b8d3}{DEV\_\-UID} dev\_\-uid, device\_\-t $\ast$dev, void $\ast$data)
+\begin{CompactList}\small\item\em writes a unit of data to the device \item\end{CompactList}\item 
+int32\_\-t \hyperlink{group__device__driver_g4915a14d06f79d1c5a2d72b186cee40d}{close\_\-driver} (device\_\-t $\ast$dev, \hyperlink{group___d_e_v_i_c_e___a_p_i_g9f427f7fc1dc07b788af60c2aaa6b8d3}{DEV\_\-UID} dev\_\-uid)
+\begin{CompactList}\small\item\em closes a device \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Device Hardware Interface. 
+
+\begin{Desc}
+\item[Author:]Team Halos \end{Desc}
+\begin{Desc}
+\item[Version:]0.0.1 \end{Desc}
+\begin{Desc}
+\item[Date:]2008-2009 \end{Desc}
+\begin{Desc}
+\item[Note:]Hardware: NGW100, Software: AVR32-GCC \end{Desc}

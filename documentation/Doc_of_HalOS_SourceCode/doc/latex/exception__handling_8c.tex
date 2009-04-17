@@ -1,0 +1,41 @@
+\hypertarget{exception__handling_8c}{
+\section{E:/Ausbildung/Semester3/Kopie von AVR32\_\-Work1/Halos\_\-Development/src/hal/ports/avr32/ap7x/ap7000/exceptions/src/exception\_\-handling.c File Reference}
+\label{exception__handling_8c}\index{E:/Ausbildung/Semester3/Kopie von AVR32\_\-Work1/Halos\_\-Development/src/hal/ports/avr32/ap7x/ap7000/exceptions/src/exception\_\-handling.c@{E:/Ausbildung/Semester3/Kopie von AVR32\_\-Work1/Halos\_\-Development/src/hal/ports/avr32/ap7x/ap7000/exceptions/src/exception\_\-handling.c}}
+}
+NEWLIB\_\-ADDONS exception handling file for AVR32.  
+
+
+{\tt \#include $<$avr32/io.h$>$}\par
+{\tt \#include $<$stdio.h$>$}\par
+{\tt \#include \char`\"{}../inc/exceptions.h\char`\"{}}\par
+{\tt \#include \char`\"{}graphics.h\char`\"{}}\par
+{\tt \#include \char`\"{}font.h\char`\"{}}\par
+{\tt \#include \char`\"{}halosUtil.h\char`\"{}}\par
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+void \hyperlink{exception__handling_8c_eb0fee7e25692380f5346f304f4b6e5a}{\_\-\_\-attribute\_\-\_\-} ((weak))
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+NEWLIB\_\-ADDONS exception handling file for AVR32. 
+
+\begin{itemize}
+\item Compiler: GNU GCC for AVR32\item Supported devices: All AVR32 devices can be used.\item AppNote:\end{itemize}
+
+
+\begin{Desc}
+\item[Author:]Atmel Corporation: \href{http://www.atmel.com}{\tt http://www.atmel.com} \par
+ Support and FAQ: \href{http://support.atmel.no/}{\tt http://support.atmel.no/} \end{Desc}
+
+
+\subsection{Function Documentation}
+\hypertarget{exception__handling_8c_eb0fee7e25692380f5346f304f4b6e5a}{
+\index{exception\_\-handling.c@{exception\_\-handling.c}!\_\-\_\-attribute\_\-\_\-@{\_\-\_\-attribute\_\-\_\-}}
+\index{\_\-\_\-attribute\_\-\_\-@{\_\-\_\-attribute\_\-\_\-}!exception_handling.c@{exception\_\-handling.c}}
+\subsubsection[{\_\-\_\-attribute\_\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}int \_\-\_\-attribute\_\-\_\- ((weak))}}
+\label{exception__handling_8c_eb0fee7e25692380f5346f304f4b6e5a}
+
+
+Low-level write command. When newlib buffer is full or fflush is called, this will output data to correct location. 1 and 2 is stdout and stderr which goes to usart 3 is framebuffer 

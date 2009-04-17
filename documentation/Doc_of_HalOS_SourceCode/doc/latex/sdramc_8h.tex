@@ -1,0 +1,72 @@
+\hypertarget{sdramc_8h}{
+\section{E:/Ausbildung/Semester3/Kopie von AVR32\_\-Work1/Halos\_\-Development/src/hal/ports/avr32/ap7x/ap7000/sdramc.h File Reference}
+\label{sdramc_8h}\index{E:/Ausbildung/Semester3/Kopie von AVR32\_\-Work1/Halos\_\-Development/src/hal/ports/avr32/ap7x/ap7000/sdramc.h@{E:/Ausbildung/Semester3/Kopie von AVR32\_\-Work1/Halos\_\-Development/src/hal/ports/avr32/ap7x/ap7000/sdramc.h}}
+}
+SDRAMC on EBI driver for AVR32 UC3.  
+
+
+{\tt \#include $<$avr32/io.h$>$}\par
+{\tt \#include \char`\"{}ngw100.h\char`\"{}}\par
+\subsection*{Defines}
+\begin{CompactItemize}
+\item 
+\#define \hyperlink{sdramc_8h_82db1eeff764aa7e568483199a0832b8}{SDRAM\_\-SIZE}
+\begin{CompactList}\small\item\em Pointer to SDRAM. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+void \hyperlink{sdramc_8h_a0f99d3a3036fbdaa70fc6365efe0b04}{sdramc\_\-init} (unsigned long hsb\_\-hz)
+\begin{CompactList}\small\item\em Initializes the AVR32 SDRAM Controller and the connected SDRAM(s). \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+SDRAMC on EBI driver for AVR32 UC3. 
+
+\begin{itemize}
+\item Compiler: IAR EWAVR32 and GNU GCC for AVR32\item Supported devices: All AVR32 devices with an SDRAMC module can be used.\item AppNote:\end{itemize}
+
+
+\begin{Desc}
+\item[Author:]Atmel Corporation: \href{http://www.atmel.com}{\tt http://www.atmel.com} \par
+ Support and FAQ: \href{http://support.atmel.no/}{\tt http://support.atmel.no/} \end{Desc}
+
+
+\subsection{Define Documentation}
+\hypertarget{sdramc_8h_82db1eeff764aa7e568483199a0832b8}{
+\index{sdramc.h@{sdramc.h}!SDRAM\_\-SIZE@{SDRAM\_\-SIZE}}
+\index{SDRAM\_\-SIZE@{SDRAM\_\-SIZE}!sdramc.h@{sdramc.h}}
+\subsubsection[{SDRAM\_\-SIZE}]{\setlength{\rightskip}{0pt plus 5cm}\#define SDRAM\_\-SIZE}}
+\label{sdramc_8h_82db1eeff764aa7e568483199a0832b8}
+
+
+\textbf{Value:}
+
+\begin{Code}\begin{verbatim}(1 << (SDRAM_BANK_BITS + \
+                               SDRAM_ROW_BITS  + \
+                               SDRAM_COL_BITS  + \
+                               (SDRAM_DBW >> 4)))
+\end{verbatim}
+\end{Code}
+Pointer to SDRAM. 
+
+SDRAM size. 
+
+\subsection{Function Documentation}
+\hypertarget{sdramc_8h_a0f99d3a3036fbdaa70fc6365efe0b04}{
+\index{sdramc.h@{sdramc.h}!sdramc\_\-init@{sdramc\_\-init}}
+\index{sdramc\_\-init@{sdramc\_\-init}!sdramc.h@{sdramc.h}}
+\subsubsection[{sdramc\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void sdramc\_\-init (unsigned long {\em hsb\_\-hz})}}
+\label{sdramc_8h_a0f99d3a3036fbdaa70fc6365efe0b04}
+
+
+Initializes the AVR32 SDRAM Controller and the connected SDRAM(s). 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em hsb\_\-hz}]HSB frequency in Hz (the HSB frequency is applied to the SDRAMC and to the SDRAM).\end{description}
+\end{Desc}
+\begin{Desc}
+\item[Note:]HMATRIX and SDRAMC registers are always read with a dummy load operation after having been written to, in order to force write-back before executing the following accesses, which depend on the values set in these registers.
+
+Each access to the SDRAM address space validates the mode of the SDRAMC and generates an operation corresponding to this mode. \end{Desc}

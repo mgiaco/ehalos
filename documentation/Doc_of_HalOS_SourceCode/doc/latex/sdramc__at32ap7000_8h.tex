@@ -1,0 +1,45 @@
+\hypertarget{sdramc__at32ap7000_8h}{
+\section{E:/Ausbildung/Semester3/Kopie von AVR32\_\-Work1/Halos\_\-Development/src/hal/ports/avr32/ap7x/ap7000/sdramc\_\-at32ap7000.h File Reference}
+\label{sdramc__at32ap7000_8h}\index{E:/Ausbildung/Semester3/Kopie von AVR32\_\-Work1/Halos\_\-Development/src/hal/ports/avr32/ap7x/ap7000/sdramc\_\-at32ap7000.h@{E:/Ausbildung/Semester3/Kopie von AVR32\_\-Work1/Halos\_\-Development/src/hal/ports/avr32/ap7x/ap7000/sdramc\_\-at32ap7000.h}}
+}
+SDRAMC on EBI driver for AVR32.  
+
+
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+void \hyperlink{sdramc__at32ap7000_8h_31ff372c0d4ab7c3e54f46df2c73c722}{sdramc\_\-init} ()
+\begin{CompactList}\small\item\em Initializes the AVR32 SDRAM Controller and the connected SDRAM(s). \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+SDRAMC on EBI driver for AVR32. 
+
+\begin{itemize}
+\item Compiler: IAR EWAVR32 and GNU GCC for AVR32\item Supported devices: All AVR32 devices with an SDRAMC module can be used.\item AppNote:\end{itemize}
+
+
+\begin{Desc}
+\item[Author:]Atmel Corporation: \href{http://www.atmel.com}{\tt http://www.atmel.com} \par
+ Support and FAQ: \href{http://support.atmel.no/}{\tt http://support.atmel.no/} \end{Desc}
+
+
+\subsection{Function Documentation}
+\hypertarget{sdramc__at32ap7000_8h_31ff372c0d4ab7c3e54f46df2c73c722}{
+\index{sdramc\_\-at32ap7000.h@{sdramc\_\-at32ap7000.h}!sdramc\_\-init@{sdramc\_\-init}}
+\index{sdramc\_\-init@{sdramc\_\-init}!sdramc_at32ap7000.h@{sdramc\_\-at32ap7000.h}}
+\subsubsection[{sdramc\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void sdramc\_\-init ()}}
+\label{sdramc__at32ap7000_8h_31ff372c0d4ab7c3e54f46df2c73c722}
+
+
+Initializes the AVR32 SDRAM Controller and the connected SDRAM(s). 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em hsb\_\-hz}]HSB frequency in Hz (the HSB frequency is applied to the SDRAMC and to the SDRAM).\end{description}
+\end{Desc}
+\begin{Desc}
+\item[Note:]HMATRIX and SDRAMC registers are always read with a dummy load operation after having been written to, in order to force write-back before executing the following accesses, which depend on the values set in these registers.
+
+Each access to the SDRAM address space validates the mode of the SDRAMC and generates an operation corresponding to this mode. \end{Desc}

@@ -1,0 +1,52 @@
+\hypertarget{sdramc__at32ap7000_8c}{
+\section{E:/Ausbildung/Semester3/Kopie von AVR32\_\-Work1/Halos\_\-Development/src/hal/ports/avr32/ap7x/ap7000/sdramc\_\-at32ap7000.c File Reference}
+\label{sdramc__at32ap7000_8c}\index{E:/Ausbildung/Semester3/Kopie von AVR32\_\-Work1/Halos\_\-Development/src/hal/ports/avr32/ap7x/ap7000/sdramc\_\-at32ap7000.c@{E:/Ausbildung/Semester3/Kopie von AVR32\_\-Work1/Halos\_\-Development/src/hal/ports/avr32/ap7x/ap7000/sdramc\_\-at32ap7000.c}}
+}
+SDRAMC on EBI driver for AVR32.  
+
+
+{\tt \#include \char`\"{}compiler.h\char`\"{}}\par
+{\tt \#include \char`\"{}ngw100.h\char`\"{}}\par
+{\tt \#include \char`\"{}sdramc\_\-at32ap7000.h\char`\"{}}\par
+{\tt \#include \char`\"{}pio.h\char`\"{}}\par
+{\tt \#include \char`\"{}sys/sysregs.h\char`\"{}}\par
+{\tt \#include \char`\"{}pm\_\-at32ap7000.h\char`\"{}}\par
+{\tt \#include \char`\"{}init.h\char`\"{}}\par
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+void \hyperlink{sdramc__at32ap7000_8c_a0f99d3a3036fbdaa70fc6365efe0b04}{sdramc\_\-init} (unsigned long hsb\_\-hz)
+\begin{CompactList}\small\item\em Initializes the AVR32 SDRAM Controller and the connected SDRAM(s). \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+SDRAMC on EBI driver for AVR32. 
+
+\begin{itemize}
+\item Compiler: IAR EWAVR32 and GNU GCC for AVR32\item Supported devices: All AVR32 devices with an SDRAMC module can be used.\item AppNote:\end{itemize}
+
+
+\begin{Desc}
+\item[Author:]Atmel Corporation: \href{http://www.atmel.com}{\tt http://www.atmel.com} \par
+ Support and FAQ: \href{http://support.atmel.no/}{\tt http://support.atmel.no/} \end{Desc}
+
+
+\subsection{Function Documentation}
+\hypertarget{sdramc__at32ap7000_8c_a0f99d3a3036fbdaa70fc6365efe0b04}{
+\index{sdramc\_\-at32ap7000.c@{sdramc\_\-at32ap7000.c}!sdramc\_\-init@{sdramc\_\-init}}
+\index{sdramc\_\-init@{sdramc\_\-init}!sdramc_at32ap7000.c@{sdramc\_\-at32ap7000.c}}
+\subsubsection[{sdramc\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void sdramc\_\-init (unsigned long {\em hsb\_\-hz})}}
+\label{sdramc__at32ap7000_8c_a0f99d3a3036fbdaa70fc6365efe0b04}
+
+
+Initializes the AVR32 SDRAM Controller and the connected SDRAM(s). 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em hsb\_\-hz}]HSB frequency in Hz (the HSB frequency is applied to the SDRAMC and to the SDRAM).\end{description}
+\end{Desc}
+\begin{Desc}
+\item[Note:]HMATRIX and SDRAMC registers are always read with a dummy load operation after having been written to, in order to force write-back before executing the following accesses, which depend on the values set in these registers.
+
+Each access to the SDRAM address space validates the mode of the SDRAMC and generates an operation corresponding to this mode. \end{Desc}

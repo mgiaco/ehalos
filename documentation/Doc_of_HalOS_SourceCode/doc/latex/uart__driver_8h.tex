@@ -1,0 +1,49 @@
+\hypertarget{uart__driver_8h}{
+\section{E:/Ausbildung/Semester3/Kopie von AVR32\_\-Work1/Halos\_\-Development/src/devices/ports/avr32/ap7x/ap7000/devices/uart\_\-driver/uart\_\-driver.h File Reference}
+\label{uart__driver_8h}\index{E:/Ausbildung/Semester3/Kopie von AVR32\_\-Work1/Halos\_\-Development/src/devices/ports/avr32/ap7x/ap7000/devices/uart\_\-driver/uart\_\-driver.h@{E:/Ausbildung/Semester3/Kopie von AVR32\_\-Work1/Halos\_\-Development/src/devices/ports/avr32/ap7x/ap7000/devices/uart\_\-driver/uart\_\-driver.h}}
+}
+hardware dependent UART code  
+
+
+{\tt \#include $<$inttypes.h$>$}\par
+{\tt \#include \char`\"{}pio.h\char`\"{}}\par
+{\tt \#include \char`\"{}usart.h\char`\"{}}\par
+{\tt \#include \char`\"{}pm\_\-at32ap7000.h\char`\"{}}\par
+{\tt \#include \char`\"{}device\_\-driver.h\char`\"{}}\par
+{\tt \#include \char`\"{}device\_\-types.h\char`\"{}}\par
+\subsection*{Defines}
+\begin{CompactItemize}
+\item 
+\#define \hyperlink{group___u_a_r_t___d_r_i_v_e_r_g8a3ec48b54d63808ed4c386c320fed47}{DEV\_\-NULL}~0
+\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+\hypertarget{group___u_a_r_t___d_r_i_v_e_r_g4d1dc433ab7e055098aabcf36ee3b8b9}{
+void \hyperlink{group___u_a_r_t___d_r_i_v_e_r_g4d1dc433ab7e055098aabcf36ee3b8b9}{uart\_\-driver\_\-init} (void)}
+\label{group___u_a_r_t___d_r_i_v_e_r_g4d1dc433ab7e055098aabcf36ee3b8b9}
+
+\begin{CompactList}\small\item\em initializes the UART driver \item\end{CompactList}\item 
+\hyperlink{group___d_e_v_i_c_e___a_p_i_g9f427f7fc1dc07b788af60c2aaa6b8d3}{DEV\_\-UID} \hyperlink{group___u_a_r_t___d_r_i_v_e_r_g21a2031520a7294468c5e6f74829a741}{uart\_\-driver\_\-open} (uint32\_\-t device\_\-type, uint32\_\-t device\_\-number)
+\begin{CompactList}\small\item\em opens the UART driver \item\end{CompactList}\item 
+int32\_\-t \hyperlink{group___u_a_r_t___d_r_i_v_e_r_ga6928ddd61de1141bef635bdf78c178a}{uart\_\-driver\_\-read\_\-byte} (\hyperlink{group___d_e_v_i_c_e___a_p_i_g9f427f7fc1dc07b788af60c2aaa6b8d3}{DEV\_\-UID} dev\_\-uid, void $\ast$data)
+\begin{CompactList}\small\item\em reads a byte from the UART \item\end{CompactList}\item 
+void \hyperlink{group___u_a_r_t___d_r_i_v_e_r_gfa04867da082deef4ff11e19691b0a7d}{uart\_\-driver\_\-write\_\-byte} (\hyperlink{group___d_e_v_i_c_e___a_p_i_g9f427f7fc1dc07b788af60c2aaa6b8d3}{DEV\_\-UID} dev\_\-uid, void $\ast$data)
+\begin{CompactList}\small\item\em writes a byte to the UART \item\end{CompactList}\item 
+int32\_\-t \hyperlink{group___u_a_r_t___d_r_i_v_e_r_ga894da78cf2a50d46371a5db778827b6}{uart\_\-driver\_\-close} (\hyperlink{group___d_e_v_i_c_e___a_p_i_g9f427f7fc1dc07b788af60c2aaa6b8d3}{DEV\_\-UID} dev\_\-uid)
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+hardware dependent UART code 
+
+\begin{Desc}
+\item[Author:]Team Halos \end{Desc}
+\begin{Desc}
+\item[Version:]0.0.1 \end{Desc}
+\begin{Desc}
+\item[Date:]2008-2009 \end{Desc}
+\begin{Desc}
+\item[Note:]Hardware: NGW100, Software: AVR32-GCC \end{Desc}
+\begin{Desc}
+\item[License: ]LGPLv2.1 \end{Desc}

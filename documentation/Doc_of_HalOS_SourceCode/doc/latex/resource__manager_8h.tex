@@ -1,0 +1,98 @@
+\hypertarget{resource__manager_8h}{
+\section{E:/Ausbildung/Semester3/Kopie von AVR32\_\-Work1/Halos\_\-Development/src/kernel/ressource\_\-manager/inc/resource\_\-manager.h File Reference}
+\label{resource__manager_8h}\index{E:/Ausbildung/Semester3/Kopie von AVR32\_\-Work1/Halos\_\-Development/src/kernel/ressource\_\-manager/inc/resource\_\-manager.h@{E:/Ausbildung/Semester3/Kopie von AVR32\_\-Work1/Halos\_\-Development/src/kernel/ressource\_\-manager/inc/resource\_\-manager.h}}
+}
+Hashmap.  
+
+
+{\tt \#include $<$stdint.h$>$}\par
+{\tt \#include $<$stdlib.h$>$}\par
+{\tt \#include \char`\"{}device\_\-types.h\char`\"{}}\par
+{\tt \#include \char`\"{}device\_\-struct.h\char`\"{}}\par
+{\tt \#include \char`\"{}pcb.h\char`\"{}}\par
+{\tt \#include \char`\"{}sched.h\char`\"{}}\par
+{\tt \#include \char`\"{}error\_\-types.h\char`\"{}}\par
+{\tt \#include \char`\"{}SerialBuffer.h\char`\"{}}\par
+\subsection*{Data Structures}
+\begin{CompactItemize}
+\item 
+struct \hyperlink{structvirtual__dev__struct}{virtual\_\-dev\_\-struct}
+\begin{CompactList}\small\item\em virtual device structure, which keeps track of the requested physical device. RXBuffer and TXbuffer are kept seperately for each virtual device \item\end{CompactList}\item 
+struct \hyperlink{structwaiting__node}{waiting\_\-node}
+\begin{CompactList}\small\item\em planned to implement a waiting queue for ressources \item\end{CompactList}\item 
+struct \hyperlink{structaccess__entry}{access\_\-entry}
+\begin{CompactList}\small\item\em planned to implement access entries to handle accesses from processes to devices \item\end{CompactList}\end{CompactItemize}
+\subsection*{Typedefs}
+\begin{CompactItemize}
+\item 
+\hypertarget{group___r_e_s_o_u_r_c_e___m_g0a6d9ff2e6e8e956cd95db8b5364fd3b}{
+typedef struct \hyperlink{structvirtual__dev__struct}{virtual\_\-dev\_\-struct} \hyperlink{group___r_e_s_o_u_r_c_e___m_g0a6d9ff2e6e8e956cd95db8b5364fd3b}{virtual\_\-dev\_\-t}}
+\label{group___r_e_s_o_u_r_c_e___m_g0a6d9ff2e6e8e956cd95db8b5364fd3b}
+
+\begin{CompactList}\small\item\em virtual device structure, which keeps track of the requested physical device. RXBuffer and TXbuffer are kept seperately for each virtual device \item\end{CompactList}\item 
+\hypertarget{group___r_e_s_o_u_r_c_e___m_g276d8f250d49d20c964bac614730a049}{
+typedef struct \hyperlink{structwaiting__node}{waiting\_\-node} \hyperlink{group___r_e_s_o_u_r_c_e___m_g276d8f250d49d20c964bac614730a049}{waiting\_\-node\_\-t}}
+\label{group___r_e_s_o_u_r_c_e___m_g276d8f250d49d20c964bac614730a049}
+
+\begin{CompactList}\small\item\em planned to implement a waiting queue for ressources \item\end{CompactList}\item 
+\hypertarget{group___r_e_s_o_u_r_c_e___m_gb728d76414e2f7fa8ad09a84c6547dc9}{
+typedef struct \hyperlink{structaccess__entry}{access\_\-entry} \hyperlink{group___r_e_s_o_u_r_c_e___m_gb728d76414e2f7fa8ad09a84c6547dc9}{access\_\-entry\_\-t}}
+\label{group___r_e_s_o_u_r_c_e___m_gb728d76414e2f7fa8ad09a84c6547dc9}
+
+\begin{CompactList}\small\item\em planned to implement access entries to handle accesses from processes to devices \item\end{CompactList}\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+void \hyperlink{group___r_e_s_o_u_r_c_e___m_g521d6b7564e57ef0d80abea4b53d6c7f}{rm\_\-initGraph} (void)
+\begin{CompactList}\small\item\em planned mapping from virtual UIDs to real UIDs \item\end{CompactList}\item 
+void \hyperlink{group___r_e_s_o_u_r_c_e___m_g5d470ccb4591d7168916467ba0b93b20}{check\_\-ressource} (\hyperlink{structprocess_control_block}{PCtrlBlock\_\-t} $\ast$new\_\-running\_\-process)
+\begin{CompactList}\small\item\em checks if new\_\-running\_\-process is a foreground process and has therefor the focus of the screen and other shared devices. has to be executed after each scheduling step. \item\end{CompactList}\item 
+void \hyperlink{group___r_e_s_o_u_r_c_e___m_gb922966b175c37acd17f1152c188b987}{set\_\-foreground\_\-process} (\hyperlink{structprocess_control_block}{PCtrlBlock\_\-t} $\ast$fg\_\-process)
+\begin{CompactList}\small\item\em sets the current foreground process, which gains the focus of LCD and shared devices \item\end{CompactList}\item 
+\hypertarget{group___r_e_s_o_u_r_c_e___m_g21c7d1f374d3089ecb525e56076cf0b5}{
+void \hyperlink{group___r_e_s_o_u_r_c_e___m_g21c7d1f374d3089ecb525e56076cf0b5}{rm\_\-switch\_\-focus} (void)}
+\label{group___r_e_s_o_u_r_c_e___m_g21c7d1f374d3089ecb525e56076cf0b5}
+
+\begin{CompactList}\small\item\em switches the focus to the next process in the process queue. gets the current runnable processes from the scheduler \item\end{CompactList}\item 
+\hypertarget{group___r_e_s_o_u_r_c_e___m_g64d5ef2dd419a49cf59542a4b954af41}{
+int8\_\-t \hyperlink{group___r_e_s_o_u_r_c_e___m_g64d5ef2dd419a49cf59542a4b954af41}{is\_\-device\_\-free} (uint32\_\-t dev\_\-type, uint32\_\-t dev\_\-no, \hyperlink{structaccess__entry}{access\_\-entry\_\-t} $\ast$\hyperlink{structaccess__entry}{access\_\-entry})}
+\label{group___r_e_s_o_u_r_c_e___m_g64d5ef2dd419a49cf59542a4b954af41}
+
+\begin{CompactList}\small\item\em planned but not yet implemented \item\end{CompactList}\item 
+\hypertarget{group___r_e_s_o_u_r_c_e___m_g0c3d4aa0c760be1dd0ccf47f48959c6f}{
+int8\_\-t \hyperlink{group___r_e_s_o_u_r_c_e___m_g0c3d4aa0c760be1dd0ccf47f48959c6f}{get\_\-device} (int32\_\-t device\_\-type, uint32\_\-t dev\_\-no, \hyperlink{group___d_e_v_i_c_e___a_p_i_g9f427f7fc1dc07b788af60c2aaa6b8d3}{DEV\_\-UID} $\ast$ret\_\-dev\_\-id, device\_\-t $\ast$device)}
+\label{group___r_e_s_o_u_r_c_e___m_g0c3d4aa0c760be1dd0ccf47f48959c6f}
+
+\begin{CompactList}\small\item\em planned but not yet implemented \item\end{CompactList}\item 
+\hypertarget{group___r_e_s_o_u_r_c_e___m_g206e4e025a03eacca299aaef4a02f6ab}{
+int8\_\-t \hyperlink{group___r_e_s_o_u_r_c_e___m_g206e4e025a03eacca299aaef4a02f6ab}{get\_\-display} ()}
+\label{group___r_e_s_o_u_r_c_e___m_g206e4e025a03eacca299aaef4a02f6ab}
+
+\begin{CompactList}\small\item\em planned but not yet implemented \item\end{CompactList}\item 
+int8\_\-t \hyperlink{group___r_e_s_o_u_r_c_e___m_g6169adf2c7a30c3aebdc2e56bd06cbb9}{release\_\-device} (device\_\-t $\ast$device)
+\begin{CompactList}\small\item\em writes a unit of data to the device \item\end{CompactList}\item 
+int8\_\-t \hyperlink{group___r_e_s_o_u_r_c_e___m_g8af28a02db0b8f6aec83fc5c9654d49f}{init\_\-resource\_\-manager} ()
+\begin{CompactList}\small\item\em initializes the ressouce manager; initializes the used hash maps, initializes the null device \item\end{CompactList}\item 
+device\_\-t $\ast$ \hyperlink{group___r_e_s_o_u_r_c_e___m_g09c6c96465e7bed0f3026fec51dbf1fc}{ressource\_\-open} (\hyperlink{group___d_e_v_i_c_e___a_p_i_g9f427f7fc1dc07b788af60c2aaa6b8d3}{DEV\_\-UID} $\ast$virt\_\-dev\_\-uid, int32\_\-t device\_\-type, int32\_\-t device\_\-number)
+\begin{CompactList}\small\item\em opens the requested ressource and initializes a virtual\_\-dev\_\-t for the request. if a ressource is not yet used, the returned virtual device uid enables to write to the real device. if the ressource is currently used, the virtual\_\-dev\_\-t points to the null device \item\end{CompactList}\item 
+int32\_\-t \hyperlink{group___r_e_s_o_u_r_c_e___m_g1a881ac8d628460d6192af633a85c78e}{ressource\_\-read} (\hyperlink{group___d_e_v_i_c_e___a_p_i_g9f427f7fc1dc07b788af60c2aaa6b8d3}{DEV\_\-UID} dev\_\-uid, device\_\-t $\ast$dev, void $\ast$data)
+\begin{CompactList}\small\item\em reads data from a device using the virutal\_\-device\_\-uid \item\end{CompactList}\item 
+void \hyperlink{group___r_e_s_o_u_r_c_e___m_g3dcd2a4d0edfb34e53f059b90700b846}{ressource\_\-write} (\hyperlink{group___d_e_v_i_c_e___a_p_i_g9f427f7fc1dc07b788af60c2aaa6b8d3}{DEV\_\-UID} dev\_\-uid, device\_\-t $\ast$dev, void $\ast$data)
+\begin{CompactList}\small\item\em writes a unit of data to the device using the virtual device uid \item\end{CompactList}\item 
+int32\_\-t \hyperlink{group___r_e_s_o_u_r_c_e___m_g271870da508ff83711dac2abc49871c9}{ressource\_\-close} (device\_\-t $\ast$dev, \hyperlink{group___d_e_v_i_c_e___a_p_i_g9f427f7fc1dc07b788af60c2aaa6b8d3}{DEV\_\-UID} dev\_\-uid)
+\begin{CompactList}\small\item\em closes a device \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Hashmap. 
+
+\begin{Desc}
+\item[Author:]Team Halos \end{Desc}
+\begin{Desc}
+\item[Version:]0.0.1 \end{Desc}
+\begin{Desc}
+\item[Date:]2008-2009 \end{Desc}
+\begin{Desc}
+\item[Note:]Hardware: NGW100, Software: AVR32-GCC \end{Desc}
+\begin{Desc}
+\item[License: ]LGPLv2.1 \end{Desc}

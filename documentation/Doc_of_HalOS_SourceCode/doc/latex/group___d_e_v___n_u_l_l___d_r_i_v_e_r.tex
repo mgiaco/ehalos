@@ -1,0 +1,130 @@
+\hypertarget{group___d_e_v___n_u_l_l___d_r_i_v_e_r}{
+\section{DEV\_\-NULL Driver}
+\label{group___d_e_v___n_u_l_l___d_r_i_v_e_r}\index{DEV\_\-NULL Driver@{DEV\_\-NULL Driver}}
+}
+AP7000 DEV\_\-NULL driver.  
+
+
+\subsection*{Defines}
+\begin{CompactItemize}
+\item 
+\#define \hyperlink{group___d_e_v___n_u_l_l___d_r_i_v_e_r_g8a3ec48b54d63808ed4c386c320fed47}{DEV\_\-NULL}~0
+\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+\hypertarget{group___d_e_v___n_u_l_l___d_r_i_v_e_r_g6f8f1bd26f17b5b9cd97a663fc6506f8}{
+void \hyperlink{group___d_e_v___n_u_l_l___d_r_i_v_e_r_g6f8f1bd26f17b5b9cd97a663fc6506f8}{dev\_\-null\_\-driver\_\-init} (void)}
+\label{group___d_e_v___n_u_l_l___d_r_i_v_e_r_g6f8f1bd26f17b5b9cd97a663fc6506f8}
+
+\begin{CompactList}\small\item\em initializes the DEV\_\-NULL driver \item\end{CompactList}\item 
+\hyperlink{group___d_e_v_i_c_e___a_p_i_g9f427f7fc1dc07b788af60c2aaa6b8d3}{DEV\_\-UID} \hyperlink{group___d_e_v___n_u_l_l___d_r_i_v_e_r_g19420164fed0b4ab3b5c4fc75585b582}{dev\_\-null\_\-driver\_\-open} (uint32\_\-t device\_\-type, uint32\_\-t device\_\-number)
+\begin{CompactList}\small\item\em opens the DEV\_\-NULL driver \item\end{CompactList}\item 
+int32\_\-t \hyperlink{group___d_e_v___n_u_l_l___d_r_i_v_e_r_g2ddfdd67728b79b4672d1549f513dfc5}{dev\_\-null\_\-driver\_\-read\_\-byte} (\hyperlink{group___d_e_v_i_c_e___a_p_i_g9f427f7fc1dc07b788af60c2aaa6b8d3}{DEV\_\-UID} dev\_\-uid, void $\ast$data)
+\begin{CompactList}\small\item\em reads a byte from the DEV\_\-NULL driver \item\end{CompactList}\item 
+void \hyperlink{group___d_e_v___n_u_l_l___d_r_i_v_e_r_g37b6936dc7965e224e2c2977a905ed8f}{dev\_\-null\_\-driver\_\-write\_\-byte} (\hyperlink{group___d_e_v_i_c_e___a_p_i_g9f427f7fc1dc07b788af60c2aaa6b8d3}{DEV\_\-UID} dev\_\-uid, void $\ast$data)
+\begin{CompactList}\small\item\em writes a byte to the DEV\_\-NULL driver \item\end{CompactList}\item 
+int32\_\-t \hyperlink{group___d_e_v___n_u_l_l___d_r_i_v_e_r_gbac6c3a551684ff0db74eb04020ebb26}{dev\_\-null\_\-driver\_\-close} (\hyperlink{group___d_e_v_i_c_e___a_p_i_g9f427f7fc1dc07b788af60c2aaa6b8d3}{DEV\_\-UID} dev\_\-uid)
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+AP7000 DEV\_\-NULL driver. 
+
+\subsection{Define Documentation}
+\hypertarget{group___d_e_v___n_u_l_l___d_r_i_v_e_r_g8a3ec48b54d63808ed4c386c320fed47}{
+\index{DEV\_\-NULL\_\-DRIVER@{DEV\_\-NULL\_\-DRIVER}!DEV\_\-NULL@{DEV\_\-NULL}}
+\index{DEV\_\-NULL@{DEV\_\-NULL}!DEV_NULL_DRIVER@{DEV\_\-NULL\_\-DRIVER}}
+\subsubsection[{DEV\_\-NULL}]{\setlength{\rightskip}{0pt plus 5cm}\#define DEV\_\-NULL~0}}
+\label{group___d_e_v___n_u_l_l___d_r_i_v_e_r_g8a3ec48b54d63808ed4c386c320fed47}
+
+
+\begin{Desc}
+\item[Note:]... \end{Desc}
+\begin{Desc}
+\item[Author:]karl, giaco \end{Desc}
+\begin{Desc}
+\item[Version:]0.0.1 \end{Desc}
+
+
+\subsection{Function Documentation}
+\hypertarget{group___d_e_v___n_u_l_l___d_r_i_v_e_r_gbac6c3a551684ff0db74eb04020ebb26}{
+\index{DEV\_\-NULL\_\-DRIVER@{DEV\_\-NULL\_\-DRIVER}!dev\_\-null\_\-driver\_\-close@{dev\_\-null\_\-driver\_\-close}}
+\index{dev\_\-null\_\-driver\_\-close@{dev\_\-null\_\-driver\_\-close}!DEV_NULL_DRIVER@{DEV\_\-NULL\_\-DRIVER}}
+\subsubsection[{dev\_\-null\_\-driver\_\-close}]{\setlength{\rightskip}{0pt plus 5cm}int32\_\-t dev\_\-null\_\-driver\_\-close ({\bf DEV\_\-UID} {\em dev\_\-uid})}}
+\label{group___d_e_v___n_u_l_l___d_r_i_v_e_r_gbac6c3a551684ff0db74eb04020ebb26}
+
+
+closes the DEV\_\-NULL driver \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em dev\_\-uid}]unique device number\end{description}
+\end{Desc}
+closes the UART driver \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em dev\_\-uid}]unique device number \end{description}
+\end{Desc}
+\hypertarget{group___d_e_v___n_u_l_l___d_r_i_v_e_r_g19420164fed0b4ab3b5c4fc75585b582}{
+\index{DEV\_\-NULL\_\-DRIVER@{DEV\_\-NULL\_\-DRIVER}!dev\_\-null\_\-driver\_\-open@{dev\_\-null\_\-driver\_\-open}}
+\index{dev\_\-null\_\-driver\_\-open@{dev\_\-null\_\-driver\_\-open}!DEV_NULL_DRIVER@{DEV\_\-NULL\_\-DRIVER}}
+\subsubsection[{dev\_\-null\_\-driver\_\-open}]{\setlength{\rightskip}{0pt plus 5cm}{\bf DEV\_\-UID} dev\_\-null\_\-driver\_\-open (uint32\_\-t {\em device\_\-type}, \/  uint32\_\-t {\em device\_\-number})}}
+\label{group___d_e_v___n_u_l_l___d_r_i_v_e_r_g19420164fed0b4ab3b5c4fc75585b582}
+
+
+opens the DEV\_\-NULL driver 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em device\_\-type}]the type of device which should be opened(USART, BIT, ...) \item[{\em device\_\-number}]unique device number\end{description}
+\end{Desc}
+opens the DEV\_\-NULL driver
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em device\_\-type}]the type of device which should be opened(USART, BIT, ...) \item[{\em device\_\-number}]unique device number \end{description}
+\end{Desc}
+\hypertarget{group___d_e_v___n_u_l_l___d_r_i_v_e_r_g2ddfdd67728b79b4672d1549f513dfc5}{
+\index{DEV\_\-NULL\_\-DRIVER@{DEV\_\-NULL\_\-DRIVER}!dev\_\-null\_\-driver\_\-read\_\-byte@{dev\_\-null\_\-driver\_\-read\_\-byte}}
+\index{dev\_\-null\_\-driver\_\-read\_\-byte@{dev\_\-null\_\-driver\_\-read\_\-byte}!DEV_NULL_DRIVER@{DEV\_\-NULL\_\-DRIVER}}
+\subsubsection[{dev\_\-null\_\-driver\_\-read\_\-byte}]{\setlength{\rightskip}{0pt plus 5cm}int32\_\-t dev\_\-null\_\-driver\_\-read\_\-byte ({\bf DEV\_\-UID} {\em dev\_\-uid}, \/  void $\ast$ {\em data})}}
+\label{group___d_e_v___n_u_l_l___d_r_i_v_e_r_g2ddfdd67728b79b4672d1549f513dfc5}
+
+
+reads a byte from the DEV\_\-NULL driver 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em dev\_\-uid}]unique device number \item[{\em data}]pointer to data buffer\end{description}
+\end{Desc}
+reads a byte from the DEV\_\-NULL driver
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em dev\_\-uid}]unique device number \item[{\em data}]pointer to data buffer \end{description}
+\end{Desc}
+\hypertarget{group___d_e_v___n_u_l_l___d_r_i_v_e_r_g37b6936dc7965e224e2c2977a905ed8f}{
+\index{DEV\_\-NULL\_\-DRIVER@{DEV\_\-NULL\_\-DRIVER}!dev\_\-null\_\-driver\_\-write\_\-byte@{dev\_\-null\_\-driver\_\-write\_\-byte}}
+\index{dev\_\-null\_\-driver\_\-write\_\-byte@{dev\_\-null\_\-driver\_\-write\_\-byte}!DEV_NULL_DRIVER@{DEV\_\-NULL\_\-DRIVER}}
+\subsubsection[{dev\_\-null\_\-driver\_\-write\_\-byte}]{\setlength{\rightskip}{0pt plus 5cm}void dev\_\-null\_\-driver\_\-write\_\-byte ({\bf DEV\_\-UID} {\em dev\_\-uid}, \/  void $\ast$ {\em data})}}
+\label{group___d_e_v___n_u_l_l___d_r_i_v_e_r_g37b6936dc7965e224e2c2977a905ed8f}
+
+
+writes a byte to the DEV\_\-NULL driver 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em dev\_\-uid}]unique device number \item[{\em data}]pointer to data\end{description}
+\end{Desc}
+writes a byte to the DEV\_\-NULL driver
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em dev\_\-uid}]unique device number \item[{\em data}]pointer to data \end{description}
+\end{Desc}

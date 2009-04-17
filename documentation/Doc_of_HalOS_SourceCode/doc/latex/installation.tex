@@ -1,0 +1,23 @@
+\hypertarget{index_intro}{}\section{Introduction}\label{index_intro}
+This Installation Guide shows how to install HalOS on the AVR NGW100 embedded board.\hypertarget{installation_Hardware}{}\section{and Tools}\label{installation_Hardware}
+The following Tools for the HalOS installation are needed: \begin{itemize}
+\item HW: ATMEL AVR NGW100 (with LCD Display, 480 x 272 ) \item HW: AVR JTAGICE mkII Debugger Device of ATMEL \item HW: Serial cable (for UART communication) \item SW: Integrated Development Environment (IDE) AMTEL AVR32 Studio, Version: 2.1.0 (JTAGICE mkII) \item SW: ATMEL AVR32 GNU Toolchain 2.1.4 Additional Tools (but not required): \item Subclipse for SVN \item CUnit for Testing \item Doxygen for documentation generation\end{itemize}
+\hypertarget{installation_Bring}{}\section{HalOS and the Applications onto the NGW100}\label{installation_Bring}
+In order to run HalOS on the NGW100 board the following steps have be done:\begin{enumerate}
+\item Start AVR32 Studio and make sure that the JTAGICE mkII is recognized by AVR32 Studio\item Setup the JTAGICE mkII device in AVR32 Studio (first do \char`\"{}scan targets\char`\"{} and setup to the CPU: AP7000 and to the board: NGW100)\item Open and Execute (run) the HalOS Project on the AVR32 Studio (this will burn the HalOS on the board)\item Burn the HalOS applications to the Flash with the following parameters: \begin{itemize}
+\item IdleProcess -$>$ File: IdleProcess.bin, Start Address: 0x00500000 \item Shell: -$>$ File: Shell.bin, Start Address: 0x00520000 \item SpaceInvaders: -$>$ File: SpaceInvaders.bin, Start Address: 0x00540000 \item ImageShow: -$>$ File: PhotoFrame.bin, Start Address: 0x00560000\end{itemize}
+\item Now the HalOS System is ready to run and also ready to debug. Just restart the NGW100 by the reset button or power plug and be sure that the NGW100 is connected by the serial cable to a computer with a running terminal (E.g. HTerm).\end{enumerate}
+\hypertarget{installation_Commands}{}\section{for the HalOS System: Shell, SpaceInvaders and ImageView}\label{installation_Commands}
+The operating system starts by default the idle process as the first system application. Afterwards the idle process starts the shell applications, which is the basic process for user interactions. With the shell application the user is able to start new applications (like SpaceInvaders or ImageShow). After starting a new applications via the shell, the new applications is running an available to the user immediately (GUI and UART). The commands for the applications have to be entered via the UART (serial) terminal. The following commands are available:
+
+SpaceInvaders: \begin{itemize}
+\item \char`\"{}s\char`\"{} = shot \item \char`\"{}d\char`\"{} = right \item \char`\"{}a\char`\"{} = left \item \char`\"{}o\char`\"{} = Shutdown the application (quit)\end{itemize}
+ImageShow:\begin{itemize}
+\item has no commands, it runs automatic and switches through several images after around 5 seconds\end{itemize}
+
+
+Shell:\begin{itemize}
+\item start PROCESSNAME (E.g. \char`\"{}start SpaceInvaders\char`\"{}, \char`\"{}start ImageShow\char`\"{} )\item kill PROCESS-ID (E.g. \char`\"{}kill 3\char`\"{});\item top -$>$ shows the current processes in HalOS\item help -$>$ shows the available commands for the shell\item history -$>$ shows the last entered shell commands\item clear -$>$ clears the screen of the shell\end{itemize}
+
+
+Its also possible to switch between different processes, therefore use: Ctrl + Alt + $|$ 

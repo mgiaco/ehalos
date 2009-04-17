@@ -1,0 +1,46 @@
+\hypertarget{leds__driver_8h}{
+\section{E:/Ausbildung/Semester3/Kopie von AVR32\_\-Work1/Halos\_\-Development/src/devices/ports/avr32/ap7x/ap7000/devices/leds\_\-driver/leds\_\-driver.h File Reference}
+\label{leds__driver_8h}\index{E:/Ausbildung/Semester3/Kopie von AVR32\_\-Work1/Halos\_\-Development/src/devices/ports/avr32/ap7x/ap7000/devices/leds\_\-driver/leds\_\-driver.h@{E:/Ausbildung/Semester3/Kopie von AVR32\_\-Work1/Halos\_\-Development/src/devices/ports/avr32/ap7x/ap7000/devices/leds\_\-driver/leds\_\-driver.h}}
+}
+hardware dependent led driver code  
+
+
+{\tt \#include $<$inttypes.h$>$}\par
+{\tt \#include \char`\"{}pio.h\char`\"{}}\par
+{\tt \#include \char`\"{}device\_\-driver.h\char`\"{}}\par
+{\tt \#include \char`\"{}device\_\-struct.h\char`\"{}}\par
+{\tt \#include \char`\"{}device\_\-types.h\char`\"{}}\par
+\subsection*{Defines}
+\begin{CompactItemize}
+\item 
+\#define \hyperlink{group___l_e_d___d_r_i_v_e_r_gda38030928bc5c3bdec6b7613fd3cab9}{DEV\_\-UID\_\-NULL}~0
+\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+\hypertarget{group___l_e_d___d_r_i_v_e_r_g0465ca2d4ffd8bed426bd197898bf72b}{
+void \hyperlink{group___l_e_d___d_r_i_v_e_r_g0465ca2d4ffd8bed426bd197898bf72b}{leds\_\-driver\_\-init} (void)}
+\label{group___l_e_d___d_r_i_v_e_r_g0465ca2d4ffd8bed426bd197898bf72b}
+
+\begin{CompactList}\small\item\em initializes the led driver \item\end{CompactList}\item 
+\hyperlink{group___d_e_v_i_c_e___a_p_i_g9f427f7fc1dc07b788af60c2aaa6b8d3}{DEV\_\-UID} \hyperlink{group___l_e_d___d_r_i_v_e_r_gb7d8a66025cb15b1eee23f5612fec260}{leds\_\-driver\_\-open} (uint32\_\-t device\_\-type, uint32\_\-t device\_\-number)
+\begin{CompactList}\small\item\em opens the led driver \item\end{CompactList}\item 
+void \hyperlink{group___l_e_d___d_r_i_v_e_r_ge5f9451ef85692996d440cb67950645a}{leds\_\-driver\_\-set\_\-bit} (\hyperlink{group___d_e_v_i_c_e___a_p_i_g9f427f7fc1dc07b788af60c2aaa6b8d3}{DEV\_\-UID} dev\_\-uid, void $\ast$data)
+\begin{CompactList}\small\item\em sets a led on the board \item\end{CompactList}\item 
+int32\_\-t \hyperlink{group___l_e_d___d_r_i_v_e_r_g1c9941f649946c996f3b22a47d809f94}{leds\_\-driver\_\-close} (\hyperlink{group___d_e_v_i_c_e___a_p_i_g9f427f7fc1dc07b788af60c2aaa6b8d3}{DEV\_\-UID} dev\_\-uid)
+\begin{CompactList}\small\item\em closes the led driver \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+hardware dependent led driver code 
+
+\begin{Desc}
+\item[Author:]Team Halos \end{Desc}
+\begin{Desc}
+\item[Version:]0.0.1 \end{Desc}
+\begin{Desc}
+\item[Date:]2008-2009 \end{Desc}
+\begin{Desc}
+\item[Note:]Hardware: NGW100, Software: AVR32-GCC \end{Desc}
+\begin{Desc}
+\item[License: ]LGPLv2.1 \end{Desc}
