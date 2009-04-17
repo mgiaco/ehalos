@@ -31,31 +31,31 @@
 <option id="gnu.c.compiler.option.debugging.level.1154379032" name="Debug Level" superClass="gnu.c.compiler.option.debugging.level" value="gnu.c.debugging.level.max" valueType="enumerated"/>
 <option id="avr32.c.compiler.option.mcu.613536835" name="Microcontroller Unit" superClass="avr32.c.compiler.option.mcu" value="-mpart=ap7000" valueType="string"/>
 <option id="gnu.c.compiler.option.include.paths.1730059333" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
-<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Halos_Development/src/devices/gdi/font/fonts}&quot;"/>
-<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Halos_Development/src/devices/gdi/font/inc}&quot;"/>
-<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Halos_Development/src/devices/gdi/graphics/inc}&quot;"/>
-<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Halos_Development/src/devices}&quot;"/>
-<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Halos_Development/src/hal/ports/avr32/ap7x/ap7000}&quot;"/>
-<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Halos_Development/src/hal/ports/avr32/ap7x/ap7000/exceptions/inc}&quot;"/>
-<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Halos_Development/src/hal/ports/avr32/ap7x/ap7000/interrupts/inc}&quot;"/>
-<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Halos_Development/src/hal/ports/avr32/ap7x/ap7000/newlib}&quot;"/>
-<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Halos_Development/src/halos_apis/halos_device_api/inc}&quot;"/>
-<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Halos_Development/src/halos_apis/halos_device_api/ports/avr32/ap7x/ap7000}&quot;"/>
-<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Halos_Development/src/halos_apis/halos_gdi/inc}&quot;"/>
-<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Halos_Development/src/halos_apis/halos_system_api/inc}&quot;"/>
-<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Halos_Development/src/kernel}&quot;"/>
-<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Halos_Development/src/kernel/process_manager/inc}&quot;"/>
-<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Halos_Development/src/kernel/process_manager/port/avr32/ap7x/ap7000}&quot;"/>
-<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Halos_Development/src/kernel/ressource_manager/inc}&quot;"/>
-<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Halos_Development/src/kernel/system_call_handler/inc}&quot;"/>
-<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Halos_Development/src/kernel/vmemory_management/inc}&quot;"/>
-<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Halos_Development/src/kernel/inc}&quot;"/>
-<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Halos_Development/src/devices/ports/avr32/ap7x/ap7000/devices}&quot;"/>
-<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Halos_Development/src/devices/ports/avr32/ap7x/ap7000/devices/leds_driver}&quot;"/>
-<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Halos_Development/src/devices/ports/avr32/ap7x/ap7000/devices/uart_driver}&quot;"/>
-<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Halos_Development/src/devices/ports/avr32/ap7x/ap7000/displays/inc}&quot;"/>
-<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Halos_Development/src/halos_apis/halos_util/inc}&quot;"/>
-<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Halos_Development/src/devices/ports/avr32/ap7x/ap7000/devices/dev_null_driver/inc}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/eHalOS/src/devices/gdi/font/fonts}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/eHalOS/src/devices/gdi/font/inc}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/eHalOS/src/devices/gdi/graphics/inc}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/eHalOS/src/devices}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/eHalOS/src/hal/ports/avr32/ap7x/ap7000}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/eHalOS/src/hal/ports/avr32/ap7x/ap7000/exceptions/inc}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/eHalOS/src/hal/ports/avr32/ap7x/ap7000/interrupts/inc}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/eHalOS/src/hal/ports/avr32/ap7x/ap7000/newlib}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/eHalOS/src/halos_apis/halos_device_api/inc}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/eHalOS/src/halos_apis/halos_device_api/ports/avr32/ap7x/ap7000}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/eHalOS/src/halos_apis/halos_gdi/inc}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/eHalOS/src/halos_apis/halos_system_api/inc}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/eHalOS/src/kernel}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/eHalOS/src/kernel/process_manager/inc}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/eHalOS/src/kernel/process_manager/port/avr32/ap7x/ap7000}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/eHalOS/src/kernel/ressource_manager/inc}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/eHalOS/src/kernel/system_call_handler/inc}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/eHalOS/src/kernel/vmemory_management/inc}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/eHalOS/src/kernel/inc}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/eHalOS/src/devices/ports/avr32/ap7x/ap7000/devices}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/eHalOS/src/devices/ports/avr32/ap7x/ap7000/devices/leds_driver}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/eHalOS/src/devices/ports/avr32/ap7x/ap7000/devices/uart_driver}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/eHalOS/src/devices/ports/avr32/ap7x/ap7000/displays/inc}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/eHalOS/src/halos_apis/halos_util/inc}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/eHalOS/src/devices/ports/avr32/ap7x/ap7000/devices/dev_null_driver/inc}&quot;"/>
 </option>
 <inputType id="avr32.managedbuild.tool.gnu.c.compiler.input.1203908454" superClass="avr32.managedbuild.tool.gnu.c.compiler.input"/>
 </tool>
