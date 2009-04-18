@@ -53,9 +53,9 @@ extern "C" {
 #include "MemoryManagement.h"
 #include "loader.h"
 
-#include "../../apps/process1.h"
-#include "../../apps/process2.h"
-#include "../../apps/shell.h"
+#include "../../tmp/process1.h"
+#include "../../tmp/process2.h"
+#include "../../tmp/shell.h"
 
 #include "macro.h"
 #include "init.h"
