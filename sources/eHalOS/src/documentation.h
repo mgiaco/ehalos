@@ -6,7 +6,7 @@
  * - Compiler:           GNU GCC for AVR32
  * - Supported devices:  AVR32 AP7000 devices with a LCD module can be used.
  *
- * @author               Team HalOS
+ * @author               Team eHalOS
  * @date	2008-2009
  *****************************************************************************/
 

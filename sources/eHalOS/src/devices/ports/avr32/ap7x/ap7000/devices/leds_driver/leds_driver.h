@@ -8,7 +8,7 @@ extern "C" {
 	/**
 	 * @file leds_driver.h
 	 * @brief hardware dependent led driver code
-	 * @author Team Halos
+	 * @author Team eHalOS
 	 * @version 0.0.1
 	 * @date    2008-2009
 	 * @note Hardware: NGW100, Software: AVR32-GCC

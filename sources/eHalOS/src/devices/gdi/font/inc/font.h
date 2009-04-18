@@ -4,7 +4,7 @@
 /**
  * @file font.h
  * @brief device independet graphic/font header
- * @author Team Halos
+ * @author Team eHalOS
  * @version 0.0.1
  * @date    2008-2009
  * @note Hardware: NGW100, Software: AVR32-GCC

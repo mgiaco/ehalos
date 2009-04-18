@@ -1,7 +1,7 @@
 /**
  * @file colors16.h
  * @brief 16-Bit Colortable
- * @author Team Halos
+ * @author Team eHalOS
  * @version 0.0.1
  * @date    2008-2009
  * @note Hardware: NGW100, Software: AVR32-GCC

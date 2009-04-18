@@ -3,7 +3,7 @@
  file:     	commBuffer.c
  sw: 		AVR32-GCC
  hw: 		NGW100
- license:  	copyright(c) 2008 team halos
+ license:  	copyright(c) 2008 Team eHalOS
  usage:    	see doxygen manual
 
  LICENSE:

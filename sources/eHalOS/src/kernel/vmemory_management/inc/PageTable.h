@@ -6,7 +6,7 @@
  file:     	PageTable.h
  sw: 		AVR32-GCC
  hw: 		NGW100
- license:  	copyright(c) 2009 team halos
+ license:  	copyright(c) 2009 Team eHalOS
  usage:    	see doxygen manual
 
  LICENSE:

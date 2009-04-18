@@ -3,7 +3,7 @@
 /**
  * @file ap7000_lcd.c
  * @brief AP7000 hardware dependet graphic/lcd implementation
- * @author Team Halos
+ * @author Team eHalOS
  * @version 0.0.1
  * @date    2008-2009
  * @note Hardware: NGW100, Software: AVR32-GCC
